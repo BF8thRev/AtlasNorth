@@ -1,0 +1,94 @@
+{
+  "cards": [
+    {
+      "id": "jb-warm-intro",
+      "title": "JB (Cheech & Chong) — Ask for warm intros to licensed manufacturing partners",
+      "agent": "Hunter",
+      "priority": "high",
+      "notes": "JB's MSO licensing partners = exact Newton ICP. Ask for 2-3 warm intros to their cannabis manufacturing licensees. Not a pitch to JB directly.",
+      "status": "backlog",
+      "iterations": 0
+    },
+    {
+      "id": "future4200-outreach",
+      "title": "future4200 — Convert solvent loss thread engagement into Newton leads",
+      "agent": "Hunter",
+      "priority": "high",
+      "notes": "Bryan's deep technical thread on future4200 generated real engagement from extraction operators. Hunter to DM top responders with a soft intro to Newton. Drafts in workspace.",
+      "status": "backlog",
+      "iterations": 0
+    },
+    {
+      "id": "trucenta-linkedin",
+      "title": "Trucenta — LinkedIn outreach to Director of Extraction (Michigan)",
+      "agent": "Hunter",
+      "priority": "high",
+      "notes": "Michigan's largest cannabis oil extraction facility. Find extraction lead on LinkedIn. Draft ready in Drafts tab — pending approval.",
+      "status": "pending-approval",
+      "iterations": 0
+    },
+    {
+      "id": "trulieve-linkedin",
+      "title": "Trulieve Florida — LinkedIn outreach to VP Ops / Extraction",
+      "agent": "Hunter",
+      "priority": "high",
+      "notes": "FL MMTC, fully vertically integrated. Every run matters at their scale. Draft ready in Drafts tab — pending approval.",
+      "status": "pending-approval",
+      "iterations": 0
+    },
+    {
+      "id": "newton-software-tier",
+      "title": "Newton — Decide: software-only tier pricing (free vs $500/mo)",
+      "agent": "Atlas",
+      "priority": "high",
+      "notes": "Decision pending. Bryan prefers product-led growth. Free tier drives adoption; $500/mo filters intent. No decision = no GTM.",
+      "status": "blocked-on-bryan",
+      "iterations": 0
+    },
+    {
+      "id": "scc-ga-growth-report",
+      "title": "SCC/HUSA — Pull GA4 traffic & conversion trends, build growth proof",
+      "agent": "Ledger",
+      "priority": "medium",
+      "notes": "GA4 property ID 473280391. SEO guy does weekly work — need to show growth proof. Pull 90-day traffic trend, acquisition channels, top landing pages.",
+      "status": "backlog",
+      "iterations": 0
+    },
+    {
+      "id": "dime-podcast-review-automation",
+      "title": "Dime — Build auto-review flow: episode drops → Atlas pre-fills scorecard → pings Bryan",
+      "agent": "Atlas",
+      "priority": "medium",
+      "notes": "48hr delay after publish for data to stabilize. Pull YouTube analytics + transcript. Pre-fill Podcast Review tab. Ping Bryan with highlights. Bryan approves in 2 min.",
+      "status": "backlog",
+      "iterations": 0
+    },
+    {
+      "id": "goals-baseline-x-li",
+      "title": "Goals tab — Set X and LinkedIn follower baselines manually",
+      "agent": "Atlas",
+      "priority": "low",
+      "notes": "YouTube baseline set: 6,740. X and LinkedIn baselines need one-time manual entry in Goals tab. Takes 60 seconds.",
+      "status": "blocked-on-bryan",
+      "iterations": 0
+    },
+    {
+      "id": "newton-fl-mi-prospects",
+      "title": "Newton — FL & MI prospect list built, needs outreach sequencing",
+      "agent": "Hunter",
+      "priority": "medium",
+      "notes": "Prospect list in workspace (Newton_prospects_FL_MI.md). LinkedIn outreach drafts exist. Need Bryan approval to send.",
+      "status": "pending-approval",
+      "iterations": 0
+    },
+    {
+      "id": "dime-x-growth",
+      "title": "Dime — Build X growth system: daily post cadence + reply strategy",
+      "agent": "Rob C",
+      "priority": "medium",
+      "notes": "X algo in 2026 rewards 1-2 quality posts/day + 15-20 thoughtful replies. Rob C to draft a 2-week content cadence for Bryan's X account.",
+      "status": "backlog",
+      "iterations": 0
+    }
+  ]
+}

@@ -2,7 +2,18 @@
 
 import { useState, useEffect } from "react";
 import BlockerCard from "@/components/BlockerCard";
-import Navigation from "@/components/Navigation";
+import Navigation, { TabId } from "@/components/Navigation";
+import RosterTab from "@/components/RosterTab";
+import KanbanBoard from "@/components/KanbanBoard";
+import MemoryVault from "@/components/MemoryVault";
+import RoutinesTab from "@/components/RoutinesTab";
+import AccessStatus from "@/components/AccessStatus";
+import DecisionsLog from "@/components/DecisionsLog";
+import BudgetMeter from "@/components/BudgetMeter";
+import PodcastReview from "@/components/PodcastReview";
+import AlertsTab, { SecurityStatus } from "@/components/AlertsTab";
+import DraftsTab from "@/components/DraftsTab";
+import GoalsTab from "@/components/GoalsTab";
 
 export type Item = {
   id: string;
@@ -19,15 +30,32 @@ export type MissionControlData = {
 };
 
 export default function Home() {
-  const [activeTab, setActiveTab] = useState<"blockers" | "loops">("blockers");
+  const [activeTab, setActiveTab] = useState<TabId>("blockers");
+  const [securityStatus, setSecurityStatus] = useState<SecurityStatus>("clear");
   const [data, setData] = useState<MissionControlData>({
     blockersForYou: [],
     openLoops: [],
   });
   const [isLoading, setIsLoading] = useState(true);
 
+  // Load security status from localStorage on boot
   useEffect(() => {
-    fetch("/data/mission-control.json")
+    try {
+      const saved = localStorage.getItem("atlas-security-status") as SecurityStatus | null;
+      if (saved) setSecurityStatus(saved);
+    } catch {}
+  }, []);
+
+  // Auto-open alerts tab when flagged
+  const handleSecurityStatusChange = (status: SecurityStatus) => {
+    setSecurityStatus(status);
+    if (status === "flagged") {
+      setActiveTab("alerts");
+    }
+  };
+
+  const fetchData = () => {
+    fetch(`/data/mission-control.json?t=${Date.now()}`)
       .then((res) => res.json())
       .then((json) => {
         setData(json);
@@ -37,44 +65,72 @@ export default function Home() {
         console.error("Failed to load data:", err);
         setIsLoading(false);
       });
+  };
+
+  useEffect(() => {
+    fetchData();
+    const interval = setInterval(fetchData, 30000);
+    return () => clearInterval(interval);
   }, []);
 
   const items = activeTab === "blockers" ? data.blockersForYou : data.openLoops;
 
   return (
     <div className="flex min-h-screen bg-gray-50">
-      {/* Left Navigation */}
-      <Navigation activeTab={activeTab} setActiveTab={setActiveTab} />
+      <Navigation activeTab={activeTab} setActiveTab={setActiveTab} securityStatus={securityStatus} />
 
-      {/* Main Content */}
       <main className="flex-1 p-6 md:p-10 md:ml-64">
-        <div className="max-w-5xl mx-auto">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">
-            {activeTab === "blockers" ? "Blockers for You" : "Open Loops"}
-          </h1>
-          <p className="text-gray-600 mb-8">
-            {activeTab === "blockers"
-              ? "Items that need your attention or approval"
-              : "Active tasks and ongoing work"}
-          </p>
 
-          {isLoading ? (
-            <div className="text-center py-12">
-              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
-              <p className="mt-4 text-gray-600">Loading...</p>
+        {activeTab === "roster"    && <RosterTab />}
+        {activeTab === "kanban"    && <KanbanBoard />}
+        {activeTab === "routines"  && <RoutinesTab />}
+        {activeTab === "decisions" && <DecisionsLog />}
+        {activeTab === "access"    && <AccessStatus />}
+        {activeTab === "vault"     && <MemoryVault />}
+        {activeTab === "budget"    && <BudgetMeter />}
+        {activeTab === "podcast"   && <PodcastReview />}
+        {activeTab === "drafts"    && <DraftsTab />}
+        {activeTab === "alerts"    && <AlertsTab onStatusChange={handleSecurityStatusChange} />}
+        {activeTab === "goals"     && <GoalsTab />}
+
+        {(activeTab === "blockers" || activeTab === "loops") && (
+          <div className="max-w-5xl mx-auto">
+            <div className="flex items-center justify-between mb-2">
+              <h1 className="text-3xl font-bold text-gray-900">
+                {activeTab === "blockers" ? "Blockers for You" : "Open Loops"}
+              </h1>
+              <button
+                onClick={fetchData}
+                className="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-600 border border-gray-200 rounded-lg hover:bg-gray-100 transition-colors"
+              >
+                🔄 Refresh
+              </button>
             </div>
-          ) : items.length === 0 ? (
-            <div className="bg-white rounded-lg shadow-sm p-8 text-center">
-              <p className="text-gray-500">No items yet</p>
-            </div>
-          ) : (
-            <div className="space-y-4">
-              {items.map((item) => (
-                <BlockerCard key={item.id} item={item} />
-              ))}
-            </div>
-          )}
-        </div>
+            <p className="text-gray-600 mb-8">
+              {activeTab === "blockers"
+                ? "Items that need your attention or approval"
+                : "Active tasks and ongoing work"}
+              <span className="ml-2 text-xs text-gray-400">· Auto-refreshes every 30s</span>
+            </p>
+
+            {isLoading ? (
+              <div className="text-center py-12">
+                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
+                <p className="mt-4 text-gray-600">Loading...</p>
+              </div>
+            ) : items.length === 0 ? (
+              <div className="bg-white rounded-lg shadow-sm p-8 text-center">
+                <p className="text-gray-500">No items yet</p>
+              </div>
+            ) : (
+              <div className="space-y-4">
+                {items.map((item) => (
+                  <BlockerCard key={item.id} item={item} />
+                ))}
+              </div>
+            )}
+          </div>
+        )}
       </main>
     </div>
   );

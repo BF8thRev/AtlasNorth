@@ -1,0 +1,74 @@
+{
+  "drafts": [
+    {
+      "id": "draft-jb-followup",
+      "title": "JB (Cheech & Chong) — Warm Intro Ask",
+      "domain": "newton",
+      "agent": "Hunter",
+      "type": "email",
+      "status": "pending",
+      "createdAt": "2026-02-27",
+      "content": "JB —\n\nReally enjoyed the conversation. The reverse licensing breakdown was one of the clearest explanations of that model I've heard — that section hit.\n\nQuick ask: we're building out Newton Insights, our real-time extraction visibility platform for cannabis operators — specifically designed to cut solvent loss and improve yield on every run.\n\nYour licensed manufacturing partners are exactly who we're looking for in this early stage. Not asking you to vouch for anything — just wondering if there are 2 or 3 people running extraction operations you'd feel comfortable connecting us with.\n\nIf it's a fit, great. If not, no harm done.\n\nEither way, let's get you back on the show when the market shifts — which, based on your legislation read, sounds like soon.\n\nBryan",
+      "notes": "Send from Bryan's personal email. Keep it casual — existing relationship. Don't mention FL/MI specifically — let JB tell you where his partners operate.",
+      "comments": [],
+      "approvedAt": null,
+      "sentAt": null
+    },
+    {
+      "id": "draft-trucenta-linkedin",
+      "title": "Trucenta — LinkedIn Outreach (Director of Extraction)",
+      "domain": "newton",
+      "agent": "Hunter",
+      "type": "linkedin",
+      "status": "pending",
+      "createdAt": "2026-02-27",
+      "content": "Hey [Name] —\n\nBryan Fields from The Dime podcast. We cover the cannabis industry weekly — just had JB from Cheech & Chong on talking about operational efficiency across multi-state licensing models.\n\nOne thing that kept coming up: extraction yield variance is quietly bleeding margins for most processors. Trucenta runs at serious volume — even a 2-3% yield improvement per run is meaningful revenue at your scale.\n\nWe built Newton Insights to fix exactly that. Real-time extraction visibility so your team catches loss before it compounds.\n\nWorth a 15-minute conversation?",
+      "notes": "Research the specific name of Trucenta's extraction lead on LinkedIn before sending. trucenta.com — Michigan's largest cannabis oil extraction facility by their own description.",
+      "comments": [],
+      "approvedAt": null,
+      "sentAt": null
+    },
+    {
+      "id": "draft-trulieve-linkedin",
+      "title": "Trulieve Florida — LinkedIn Outreach (VP Operations / Extraction)",
+      "domain": "newton",
+      "agent": "Hunter",
+      "type": "linkedin",
+      "status": "pending",
+      "createdAt": "2026-02-27",
+      "content": "Hey [Name] —\n\nBryan Fields from The Dime podcast — we cover cannabis industry leaders weekly.\n\nFL MMTCs run fully integrated extraction operations and Trulieve is the largest in the state. At that volume, solvent loss and yield variance isn't a small problem — it's a significant margin leak happening on every run.\n\nNewton Insights is real-time extraction visibility software built specifically for licensed processors. We surface exactly where loss is happening so your team can act on it immediately.\n\nWould love to show you what we're seeing across similar operations. 15 minutes?",
+      "notes": "Florida MMTC — fully vertically integrated by law. Every run matters at Trulieve's scale. Find the VP of Operations or Director of Extraction on LinkedIn.",
+      "comments": [],
+      "approvedAt": null,
+      "sentAt": null
+    },
+    {
+      "id": "draft-dime-clip-2307",
+      "title": "Social Post — JB Reverse Licensing Clip (23:07)",
+      "domain": "dime",
+      "agent": "Rob C",
+      "type": "social",
+      "status": "pending",
+      "createdAt": "2026-02-27",
+      "content": "Most cannabis brands are trying to own everything.\n\nCheech & Chong are doing the opposite — and it's working.\n\nJB breaks down exactly how their reverse licensing model lets them enter any state market without the overhead of vertical integration.\n\nThis is what brand as strategic leverage actually looks like. 🎙️\n\n→ Full episode link in bio\n\n#cannabis #cannabisbusiness #MSO #cannabisindustry #TheDime",
+      "notes": "Pull clip: YouTube video xSSEUCu0Ov0, timestamp 23:07–24:41 (94 seconds). Post as YouTube Short + Instagram Reel. Tag @cheechandchong if possible.",
+      "comments": [],
+      "approvedAt": null,
+      "sentAt": null
+    },
+    {
+      "id": "draft-dime-clip-2929",
+      "title": "Social Post — JB Big Tobacco vs MSO Clip (29:29)",
+      "domain": "dime",
+      "agent": "Rob C",
+      "type": "social",
+      "status": "pending",
+      "createdAt": "2026-02-27",
+      "content": "Big Tobacco entering cannabis isn't a threat.\n\nIt's a signal.\n\nJB breaks down why the MSO playbook and Big Tobacco's playbook are more similar than anyone in this industry wants to admit — and what that means for where this market is actually going.\n\nThis one is worth your 2 minutes. 🎙️\n\n→ Full episode link in bio\n\n#cannabis #bigcannabis #MSO #cannabisindustry #TheDime",
+      "notes": "Pull clip: YouTube video xSSEUCu0Ov0, timestamp 29:29–32:07. Post as YouTube Short + Instagram Reel. Strong hook for the operator/investor audience.",
+      "comments": [],
+      "approvedAt": null,
+      "sentAt": null
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "log": [
+    {
+      "id": "tk-001",
+      "timestamp": "2026-03-01T08:27:00-05:00",
+      "agent": "Atlas",
+      "task": "YouTube pull + MC update (25 shorts, 25 long-forms)",
+      "category": "data_pull",
+      "inputTokens": 4200,
+      "outputTokens": 1800,
+      "totalTokens": 6000,
+      "notes": "YouTube API + podcast-reviews.json update"
+    },
+    {
+      "id": "tk-002",
+      "timestamp": "2026-03-01T08:35:00-05:00",
+      "agent": "Atlas",
+      "task": "GA4 analytics pull \u2014 Feb 2026 Dime report",
+      "category": "analytics",
+      "inputTokens": 3100,
+      "outputTokens": 1400,
+      "totalTokens": 4500,
+      "notes": "Google Analytics Data API, traffic + engagement breakdown"
+    },
+    {
+      "id": "tk-003",
+      "timestamp": "2026-03-01T08:42:00-05:00",
+      "agent": "Atlas",
+      "task": "Rate all 75 shorts \u2014 theme + title style correlation analysis",
+      "category": "analysis",
+      "inputTokens": 5800,
+      "outputTokens": 3200,
+      "totalTokens": 9000,
+      "notes": "Full shorts rating pass, DIME_LEARNINGS.md + MEMORY.md updated"
+    },
+    {
+      "id": "tk-004",
+      "timestamp": "2026-03-01T08:50:00-05:00",
+      "agent": "Atlas",
+      "task": "BudgetMeter rebuild \u2014 running token log with breakdowns",
+      "category": "build",
+      "inputTokens": 2200,
+      "outputTokens": 1600,
+      "totalTokens": 3800,
+      "notes": "MC component update"
+    },
+    {
+      "id": "tk-005",
+      "timestamp": "2026-03-01T08:56:00-05:00",
+      "agent": "Atlas",
+      "task": "YouTube pull + rate next 50 shorts (batch 3)",
+      "category": "data_pull",
+      "inputTokens": 3800,
+      "outputTokens": 1600,
+      "totalTokens": 5400,
+      "notes": "125 total shorts in MC, 34 strong performers"
+    },
+    {
+      "id": "tk-006",
+      "timestamp": "2026-03-01T10:19:00-05:00",
+      "agent": "Atlas",
+      "task": "15 long-forms pulled + rated, audience personas built, DIME_AUDIENCE_INTELLIGENCE.md created",
+      "category": "analysis",
+      "inputTokens": 6200,
+      "outputTokens": 4100,
+      "totalTokens": 10300,
+      "notes": "140 total episodes rated, 4 personas, full intelligence file written"
+    }
+  ]
+}
