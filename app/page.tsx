@@ -79,7 +79,7 @@ export default function Home() {
     <div className="flex min-h-screen bg-gray-50">
       <Navigation activeTab={activeTab} setActiveTab={setActiveTab} securityStatus={securityStatus} />
 
-      <main className="flex-1 p-6 md:p-10 md:ml-64">
+      <main className="flex-1 px-4 py-4 md:p-8 pb-20 md:pb-0 md:ml-64 overflow-y-auto">
 
         {activeTab === "roster"    && <RosterTab />}
         {activeTab === "kanban"    && <KanbanBoard />}
