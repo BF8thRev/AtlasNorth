@@ -248,13 +248,15 @@ async function readFile(filePath: string): Promise<string> {
   return data.content ?? "";
 }
 
-async function writeFile(filePath: string, content: string): Promise<boolean> {
+async function writeFile(filePath: string, content: string): Promise<{ ok: boolean; method?: string }> {
   const res = await fetch("/api/files", {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ path: filePath, content }),
   });
-  return res.ok;
+  if (!res.ok) return { ok: false };
+  const data = await res.json();
+  return { ok: true, method: data.method };
 }
 
 /* ─── Component ─────────────────────────────────────── */
@@ -264,7 +266,7 @@ export default function MemoryVault() {
   const [originalContent, setOriginalContent] = useState<string>("");
   const [loading, setLoading] = useState(false);
   const [saving, setSaving] = useState(false);
-  const [saveStatus, setSaveStatus] = useState<"idle" | "saved" | "error">("idle");
+  const [saveStatus, setSaveStatus] = useState<"idle" | "saved" | "saved-github" | "saved-local" | "error">("idle");
   const [expandedAgents, setExpandedAgents] = useState<Set<string>>(new Set(["atlas"]));
   const [expandedShared, setExpandedShared] = useState<Set<string>>(new Set(["General Ops"]));
 
@@ -283,10 +285,14 @@ export default function MemoryVault() {
   const save = async () => {
     if (!selectedFile) return;
     setSaving(true);
-    const ok = await writeFile(selectedFile.path, content);
+    const result = await writeFile(selectedFile.path, content);
     setSaving(false);
-    setSaveStatus(ok ? "saved" : "error");
-    if (ok) setOriginalContent(content);
+    if (result.ok) {
+      setOriginalContent(content);
+      setSaveStatus(result.method === "github" ? "saved-github" : result.method === "local" ? "saved-local" : "saved");
+    } else {
+      setSaveStatus("error");
+    }
     setTimeout(() => setSaveStatus("idle"), 2500);
   };
 
@@ -405,8 +411,10 @@ export default function MemoryVault() {
                 {isDirty && (
                   <span className="text-xs text-amber-500 font-medium">● Unsaved changes</span>
                 )}
-                {saveStatus === "saved" && (
-                  <span className="text-xs text-green-600 font-medium">✓ Saved</span>
+                {(saveStatus === "saved" || saveStatus === "saved-github" || saveStatus === "saved-local") && (
+                  <span className="text-xs text-green-600 font-medium">
+                    {saveStatus === "saved-github" ? "✓ Saved to GitHub" : saveStatus === "saved-local" ? "✓ Saved locally" : "✓ Saved"}
+                  </span>
                 )}
                 {saveStatus === "error" && (
                   <span className="text-xs text-red-500 font-medium">✗ Save failed</span>

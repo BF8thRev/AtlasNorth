@@ -27,13 +27,72 @@ export async function GET(req: NextRequest) {
 export async function PUT(req: NextRequest) {
   const { path: filePath, content } = await req.json();
   if (!filePath) return NextResponse.json({ error: "No path" }, { status: 400 });
-  const abs = safePath(filePath);
-  if (!abs) return NextResponse.json({ error: "Invalid path" }, { status: 403 });
-  try {
-    fs.mkdirSync(path.dirname(abs), { recursive: true });
-    fs.writeFileSync(abs, content, "utf-8");
-    return NextResponse.json({ ok: true });
-  } catch {
-    return NextResponse.json({ error: "Write failed" }, { status: 500 });
+
+  const isVercel = process.env.VERCEL === "1";
+
+  if (isVercel) {
+    // Write via GitHub API
+    const token = process.env.GITHUB_TOKEN;
+    const repo = process.env.GITHUB_REPO; // e.g. "BF8thRev/AtlasNorth"
+    const branch = process.env.GITHUB_BRANCH || "main";
+
+    if (!token || !repo) {
+      return NextResponse.json({ error: "GitHub credentials not configured" }, { status: 500 });
+    }
+
+    // The file lives in data/vault/ in the repo
+    const repoFilePath = `data/vault/${filePath}`;
+
+    // Get current SHA (required for update)
+    const getRes = await fetch(
+      `https://api.github.com/repos/${repo}/contents/${repoFilePath}?ref=${branch}`,
+      { headers: { Authorization: `token ${token}`, Accept: "application/vnd.github.v3+json" } }
+    );
+
+    let sha: string | undefined;
+    if (getRes.ok) {
+      const existing = await getRes.json();
+      sha = existing.sha;
+    }
+
+    // Commit the file
+    const body: Record<string, string> = {
+      message: `vault: update ${filePath}`,
+      content: Buffer.from(content, "utf-8").toString("base64"),
+      branch,
+    };
+    if (sha) body.sha = sha;
+
+    const putRes = await fetch(
+      `https://api.github.com/repos/${repo}/contents/${repoFilePath}`,
+      {
+        method: "PUT",
+        headers: {
+          Authorization: `token ${token}`,
+          Accept: "application/vnd.github.v3+json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(body),
+      }
+    );
+
+    if (!putRes.ok) {
+      const err = await putRes.json();
+      return NextResponse.json({ error: "GitHub write failed", detail: err }, { status: 500 });
+    }
+
+    return NextResponse.json({ ok: true, method: "github" });
+
+  } else {
+    // Local: write to workspace directly
+    const abs = safePath(filePath);
+    if (!abs) return NextResponse.json({ error: "Invalid path" }, { status: 403 });
+    try {
+      fs.mkdirSync(path.dirname(abs), { recursive: true });
+      fs.writeFileSync(abs, content, "utf-8");
+      return NextResponse.json({ ok: true, method: "local" });
+    } catch {
+      return NextResponse.json({ error: "Write failed" }, { status: 500 });
+    }
   }
 }
