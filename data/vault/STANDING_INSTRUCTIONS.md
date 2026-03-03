@@ -18,6 +18,22 @@
 
 ---
 
+---
+
+## 📁 Transcript Workflow Triggers (set 2026-03-03)
+
+### The Dime
+- **Drive folder ID:** `165U0PXhdij9oGsiKs-HDb0whmqN2Rlhn`
+- **When transcript lands:** Pulse → OLG → Rob_C pipeline
+- **Full spec:** WORKFLOW_AUTO.md
+
+### Newton Sales Calls
+- **Drive folder ID:** `1l13Fvo4LWsOE8LRnMkEisa5YI1ywXN_2`
+- **When transcript lands:** Hunter → Ledger → Atlas summary pipeline
+- **Full spec:** WORKFLOW_AUTO.md
+
+---
+
 ## Protocol Failures
 
 - Missing any step = protocol failure

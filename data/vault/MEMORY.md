@@ -139,3 +139,13 @@
 
 ## Current Task Repetition Counts
 (Track here as tasks repeat)
+
+## Google Drive — Transcript Folders
+- **The Dime workflow transcripts:** https://drive.google.com/drive/folders/165U0PXhdij9oGsiKs-HDb0whmqN2Rlhn
+  - Folder ID: `165U0PXhdij9oGsiKs-HDb0whmqN2Rlhn`
+  - Agent owners: Pulse (research/synthesis), OLG (content writing)
+  - Trigger: New transcript → Pulse ingests → OLG drafts content
+- **Newton sales call transcripts:** https://drive.google.com/drive/folders/1l13Fvo4LWsOE8LRnMkEisa5YI1ywXN_2
+  - Folder ID: `1l13Fvo4LWsOE8LRnMkEisa5YI1ywXN_2`
+  - Agent owners: Hunter (sales patterns), Ledger (data/metrics)
+  - Trigger: New transcript → Hunter extracts objections/signals → Ledger logs metrics

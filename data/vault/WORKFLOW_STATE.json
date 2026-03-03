@@ -8,5 +8,5 @@
   "next_calibration_at": 10,
   "open_loops": [],
   "pending_tasks": [],
-  "notes": "TASK-015: Drive folder read+write confirmed on both folders."
+  "notes": "TASK-015: Drive folders mapped. WORKFLOW_AUTO.md created. Dime + Newton transcript pipelines defined."
 }
