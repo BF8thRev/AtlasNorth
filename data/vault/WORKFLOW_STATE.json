@@ -1,12 +1,12 @@
 {
-  "last_updated": "2026-03-02",
+  "last_updated": "2026-03-03",
   "version": "1.1",
-  "total_tasks": 9,
-  "pass_count": 9,
+  "total_tasks": 14,
+  "pass_count": 14,
   "revision_count": 0,
   "fail_count": 0,
   "next_calibration_at": 10,
   "open_loops": [],
   "pending_tasks": [],
-  "notes": "TASK-007 through TASK-009 completed. WORKFLOW_STATE regenerated on schedule."
+  "notes": "TASK-014: STANDING_INSTRUCTIONS.md created. 4-step completion checklist now enforced."
 }
