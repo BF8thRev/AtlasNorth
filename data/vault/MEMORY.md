@@ -87,7 +87,7 @@
 - Analytics Data API ✅ (enabled, authenticated 2026-02-26)
 - Analytics Admin API ✅ (enabled, authenticated 2026-02-26)
 - Search Console API ✅ (enabled 2026-02-26, no sites found - may need to add atlas.opsman@gmail.com as user)
-- People API ⚠️ (needs enable in Cloud Console)
+- People API ✅ (confirmed enabled by Bryan — note: OAuth token lacks People API scope, re-auth needed before use)
 - Chromium installed on VM ✅
 - GitHub: NOT YET — coming later
 - Newton repo: NOT YET — coming later
