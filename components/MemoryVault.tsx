@@ -79,6 +79,7 @@ const SHARED: SharedSection[] = [
     files: [
       { name: "Newton_tasks.md",             path: "Newton_tasks.md",             description: "Active Newton task registry" },
       { name: "NEWTON_SALES_PLAYBOOK.md",    path: "NEWTON_SALES_PLAYBOOK.md",    description: "Sales playbook & objection handling" },
+      { name: "NEWTON_SALES_ANALYSIS.md",   path: "NEWTON_SALES_ANALYSIS.md",   description: "Sales analysis & market data" },
     ],
   },
   {
