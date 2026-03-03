@@ -38,6 +38,8 @@ const AGENTS: AgentDef[] = [
       { name: "SYSTEM_ARCHITECTURE.md", path: "SYSTEM_ARCHITECTURE.md", description: "Agent roster, task flow, file map, north stars" },
       { name: "CALIBRATION_NOTES.md",   path: "CALIBRATION_NOTES.md",   description: "What lands vs. fails — pattern log" },
       { name: "DECISION_TREES.md",      path: "DECISION_TREES.md",      description: "Atlas decision logic — routing, memory, content, build" },
+      { name: "AGENT_TOOL_ACCESS.md",   path: "system/AGENT_TOOL_ACCESS.md", description: "Deny-by-default boundary file — all agent permissions" },
+      { name: "system/FILE_AUDIT_LOG",  path: "system/FILE_AUDIT_LOG.jsonl", description: "System-level write audit log" },
       { name: "BRYAN_PROFILE.md",   path: "BRYAN_PROFILE.md",       description: "Approval/rejection patterns & calibration log" },
       { name: "ATLAS_MEMORY_EXPORT.txt", path: "ATLAS_MEMORY_EXPORT.txt", description: "Task history — source of truth" },
       { name: "WORKFLOW_STATE.json", path: "WORKFLOW_STATE.json",   description: "Current workflow state & open loops" },

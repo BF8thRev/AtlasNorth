@@ -37,6 +37,12 @@ Atlas reviews (revision count: 1)
 Escalate to Bryan with: task / output / why it failed / recommendation
 ```
 
+## ⚠️ STANDING RULE (set 2026-03-02 by Bryan)
+- No task is complete until its entry is written to ATLAS_MEMORY_EXPORT.txt
+- If gatekeeping is done but the line isn't appended — the loop is open
+- The loop closes when the line is written. Not before.
+- WORKFLOW_STATE.json must be regenerated after every 3 tasks
+
 ## Tree 2: Memory Update Decision
 
 ```
