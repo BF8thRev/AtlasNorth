@@ -5,7 +5,7 @@ import { SecurityStatus } from "./AlertsTab";
 export type TabId =
   | "blockers" | "loops" | "roster" | "kanban"
   | "routines" | "decisions" | "access" | "vault"
-  | "budget" | "podcast" | "alerts" | "drafts" | "goals";
+  | "budget" | "podcast" | "alerts" | "drafts" | "goals" | "models";
 
 type NavigationProps = {
   activeTab: TabId;
@@ -28,6 +28,7 @@ export default function Navigation({ activeTab, setActiveTab, securityStatus }: 
     { id: "drafts",    label: "Drafts",                shortLabel: "Drafts",    icon: "📝" },
     { id: "goals",     label: "Growth Goals",          shortLabel: "Goals",     icon: "🎯" },
     { id: "alerts",    label: "Security Alerts",       shortLabel: "Alerts",    icon: securityStatus === "flagged" ? "🔴" : "🟢" },
+    { id: "models",    label: "Model Status",           shortLabel: "Models",    icon: "🧠" },
   ];
 
   return (

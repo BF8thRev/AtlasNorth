@@ -1,0 +1,108 @@
+{
+  "version": "1.0",
+  "last_updated": "2026-03-02",
+  "description": "Agent-to-Model mapping. Claude is default. Atlas validates model availability before task dispatch.",
+
+  "global_defaults": {
+    "primary_fallback": "claude-sonnet-4-20250514",
+    "secondary_fallback": "claude-opus-4-5-20251101",
+    "timeout_seconds": 30,
+    "retry_attempts": 3
+  },
+
+  "agent_routing": {
+    "atlas": {
+      "primary_model": "claude-opus-4-5-20251101",
+      "fallback_model": "claude-sonnet-4-20250514",
+      "role": "Gatekeeper - validates all routing decisions",
+      "min_confidence_threshold": 0.85
+    },
+    "olg": {
+      "primary_model": "claude-sonnet-4-20250514",
+      "fallback_model": "claude-opus-4-5-20251101",
+      "role": "Writer - content drafting"
+    },
+    "rob_c": {
+      "primary_model": "claude-sonnet-4-20250514",
+      "fallback_model": "claude-opus-4-5-20251101",
+      "role": "Engagement - evaluates content against audience rules"
+    },
+    "hunter": {
+      "primary_model": "claude-sonnet-4-20250514",
+      "fallback_model": "claude-opus-4-5-20251101",
+      "role": "Sales - prospect engagement"
+    },
+    "pulse": {
+      "primary_model": "claude-opus-4-5-20251101",
+      "fallback_model": "claude-sonnet-4-20250514",
+      "role": "Research - requires web search and synthesis",
+      "requires_web_search": true
+    },
+    "dr_frankl": {
+      "primary_model": "phi-4-mini-local",
+      "fallback_model": "claude-opus-4-5-20251101",
+      "role": "Life Coach - pattern matching against BRYAN_PROFILE.md"
+    },
+    "ledger": {
+      "primary_model": "claude-sonnet-4-20250514",
+      "fallback_model": "claude-opus-4-5-20251101",
+      "role": "Data & Analytics - structuring and analysis"
+    },
+    "voss": {
+      "primary_model": "phi-4-mini-local",
+      "fallback_model": "claude-sonnet-4-20250514",
+      "role": "Devil's Advocate - critique and risk assessment"
+    },
+    "spark": {
+      "primary_model": "claude-opus-4-5-20251101",
+      "fallback_model": "claude-sonnet-4-20250514",
+      "role": "Ideas & Concepts - synthesis across domains"
+    },
+    "bob_the_builder": {
+      "primary_model": "claude-sonnet-4-20250514",
+      "fallback_model": "claude-opus-4-5-20251101",
+      "role": "Code & Technical Build"
+    },
+    "detective_niessen": {
+      "primary_model": "phi-4-mini-local",
+      "fallback_model": "claude-sonnet-4-20250514",
+      "role": "Security & Defense - audit against FILE_AUDIT_LOG.jsonl"
+    }
+  },
+
+  "model_availability": {
+    "claude-opus-4-5-20251101":  { "status": "active", "type": "api", "last_checked": "2026-03-02" },
+    "claude-sonnet-4-20250514":  { "status": "active", "type": "api", "last_checked": "2026-03-02" },
+    "phi-4-mini-local":          { "status": "active", "type": "local", "last_checked": "2026-03-02" }
+  },
+
+  "model_availability_check": {
+    "enabled": true,
+    "validator": "atlas",
+    "check_interval_seconds": 60,
+    "log_to": "FILE_AUDIT_LOG.jsonl"
+  },
+
+  "rate_limit_rules": {
+    "claude_opus": {
+      "threshold_tokens_per_hour": 50000,
+      "action_on_breach": "switch_to_fallback"
+    },
+    "claude_sonnet": {
+      "threshold_tokens_per_hour": 100000,
+      "action_on_breach": "switch_to_fallback"
+    },
+    "phi_4_mini_local": {
+      "threshold": "unlimited",
+      "action_on_error": "switch_to_fallback"
+    }
+  },
+
+  "model_switch_log": [],
+
+  "audit_trail": {
+    "log_file": "FILE_AUDIT_LOG.jsonl",
+    "track_model_switches": true,
+    "track_fallback_triggers": true
+  }
+}

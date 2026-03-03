@@ -14,6 +14,7 @@ import PodcastReview from "@/components/PodcastReview";
 import AlertsTab, { SecurityStatus } from "@/components/AlertsTab";
 import DraftsTab from "@/components/DraftsTab";
 import GoalsTab from "@/components/GoalsTab";
+import ModelStatus from "@/components/ModelStatus";
 
 export type Item = {
   id: string;
@@ -92,6 +93,7 @@ export default function Home() {
         {activeTab === "drafts"    && <DraftsTab />}
         {activeTab === "alerts"    && <AlertsTab onStatusChange={handleSecurityStatusChange} />}
         {activeTab === "goals"     && <GoalsTab />}
+        {activeTab === "models"    && <ModelStatus />}
 
         {(activeTab === "blockers" || activeTab === "loops") && (
           <div className="max-w-5xl mx-auto">
