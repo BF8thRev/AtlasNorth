@@ -21,3 +21,6 @@ TASK-015 | drive_folder_access_confirmation | PASS | Confirmed read+write on bot
 TASK-015 | drive_folder_mapping | PASS | Dime folder (165U0...) + Newton folder (1l13F...) mapped to agents, WORKFLOW_AUTO.md created, MEMORY.md + STANDING_INSTRUCTIONS.md updated | 0
 TASK-016 | deployment_schedule | PASS | Push schedule set: 11AM + 5PM EST crons live, push-to-github.sh created, STANDING_INSTRUCTIONS.md updated | 0
 TASK-017 | pulse_brief_spec | PASS | PULSE_BRIEF_SPEC.md created, 6AM EST cron live, 5 signals defined, WhatsApp delivery, narrative tone locked | 0
+TASK-018 | file_audit_model_router | PASS | MODEL_ROUTER.json change (TASK-011) backlogged to FILE_AUDIT_LOG.jsonl with timestamp and reason | 0
+TASK-019 | token_tracking_wire | PASS | TOKEN_USAGE.jsonl created, update-token-heartbeat.sh built, /api/token-usage route created, BudgetMeter source updated | 0
+TASK-020 | blockers_tab | PASS | BLOCKERS.json created with 10 prioritized blockers, /api/blockers route created, ready for UI tab build | 0

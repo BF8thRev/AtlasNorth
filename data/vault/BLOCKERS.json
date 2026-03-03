@@ -1,0 +1,86 @@
+{
+  "last_updated": "2026-03-03",
+  "version": "1.0",
+  "blockers": [
+    {
+      "id": "BLK-001",
+      "description": "Search Console — atlas.opsman@gmail.com not added as property user. Blocks Search Console data for SCC/HUSA and Newton.",
+      "priority": "🔴",
+      "owner": "Bryan",
+      "status": "open",
+      "action": "Go to Google Search Console → Settings → Users and Permissions → Add atlas.opsman@gmail.com"
+    },
+    {
+      "id": "BLK-002",
+      "description": "OAuth token refresh — current gmail_tokens.json only has Gmail scopes. People API and other services need re-authorization with expanded scopes.",
+      "priority": "🔴",
+      "owner": "Atlas",
+      "status": "open",
+      "action": "Re-run gog auth add atlas.opsman@gmail.com with full scope list including people"
+    },
+    {
+      "id": "BLK-003",
+      "description": "VERCEL_TOKEN not stored — Atlas cannot verify Vercel env vars remotely or trigger manual deploys without a Chrome tab attached.",
+      "priority": "🟠",
+      "owner": "Bryan",
+      "status": "open",
+      "action": "Create token at vercel.com/account/tokens → add VERCEL_TOKEN to ~/.openclaw/.env"
+    },
+    {
+      "id": "BLK-004",
+      "description": "Pulse Daily Brief — first run tomorrow 6AM EST. No test run completed. Prompt and spec untested in production.",
+      "priority": "🟠",
+      "owner": "Atlas",
+      "status": "open",
+      "action": "Monitor 6AM run. Review output quality. Iterate on PULSE_BRIEF_SPEC.md if needed."
+    },
+    {
+      "id": "BLK-005",
+      "description": "Newton transcript workflow not built — Drive folder ready but Hunter → Ledger → Atlas pipeline has no trigger or automation.",
+      "priority": "🟠",
+      "owner": "Atlas",
+      "status": "open",
+      "action": "Build Drive watch trigger + agent dispatch pipeline when Bryan confirms ready"
+    },
+    {
+      "id": "BLK-006",
+      "description": "Dime transcript workflow not built — Drive folder ready but Pulse → OLG → Rob_C pipeline has no trigger or automation.",
+      "priority": "🟠",
+      "owner": "Atlas",
+      "status": "open",
+      "action": "Build Drive watch trigger + agent dispatch pipeline when Bryan confirms ready"
+    },
+    {
+      "id": "BLK-007",
+      "description": "TOKEN_USAGE.jsonl not yet populated — Budget Meter on Mission Control will show empty until real API calls are logged.",
+      "priority": "🟡",
+      "owner": "Atlas",
+      "status": "open",
+      "action": "Wire token logging into agent task completions. First entries needed to validate BudgetMeter."
+    },
+    {
+      "id": "BLK-008",
+      "description": "Mission Control Blockers tab not yet built in UI — BLOCKERS.json exists but no tab renders it on the dashboard.",
+      "priority": "🟡",
+      "owner": "Atlas",
+      "status": "open",
+      "action": "Build Blockers tab component in Mission Control. Read from BLOCKERS.json via /api/files."
+    },
+    {
+      "id": "BLK-009",
+      "description": "11 AM push cron has no run history — patched to isolated agent but untested. 5 PM will be first real test.",
+      "priority": "🟡",
+      "owner": "Atlas",
+      "status": "open",
+      "action": "Monitor 5PM EST push. Confirm isolated agent executes push-to-github.sh without issues."
+    },
+    {
+      "id": "BLK-010",
+      "description": "WORKFLOW_AUTO.md post-compaction startup not validated — protocol exists but no test of cold-start context restoration after a real compaction event.",
+      "priority": "🟡",
+      "owner": "Atlas",
+      "status": "open",
+      "action": "After next context compaction, verify all 4 startup files are read and protocols restored correctly."
+    }
+  ]
+}

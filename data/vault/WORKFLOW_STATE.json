@@ -1,12 +1,12 @@
 {
   "last_updated": "2026-03-03",
   "version": "1.1",
-  "total_tasks": 17,
-  "pass_count": 17,
+  "total_tasks": 20,
+  "pass_count": 20,
   "revision_count": 0,
   "fail_count": 0,
   "next_calibration_at": 10,
   "open_loops": [],
   "pending_tasks": [],
-  "notes": "TASK-017: Pulse Daily Intel Brief spec locked. 6AM EST cron live. WhatsApp delivery."
+  "notes": "TASK-018/019/020: FILE_AUDIT backfill, TOKEN_USAGE.jsonl wired, BLOCKERS.json with 10 items created."
 }
