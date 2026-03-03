@@ -1,5 +1,5 @@
 # ATLAS_MEMORY_EXPORT.txt
-# Last Updated: 2026-03-02 | Version: 1.0
+# Last Updated: 2026-03-03 | Version: 1.1
 # Format: task_id | task_type | decision | primary_reason | revision_count
 # ---
 # task_id | task_type | decision | primary_reason | revision_count
@@ -12,3 +12,7 @@ TASK-006 | memory_sync_cron | PASS | sync-memory.sh created, cron job set to run
 TASK-007 | file_audit_log_implementation | PASS | FILE_AUDIT_LOG.jsonl created, audit utility wired into API routes, Bob executing | 0
 TASK-008 | model_router_implementation | PASS | MODEL_ROUTER.json created, UI panel + WORKFLOW_PROTOCOL + HEARTBEAT wired, Bob executing | 0
 TASK-009 | agent_tool_access_boundaries | PASS | /system/AGENT_TOOL_ACCESS.md created, deny-by-default enforcement layer, FILE_AUDIT_LOG wired | 0
+TASK-010 | memory_vault_debug_logging | PASS | Added full env + GitHub write debug logging to files/route.ts, committed and pushed to main | 0
+TASK-011 | model_router_pulse_gemini | PASS | MODEL_ROUTER.json v1.1 — Pulse primary set to google/gemini-2.5-flash, fallback claude-opus, Gemini added to model_availability | 0
+TASK-012 | people_api_verification | PASS | Confirmed People API enabled via gog contacts list + gog auth list — contacts scope active on atlas.opsman@gmail.com | 0
+TASK-013 | memory_md_people_api_update | PASS | Updated MEMORY.md to reflect People API confirmed enabled via gog | 0
