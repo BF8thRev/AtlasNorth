@@ -24,3 +24,4 @@ TASK-017 | pulse_brief_spec | PASS | PULSE_BRIEF_SPEC.md created, 6AM EST cron l
 TASK-018 | file_audit_model_router | PASS | MODEL_ROUTER.json change (TASK-011) backlogged to FILE_AUDIT_LOG.jsonl with timestamp and reason | 0
 TASK-019 | token_tracking_wire | PASS | TOKEN_USAGE.jsonl created, update-token-heartbeat.sh built, /api/token-usage route created, BudgetMeter source updated | 0
 TASK-020 | blockers_tab | PASS | BLOCKERS.json created with 10 prioritized blockers, /api/blockers route created, ready for UI tab build | 0
+TASK-021 | ui_fix_mission_control_json | PASS | Replaced broken /data/mission-control.json fetch with /api/mission-control route — reads from BLOCKERS.json + WORKFLOW_STATE.json | 0

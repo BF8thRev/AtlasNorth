@@ -1,12 +1,12 @@
 {
   "last_updated": "2026-03-03",
   "version": "1.1",
-  "total_tasks": 20,
-  "pass_count": 20,
+  "total_tasks": 21,
+  "pass_count": 21,
   "revision_count": 0,
   "fail_count": 0,
   "next_calibration_at": 10,
   "open_loops": [],
   "pending_tasks": [],
-  "notes": "TASK-018/019/020: FILE_AUDIT backfill, TOKEN_USAGE.jsonl wired, BLOCKERS.json with 10 items created."
+  "notes": "TASK-021: UI fix \u2014 /api/mission-control replaces broken static JSON path."
 }
