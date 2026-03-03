@@ -1,5 +1,29 @@
 # HEARTBEAT.md
-_Last Updated: 2026-03-02_
+_Auto-updated every 60 seconds by cron. Do not edit manually._
+
+---
+
+## Current System Health
+
+- **Last Checked:** 2026-03-02T00:00:00Z
+- **Status:** ✅ HEALTHY
+- **Models:**
+  - phi-4-mini-local: ✅ Active
+  - claude-sonnet-4-20250514: ✅ Active
+  - claude-opus-4-5-20251101: ✅ Active
+- **Mission Control Responsive:** Yes
+- **Memory Sync Last Run:** 2026-03-02T00:00:00Z
+- **GitHub Connection:** Active
+
+---
+
+## Last 10 Health Checks
+
+| Timestamp | Status | Models Up | Issues |
+|-----------|--------|-----------|--------|
+| 2026-03-02T00:00:00Z | ✅ HEALTHY | 3/3 | None |
+
+---
 
 ## Periodic Tasks
 
@@ -7,7 +31,7 @@ _Last Updated: 2026-03-02_
 - Read MODEL_ROUTER.json
 - Verify model_availability status for all 3 models
 - If any model shows degraded/down → log to FILE_AUDIT_LOG.jsonl
-- Update MODEL_ROUTER.json model_availability[model].last_checked timestamp
+- Update this file with new health check row
 
 ### Every 30 minutes — Memory Sync
 - Run /Users/atlasnorth/.openclaw/workspace/scripts/sync-memory.sh
@@ -23,10 +47,4 @@ _Last Updated: 2026-03-02_
 | Job | Schedule | ID |
 |-----|----------|----|
 | Memory Sync → GitHub → Vercel | Every 30 min | 9ba59fab |
-
-## Model Health Status (updated on check)
-| Model | Status | Last Checked |
-|-------|--------|-------------|
-| claude-opus-4-5-20251101 | ✅ Active | 2026-03-02 |
-| claude-sonnet-4-20250514 | ✅ Active | 2026-03-02 |
-| phi-4-mini-local | ✅ Active | 2026-03-02 |
+| Model Health Check | Every 60 sec | via heartbeat |
