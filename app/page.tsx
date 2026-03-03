@@ -56,7 +56,7 @@ export default function Home() {
   };
 
   const fetchData = () => {
-    fetch(`/data/mission-control.json?t=${Date.now()}`)
+    fetch(`/api/mission-control?t=${Date.now()}`)
       .then((res) => res.json())
       .then((json) => {
         setData(json);
