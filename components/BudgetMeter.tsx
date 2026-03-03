@@ -55,9 +55,10 @@ export default function BudgetMeter() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("/data/token-log.json")
+    fetch("/api/files?path=token-log.json")
       .then((r) => r.json())
-      .then((data) => {
+      .then((raw) => {
+        const data = raw.content ? JSON.parse(raw.content || '{"log":[]}') : raw;
         const sorted = [...(data.log || [])].sort(
           (a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime()
         );

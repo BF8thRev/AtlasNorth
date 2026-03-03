@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import fs from "fs";
 import path from "path";
 
-const WORKSPACE = "/Users/atlasnorth/.openclaw/workspace";
+const WORKSPACE = process.env.WORKSPACE_PATH || "/Users/atlasnorth/.openclaw/workspace";
 
 function safePath(filePath: string): string | null {
   const resolved = path.resolve(WORKSPACE, filePath);

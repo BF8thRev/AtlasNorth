@@ -32,7 +32,11 @@ const AGENTS: AgentDef[] = [
       { name: "AGENTS.md",     path: "AGENTS.md",     description: "Capabilities, gates, context tagging" },
       { name: "IDENTITY.md",   path: "IDENTITY.md",   description: "Name, vibe, avatar card" },
       { name: "USER.md",       path: "USER.md",       description: "Bryan's profile & preferences" },
-      { name: "HEARTBEAT.md",  path: "HEARTBEAT.md",  description: "Periodic task scheduler" },
+      { name: "HEARTBEAT.md",       path: "HEARTBEAT.md",           description: "Periodic task scheduler" },
+      { name: "BRYAN_PROFILE.md",   path: "BRYAN_PROFILE.md",       description: "Approval/rejection patterns & calibration log" },
+      { name: "ATLAS_MEMORY_EXPORT.txt", path: "ATLAS_MEMORY_EXPORT.txt", description: "Task history — source of truth" },
+      { name: "WORKFLOW_STATE.json", path: "WORKFLOW_STATE.json",   description: "Current workflow state & open loops" },
+      { name: "ENGAGEMENT_RULES.md", path: "ENGAGEMENT_RULES.md",  description: "Behavioral rules (3+ occurrence threshold)" },
     ],
   },
 ];
@@ -78,6 +82,15 @@ const SHARED: SharedSection[] = [
     files: [
       { name: "DAILY_BRIEF_SPEC.md", path: "memory/DAILY_BRIEF_SPEC.md", description: "Daily brief format & delivery rules" },
       { name: "TOOLS.md",            path: "TOOLS.md",                   description: "Local tool notes & device names" },
+      { name: "SOUL.md",             path: "SOUL.md",                    description: "Atlas identity & operating rules" },
+    ],
+  },
+  {
+    label: "Memory Archive",
+    emoji: "🧠",
+    files: [
+      { name: "MEMORY.md",            path: "MEMORY.md",                  description: "Long-term memory & access log" },
+      { name: "DAILY_BRIEF_SPEC.md",  path: "memory/DAILY_BRIEF_SPEC.md", description: "Daily brief spec" },
     ],
   },
 ];
