@@ -35,6 +35,29 @@
 
 ---
 
+---
+
+## 🧪 Test Run Rule (set 2026-03-03)
+**Every new cron, routine, or automated workflow requires a test run before it is considered live.**
+- Set up the cron/routine
+- Immediately trigger a test run
+- Confirm output is correct
+- Only then report it as live
+- **No exceptions. A cron that hasn't been tested hasn't been deployed.**
+
+---
+
+## ✅ Blocker Resolution Protocol (set 2026-03-03)
+When a blocker is resolved, in order:
+1. Update `BLOCKERS.json` — set `status: "resolved"` + add `resolved_date`
+2. Move entry to `COMPLETED_BLOCKERS.json` (archive)
+3. Log to `FILE_AUDIT_LOG.jsonl` with timestamp and resolution note
+4. Log to `ATLAS_MEMORY_EXPORT.txt` as `task_type: blocker_resolution`
+
+**No blocker is closed until all 4 steps are done.**
+
+---
+
 ## 📁 Transcript Workflow Triggers (set 2026-03-03)
 
 ### The Dime

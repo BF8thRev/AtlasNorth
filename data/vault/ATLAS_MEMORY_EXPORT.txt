@@ -25,3 +25,6 @@ TASK-018 | file_audit_model_router | PASS | MODEL_ROUTER.json change (TASK-011) 
 TASK-019 | token_tracking_wire | PASS | TOKEN_USAGE.jsonl created, update-token-heartbeat.sh built, /api/token-usage route created, BudgetMeter source updated | 0
 TASK-020 | blockers_tab | PASS | BLOCKERS.json created with 10 prioritized blockers, /api/blockers route created, ready for UI tab build | 0
 TASK-021 | ui_fix_mission_control_json | PASS | Replaced broken /data/mission-control.json fetch with /api/mission-control route — reads from BLOCKERS.json + WORKFLOW_STATE.json | 0
+TASK-021 | blockers_ui_numbers | PASS | Added numbered circles to BlockerCard component, index passed from page.tsx | 0
+TASK-022 | standing_instructions_update | PASS | Test run rule + blocker resolution protocol added to STANDING_INSTRUCTIONS.md | 0
+TASK-023 | completed_blockers_archive | PASS | COMPLETED_BLOCKERS.json created as resolution archive | 0

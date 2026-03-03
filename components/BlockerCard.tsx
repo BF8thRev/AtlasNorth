@@ -2,6 +2,7 @@ import type { Item } from "@/app/page";
 
 type BlockerCardProps = {
   item: Item;
+  number?: number;
 };
 
 const statusConfig = {
@@ -19,7 +20,7 @@ const getScoreColor = (score: number) => {
   return "text-green-600";
 };
 
-export default function BlockerCard({ item }: BlockerCardProps) {
+export default function BlockerCard({ item, number }: BlockerCardProps) {
   const status = statusConfig[item.status] ?? { label: item.status ?? "Unknown", color: "bg-gray-100 text-gray-600" };
 
   return (
@@ -27,9 +28,16 @@ export default function BlockerCard({ item }: BlockerCardProps) {
       <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
         {/* Left side: Title and Notes */}
         <div className="flex-1">
-          <h3 className="text-xl font-semibold text-gray-900 mb-2">
-            {item.title}
-          </h3>
+          <div className="flex items-start gap-3 mb-2">
+            {number !== undefined && (
+              <span className="flex-shrink-0 w-7 h-7 rounded-full bg-gray-900 text-white text-xs font-bold flex items-center justify-center mt-0.5">
+                {number}
+              </span>
+            )}
+            <h3 className="text-xl font-semibold text-gray-900">
+              {item.title}
+            </h3>
+          </div>
           <p className="text-gray-600 text-sm mb-4">{item.notes}</p>
 
           {/* Status Badge */}

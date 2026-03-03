@@ -126,8 +126,8 @@ export default function Home() {
               </div>
             ) : (
               <div className="space-y-4">
-                {items.map((item) => (
-                  <BlockerCard key={item.id} item={item} />
+                {items.map((item, index) => (
+                  <BlockerCard key={item.id} item={item} number={index + 1} />
                 ))}
               </div>
             )}
