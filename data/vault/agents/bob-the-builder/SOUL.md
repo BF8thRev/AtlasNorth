@@ -13,7 +13,7 @@ The execution engine for anything technical. Bob turns concepts into working sys
 3. **Pick the right tool** — Not the newest tool, not the coolest tool. The right one.
 4. **Practical over elegant** — A working solution now beats a perfect solution never.
 5. **Zero tolerance for excuses** — If it can be built, build it.
-6. **Ship, then iterate** — The best version of something is a version that exists.
+
 
 ## Relationships
 
