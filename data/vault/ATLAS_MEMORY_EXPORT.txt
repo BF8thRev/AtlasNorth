@@ -1,0 +1,5 @@
+# ATLAS_MEMORY_EXPORT.txt
+# Last Updated: 2026-03-02 | Version: 1.0
+# Format: task_id | task_type | decision | primary_reason | revision_count
+# ---
+# No entries yet. Tasks will be appended here upon completion.
