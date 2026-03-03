@@ -17,3 +17,4 @@ TASK-011 | model_router_pulse_gemini | PASS | MODEL_ROUTER.json v1.1 — Pulse p
 TASK-012 | people_api_verification | PASS | Confirmed People API enabled via gog contacts list + gog auth list — contacts scope active on atlas.opsman@gmail.com | 0
 TASK-013 | memory_md_people_api_update | PASS | Updated MEMORY.md to reflect People API confirmed enabled via gog | 0
 TASK-014 | standing_instructions_checklist | PASS | Created STANDING_INSTRUCTIONS.md with 4-step task completion gate — no task complete without all 4 | 0
+TASK-015 | drive_folder_access_confirmation | PASS | Confirmed read+write on both Drive folders (1l13Fvo4L + 165U0PXhd) via gog upload/delete | 0
