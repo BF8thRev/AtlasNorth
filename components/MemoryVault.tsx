@@ -42,6 +42,7 @@ const AGENTS: AgentDef[] = [
       { name: "ATLAS_MEMORY_EXPORT.txt", path: "ATLAS_MEMORY_EXPORT.txt", description: "Task history — source of truth" },
       { name: "WORKFLOW_STATE.json", path: "WORKFLOW_STATE.json",   description: "Current workflow state & open loops" },
       { name: "ENGAGEMENT_RULES.md", path: "ENGAGEMENT_RULES.md",  description: "Behavioral rules (3+ occurrence threshold)" },
+      { name: "FILE_AUDIT_LOG.jsonl", path: "FILE_AUDIT_LOG.jsonl", description: "Tamper-evident log of all file operations" },
     ],
   },
   {

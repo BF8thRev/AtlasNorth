@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import fs from "fs";
 import path from "path";
+import { appendAudit } from "@/lib/auditLog";
 
 // Local dev: reads from workspace. Vercel: reads from data/vault/ in repo.
 const WORKSPACE = process.env.WORKSPACE_PATH || path.join(process.cwd(), "data/vault");
@@ -18,8 +19,10 @@ export async function GET(req: NextRequest) {
   if (!abs) return NextResponse.json({ error: "Invalid path" }, { status: 403 });
   try {
     const content = fs.existsSync(abs) ? fs.readFileSync(abs, "utf-8") : "";
+    appendAudit({ event: "read", file: filePath, method: "local", success: true, timestamp: "" });
     return NextResponse.json({ content });
-  } catch {
+  } catch (e) {
+    appendAudit({ event: "error", file: filePath, method: "local", success: false, note: String(e), timestamp: "" });
     return NextResponse.json({ error: "Read failed" }, { status: 500 });
   }
 }
@@ -78,9 +81,11 @@ export async function PUT(req: NextRequest) {
 
     if (!putRes.ok) {
       const err = await putRes.json();
+      appendAudit({ event: "error", file: filePath, method: "github", success: false, note: "GitHub write failed", timestamp: "" });
       return NextResponse.json({ error: "GitHub write failed", detail: err }, { status: 500 });
     }
 
+    appendAudit({ event: "write", file: filePath, method: "github", success: true, size_bytes: content.length, timestamp: "" });
     return NextResponse.json({ ok: true, method: "github" });
 
   } else {
@@ -90,8 +95,10 @@ export async function PUT(req: NextRequest) {
     try {
       fs.mkdirSync(path.dirname(abs), { recursive: true });
       fs.writeFileSync(abs, content, "utf-8");
+      appendAudit({ event: "write", file: filePath, method: "local", success: true, size_bytes: content.length, timestamp: "" });
       return NextResponse.json({ ok: true, method: "local" });
-    } catch {
+    } catch (e) {
+      appendAudit({ event: "error", file: filePath, method: "local", success: false, note: String(e), timestamp: "" });
       return NextResponse.json({ error: "Write failed" }, { status: 500 });
     }
   }

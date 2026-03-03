@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import fs from "fs";
 import path from "path";
+import { appendAudit } from "@/lib/auditLog";
 
 const WORKSPACE = process.env.WORKSPACE_PATH || "/Users/atlasnorth/.openclaw/workspace";
 const TOKEN_LOG_PATH = path.join(WORKSPACE, "token-log.json");
@@ -37,8 +38,10 @@ export async function POST(req: NextRequest) {
     fs.mkdirSync(path.dirname(TOKEN_LOG_PATH), { recursive: true });
     fs.writeFileSync(TOKEN_LOG_PATH, JSON.stringify(data, null, 2), "utf-8");
 
+    appendAudit({ event: "write", file: "token-log.json", method: "local", success: true, actor: entry.agent, timestamp: "" });
     return NextResponse.json({ ok: true, total: data.log.length });
-  } catch {
+  } catch (e) {
+    appendAudit({ event: "error", file: "token-log.json", method: "local", success: false, note: String(e), timestamp: "" });
     return NextResponse.json({ error: "Failed to append entry" }, { status: 500 });
   }
 }
