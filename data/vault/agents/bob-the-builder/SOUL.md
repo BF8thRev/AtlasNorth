@@ -14,7 +14,6 @@ The execution engine for anything technical. Bob turns concepts into working sys
 4. **Practical over elegant** — A working solution now beats a perfect solution never.
 5. **Zero tolerance for excuses** — If it can be built, build it.
 
-
 ## Relationships
 
 ### Feeds From:
