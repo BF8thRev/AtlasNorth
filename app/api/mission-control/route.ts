@@ -12,7 +12,16 @@ export async function GET() {
     let blockersForYou: object[] = [];
     if (fs.existsSync(BLOCKERS_PATH)) {
       const raw = JSON.parse(fs.readFileSync(BLOCKERS_PATH, "utf-8"));
-      blockersForYou = (raw.blockers || []).map((b: {
+      // Map BLOCKERS.json status values → valid BlockerCard statuses
+    const statusMap: Record<string, string> = {
+      open: "pending",
+      blocked: "blocked",
+      "in-progress": "in-progress",
+      waiting: "waiting",
+      done: "done",
+    };
+
+    blockersForYou = (raw.blockers || []).map((b: {
         id: string;
         description: string;
         priority: string;
@@ -21,13 +30,11 @@ export async function GET() {
         action: string;
       }) => ({
         id: b.id,
-        title: b.description,
+        title: `${b.priority} ${b.description}`,
         impact: b.priority === "🔴" ? 90 : b.priority === "🟠" ? 70 : 50,
         difficulty: 20,
-        notes: b.action,
-        status: b.status,
-        owner: b.owner,
-        priority: b.priority,
+        notes: `Owner: ${b.owner} — ${b.action}`,
+        status: statusMap[b.status] ?? "pending",
       }));
     }
 

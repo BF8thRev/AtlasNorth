@@ -20,7 +20,7 @@ const getScoreColor = (score: number) => {
 };
 
 export default function BlockerCard({ item }: BlockerCardProps) {
-  const status = statusConfig[item.status];
+  const status = statusConfig[item.status] ?? { label: item.status ?? "Unknown", color: "bg-gray-100 text-gray-600" };
 
   return (
     <div className="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 p-6 border border-gray-200">
