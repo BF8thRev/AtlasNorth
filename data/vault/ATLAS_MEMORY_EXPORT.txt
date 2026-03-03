@@ -20,3 +20,4 @@ TASK-014 | standing_instructions_checklist | PASS | Created STANDING_INSTRUCTION
 TASK-015 | drive_folder_access_confirmation | PASS | Confirmed read+write on both Drive folders (1l13Fvo4L + 165U0PXhd) via gog upload/delete | 0
 TASK-015 | drive_folder_mapping | PASS | Dime folder (165U0...) + Newton folder (1l13F...) mapped to agents, WORKFLOW_AUTO.md created, MEMORY.md + STANDING_INSTRUCTIONS.md updated | 0
 TASK-016 | deployment_schedule | PASS | Push schedule set: 11AM + 5PM EST crons live, push-to-github.sh created, STANDING_INSTRUCTIONS.md updated | 0
+TASK-017 | pulse_brief_spec | PASS | PULSE_BRIEF_SPEC.md created, 6AM EST cron live, 5 signals defined, WhatsApp delivery, narrative tone locked | 0
