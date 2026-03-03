@@ -11,3 +11,4 @@ TASK-005 | agent_file_scaffold | PASS | Created 5-file structure for Spark + Pul
 TASK-006 | memory_sync_cron | PASS | sync-memory.sh created, cron job set to run every 30 min | 0
 TASK-007 | file_audit_log_implementation | PASS | FILE_AUDIT_LOG.jsonl created, audit utility wired into API routes, Bob executing | 0
 TASK-008 | model_router_implementation | PASS | MODEL_ROUTER.json created, UI panel + WORKFLOW_PROTOCOL + HEARTBEAT wired, Bob executing | 0
+TASK-009 | agent_tool_access_boundaries | PASS | /system/AGENT_TOOL_ACCESS.md created, deny-by-default enforcement layer, FILE_AUDIT_LOG wired | 0
