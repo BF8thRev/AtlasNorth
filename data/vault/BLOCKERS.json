@@ -4,19 +4,19 @@
   "blockers": [
     {
       "id": "BLK-001",
-      "description": "Search Console — atlas.opsman@gmail.com not added as property user. Blocks Search Console data for SCC/HUSA and Newton.",
+      "description": "Search Console — atlas.opsman@gmail.com not added as property user. Blocks SCC/HUSA and Newton SEO data.",
       "priority": "🔴",
       "owner": "Bryan",
       "status": "open",
-      "action": "Go to Google Search Console → Settings → Users and Permissions → Add atlas.opsman@gmail.com"
+      "action": "Google Search Console → Settings → Users and Permissions → Add atlas.opsman@gmail.com"
     },
     {
       "id": "BLK-002",
-      "description": "OAuth token refresh — People API scope missing. gog re-auth requires browser OAuth flow.",
+      "description": "OAuth re-auth blocked — redirect_uri_mismatch. 127.0.0.1 callback not registered in Google Cloud Console OAuth credentials.",
       "priority": "🔴",
-      "owner": "Atlas",
-      "status": "open",
-      "action": "Re-run gog auth with browser open. Requires interactive OAuth — Atlas will attempt tonight."
+      "owner": "Bryan",
+      "status": "blocked",
+      "action": "Go to console.cloud.google.com → APIs & Services → Credentials → OAuth 2.0 Client → Add http://127.0.0.1 to Authorized redirect URIs. Takes 30 seconds."
     },
     {
       "id": "BLK-003",
@@ -24,23 +24,63 @@
       "priority": "🟠",
       "owner": "Bryan",
       "status": "open",
-      "action": "Create token at vercel.com/account/tokens → add VERCEL_TOKEN to ~/.openclaw/.env"
+      "action": "vercel.com/account/tokens → create token → add VERCEL_TOKEN to ~/.openclaw/.env"
     },
     {
-      "id": "BLK-005",
-      "description": "Newton transcript workflow not built — Drive folder ready but Hunter → Ledger → Atlas pipeline has no trigger or automation.",
+      "id": "BLK-011",
+      "description": "Pulse 6AM cron — last run returned 'message failed' warning. Root cause not confirmed. Could silently fail tomorrow.",
+      "priority": "🔴",
+      "owner": "Atlas",
+      "status": "open",
+      "action": "Audit cron delivery config. Confirm WhatsApp to field number is correctly set. Run test delivery."
+    },
+    {
+      "id": "BLK-012",
+      "description": "8AM Daily Brief cron is disabled — was pointing at Slack which isn't configured. Needs to be migrated to WhatsApp or permanently removed.",
       "priority": "🟠",
       "owner": "Atlas",
       "status": "open",
-      "action": "Build Drive watch trigger + agent dispatch pipeline."
+      "action": "Decide: migrate 8AM brief to WhatsApp or remove cron entirely. Update cron config."
     },
     {
-      "id": "BLK-006",
-      "description": "Dime transcript workflow not built — Drive folder ready but Pulse → OLG → Rob_C pipeline has no trigger or automation.",
+      "id": "BLK-013",
+      "description": "WEEKEND_BRIEF_SPEC.md not written — weekend brief crons are live but no spec file exists for reference or iteration.",
       "priority": "🟠",
       "owner": "Atlas",
       "status": "open",
-      "action": "Build Drive watch trigger + agent dispatch pipeline."
+      "action": "Write WEEKEND_BRIEF_SPEC.md based on approved design. Mirror structure of PULSE_BRIEF_SPEC.md."
+    },
+    {
+      "id": "BLK-014",
+      "description": "Agent SOUL.md files missing for 9 agents — OLG, Rob_C, Hunter, Dr. Frankl, Ledger, Voss, Bob, Niessen, Spark are scaffolded but empty.",
+      "priority": "🟠",
+      "owner": "Bryan",
+      "status": "open",
+      "action": "Drop each agent's SOUL.md in chat and Atlas slots it in immediately. Or Bryan writes identity bullet points and Atlas drafts them."
+    },
+    {
+      "id": "BLK-015",
+      "description": "BudgetMeter still reads token-log.json not TOKEN_USAGE.jsonl — partial fix. UI not yet wired to new API route.",
+      "priority": "🟡",
+      "owner": "Atlas",
+      "status": "open",
+      "action": "Update BudgetMeter component to call /api/token-usage instead of reading token-log.json directly."
+    },
+    {
+      "id": "BLK-016",
+      "description": "Friday Founder Snapshot failed last run — rate limit error on both Anthropic models. No fallback model configured.",
+      "priority": "🟡",
+      "owner": "Atlas",
+      "status": "open",
+      "action": "Add Gemini fallback to Friday Snapshot cron payload. Add retry logic or model cascade."
+    },
+    {
+      "id": "BLK-017",
+      "description": "OLG LinkedIn post draft from Signal 5 (cannabis vs alcohol) sitting in DIME_LEARNINGS.md but never moved to task queue or drafted.",
+      "priority": "🟡",
+      "owner": "Atlas",
+      "status": "open",
+      "action": "Draft OLG LinkedIn post from Signal 5 insight. <200 words. Add to task board for Bryan review."
     }
   ]
 }
