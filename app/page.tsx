@@ -28,6 +28,7 @@ export type Item = {
 export type MissionControlData = {
   blockersForYou: Item[];
   openLoops: Item[];
+  lastUpdated?: string;
 };
 
 export default function Home() {
@@ -38,6 +39,7 @@ export default function Home() {
     openLoops: [],
   });
   const [isLoading, setIsLoading] = useState(true);
+  const [lastUpdated, setLastUpdated] = useState<string | null>(null);
 
   // Load security status from localStorage on boot
   useEffect(() => {
@@ -60,6 +62,12 @@ export default function Home() {
       .then((res) => res.json())
       .then((json) => {
         setData(json);
+        setLastUpdated(new Date().toLocaleString("en-US", {
+          timeZone: "America/New_York",
+          month: "short", day: "numeric", year: "numeric",
+          hour: "numeric", minute: "2-digit", hour12: true,
+          timeZoneName: "short"
+        }));
         setIsLoading(false);
       })
       .catch((err) => {
@@ -113,6 +121,9 @@ export default function Home() {
                 ? "Items that need your attention or approval"
                 : "Active tasks and ongoing work"}
               <span className="ml-2 text-xs text-gray-400">· Auto-refreshes every 30s</span>
+              {lastUpdated && (
+                <span className="ml-2 text-xs text-gray-400">· Last updated: {lastUpdated}</span>
+              )}
             </p>
 
             {isLoading ? (

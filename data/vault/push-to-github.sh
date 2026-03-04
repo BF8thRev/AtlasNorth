@@ -10,10 +10,14 @@ WINDOW=$(TZ="America/New_York" date +"%H:%M")
 
 cd "$REPO" || exit 1
 
-# Stash any unstaged changes, pull, then restore
-git stash 2>&1
+# Stage any outstanding vault changes before pull
+git add data/vault/ 2>&1
+if ! git diff --cached --quiet; then
+  git commit -m "auto: pre-push vault sync $(TZ='America/New_York' date '+%Y-%m-%d %H:%M EST')" 2>&1
+fi
+
+# Pull and rebase
 git pull --rebase origin main 2>&1
-git stash pop 2>&1 || true
 
 # Push
 PUSH_OUTPUT=$(git push origin main 2>&1)
