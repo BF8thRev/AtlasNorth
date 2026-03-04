@@ -29,3 +29,5 @@ TASK-021 | blockers_ui_numbers | PASS | Added numbered circles to BlockerCard co
 TASK-022 | standing_instructions_update | PASS | Test run rule + blocker resolution protocol added to STANDING_INSTRUCTIONS.md | 0
 TASK-023 | completed_blockers_archive | PASS | COMPLETED_BLOCKERS.json created as resolution archive | 0
 TASK-021 | blocker_resolution | PASS | BLK-008 resolved: Blockers tab UI built, numbered cards live on Mission Control | 0
+TASK-021 | pulse_brief_spec_v1.1 | PASS | Spec updated: stat citation rule, PRIORITY ACTION TODAY locked as mandatory, agent distribution pipeline defined for OLG/Hunter/Spark/DrFrankl | 0
+TASK-022 | agent_brief_extractions | PASS | DIME_LEARNINGS, GENERAL_LEARNINGS, Newton_tasks updated with today's brief extractions for OLG/Hunter/Spark/DrFrankl | 0

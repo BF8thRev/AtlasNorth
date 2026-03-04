@@ -251,3 +251,24 @@ Full personas in DIME_AUDIENCE_INTELLIGENCE.md
 - Policy Watcher (15%) — what legislation means for their business
 - Brand Builder (10%) — how top brands win at retail
 
+
+---
+
+## Pulse Brief Learnings — 2026-03-04
+
+### OLG Extraction
+- **Signal 5 (Outside-In):** Tilray acquired BrewDog assets for £33M. Cannabis beverages cutting alcohol use by ~50%. Brewers Association modeling THC market share impact.
+  - Content angle: "The cannabis vs. alcohol category war nobody is naming yet" — LinkedIn post or Dime episode pitch
+  - _Source: Tilray press release + peer-reviewed study cited in brief (March 2026)_
+- **Priority Action:** Ohio SB 56 compliance deadline March 20 — 35% THC cap on flower + public smoking restrictions. Time-sensitive episode or post opportunity.
+
+### Market Context (Signal 2)
+- LA operators owe $400M in back taxes — city building amnesty program
+- IIP still unwinding MSO tenant defaults
+- Cresco Labs Sunnyside PA dispensary on strike
+- Theme: Market thinning. Survivors run lean.
+
+### Content Formula Reinforced
+- Operator survival content outperforming brand/hype content on LinkedIn + trade media
+- Analytical, no-BS framing = highest engagement right now
+- Dime positioning is correctly aligned with market appetite

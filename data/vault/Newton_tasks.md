@@ -55,3 +55,14 @@
 
 ## Completed Tasks
 (none yet)
+
+---
+
+## Hunter Extraction — Pulse Brief 2026-03-04
+
+### Prospecting Hooks (Newton ICP)
+1. **Equipment consolidation signal (Signal 3):** ExtractionTek + Pinnacle Stainless merged. Equipment vendors consolidating = capex pullback from operators. Hook: "As equipment costs go up post-merger, Newton's software-only tier becomes the highest-ROI infrastructure spend left on the table."
+
+2. **Operator distress signal (Signal 2):** LA operators owe $400M in back taxes. IIP MSO defaults ongoing. Hook: "Operators under financial pressure need extraction visibility MORE, not less — knowing exactly what's leaving the room is the difference between margin and loss."
+
+3. **Market compression (Signal 1+2):** 280E relief pushed to 2027+, balance sheets fraying. Hook: "Every dollar of extraction waste is a dollar operators can't afford right now. Newton makes the invisible visible."
