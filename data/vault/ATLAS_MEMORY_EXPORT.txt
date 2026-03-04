@@ -31,3 +31,8 @@ TASK-023 | completed_blockers_archive | PASS | COMPLETED_BLOCKERS.json created a
 TASK-021 | blocker_resolution | PASS | BLK-008 resolved: Blockers tab UI built, numbered cards live on Mission Control | 0
 TASK-021 | pulse_brief_spec_v1.1 | PASS | Spec updated: stat citation rule, PRIORITY ACTION TODAY locked as mandatory, agent distribution pipeline defined for OLG/Hunter/Spark/DrFrankl | 0
 TASK-022 | agent_brief_extractions | PASS | DIME_LEARNINGS, GENERAL_LEARNINGS, Newton_tasks updated with today's brief extractions for OLG/Hunter/Spark/DrFrankl | 0
+BLOCKER_RESOLUTION | BLK-004 | Pulse Daily Brief first run completed and delivered 2026-03-04 | resolved 2026-03-04 | task_type: blocker_resolution
+BLOCKER_RESOLUTION | BLK-007 | TOKEN_USAGE.jsonl infrastructure built — API route + file live | resolved 2026-03-04 | task_type: blocker_resolution
+BLOCKER_RESOLUTION | BLK-008 | Mission Control Blockers tab built, numbered, deployed to Vercel | resolved 2026-03-04 | task_type: blocker_resolution
+BLOCKER_RESOLUTION | BLK-009 | 11AM push cron verified running, timeout fixed to 120s | resolved 2026-03-04 | task_type: blocker_resolution
+BLOCKER_RESOLUTION | BLK-010 | WORKFLOW_AUTO.md post-compaction protocol accepted as complete | resolved 2026-03-04 | task_type: blocker_resolution
