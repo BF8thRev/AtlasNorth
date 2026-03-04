@@ -28,3 +28,4 @@ TASK-021 | ui_fix_mission_control_json | PASS | Replaced broken /data/mission-co
 TASK-021 | blockers_ui_numbers | PASS | Added numbered circles to BlockerCard component, index passed from page.tsx | 0
 TASK-022 | standing_instructions_update | PASS | Test run rule + blocker resolution protocol added to STANDING_INSTRUCTIONS.md | 0
 TASK-023 | completed_blockers_archive | PASS | COMPLETED_BLOCKERS.json created as resolution archive | 0
+TASK-021 | blocker_resolution | PASS | BLK-008 resolved: Blockers tab UI built, numbered cards live on Mission Control | 0

@@ -1,12 +1,12 @@
 {
   "last_updated": "2026-03-03",
   "version": "1.1",
-  "total_tasks": 23,
-  "pass_count": 23,
+  "total_tasks": 21,
+  "pass_count": 21,
   "revision_count": 0,
   "fail_count": 0,
   "next_calibration_at": 10,
   "open_loops": [],
   "pending_tasks": [],
-  "notes": "TASK-021/022/023: Blockers numbered, test run rule + resolution protocol added, COMPLETED_BLOCKERS.json created."
+  "notes": "TASK-021: BLK-008 resolved. Blockers tab live with numbers."
 }

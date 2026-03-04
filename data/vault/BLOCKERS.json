@@ -4,80 +4,83 @@
   "blockers": [
     {
       "id": "BLK-001",
-      "description": "Search Console — atlas.opsman@gmail.com not added as property user. Blocks Search Console data for SCC/HUSA and Newton.",
-      "priority": "🔴",
+      "description": "Search Console \u2014 atlas.opsman@gmail.com not added as property user. Blocks Search Console data for SCC/HUSA and Newton.",
+      "priority": "\ud83d\udd34",
       "owner": "Bryan",
       "status": "open",
-      "action": "Go to Google Search Console → Settings → Users and Permissions → Add atlas.opsman@gmail.com"
+      "action": "Go to Google Search Console \u2192 Settings \u2192 Users and Permissions \u2192 Add atlas.opsman@gmail.com"
     },
     {
       "id": "BLK-002",
-      "description": "OAuth token refresh — current gmail_tokens.json only has Gmail scopes. People API and other services need re-authorization with expanded scopes.",
-      "priority": "🔴",
+      "description": "OAuth token refresh \u2014 current gmail_tokens.json only has Gmail scopes. People API and other services need re-authorization with expanded scopes.",
+      "priority": "\ud83d\udd34",
       "owner": "Atlas",
       "status": "open",
       "action": "Re-run gog auth add atlas.opsman@gmail.com with full scope list including people"
     },
     {
       "id": "BLK-003",
-      "description": "VERCEL_TOKEN not stored — Atlas cannot verify Vercel env vars remotely or trigger manual deploys without a Chrome tab attached.",
-      "priority": "🟠",
+      "description": "VERCEL_TOKEN not stored \u2014 Atlas cannot verify Vercel env vars remotely or trigger manual deploys without a Chrome tab attached.",
+      "priority": "\ud83d\udfe0",
       "owner": "Bryan",
       "status": "open",
-      "action": "Create token at vercel.com/account/tokens → add VERCEL_TOKEN to ~/.openclaw/.env"
+      "action": "Create token at vercel.com/account/tokens \u2192 add VERCEL_TOKEN to ~/.openclaw/.env"
     },
     {
       "id": "BLK-004",
-      "description": "Pulse Daily Brief — first run tomorrow 6AM EST. No test run completed. Prompt and spec untested in production.",
-      "priority": "🟠",
+      "description": "Pulse Daily Brief \u2014 first run tomorrow 6AM EST. No test run completed. Prompt and spec untested in production.",
+      "priority": "\ud83d\udfe0",
       "owner": "Atlas",
       "status": "open",
       "action": "Monitor 6AM run. Review output quality. Iterate on PULSE_BRIEF_SPEC.md if needed."
     },
     {
       "id": "BLK-005",
-      "description": "Newton transcript workflow not built — Drive folder ready but Hunter → Ledger → Atlas pipeline has no trigger or automation.",
-      "priority": "🟠",
+      "description": "Newton transcript workflow not built \u2014 Drive folder ready but Hunter \u2192 Ledger \u2192 Atlas pipeline has no trigger or automation.",
+      "priority": "\ud83d\udfe0",
       "owner": "Atlas",
       "status": "open",
       "action": "Build Drive watch trigger + agent dispatch pipeline when Bryan confirms ready"
     },
     {
       "id": "BLK-006",
-      "description": "Dime transcript workflow not built — Drive folder ready but Pulse → OLG → Rob_C pipeline has no trigger or automation.",
-      "priority": "🟠",
+      "description": "Dime transcript workflow not built \u2014 Drive folder ready but Pulse \u2192 OLG \u2192 Rob_C pipeline has no trigger or automation.",
+      "priority": "\ud83d\udfe0",
       "owner": "Atlas",
       "status": "open",
       "action": "Build Drive watch trigger + agent dispatch pipeline when Bryan confirms ready"
     },
     {
       "id": "BLK-007",
-      "description": "TOKEN_USAGE.jsonl not yet populated — Budget Meter on Mission Control will show empty until real API calls are logged.",
-      "priority": "🟡",
+      "description": "TOKEN_USAGE.jsonl not yet populated \u2014 Budget Meter on Mission Control will show empty until real API calls are logged.",
+      "priority": "\ud83d\udfe1",
       "owner": "Atlas",
-      "status": "open",
-      "action": "Wire token logging into agent task completions. First entries needed to validate BudgetMeter."
+      "status": "waiting",
+      "action": "Wire token logging into agent task completions. First entries needed to validate BudgetMeter.",
+      "resolved_note": "Wire built. Populates when agents log tokens."
     },
     {
       "id": "BLK-008",
-      "description": "Mission Control Blockers tab not yet built in UI — BLOCKERS.json exists but no tab renders it on the dashboard.",
-      "priority": "🟡",
+      "description": "Mission Control Blockers tab not yet built in UI \u2014 BLOCKERS.json exists but no tab renders it on the dashboard.",
+      "priority": "\ud83d\udfe1",
       "owner": "Atlas",
-      "status": "open",
-      "action": "Build Blockers tab component in Mission Control. Read from BLOCKERS.json via /api/files."
+      "status": "resolved",
+      "action": "Build Blockers tab component in Mission Control. Read from BLOCKERS.json via /api/files.",
+      "resolved_date": "2026-03-03",
+      "resolved_note": "Blockers tab built, numbered, live on Vercel at c5fb616"
     },
     {
       "id": "BLK-009",
-      "description": "11 AM push cron has no run history — patched to isolated agent but untested. 5 PM will be first real test.",
-      "priority": "🟡",
+      "description": "11 AM push cron has no run history \u2014 patched to isolated agent but untested. 5 PM will be first real test.",
+      "priority": "\ud83d\udfe1",
       "owner": "Atlas",
       "status": "open",
       "action": "Monitor 5PM EST push. Confirm isolated agent executes push-to-github.sh without issues."
     },
     {
       "id": "BLK-010",
-      "description": "WORKFLOW_AUTO.md post-compaction startup not validated — protocol exists but no test of cold-start context restoration after a real compaction event.",
-      "priority": "🟡",
+      "description": "WORKFLOW_AUTO.md post-compaction startup not validated \u2014 protocol exists but no test of cold-start context restoration after a real compaction event.",
+      "priority": "\ud83d\udfe1",
       "owner": "Atlas",
       "status": "open",
       "action": "After next context compaction, verify all 4 startup files are read and protocols restored correctly."

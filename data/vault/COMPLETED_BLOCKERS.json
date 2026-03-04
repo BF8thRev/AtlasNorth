@@ -1,5 +1,16 @@
 {
   "last_updated": "2026-03-03",
   "version": "1.0",
-  "completed_blockers": []
+  "completed_blockers": [
+    {
+      "id": "BLK-008",
+      "description": "Mission Control Blockers tab not yet built in UI \u2014 BLOCKERS.json exists but no tab renders it on the dashboard.",
+      "priority": "\ud83d\udfe1",
+      "owner": "Atlas",
+      "status": "resolved",
+      "action": "Build Blockers tab component in Mission Control. Read from BLOCKERS.json via /api/files.",
+      "resolved_date": "2026-03-03",
+      "resolved_note": "Blockers tab built, numbered, live on Vercel at c5fb616"
+    }
+  ]
 }
