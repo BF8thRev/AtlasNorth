@@ -272,3 +272,66 @@ Full personas in DIME_AUDIENCE_INTELLIGENCE.md
 - Operator survival content outperforming brand/hype content on LinkedIn + trade media
 - Analytical, no-BS framing = highest engagement right now
 - Dime positioning is correctly aligned with market appetite
+
+---
+
+## Pulse Brief Learnings — 2026-03-05
+
+### Strongest Content Angle Selected: SIGNAL 5 — Tilray/BrewDog (Outside-In)
+
+**Why this angle wins:**
+- Passes all 4 Dime Stress Tests: Crossover ✅ | Consequence ✅ | Specificity ✅ | Tension ✅
+- "Cannabis company acquires alcohol brand" is the exact outside-in frame that historically drives highest views (ref: Tobacco's Late Innovation = 1,006v)
+- Specific numbers anchor credibility: £33M acquisition, £1.8B previous valuation, 484 jobs cut, 15 breweries
+- Power dynamic inversion = built-in tension and disagreement trigger
+- Operators in cannabis + beverage will react — both audiences activated
+- Timely: deal closed March 2, 2026 — 3-day window still fresh
+
+**Secondary angles identified (ranked):**
+1. Signal 2 (IIP/IIPR default) — structural MSO distress, AFFO gap — strong but inside-baseball for non-operators
+2. Signal 1 (rollback campaigns + hemp THC rule) — high urgency, but policy-only can feel academic without stakes language
+3. Signal 4 (athlete recovery bifurcation + 60-day window) — relevant for brand builders but narrower reach
+4. Signal 3 (vendor consolidation, extraction merger) — science/tech angle, but niche; better as a Dime episode than LinkedIn post
+
+---
+
+### LinkedIn Post Draft — Tilray/BrewDog
+
+**Topic: Cannabis company as distressed beverage acquirer**
+
+---
+
+Tilray just bought BrewDog for £33M.
+
+BrewDog was valued at £1.8B four years ago. 484 jobs cut. 15 breweries now under a cannabis company's umbrella — acquired at distressed prices during an alcohol category contraction.
+
+Let that sink in.
+
+Five years ago, the narrative was: Big Alcohol will acquire cannabis when it's ready. Patient capital. They'll swoop in on their terms.
+
+That didn't happen.
+
+Instead, a cannabis company — one that's been grinding through its own capital problems — is now the one buying distressed alcohol assets.
+
+The power dynamic didn't slowly shift. It flipped.
+
+What this tells operators: the category war between cannabis and alcohol is no longer theoretical. It's balance-sheet-level. And the companies positioned to win are the ones who understand they're not just competing for market share — they're competing for consumer identity.
+
+The question worth asking: Is your brand built around a product, or an identity your consumer can't get anywhere else?
+
+Because Tilray just bet £33M that the identity play is where this goes.
+
+Agree or disagree — drop it below.
+
+---
+
+**Word count: 187**
+**Stress tests passed: Crossover ✅ | Consequence ✅ | Specificity ✅ | Tension ✅**
+
+---
+
+### Task Queue Note
+- 📋 **LinkedIn post ready for review - Tilray/BrewDog power dynamic flip**
+
+### Priority Action Logged
+- Hunter to pull PharmaCann, 4Front Ventures, and IIP default-list operators for Newton outreach (per brief directive)

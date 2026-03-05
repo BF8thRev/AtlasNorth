@@ -66,3 +66,29 @@
 2. **Operator distress signal (Signal 2):** LA operators owe $400M in back taxes. IIP MSO defaults ongoing. Hook: "Operators under financial pressure need extraction visibility MORE, not less — knowing exactly what's leaving the room is the difference between margin and loss."
 
 3. **Market compression (Signal 1+2):** 280E relief pushed to 2027+, balance sheets fraying. Hook: "Every dollar of extraction waste is a dollar operators can't afford right now. Newton makes the invisible visible."
+
+---
+
+## Hunter Extraction — Pulse Brief 2026-03-05
+
+**Priority Targets:** PharmaCann, 4Front Ventures, IIP default list operators
+
+### Operator Pain Points (Newton ICP)
+
+1. **Structural cash bleed from rent defaults** — PharmaCann and 4Front Ventures defaulted on $18M in IIPR rent. These operators are not in a liquidity crisis from slow sales — they're bleeding because their operational cost base is out of control. Every inefficiency on the floor compounds the problem.
+
+2. **Vendor consolidation = lost negotiation leverage** — ExtractionTek + Pinnacle Stainless merger tightens the equipment market. Operators have fewer vendors to pit against each other. The only cost lever they control now is *how efficiently they run existing equipment* — yield, throughput, waste reduction.
+
+3. **Policy whipsaw creating compliance and planning paralysis** — Rescheduling cascade, state rollback campaigns (MA, AZ, ME), hemp THC rule changes. Operators can't plan capex confidently. They need operational data to defend decisions to boards, investors, and regulators — not gut feel.
+
+### Prospecting Hooks
+
+**Hook 1 — For PharmaCann / 4Front (Distressed MSO Outreach):**
+> "You just defaulted on $18M in rent to IIPR. Before your board asks what's next, do you know exactly what your extraction floor is producing per run — and what it's costing you? Newton closes that gap in 30 days."
+
+**Hook 2 — For Extraction Operators Post-Merger (Tech Signal):**
+> "ExtractionTek and Pinnacle just merged. Your equipment options just got narrower and your rep just got less motivated to negotiate. The one cost you still control is efficiency. Newton shows you where you're leaving yield — and money — on the table."
+
+**Hook 3 — For MSOs in Policy-Volatile Markets (MA, AZ, ME):**
+> "With rollback campaigns active in Massachusetts and Arizona, your investors want operational proof you're running lean. Newton gives you the data to show them — not just a story."
+

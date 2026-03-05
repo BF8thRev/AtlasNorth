@@ -70,3 +70,33 @@ Jared, STIIIZY/Jesse, Ayrloom's Luke, and iAnthus's Kevin all raised price as an
 
 **5. Bryan is building a data product on top of teams that don't have data discipline — and nobody has said it out loud yet.**
 Sam at STIIIZY screenshots Excel dashboards to send to executives because they won't open Excel files. Zach at Bud & Mary has no unified tracking system across four states. iAnthus uses Excel and paper logs. Jushi uses Excel. Even at Curaleaf, the question of "is this deployed in real situations" suggests they're skeptical of data quality. Newton Insights requires operators to log data consistently to generate meaningful insights. If the operators don't fill things in, the model is useless. Bryan hasn't addressed this in any of the sales calls — there's no discovery question about current data hygiene, no onboarding plan that includes data discipline, and no acknowledgment that implementation success depends on operator behavior as much as the hardware. This is the #1 reason a pilot fails silently: the product works fine, but the operator entries are sparse and inconsistent, insights are thin, and nobody can prove value. Bryan needs a data-readiness qualifier in his discovery process.
+
+---
+
+## 2026-03-05 — Hunter Intel Entry
+
+**Source:** Pulse Daily Brief — March 5, 2026
+**Priority Targets:** PharmaCann, 4Front Ventures, IIP default list operators
+
+### Key Signals Read
+- **MARKET:** IIPR revenue dropped to $266M. PharmaCann + 4Front defaulted on $18M rent. AFFO ($7.24) below $7.60 dividend — structural distress confirmed.
+- **TECH:** ExtractionTek + Pinnacle Stainless merger closes the equipment vendor market. Fewer options = less operator leverage.
+- **POLICY:** Rescheduling cascade, MA ballot initiative certified (63% oppose), AZ + ME rollback campaigns active.
+
+### Operator Pain Points Extracted
+1. **Cash bleed / cost base out of control** — Rent defaults signal operators cannot sustain current OpEx. Operational inefficiency is accelerating their distress.
+2. **Extraction vendor consolidation = no external cost relief** — Merging suppliers remove price competition. Efficiency software becomes the last remaining lever.
+3. **Policy volatility = board/investor pressure for operational data** — Operators in contested markets must prove they're running lean. Gut feel won't survive scrutiny.
+
+### Prospecting Hooks
+| # | Target | Hook |
+|---|--------|------|
+| 1 | PharmaCann / 4Front | "You just defaulted on $18M in rent to IIPR. Before your board asks what's next, do you know exactly what your extraction floor is producing per run — and what it's costing you? Newton closes that gap in 30 days." |
+| 2 | Extraction Operators (Post-Merger) | "ExtractionTek and Pinnacle just merged. Your equipment options got narrower and your rep got less motivated. The one cost you still control is efficiency. Newton shows you where you're leaving yield — and money — on the table." |
+| 3 | MSOs in Volatile Policy Markets | "With rollback campaigns active in Massachusetts and Arizona, your investors want operational proof you're running lean. Newton gives you the data to show them — not just a story." |
+
+### Recommended Outreach Order
+1. 4Front Ventures (most public distress signal, operationally visible)
+2. PharmaCann (named in IIPR default, board pressure likely)
+3. IIP default list operators (secondary sweep — request full list from Bryan)
+
