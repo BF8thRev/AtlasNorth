@@ -65,13 +65,59 @@
 - Apple Podcasts, Spotify (audio)
 - Hosting: Simplecast
 
-## Dime Workflow Protocol Update (2026-03-05)
-- **CRITICAL CHANGE:** Native Google Docs API is now the default for all artifact storage
-- **RULE:** Never fallback to .txt files or local storage
-- **PROCESS:** Always ingest full transcript (approx 20k-40k tokens) before artifact creation
-- **STORAGE:** All artifacts on GDrive only. Zero local copies (except temporary workspace files during processing)
-- **ARTIFACTS:** Stored as native markdown (.md) files in GDrive folder structure
-- **DELEGATION:** Compressed artifact is distributed to sub-agents (OLG, Rob_C) via section-specific routing
+## DIME EPISODE SOP WORKFLOW (Formalized 2026-03-05)
+
+### TRIGGER
+- **Event:** "New episode ready"
+- **Input:** [Guest Name] + [Transcript Path/Link]
+- **Initiator:** Bryan (WhatsApp or dashboard)
+
+### REQUIRED CONSTRAINTS
+1. **API Standard:** Use Native Google Docs API (gog docs.create) ONLY. Zero fallback to .txt or .md for final deliverables.
+2. **Transcript Ingestion:** Always ingest FULL transcript (approx. 20k–60k tokens) before artifact creation. No exceptions.
+3. **Storage:** All output files are NATIVE Google Docs (application/vnd.google-apps.document). ZERO local copies in workspace (temp workspace files OK during processing, must be deleted post-filing).
+4. **Artifact Structure:** Compressed artifact = 5 sections (A–E: Quotes, Episode Structure, Tension Map, Clip Candidates, First Principles).
+5. **Deliverables:** All final text (Titles, Descriptions, Hooks, Clips, Timestamps) filed in native Google Doc with "Score: PASS" header at top.
+
+### WORKFLOW STEPS
+1. **Ingest:** Read full transcript into context (20k–60k tokens).
+2. **Compress:** Create 5-section artifact locally (temp).
+3. **File Artifact:** Create native Google Doc via `gog docs create --file [artifact.md] --parent [folder-id]`.
+4. **Delegate:** Spawn subagents (OLG for hooks/titles/descriptions, Rob_C equivalent for clips).
+5. **Await Completion:** Auto-announce on completion. Do not poll.
+6. **File Deliverables:** Consolidate all subagent outputs into single native Google Doc via `gog docs create`.
+7. **Score Pass:** Add "Score: PASS" header. Verify against Workflow Doc standards.
+8. **Cleanup:** Delete all local .md/.txt files. Only GDrive artifacts remain.
+9. **Report:** Provide folder link. ZERO content dumps to WhatsApp.
+
+### LIVE LEARNING SYSTEM
+- **Feedback Doc Location:** https://docs.google.com/document/d/1qqYgNG3twMTyPUWUrwv6ygzhvnaNJy54Nzs4W1rQO-w/edit (native Google Doc, created 2026-03-05)
+- **Document ID:** 1qqYgNG3twMTyPUWUrwv6ygzhvnaNJy54Nzs4W1rQO-w
+- **Purpose:** Continuous SOP refinement. Any notes, corrections, or learnings logged with timestamps.
+- **Read Before Each Episode:** At the start of every 'New Episode' trigger, Atlas MUST read Workflow_Feedback Doc first.
+- **Active Instructions:** Any notes in Feedback Doc become active instructions for that episode. Precedent over this SOP if conflict.
+- **Logging:** After each episode, Atlas logs timestamp + what worked + what failed + suggested improvements.
+
+### FOLDER STRUCTURE
+```
+/The Dime
+  /Episodes
+    /[Guest-Name-Date]
+      - [Guest-Name-Date] — Compressed Artifact (native Google Doc)
+      - [Guest-Name-Date] — Deliverables (native Google Doc, Score: PASS header)
+  /System
+    - Workflow_Feedback (native Google Doc — read before each episode, log updates after)
+```
+
+### CRITICAL RULES
+- ❌ Never upload .md or .txt files as final deliverables
+- ❌ Never dump content to WhatsApp/chat (only folder links)
+- ❌ Never assume format conversion — you must execute it
+- ❌ Never skip transcript ingestion
+- ✅ Always ingest full context before artifact creation
+- ✅ Always file as native Google Docs
+- ✅ Always read Workflow_Feedback before starting new episode
+- ✅ Always log updates to Workflow_Feedback after completion
 
 ## Access Granted
 - Simplecast (team member)
