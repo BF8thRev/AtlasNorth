@@ -65,6 +65,14 @@
 - Apple Podcasts, Spotify (audio)
 - Hosting: Simplecast
 
+## Dime Workflow Protocol Update (2026-03-05)
+- **CRITICAL CHANGE:** Native Google Docs API is now the default for all artifact storage
+- **RULE:** Never fallback to .txt files or local storage
+- **PROCESS:** Always ingest full transcript (approx 20k-40k tokens) before artifact creation
+- **STORAGE:** All artifacts on GDrive only. Zero local copies (except temporary workspace files during processing)
+- **ARTIFACTS:** Stored as native markdown (.md) files in GDrive folder structure
+- **DELEGATION:** Compressed artifact is distributed to sub-agents (OLG, Rob_C) via section-specific routing
+
 ## Access Granted
 - Simplecast (team member)
 - Google Analytics ✅ (full access configured 2026-02-26)
