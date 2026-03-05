@@ -35,9 +35,11 @@ const AGENT_ICONS: Record<string, string> = {
 };
 
 const MODEL_SHORT: Record<string, string> = {
-  "claude-opus-4-5-20251101": "Claude Opus",
-  "claude-sonnet-4-20250514": "Claude Sonnet",
-  "phi-4-mini-local": "Phi-4 Mini",
+  "claude-haiku-4-5-20251001": "Claude Haiku",
+  "claude-opus-4-5-20251101":  "Claude Opus",
+  "claude-sonnet-4-20250514":  "Claude Sonnet",
+  "phi-4-mini-local":          "Phi-4 Mini",
+  "google/gemini-2.5-flash":   "Gemini 2.5 Flash",
 };
 
 function statusBadge(status: string) {
@@ -154,9 +156,10 @@ export default function ModelStatus() {
         <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3">Token Usage (Current Session)</h2>
         <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-5 space-y-4">
           {[
-            { label: "Claude Sonnet", pct: 45, color: "bg-blue-500" },
-            { label: "Claude Opus",   pct: 57, color: "bg-purple-500" },
-          ].map(({ label, pct, color }) => (
+            { label: "Claude Haiku",  pct: 12, color: "bg-teal-500",   note: "200k/hr limit" },
+            { label: "Claude Sonnet", pct: 45, color: "bg-blue-500",   note: "100k/hr limit" },
+            { label: "Claude Opus",   pct: 57, color: "bg-purple-500", note: "50k/hr limit" },
+          ].map(({ label, pct, color, note }) => (
             <div key={label}>
               <div className="flex justify-between text-sm text-gray-600 mb-1">
                 <span className="font-medium">{label}</span>
@@ -165,6 +168,7 @@ export default function ModelStatus() {
               <div className="w-full bg-gray-100 rounded-full h-3">
                 <div className={`${color} h-3 rounded-full transition-all`} style={{ width: `${pct}%` }} />
               </div>
+              {note && <p className="text-xs text-gray-400 mt-1">{note}</p>}
             </div>
           ))}
           <div>

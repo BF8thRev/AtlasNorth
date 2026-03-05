@@ -1,13 +1,18 @@
 {
-  "version": "1.1",
-  "last_updated": "2026-03-03",
-  "description": "Agent-to-Model mapping. Claude is default. Atlas validates model availability before task dispatch.",
+  "version": "1.2",
+  "last_updated": "2026-03-05",
+  "description": "Agent-to-Model mapping. Haiku is default for new subagents. Atlas validates model availability before task dispatch.",
 
   "global_defaults": {
     "primary_fallback": "claude-sonnet-4-20250514",
     "secondary_fallback": "claude-opus-4-5-20251101",
-    "timeout_seconds": 30,
+    "timeout_seconds": 60,
     "retry_attempts": 3
+  },
+
+  "subagent_default": {
+    "model": "anthropic/claude-haiku-4-5-20251001",
+    "note": "All new subagents spawn with Haiku unless explicitly overridden in the task payload."
   },
 
   "agent_routing": {
@@ -18,18 +23,18 @@
       "min_confidence_threshold": 0.85
     },
     "olg": {
-      "primary_model": "claude-sonnet-4-20250514",
-      "fallback_model": "claude-opus-4-5-20251101",
+      "primary_model": "claude-haiku-4-5-20251001",
+      "fallback_model": "claude-sonnet-4-20250514",
       "role": "Writer - content drafting"
     },
     "rob_c": {
-      "primary_model": "claude-sonnet-4-20250514",
-      "fallback_model": "claude-opus-4-5-20251101",
+      "primary_model": "claude-haiku-4-5-20251001",
+      "fallback_model": "claude-sonnet-4-20250514",
       "role": "Engagement - evaluates content against audience rules"
     },
     "hunter": {
-      "primary_model": "claude-sonnet-4-20250514",
-      "fallback_model": "claude-opus-4-5-20251101",
+      "primary_model": "claude-haiku-4-5-20251001",
+      "fallback_model": "claude-sonnet-4-20250514",
       "role": "Sales - prospect engagement"
     },
     "pulse": {
@@ -71,10 +76,11 @@
   },
 
   "model_availability": {
-    "claude-opus-4-5-20251101":  { "status": "active", "type": "api", "last_checked": "2026-03-02" },
-    "claude-sonnet-4-20250514":  { "status": "active", "type": "api", "last_checked": "2026-03-02" },
-    "phi-4-mini-local":          { "status": "active", "type": "local", "last_checked": "2026-03-02" },
-    "google/gemini-2.5-flash":   { "status": "active", "type": "api", "api_key_env": "GEMINI_API_KEY", "last_checked": "2026-03-03" }
+    "claude-haiku-4-5-20251001":  { "status": "active", "type": "api", "last_checked": "2026-03-05" },
+    "claude-opus-4-5-20251101":   { "status": "active", "type": "api", "last_checked": "2026-03-05" },
+    "claude-sonnet-4-20250514":   { "status": "active", "type": "api", "last_checked": "2026-03-05" },
+    "phi-4-mini-local":           { "status": "active", "type": "local", "last_checked": "2026-03-05" },
+    "google/gemini-2.5-flash":    { "status": "active", "type": "api", "api_key_env": "GEMINI_API_KEY", "last_checked": "2026-03-05" }
   },
 
   "model_availability_check": {
@@ -85,6 +91,10 @@
   },
 
   "rate_limit_rules": {
+    "claude_haiku": {
+      "threshold_tokens_per_hour": 200000,
+      "action_on_breach": "switch_to_fallback"
+    },
     "claude_opus": {
       "threshold_tokens_per_hour": 50000,
       "action_on_breach": "switch_to_fallback"
