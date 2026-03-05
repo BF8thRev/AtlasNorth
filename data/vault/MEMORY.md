@@ -90,13 +90,25 @@
 8. **Cleanup:** Delete all local .md/.txt files. Only GDrive artifacts remain.
 9. **Report:** Provide folder link. ZERO content dumps to WhatsApp.
 
-### LIVE LEARNING SYSTEM
-- **Feedback Doc Location:** https://docs.google.com/document/d/1qqYgNG3twMTyPUWUrwv6ygzhvnaNJy54Nzs4W1rQO-w/edit (native Google Doc, created 2026-03-05)
-- **Document ID:** 1qqYgNG3twMTyPUWUrwv6ygzhvnaNJy54Nzs4W1rQO-w
-- **Purpose:** Continuous SOP refinement. Any notes, corrections, or learnings logged with timestamps.
-- **Read Before Each Episode:** At the start of every 'New Episode' trigger, Atlas MUST read Workflow_Feedback Doc first.
-- **Active Instructions:** Any notes in Feedback Doc become active instructions for that episode. Precedent over this SOP if conflict.
+### LIVE LEARNING SYSTEM & HARD RULES (Updated 2026-03-05 12:35 EST)
+- **Feedback Doc Location:** https://docs.google.com/document/d/15ewrXDLrhOTWd4nnLJTl0KvdLl7-ebZp0kf8LQErGuk/edit (native Google Doc, updated 2026-03-05)
+- **Document ID:** 15ewrXDLrhOTWd4nnLJTl0KvdLl7-ebZp0kf8LQErGuk
+- **Purpose:** Continuous SOP refinement + Hard Rules enforcement. Read before every new episode.
+- **Read Before Each Episode:** At the start of every 'New Episode' trigger, Atlas MUST read Workflow_Feedback Doc first to check for updates and hard rules.
+- **Active Instructions:** Any notes in Feedback Doc become active instructions for that episode. Hard Rules take precedence over this SOP if conflict.
 - **Logging:** After each episode, Atlas logs timestamp + what worked + what failed + suggested improvements.
+
+### HARD RULES (Non-Negotiable, from Workflow_Feedback)
+1. **NO EM-DASHES EVER** - Any em-dash (—) is immediate failure
+2. **INTRO HOOKS MUST BE VERBATIM WITH TIMESTAMPS** - No made-up text, exact quotes only
+3. **AUDIO TITLES MUST INCLUDE GUEST NAME** - Non-negotiable for feed discovery
+4. **AUDIO OPTION 2 MUST BE EPISODE-RELEVANT** - Not generic angles
+5. **YOUTUBE TITLES MUST BE SEO-OPTIMIZED, HIGH-CTR, RELEVANT** - 70-100 chars, keyword phrases
+6. **SOCIAL CLIPS REQUIRE TITLES + DESCRIPTIONS FOR SEO** - Every clip must have metadata
+7. **SECTION E IS MANDATORY** - 3 newsletter title options + full drafts
+8. **CONTEXTUAL AUTOCORRECT ENABLED** - Fix phonetic errors (myclobutanil, Leef Brands, etc.)
+9. **ONLY REPORT AFTER STAGE 3 PASSES** - No content dumps to chat, only folder links
+10. **ALL DELIVERABLES NATIVE GOOGLE DOCS** - Never .txt or .md uploads
 
 ### FOLDER STRUCTURE
 ```
@@ -190,6 +202,33 @@
 - Repo: https://github.com/BF8thRev/AtlasNorth
 - Access confirmed: 2026-03-02 — commit write access verified
 - Token type: Fine-grained PAT with Contents: Read & Write on AtlasNorth repo
+
+## Dime Episode Files (Corrected/Published)
+
+### Micah Anderson Episode (3/4/26) — LEEF Cannabis
+- **Compressed Artifact:** https://docs.google.com/document/d/1y8wDE4PJ4AbYy5TN6Y19jdErfJ81QkMQIttGXjICJ7A/edit
+  - Doc ID: 1y8wDE4PJ4AbYy5TN6Y19jdErfJ81QkMQIttGXjICJ7A
+  - Section A: Verbatim quotes with timestamps
+  - Section B: Episode structure and data points
+  - Section C: Tension map (5 high-tension moments)
+  - Section D: Clip candidates (6 clips with titles and descriptions)
+  - Section E: First Principles with 3 newsletter drafts
+
+- **Deliverables (Score: PASS):** https://docs.google.com/document/d/1vx7tVy3wEyz9mNdcl-Gs9hABAgkkfsrdzPcg4L-PhhA/edit
+  - Doc ID: 1vx7tVy3wEyz9mNdcl-Gs9hABAgkkfsrdzPcg4L-PhhA
+  - Intro Hooks (3 options, verbatim with timestamps)
+  - Audio Titles (3 options, includes guest name)
+  - YouTube Titles (3 options, SEO-optimized)
+  - Social Clips (6 clips with titles and SEO descriptions)
+  - Spotify/Apple Description
+  - YouTube Description
+  - Timestamps (13 segments)
+  - First Principles Newsletter (3 options with full drafts)
+  - Quality Checklist (all hard rules verified)
+
+- **Status:** Corrected (1 revision cycle), Single-threaded director model
+- **Corrections:** Removed em-dashes, verified verbatim hooks, added SEO optimization, completed Section E
+- **Filed:** 2026-03-05 12:30 EST
 
 ## Current Task Repetition Counts
 (Track here as tasks repeat)
