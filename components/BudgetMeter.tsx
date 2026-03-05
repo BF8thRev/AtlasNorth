@@ -55,14 +55,21 @@ export default function BudgetMeter() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("/api/files?path=token-log.json")
+    fetch("/api/token-usage")
       .then((r) => r.json())
-      .then((raw) => {
-        const data = raw.content ? JSON.parse(raw.content || '{"log":[]}') : raw;
-        const sorted = [...(data.log || [])].sort(
-          (a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime()
-        );
-        setEntries(sorted);
+      .then((data) => {
+        const mapped = (data.entries || []).map((e: any) => ({
+          id: e.task_ref || `${e.timestamp}-${e.agent}`,
+          timestamp: e.timestamp,
+          agent: e.agent || "unknown",
+          task: e.task_ref || "unknown",
+          category: e.category || "other",
+          inputTokens: e.input_tokens || 0,
+          outputTokens: e.output_tokens || 0,
+          totalTokens: e.total_tokens || 0,
+          notes: e.model ? `Model: ${e.model}` : undefined,
+        }));
+        setEntries(mapped);
         setLoading(false);
       })
       .catch(() => setLoading(false));
