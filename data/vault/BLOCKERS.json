@@ -26,14 +26,7 @@
       "status": "open",
       "action": "vercel.com/account/tokens → create token → add VERCEL_TOKEN to ~/.openclaw/.env"
     },
-    {
-      "id": "BLK-011",
-      "description": "Pulse 6AM cron — delivery shows as 'message failed' but brief did deliver. Partial failure state unclear.",
-      "priority": "🔴",
-      "owner": "Atlas",
-      "status": "open",
-      "action": "Audit Pulse 6AM cron delivery config. Verify WhatsApp 'to' field is correct. Run test delivery today. Confirm consistency."
-    },
+
     {
       "id": "BLK-012",
       "description": "8AM Daily Brief cron is disabled — was pointing at Slack which isn't configured. Needs to be migrated to WhatsApp or permanently removed.",
@@ -66,14 +59,7 @@
       "status": "open",
       "action": "Update BudgetMeter component to call /api/token-usage instead of reading token-log.json directly."
     },
-    {
-      "id": "BLK-016",
-      "description": "Friday Founder Snapshot failed last run — rate limit error on both Anthropic models. No fallback model configured.",
-      "priority": "🟡",
-      "owner": "Atlas",
-      "status": "open",
-      "action": "Add Gemini fallback to Friday Snapshot cron payload. Add retry logic or model cascade."
-    },
+
     {
       "id": "BLK-017",
       "description": "OLG LinkedIn post draft (Tilray/BrewDog) moved to DRAFTS folder. Need formal system for tracking draft items that need Bryan review/approval.",
