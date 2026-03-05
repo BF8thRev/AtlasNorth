@@ -79,7 +79,8 @@
     "claude-haiku-4-5-20251001":  { "status": "active", "type": "api", "last_checked": "2026-03-05" },
     "claude-opus-4-5-20251101":   { "status": "active", "type": "api", "last_checked": "2026-03-05" },
     "claude-sonnet-4-20250514":   { "status": "active", "type": "api", "last_checked": "2026-03-05" },
-    "phi-4-mini-local":           { "status": "active", "type": "local", "last_checked": "2026-03-05" },
+    "ollama/phi-4-mini:latest":   { "status": "active", "type": "local", "last_checked": "2026-03-05" },
+    "ollama/deepseek-r1:14b":     { "status": "active", "type": "local", "last_checked": "2026-03-05" },
     "google/gemini-2.5-flash":    { "status": "active", "type": "api", "api_key_env": "GEMINI_API_KEY", "last_checked": "2026-03-05" }
   },
 
@@ -104,6 +105,10 @@
       "action_on_breach": "switch_to_fallback"
     },
     "phi_4_mini_local": {
+      "threshold": "unlimited",
+      "action_on_error": "switch_to_fallback"
+    },
+    "deepseek_r1_local": {
       "threshold": "unlimited",
       "action_on_error": "switch_to_fallback"
     }

@@ -35,11 +35,12 @@ const AGENT_ICONS: Record<string, string> = {
 };
 
 const MODEL_SHORT: Record<string, string> = {
-  "claude-haiku-4-5-20251001": "Claude Haiku",
-  "claude-opus-4-5-20251101":  "Claude Opus",
-  "claude-sonnet-4-20250514":  "Claude Sonnet",
-  "phi-4-mini-local":          "Phi-4 Mini",
-  "google/gemini-2.5-flash":   "Gemini 2.5 Flash",
+  "claude-haiku-4-5-20251001":  "Claude Haiku",
+  "claude-opus-4-5-20251101":   "Claude Opus",
+  "claude-sonnet-4-20250514":   "Claude Sonnet",
+  "ollama/phi4-mini:latest":    "Phi-4 Mini",
+  "ollama/deepseek-r1:14b":     "DeepSeek R1 14B",
+  "google/gemini-2.5-flash":    "Gemini 2.5 Flash",
 };
 
 function statusBadge(status: string) {
