@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-03-04",
+  "last_updated": "2026-03-05",
   "version": "1.0",
   "blockers": [
     {
@@ -28,11 +28,11 @@
     },
     {
       "id": "BLK-011",
-      "description": "Pulse 6AM cron — last run returned 'message failed' warning. Root cause not confirmed. Could silently fail tomorrow.",
+      "description": "Pulse 6AM cron — delivery shows as 'message failed' but brief did deliver. Partial failure state unclear.",
       "priority": "🔴",
       "owner": "Atlas",
       "status": "open",
-      "action": "Audit cron delivery config. Confirm WhatsApp to field number is correctly set. Run test delivery."
+      "action": "Audit Pulse 6AM cron delivery config. Verify WhatsApp 'to' field is correct. Run test delivery today. Confirm consistency."
     },
     {
       "id": "BLK-012",
@@ -76,11 +76,19 @@
     },
     {
       "id": "BLK-017",
-      "description": "OLG LinkedIn post draft from Signal 5 (cannabis vs alcohol) sitting in DIME_LEARNINGS.md but never moved to task queue or drafted.",
-      "priority": "🟡",
-      "owner": "Atlas",
+      "description": "OLG LinkedIn post draft (Tilray/BrewDog) moved to DRAFTS folder. Need formal system for tracking draft items that need Bryan review/approval.",
+      "priority": "🟠",
+      "owner": "Bryan",
       "status": "open",
-      "action": "Draft OLG LinkedIn post from Signal 5 insight. <200 words. Add to task board for Bryan review."
+      "action": "Review OLG post in /DRAFTS/OLG_LinkedIn_TilrayBrewDog_20260305.md. Approve, edit, or reject. Establish DRAFTS workflow: Atlas creates → stores in DRAFTS → logs as blocker → Bryan handles."
+    },
+    {
+      "id": "BLK-018",
+      "description": "DRAFTS folder system not formalized. Items building in DRAFTS need tracking so Bryan can batch-review and approve/reject.",
+      "priority": "🟠",
+      "owner": "Bryan",
+      "status": "open",
+      "action": "Define DRAFTS workflow: (1) Atlas moves items to /DRAFTS/ with metadata header, (2) Add to blockers board as 'pending review', (3) Bryan reviews batch at set cadence (daily? weekly?), (4) Approve/Reject/Revise. Build DRAFTS_STATUS.json to track."
     }
   ]
 }
