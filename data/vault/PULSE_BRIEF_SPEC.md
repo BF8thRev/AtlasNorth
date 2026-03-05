@@ -149,3 +149,22 @@ This is how institutional knowledge compounds over time.
 Per STANDING_INSTRUCTIONS.md: Every new cron or routine requires a test run before going live.
 First brief was delivered 2026-03-04 at 6:00 AM EST — ✅ confirmed delivered to Bryan via WhatsApp.
 Feedback incorporated into spec v1.1.
+
+---
+
+## Researcher/Director Architecture (set 2026-03-05)
+**All routines now follow the Researcher/Director split pattern.**
+
+- **Researcher phase (Pulse):** Research only. Outputs to file. No delivery, no distribution.
+- **Director phase (Atlas):** Formats. Sends. Syncs. Registers with Mission Control.
+
+**Rule: All new routines must follow this split and register their status with Mission Control Dashboard immediately upon creation.**
+
+### Registration Protocol
+Every new routine automatically gets:
+1. An entry in MISSION_CONTROL_ROUTINES.json (auto-generated)
+2. Status field: `pending` → `active` → `error` (tracked per run)
+3. Last run + next run timestamps
+4. Owner (Pulse / Atlas / other agent)
+
+**Implementation:** On routine creation, immediately add to Mission Control Dashboard via cron registration hook.
