@@ -218,6 +218,76 @@ When a blocker is resolved, in order:
 
 ---
 
+## 🤖 SUBAGENT OPERATIONAL STANDARDS (Formalized 2026-03-06)
+
+**CRITICAL: No subagent is production-ready until both requirements are verified in a test run.**
+
+### Requirement 1: Load Own Identity Config
+Every spawned subagent MUST load its own SOUL.md and IDENTITY.md at session start.
+
+**Proof Required:**
+- Session history shows `read` calls on agent's SOUL.md and IDENTITY.md
+- Agent confirms in output: "I loaded my SOUL.md (state core principle)" and "I loaded my IDENTITY.md (state role)"
+- Agent is NOT generic/Atlas-like, but personality-specific
+
+**Test:**
+- Spawn agent with task that asks it to confirm identity
+- Check session_history for read calls + confirmation text
+- If confirmation missing, agent failed identity test → do not use
+
+**Example (Pulse):**
+```
+Session shows: read → /agents/pulse/SOUL.md ✅
+Session shows: read → /agents/pulse/IDENTITY.md ✅
+Agent states: "I am Pulse. My core principle: Speed is the advantage" ✅
+```
+
+### Requirement 2: Auto-Write to Own MEMORY.md
+Every spawned subagent MUST write to its own MEMORY.md at session end automatically.
+
+**Proof Required:**
+- Session history shows `write` or `edit` call to agent's MEMORY.md
+- File timestamp updated to session end time
+- One row added to appropriate table (no data loss, no overwrites)
+- Agent worked independently — Atlas did NOT manually log for agent
+
+**Test:**
+- Spawn agent with task that produces loggable output
+- Specify: "Update your MEMORY.md with: [format]"
+- Check session_history for write/edit calls to MEMORY.md
+- Verify file was actually modified (stat + tail the file)
+- If no write call, auto-save hook failed → fix before spawning other agents
+
+**Example (Pulse):**
+```
+Session shows: write → /agents/pulse/MEMORY.md ✅
+File mod time: 2026-03-06T12:00:23Z (matches session end) ✅
+File tail shows new row added: | cannabis regulations | Dime | 2026-03-06 | ... | ✅
+```
+
+### Production Readiness Checklist
+- [ ] Agent loads own SOUL.md (verified in session history)
+- [ ] Agent loads own IDENTITY.md (verified in session history)
+- [ ] Agent confirms identity in output
+- [ ] Agent auto-writes to own MEMORY.md (verified in session history)
+- [ ] MEMORY.md file actually modified (stat the file)
+- [ ] Atlas did NOT manually update MEMORY.md for agent
+
+**If any box is unchecked → agent is NOT production ready.**
+
+### Auto-Save Hook Pattern
+
+See `subagent-autosave-hook.md` in workspace root for implementation details.
+
+**Generic pattern for all agents:**
+1. At session end, gather loggable data (what actually happened)
+2. Identify the right table in agent's MEMORY.md
+3. Append one row: [Date] | [What happened] | [Finding] | [Owner] | [Status]
+4. Use `write` or `edit` to append to file (never overwrite existing data)
+5. Confirm write succeeded by checking file timestamp
+
+---
+
 ## Protocol Failures
 
 - Missing any step = protocol failure
