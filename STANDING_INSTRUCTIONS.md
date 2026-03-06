@@ -93,24 +93,12 @@ If you push outside the windows:
 
 ---
 
-## 📡 Infrastructure Reference (2026-03-06)
+## 📡 Infrastructure References
 
-For detailed infrastructure configuration, see **MEMORY.md — "GitHub & Vercel Infrastructure"** section:
+**For current infrastructure status, URLs, and configuration details:**
+→ See **MEMORY.md — "GitHub & Vercel Infrastructure (Status as of...)"**
 
-**GitHub:**
-- Repo: https://github.com/BF8thRev/AtlasNorth.git
-- Remote configured locally
-- PAT token in ~/.openclaw/.env
-
-**Vercel:**
-- App URL: https://atlas-north.vercel.app/
-- Auto-deploy on every push to main (intentional)
-- Environment variables: GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET
-
-**Memory Vault:**
-- Location: GitHub repo → data/vault/
-- Synced via cron at 4 push windows
-- Full backup of workspace memory, configs, and audit logs
+This file contains only rules about how to use them.
 
 ---
 
