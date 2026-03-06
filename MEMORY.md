@@ -160,11 +160,12 @@
     - **Newton Insights (www.newton-insights.com):** Property ID 491614945
     - **SCC/HUSA (Hellma USA Shopify):** Property ID 473280391
 - YouTube API ✅ (configured 2026-02-22, tested and working)
-- Gmail OAuth ✅ (configured 2026-02-22, full access confirmed 2026-02-23)
+- Gmail OAuth ✅ (FRESH AUTH 2026-03-06 14:35 EST)
   - Account: atlas.opsman@gmail.com
-  - Scopes: read, send, modify
-  - Credentials: ~/.openclaw/.env (GMAIL_CLIENT_ID, GMAIL_CLIENT_SECRET)
-  - Tokens: ~/.openclaw/workspace/credentials/gmail_tokens.json
+  - Scopes: gmail.modify, gmail.send, gmail.readonly, drive.readonly
+  - Credentials: Vercel env vars (GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET)
+  - Tokens: ~/.openclaw/workspace/credentials/gmail_tokens.json (FRESH, valid 7 days)
+  - Status: ✅ TESTED & WORKING (Gmail profile + Drive API confirmed)
 - Drive API ✅ (enabled 2026-02-26, working via gog)
 - Sheets API ✅ (enabled 2026-02-26, working via gog)
 - Calendar API ✅ (working via gog)
