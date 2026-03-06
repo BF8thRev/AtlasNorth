@@ -17,9 +17,9 @@
 
   "agent_routing": {
     "atlas": {
-      "primary_model": "claude-opus-4-5-20251101",
+      "primary_model": "claude-haiku-4-5-20251001",
       "fallback_model": "claude-sonnet-4-20250514",
-      "role": "Gatekeeper - validates all routing decisions",
+      "role": "Gatekeeper - validates all routing decisions. Default to Haiku. Request Sonnet or Opus for heavy reasoning.",
       "min_confidence_threshold": 0.85
     },
     "olg": {
@@ -39,38 +39,38 @@
     },
     "pulse": {
       "primary_model": "google/gemini-2.5-flash",
-      "fallback_model": "claude-opus-4-5-20251101",
-      "role": "Research - requires web search and synthesis",
+      "fallback_model": "claude-sonnet-4-20250514",
+      "role": "Research - web search and synthesis",
       "requires_web_search": true
     },
     "dr_frankl": {
       "primary_model": "phi-4-mini-local",
-      "fallback_model": "claude-opus-4-5-20251101",
+      "fallback_model": "claude-haiku-4-5-20251001",
       "role": "Life Coach - pattern matching against BRYAN_PROFILE.md"
     },
     "ledger": {
       "primary_model": "claude-sonnet-4-20250514",
-      "fallback_model": "claude-opus-4-5-20251101",
+      "fallback_model": "claude-haiku-4-5-20251001",
       "role": "Data & Analytics - structuring and analysis"
     },
     "voss": {
       "primary_model": "phi-4-mini-local",
-      "fallback_model": "claude-sonnet-4-20250514",
+      "fallback_model": "claude-haiku-4-5-20251001",
       "role": "Devil's Advocate - critique and risk assessment"
     },
     "spark": {
-      "primary_model": "claude-opus-4-5-20251101",
-      "fallback_model": "claude-sonnet-4-20250514",
+      "primary_model": "claude-sonnet-4-20250514",
+      "fallback_model": "claude-haiku-4-5-20251001",
       "role": "Ideas & Concepts - synthesis across domains"
     },
     "bob_the_builder": {
       "primary_model": "claude-sonnet-4-20250514",
-      "fallback_model": "claude-opus-4-5-20251101",
+      "fallback_model": "claude-haiku-4-5-20251001",
       "role": "Code & Technical Build"
     },
     "detective_niessen": {
       "primary_model": "phi-4-mini-local",
-      "fallback_model": "claude-sonnet-4-20250514",
+      "fallback_model": "claude-haiku-4-5-20251001",
       "role": "Security & Defense - audit against FILE_AUDIT_LOG.jsonl"
     }
   },

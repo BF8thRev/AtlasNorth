@@ -1,5 +1,10 @@
 # MEMORY.md — Hunter
 
+## Prospects Researched
+| Company | Sector | Date | Primary Objection | Strongest Wedge | Status |
+|---------|--------|------|-------------------|-----------------|--------|
+| Cresco Labs | extraction | 2026-03-06 | "We have internal processes" | Economic (280E margin compression — yield = profit) | Ready for outreach |
+
 ## Prospect Pipeline
 | Name | Company | Context | Stage | Last Touch | Next Action | Notes |
 |------|---------|---------|-------|-----------|-------------|-------|
