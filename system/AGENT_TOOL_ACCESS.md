@@ -48,7 +48,7 @@ allowed_tools:
 
 ### ✍️ Olg
 ```
-assigned_model:     claude-sonnet-4-20250514
+assigned_model:     claude-haiku-4-5-20251001
 allowed_read_paths:
   - /workspace/DIME_MISSION.md
   - /workspace/DIME_STYLE_GUIDE.md
@@ -68,7 +68,7 @@ allowed_tools:
 
 ### 📣 Rob C
 ```
-assigned_model:     claude-sonnet-4-20250514
+assigned_model:     claude-haiku-4-5-20251001
 allowed_read_paths:
   - /workspace/DIME_STYLE_GUIDE.md
   - /workspace/DIME_STRATEGY_WIKI.md
@@ -85,7 +85,7 @@ allowed_tools:
 
 ### 🎯 Hunter
 ```
-assigned_model:     claude-sonnet-4-20250514
+assigned_model:     claude-haiku-4-5-20251001
 allowed_read_paths:
   - /workspace/NEWTON_SALES_PLAYBOOK.md
   - /workspace/NEWTON_SALES_ANALYSIS.md
@@ -104,7 +104,7 @@ allowed_tools:
 
 ### 📡 Pulse
 ```
-assigned_model:     claude-opus-4-5-20251101
+assigned_model:     google/gemini-2.5-flash
 requires_web_search: true
 allowed_read_paths:
   - /workspace/DIME_MISSION.md
