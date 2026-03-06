@@ -1,6 +1,15 @@
 # STANDING_INSTRUCTIONS.md
-# Last Updated: 2026-03-03
-# These rules are non-negotiable. No exceptions.
+# Last Updated: 2026-03-06 14:40 EST
+# 
+# SOURCE OF TRUTH: All permanent rules, procedures, and protocols.
+# Non-negotiable. No exceptions.
+#
+# ⚠️ ORGANIZATION RULE: Single Source of Truth
+# • THIS FILE = Permanent rules & procedures (apply always)
+# • MEMORY.md = Dated facts & status updates (what happened when)
+# • NO DUPLICATION — each file has its domain
+#
+# For current infrastructure status, API access status, or recent events → See MEMORY.md
 
 ---
 
@@ -144,10 +153,7 @@ When a blocker is resolved, in order:
 
 **⚠️ CRITICAL: Read this section EVERY TIME Bryan signals "New Episode Ready"**
 
-### Where to Find the Full SOP
-- **File:** `MEMORY.md` (root workspace)
-- **Section:** "## DIME EPISODE SOP WORKFLOW (Formalized 2026-03-05)"
-- **Includes:** 9-step workflow, 5-section artifact structure, 10 Hard Rules, folder structure
+**This is the authoritative SOP.** Current configuration tracked in MEMORY.md.
 
 ### Workflow_Feedback Doc (Live Learning System)
 - **Link:** https://docs.google.com/document/d/15ewrXDLrhOTWd4nnLJTl0KvdLl7-ebZp0kf8LQErGuk/edit
