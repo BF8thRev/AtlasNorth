@@ -288,6 +288,82 @@ See `subagent-autosave-hook.md` in workspace root for implementation details.
 
 ---
 
+## 🔗 CRON JOB MODEL ROUTING (Formalized 2026-03-06)
+
+**All cron job payloads MUST match MODEL_ROUTER.json agent assignments.**
+
+### Routing Rule
+- Check `MODEL_ROUTER.json → agent_routing[agent_name].primary_model`
+- Use that model in the cron payload (field: `payload.model`)
+- If overriding, document reason in cron job name
+- No cron can use a model not in `model_availability`
+
+### Current Mappings (Active)
+| Cron | Agent | Model | Reason |
+|---|---|---|---|
+| Pulse Daily Intel (6 AM) | pulse | `google/gemini-2.5-flash` | Web search + synthesis |
+| Daily Brief Format (6:15 AM) | atlas | `claude-haiku-4-5-20251001` | Formatting only |
+| YouTube Content Catalog (11 PM) | atlas | `claude-haiku-4-5-20251001` | Lightweight cataloging |
+| YouTube Content Rating (Tue 10 AM) | atlas | `claude-haiku-4-5-20251001` | Ramp curve model application |
+| Friday Founder Load (Fri 11 AM) | atlas | `claude-sonnet-4-20250514` | Heavy reasoning + comprehensive analysis |
+
+### The Rule (Non-Negotiable)
+1. **Every cron payload MUST specify `model` field**
+2. **Model MUST match MODEL_ROUTER.json primary assignment** (or override is documented)
+3. **Fallback model listed in router MUST be available** in case primary fails
+4. **Atlas verifies routing on cron creation/update** — mismatches will be caught
+
+### Pure Command Tasks Use Shell Scripts (Not Agent Sessions)
+**When a cron task is pure command execution (no reasoning/synthesis needed):**
+- ❌ Do NOT spawn an agent session
+- ✅ DO use a shell script instead
+- ✅ Shell scripts live in `/workspace/scripts/`
+- ✅ Shell scripts are called from LaunchAgents or git push crons
+- ✅ Results logged to FILE_AUDIT_LOG.jsonl + TOKEN_USAGE.jsonl
+
+**Example:**
+- GitHub push → use `/scripts/git-push.sh` (not agent)
+- Token logging → use `/scripts/log-tokens.sh` (not agent)
+- File copy/sync → use shell script (not agent)
+- Research → use agent (requires synthesis)
+
+### Token Logging for All Cron Runs
+**Every cron job MUST log token usage to TOKEN_USAGE.jsonl at session end.**
+
+**Pattern:**
+- Agent completes task
+- Agent reads its own session token usage (if available)
+- Agent or wrapper script calls: `bash /workspace/scripts/log-tokens.sh "<timestamp>" "<model>" "<agent>" "<task_ref>" <input_tokens> <output_tokens> <total_tokens> "[category]"`
+- Log entry appended to TOKEN_USAGE.jsonl
+
+**Agent Instruction (add to cron payloads):**
+```
+At session end, log token usage:
+bash /workspace/scripts/log-tokens.sh "$(date -u +\"%Y-%m-%dT%H:%M:%SZ\")" "MODEL_HERE" "AGENT_HERE" "TASK_REF" INPUT OUTPUT TOTAL "category"
+
+Example for Pulse Daily Intel:
+bash /workspace/scripts/log-tokens.sh "$(date -u +\"%Y-%m-%dT%H:%M:%SZ\")" "google/gemini-2.5-flash" "pulse" "daily-intel-6am" 0 0 0 "research"
+(Note: Agent must fill in actual token counts from its session)
+```
+
+**TOKEN_USAGE.jsonl Schema:**
+```json
+{
+  "timestamp": "2026-03-06T06:15:00Z",
+  "model": "google/gemini-2.5-flash",
+  "agent": "pulse",
+  "task_ref": "daily-intel-6am",
+  "input_tokens": 8500,
+  "output_tokens": 12300,
+  "total_tokens": 20800,
+  "category": "research"
+}
+```
+
+**No exceptions. Every cron run = one TOKEN_USAGE.jsonl entry.**
+
+---
+
 ## Protocol Failures
 
 - Missing any step = protocol failure

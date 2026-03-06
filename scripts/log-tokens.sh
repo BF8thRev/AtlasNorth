@@ -1,30 +1,34 @@
 #!/bin/bash
-# log-tokens.sh — Append token usage to TOKEN_USAGE.jsonl
-# Called by cron jobs after execution with: bash log-tokens.sh "<agent>" "<task>" "<category>" <input> <output>
-# Usage: log-tokens.sh "Hunter" "Prospect Research" "research" 1500 500
+# log-tokens.sh — Log cron job token usage to TOKEN_USAGE.jsonl
+# Usage: bash log-tokens.sh "<timestamp>" "<model>" "<agent>" "<task_ref>" <input> <output> <total> "[category]"
+# Example: bash log-tokens.sh "2026-03-06T06:00:00Z" "google/gemini-2.5-flash" "pulse" "daily-intel-6am" 8500 12300 20800 "research"
 
 WORKSPACE="/Users/atlasnorth/.openclaw/workspace"
-TOKEN_FILE="$WORKSPACE/TOKEN_USAGE.jsonl"
+LOGFILE="$WORKSPACE/TOKEN_USAGE.jsonl"
 
-AGENT="${1:-unknown}"
-TASK="${2:-unknown}"
-CATEGORY="${3:-other}"
-INPUT_TOKENS="${4:-0}"
-OUTPUT_TOKENS="${5:-0}"
-TOTAL_TOKENS=$((INPUT_TOKENS + OUTPUT_TOKENS))
-TIMESTAMP=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
-MODEL="${6:-unknown}"
+# Parse arguments
+TIMESTAMP="${1:-$(date -u +"%Y-%m-%dT%H:%M:%SZ")}"
+MODEL="${2:-unknown}"
+AGENT="${3:-unknown}"
+TASK_REF="${4:-unknown}"
+INPUT_TOKENS="${5:-0}"
+OUTPUT_TOKENS="${6:-0}"
+TOTAL_TOKENS="${7:-0}"
+CATEGORY="${8:-cron}"
 
-# Create file if it doesn't exist
-if [ ! -f "$TOKEN_FILE" ]; then
-  mkdir -p "$(dirname "$TOKEN_FILE")"
-  echo '# TOKEN_USAGE.jsonl — append-only, one JSON object per line' > "$TOKEN_FILE"
-  echo '# Schema: {"timestamp":"ISO","model":"string","agent":"string","task_ref":"string","input_tokens":0,"output_tokens":0,"total_tokens":0,"category":"string"}' >> "$TOKEN_FILE"
+# Calculate totals if not provided
+if [ "$TOTAL_TOKENS" = "0" ] && [ "$INPUT_TOKENS" != "0" ]; then
+  TOTAL_TOKENS=$((INPUT_TOKENS + OUTPUT_TOKENS))
 fi
 
-# Append token entry as JSON
-cat >> "$TOKEN_FILE" << EOF
-{"timestamp":"$TIMESTAMP","model":"$MODEL","agent":"$AGENT","task_ref":"$TASK","input_tokens":$INPUT_TOKENS,"output_tokens":$OUTPUT_TOKENS,"total_tokens":$TOTAL_TOKENS,"category":"$CATEGORY"}
+# Create JSON entry
+JSON=$(cat <<EOF
+{"timestamp":"$TIMESTAMP","model":"$MODEL","agent":"$AGENT","task_ref":"$TASK_REF","input_tokens":$INPUT_TOKENS,"output_tokens":$OUTPUT_TOKENS,"total_tokens":$TOTAL_TOKENS,"category":"$CATEGORY"}
 EOF
+)
 
-echo "[Token Log] $AGENT • $TASK • $TOTAL_TOKENS tokens ($INPUT_TOKENS↑ / $OUTPUT_TOKENS↓) — $(date '+%Y-%m-%d %H:%M:%S %Z')"
+# Append to JSONL file
+echo "$JSON" >> "$LOGFILE"
+
+# Confirm
+echo "[$(date -u +"%Y-%m-%dT%H:%M:%SZ")] Logged: $AGENT | $MODEL | $TASK_REF | $TOTAL_TOKENS tokens"
