@@ -298,14 +298,19 @@ See `subagent-autosave-hook.md` in workspace root for implementation details.
 - If overriding, document reason in cron job name
 - No cron can use a model not in `model_availability`
 
-### Current Mappings (Active)
-| Cron | Agent | Model | Reason |
-|---|---|---|---|
-| Pulse Daily Intel (6 AM) | pulse | `google/gemini-2.5-flash` | Web search + synthesis |
-| Daily Brief Format (6:15 AM) | atlas | `claude-haiku-4-5-20251001` | Formatting only |
-| YouTube Content Catalog (11 PM) | atlas | `claude-haiku-4-5-20251001` | Lightweight cataloging |
-| YouTube Content Rating (Tue 10 AM) | atlas | `claude-haiku-4-5-20251001` | Ramp curve model application |
-| Friday Founder Load (Fri 11 AM) | atlas | `claude-sonnet-4-20250514` | Heavy reasoning + comprehensive analysis |
+### Current Mappings (Active — Last Updated 2026-03-06)
+| Cron | Day | Agent | Model | Reason |
+|---|---|---|---|---|
+| Pulse Daily Intel | Weekday 6 AM | pulse | `google/gemini-2.5-flash` | Web search + synthesis |
+| Pulse Weekend Brief | Sat 7 AM | pulse | `google/gemini-2.5-flash` | Same as weekday (synthesis) |
+| Pulse Weekend Brief | Sun 7 AM | pulse | `google/gemini-2.5-flash` | Same as weekday (synthesis) |
+| Daily Brief Format & Send | Weekday 6:15 AM | atlas | `claude-haiku-4-5-20251001` | Lightweight formatting |
+| Saturday Brief Format & Send | Sat 7:15 AM | atlas | `claude-haiku-4-5-20251001` | Same as weekday (formatting) |
+| Sunday Brief Format & Send | Sun 7:15 AM | atlas | `claude-haiku-4-5-20251001` | Same as weekday (formatting) |
+| Morning Brief | Weekday 8 AM | atlas | `claude-sonnet-4-20250514` | Synthesis + prioritization |
+| YouTube Content Catalog | Daily 11 PM | atlas | `claude-haiku-4-5-20251001` | Lightweight cataloging |
+| YouTube Content Rating | Tue 10 AM | atlas | `claude-sonnet-4-20250514` | Ramp curve analysis + confidence scoring |
+| Friday Founder Load | Fri 11 AM | atlas | `claude-sonnet-4-20250514` | Heavy reasoning + comprehensive analysis |
 
 ### The Rule (Non-Negotiable)
 1. **Every cron payload MUST specify `model` field**

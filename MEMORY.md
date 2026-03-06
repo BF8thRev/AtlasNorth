@@ -7,6 +7,19 @@ For permanent rules, procedures, and protocols → See **STANDING_INSTRUCTIONS.m
 
 ---
 
+## Cron Configuration — Model Routing (Updated 2026-03-06 22:57 EST)
+
+**Normalized all cron jobs to match MODEL_ROUTER.json assignments:**
+- Pulse Daily/Weekend research (all days) → google/gemini-2.5-flash (fixed Sat/Sun from sonnet-4-6)
+- Brief Format & Send (all days) → claude-haiku-4-5-20251001 (fixed Sat/Sun from sonnet-4-6)
+- YouTube Content Rating → claude-sonnet-4-20250514 (fixed from haiku — reasoning required for ramp curves)
+- Friday Founder Load → claude-sonnet-4-20250514 (already correct, timeout 300s)
+- YouTube Content Catalog → claude-haiku-4-5-20251001 (already correct)
+
+**Routing rule enforced:** Same task type = same model, regardless of day or schedule.
+
+---
+
 ## Subagent Status — Production Readiness (Updated 2026-03-06 15:19 EST)
 
 ### Pulse (Research & Trends)
