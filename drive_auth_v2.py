@@ -3,9 +3,12 @@
 import json, os, sys, urllib.parse, http.server, threading, webbrowser
 import google.auth.transport.requests
 from google_auth_oauthlib.flow import Flow
+from dotenv import load_dotenv
 
-CLIENT_ID = "os.environ.get("GOOGLE_CLIENT_ID")"
-CLIENT_SECRET = "os.environ.get("GOOGLE_CLIENT_SECRET")"
+load_dotenv()
+
+CLIENT_ID = os.environ.get("GOOGLE_CLIENT_ID")
+CLIENT_SECRET = os.environ.get("GOOGLE_CLIENT_SECRET")
 TOKEN_PATH = os.path.expanduser("~/.openclaw/workspace/credentials/drive_tokens.json")
 REDIRECT_URI = "http://localhost:8765"
 SCOPES = ["https://www.googleapis.com/auth/drive.readonly"]

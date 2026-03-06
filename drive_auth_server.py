@@ -2,9 +2,12 @@
 """Get Drive OAuth token via local server flow."""
 import json, os, sys, webbrowser
 from google_auth_oauthlib.flow import InstalledAppFlow
+from dotenv import load_dotenv
 
-CLIENT_ID = "os.environ.get("GOOGLE_CLIENT_ID")"
-CLIENT_SECRET = "os.environ.get("GOOGLE_CLIENT_SECRET")"
+load_dotenv()
+
+CLIENT_ID = os.environ.get("GOOGLE_CLIENT_ID")
+CLIENT_SECRET = os.environ.get("GOOGLE_CLIENT_SECRET")
 TOKEN_PATH = os.path.expanduser("~/.openclaw/workspace/credentials/drive_tokens.json")
 SCOPES = [
     "https://www.googleapis.com/auth/drive.readonly",

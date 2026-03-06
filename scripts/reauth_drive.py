@@ -4,8 +4,11 @@ Re-authenticate Gmail OAuth with Drive API scopes
 Run this to get a new authorization URL, then paste the code back
 """
 
-import json
+import json, os
 from google_auth_oauthlib.flow import InstalledAppFlow
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Scopes: Gmail + Drive read-only
 SCOPES = [
@@ -15,9 +18,9 @@ SCOPES = [
     'https://www.googleapis.com/auth/drive.readonly'
 ]
 
-# Load credentials from .env
-CLIENT_ID = 'os.environ.get("GOOGLE_CLIENT_ID")'
-CLIENT_SECRET = 'os.environ.get("GOOGLE_CLIENT_SECRET")'
+# Load credentials from environment
+CLIENT_ID = os.environ.get('GOOGLE_CLIENT_ID')
+CLIENT_SECRET = os.environ.get('GOOGLE_CLIENT_SECRET')
 
 client_config = {
     "installed": {

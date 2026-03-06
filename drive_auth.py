@@ -4,9 +4,12 @@ import json, os, sys
 from google_auth_oauthlib.flow import InstalledAppFlow
 from google.oauth2.credentials import Credentials
 from google.auth.transport.requests import Request
+from dotenv import load_dotenv
 
-CLIENT_ID = "os.environ.get("GOOGLE_CLIENT_ID")"
-CLIENT_SECRET = "os.environ.get("GOOGLE_CLIENT_SECRET")"
+load_dotenv()
+
+CLIENT_ID = os.environ.get("GOOGLE_CLIENT_ID")
+CLIENT_SECRET = os.environ.get("GOOGLE_CLIENT_SECRET")
 TOKEN_PATH = os.path.expanduser("~/.openclaw/workspace/credentials/drive_tokens.json")
 
 SCOPES = ["https://www.googleapis.com/auth/drive.readonly"]

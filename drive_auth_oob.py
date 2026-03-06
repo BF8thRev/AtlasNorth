@@ -2,9 +2,12 @@
 """Generate Drive OAuth URL for manual auth."""
 import json, os
 from google_auth_oauthlib.flow import Flow
+from dotenv import load_dotenv
 
-CLIENT_ID = "os.environ.get("GOOGLE_CLIENT_ID")"
-CLIENT_SECRET = "os.environ.get("GOOGLE_CLIENT_SECRET")"
+load_dotenv()
+
+CLIENT_ID = os.environ.get("GOOGLE_CLIENT_ID")
+CLIENT_SECRET = os.environ.get("GOOGLE_CLIENT_SECRET")
 SCOPES = ["https://www.googleapis.com/auth/drive.readonly"]
 TOKEN_PATH = os.path.expanduser("~/.openclaw/workspace/credentials/drive_tokens.json")
 

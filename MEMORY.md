@@ -216,11 +216,40 @@
 - **Tobacco/legacy industry lens** drives outsized views — outside-in framing resonates
 - Full findings: DIME_LEARNINGS.md
 
-## GitHub Access
-- PAT Token: stored in ~/.openclaw/.env as GITHUB_PAT_TOKEN
-- Repo: https://github.com/BF8thRev/AtlasNorth
-- Access confirmed: 2026-03-02 — commit write access verified
-- Token type: Fine-grained PAT with Contents: Read & Write on AtlasNorth repo
+## GitHub & Vercel Infrastructure (Configured 2026-03-06)
+
+### GitHub
+- **Repo:** https://github.com/BF8thRev/AtlasNorth.git
+- **Remote:** Configured locally (git remote add origin)
+- **PAT Token:** ~/.openclaw/.env → GITHUB_PAT_TOKEN
+- **Token type:** Fine-grained PAT with Contents: Read & Write
+- **Branch:** main
+- **Access confirmed:** 2026-03-02
+
+### Vercel Deployment
+- **App URL:** https://atlas-north.vercel.app/
+- **Dashboard:** https://vercel.com/BF8thRev/AtlasNorth/settings
+- **Environment Variables:** 
+  - GOOGLE_CLIENT_ID
+  - GOOGLE_CLIENT_SECRET
+  - (Both added 2026-03-06)
+- **Auto-Deploy:** INTENTIONAL — Every push to main triggers live deployment (~60-90 sec)
+- **Why scheduled windows exist:** To avoid Vercel rate limits + keep deployments organized + prevent accidental live changes during development
+
+### Memory Vault (data/vault/)
+- **Location:** GitHub repo → data/vault/ folder
+- **Synced by:** Cron push jobs at scheduled windows
+- **Contents:** MEMORY.md, agent configs, learnings, audit logs, workflows
+- **Backup location:** Local workspace + GitHub remote
+
+### Critical Rule: Every Push = Live Deployment
+**No pushes happen outside the 4 scheduled windows because each push triggers an immediate live deployment to Vercel.**
+- 6:30 AM EST — Morning sync
+- 12:00 PM EST — Noon sync  
+- 6:00 PM EST — Evening sync
+- 11:30 PM EST — Night wrap
+
+**Exception protocol:** Only Bryan can authorize emergency pushes outside windows (requires explicit approval).
 
 ## Google Drive — Transcript Folders
 - **The Dime workflow transcripts:** https://drive.google.com/drive/folders/165U0PXhdij9oGsiKs-HDb0whmqN2Rlhn

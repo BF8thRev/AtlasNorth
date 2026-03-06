@@ -18,24 +18,68 @@
 
 ---
 
-## 🕐 Deployment Schedule (updated 2026-03-05)
+## 🕐 Deployment Schedule (updated 2026-03-06)
 
-| Rule | Detail |
+### ⚠️ CRITICAL: EVERY PUSH = LIVE DEPLOYMENT TO VERCEL
+
+Vercel is configured with **auto-deploy on every push to main**. This is intentional. This means:
+- **Each push is an immediate live deployment** (~60-90 seconds)
+- **Pushing outside scheduled windows = unplanned live changes**
+- **Scheduled windows exist to control deployment frequency** and prevent accidental live updates
+
+### Push Windows (Immutable)
+
+| Time | Window | Auto-triggered by cron |
+|---|---|---|
+| **6:30 AM EST** | Morning sync | GitHub Push cron job |
+| **12:00 PM EST (Noon)** | Midday sync | GitHub Push cron job |
+| **6:00 PM EST** | Evening sync | GitHub Push cron job |
+| **11:30 PM EST** | Night wrap | GitHub Push cron job |
+
+### Local Commit Workflow (Throughout Day)
+
+Work → Commit locally → Next push window → Vercel deploys
+
+| Action | Detail |
 |---|---|
-| Work throughout day | Commit locally after each task |
-| Memory files | `ATLAS_MEMORY_EXPORT.txt` + `WORKFLOW_STATE.json` — local commit after every task |
-| Push window 1 | **6:30 AM EST** — auto-push via cron |
-| Push window 2 | **12:00 PM EST (Noon)** — auto-push via cron |
-| Push window 3 | **6:00 PM EST** — auto-push via cron |
-| Push window 4 | **11:30 PM EST** — auto-push via cron |
-| Push script | `/workspace/scripts/push-to-github.sh` |
-| Why | Avoid Vercel rate limits, keep deployments organized |
+| Work throughout day | Execute tasks, create/modify files |
+| Local commits | After each task, commit to local main branch |
+| Memory logging | Every task must update `ATLAS_MEMORY_EXPORT.txt` + `WORKFLOW_STATE.json` |
+| Push script | `/workspace/scripts/push-to-github.sh` (runs during cron windows only) |
 
-**Never push outside the scheduled windows unless Bryan explicitly requests it.**
+### THE RULE: No Pushes Outside Windows
+
+**NEVER push outside the 4 scheduled windows except by explicit Bryan authorization.**
+
+If you push outside the windows:
+1. You trigger an unplanned live deployment
+2. You may interrupt Bryan's work or create unexpected user-facing changes
+3. You violate the deployment control protocol
+
+**Exception:** Only Bryan can authorize emergency pushes (e.g., critical security fix). Must be explicitly requested.
 
 ---
 
 ---
+
+## 📡 Infrastructure Reference (2026-03-06)
+
+For detailed infrastructure configuration, see **MEMORY.md — "GitHub & Vercel Infrastructure"** section:
+
+**GitHub:**
+- Repo: https://github.com/BF8thRev/AtlasNorth.git
+- Remote configured locally
+- PAT token in ~/.openclaw/.env
+
+**Vercel:**
+- App URL: https://atlas-north.vercel.app/
+- Auto-deploy on every push to main (intentional)
+- Environment variables: GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET
+
+**Memory Vault:**
+- Location: GitHub repo → data/vault/
+- Synced via cron at 4 push windows
+- Full backup of workspace memory, configs, and audit logs
 
 ---
 
