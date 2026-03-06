@@ -62,6 +62,28 @@ If you push outside the windows:
 
 ---
 
+## 🔐 SECRETS POLICY (Enforced 2026-03-06)
+
+**NO HARDCODED SECRETS IN CODE. EVER.**
+
+- ❌ Google OAuth Client ID — NEVER hardcode
+- ❌ Google OAuth Client Secret — NEVER hardcode
+- ❌ API keys, tokens, passwords — NEVER hardcode
+- ✅ All credentials MUST come from environment variables (os.environ.get)
+- ✅ Load from .env via python-dotenv or read from Vercel env vars
+- ✅ All production credentials stored in Vercel Environment Variables
+
+**If secrets are ever exposed in a commit:**
+1. Immediately notify Bryan
+2. Use BFG repo-cleaner: `brew install bfg`
+3. Run: `bfg --replace-text /path/to/secrets.txt --no-blob-protection`
+4. Force push: `git push -f origin main`
+5. GitHub Push Protection will pass once history is clean
+
+**History note:** Full git history was cleaned of Google OAuth secrets on 2026-03-06 14:32 EST using BFG. Zero secrets remain.
+
+---
+
 ## 📡 Infrastructure Reference (2026-03-06)
 
 For detailed infrastructure configuration, see **MEMORY.md — "GitHub & Vercel Infrastructure"** section:
