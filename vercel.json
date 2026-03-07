@@ -1,6 +1,18 @@
 {
   "version": 2,
-  "buildCommand": "cd mission-control-dashboard && npm install && npm run build",
-  "outputDirectory": "mission-control-dashboard/.next",
-  "installCommand": "cd mission-control-dashboard && npm install"
+  "builds": [
+    {
+      "src": "mission-control-dashboard/package.json",
+      "use": "@vercel/next",
+      "config": {
+        "zeroConfig": true
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/mission-control-dashboard/$1"
+    }
+  ]
 }
