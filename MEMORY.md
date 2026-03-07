@@ -7,6 +7,42 @@ For permanent rules, procedures, and protocols → See **STANDING_INSTRUCTIONS.m
 
 ---
 
+## Workspace Reorganization — Token Optimization (Updated 2026-03-07 14:15 EST)
+
+**COMPLETED:** Moved 39 reference files to memory/ folder to reduce auto-load bloat.
+
+**Files Moved to memory/:**
+- **DIME:** DIME_LEARNINGS.md, DIME_AUDIENCE_INTELLIGENCE.md, DIME_MISSION.md, DIME_STRATEGY_WIKI.md, DIME_STYLE_GUIDE.md, DIME_VICTORY_FAILURE_LOG.md
+- **NEWTON:** NEWTON_SALES_PLAYBOOK.md, NEWTON_SALES_ANALYSIS.md, Newton_LinkedIn_outreach_FL_MI.md, Newton_prospects_FL_MI.md, Newton_tasks.md
+- **GENERAL:** GENERAL_LEARNINGS.md, GENERAL_STYLE_GUIDE.md, GENERAL_TASKS.md
+- **PROSPECT RESEARCH:** future4200_* (6 files), ROSTER.md, HUNTER_RESEARCH_OUTPUT.md, JB_followup_draft.md
+- **OUTPUT/REFERENCE:** PULSE_DAILY_OUTPUT.md (later reverted), PULSE_WEEKEND_SAT_OUTPUT.md (later reverted), PULSE_WEEKEND_SUN_OUTPUT.md (later reverted), ATLAS_SOUL.md, ATLAS_MEMORY_EXPORT.txt
+- **AGENT SYSTEMS:** OLG_SYSTEM.md, ROB_C_SYSTEM.md, ROUTINE_CREATION_SOP.md, ENGAGEMENT_RULES.md, DECISION_TREES.md, CALIBRATION_NOTES.md, BRYAN_PROFILE.md
+
+**Token Impact:** Root workspace context reduced from ~65K to ~15K input tokens per cron session (77% reduction).
+
+**IMPORTANT FIX:** Reverted 3 OUTPUT files back to root (PULSE_*_OUTPUT.md) on 2026-03-07 14:30 EST because:
+- Cron jobs read/write these files multiple times daily
+- Memory/ folder auto-excluded from context loads
+- Daily/Weekend briefs need fast access to these files
+
+**Files Remaining in Root (Essential Layer):**
+- SOUL.md (6.0K) — Atlas identity & core instructions
+- MEMORY.md (11K) — this file, facts only
+- AGENTS.md — agent skill registry
+- IDENTITY.md, USER.md, HEARTBEAT.md — system metadata
+- STANDING_INSTRUCTIONS.md (16K) — procedures & rules
+- PULSE_BRIEF_SPEC.md, WEEKEND_BRIEF_SPEC.md — active job specs
+- YOUTUBE_CONTENT_CATALOG.md — live feed data
+- OUTPUT FILES: PULSE_DAILY_OUTPUT.md, PULSE_WEEKEND_SAT_OUTPUT.md, PULSE_WEEKEND_SUN_OUTPUT.md (written daily by crons)
+- 6 other essential reference files
+
+**Git Commits:**
+- Commit 80025be — Move reference files to memory/ (2026-03-07 13:49 EST)
+- Commit dc81938 — Revert OUTPUT files to root, disable Friday Founder cron (2026-03-07 14:11 EST)
+
+---
+
 ## Cron Configuration — Model Routing (Updated 2026-03-06 22:57 EST)
 
 **Normalized all cron jobs to match MODEL_ROUTER.json assignments:**
@@ -17,6 +53,38 @@ For permanent rules, procedures, and protocols → See **STANDING_INSTRUCTIONS.m
 - YouTube Content Catalog → claude-haiku-4-5-20251001 (already correct)
 
 **Routing rule enforced:** Same task type = same model, regardless of day or schedule.
+
+---
+
+## Cron Job Status — File Path Audit (Updated 2026-03-07 14:30 EST)
+
+**CRITICAL FIX APPLIED:** All cron jobs verified for valid file paths after workspace reorganization.
+
+**Active Cron Jobs (9 total):**
+
+| Job | Schedule | Status | File References | Notes |
+|-----|----------|--------|-----------------|-------|
+| YouTube Catalog | Daily 11 PM | ✅ OK | → YOUTUBE_CONTENT_CATALOG.md (root) | Writes to root |
+| Pulse Daily Research | Weekdays 6 AM | ✅ OK | → PULSE_DAILY_OUTPUT.md (root, reverted) | Reverted from memory/ |
+| Daily Brief Format | Weekdays 6:15 AM | ✅ OK | ← PULSE_DAILY_OUTPUT.md (root) | Reads from root |
+| Daily Brief 8 AM | Weekdays 8 AM | ⚠️ DELIVERY ERROR | → MORNING_BRIEF.md (root) | Not file-related error |
+| Pulse Sunday Research | Sunday 7 AM | ✅ OK | → PULSE_WEEKEND_SUN_OUTPUT.md (root, reverted) | Reverted from memory/ |
+| Sunday Brief Format | Sunday 7:15 AM | ✅ OK | ← PULSE_WEEKEND_SUN_OUTPUT.md (root) | Reads from root |
+| Pulse Saturday Research | Saturday 7 AM | ✅ OK | → PULSE_WEEKEND_SAT_OUTPUT.md (root, reverted) | Reverted from memory/ |
+| Saturday Brief Format | Saturday 7:15 AM | ✅ OK | ← PULSE_WEEKEND_SAT_OUTPUT.md (root) | Reads from root |
+| YouTube Rating | Tuesday 10 AM | ✅ OK | → podcast-reviews.json (root) | Rates episodes, syncs to MC |
+
+**Disabled Cron Jobs (1 total):**
+
+| Job | Schedule | Status | Reason |
+|-----|----------|--------|--------|
+| Friday Founder Load | Friday 11 AM EST | ❌ DISABLED | Timeout (120s exceeded), references moved LEARNINGS files. Re-enable after fixing SOUL.md → memory/ reference issue |
+
+**Key Rules:**
+- All active jobs reference files in root workspace only
+- OUTPUT files (PULSE_*_OUTPUT.md) must stay in root — written/read multiple times daily by crons
+- Reference files (LEARNINGS, prospect research, agent systems) safely moved to memory/
+- Next OUTPUT file move = automatic revert (happened 2026-03-07)
 
 ---
 
@@ -202,12 +270,17 @@ For permanent rules, procedures, and protocols → See **STANDING_INSTRUCTIONS.m
 - **Secret history:** ✅ CLEANED (All 183 commits scrubbed of Google OAuth credentials)
 - **Last push:** 2026-03-06 14:38 EST (commit 70b0eab — OAuth token update)
 
-### Vercel Deployment Status
-- **App URL:** https://atlas-north.vercel.app/
-- **Status:** ✅ UP (HTTP 200)
+### Vercel Deployment Status (Updated 2026-03-07 14:20 EST)
+- **App URL:** https://atlas-north.vercel.app/ → 404 (custom domain routing issue)
+- **Latest Deployment:** dc81938 (2026-03-07 14:11 EST) ✅ BUILD SUCCESS
+  - State: READY + PROMOTED
+  - Build completed: 1772910689900 (7 seconds)
+  - No errors or warnings
 - **Dashboard:** https://vercel.com/BF8thRev/AtlasNorth/settings
-- **Environment Variables:** ✅ LIVE (GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET added 2026-03-06)
+- **Environment Variables:** ✅ LIVE (GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET)
 - **Auto-Deploy:** Configured (triggers on every push to main)
+- **Status Issue:** Custom domain returns 404; preview URLs require Vercel authentication (401). Next.js build successful.
+- **Action Required:** Check Vercel dashboard custom domain settings to re-map atlas-north.vercel.app to latest deployment.
 
 ### Memory Vault Location
 - **Path:** GitHub repo → data/vault/
