@@ -3,16 +3,7 @@
   "builds": [
     {
       "src": "mission-control-dashboard/package.json",
-      "use": "@vercel/next",
-      "config": {
-        "zeroConfig": true
-      }
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/mission-control-dashboard/$1"
+      "use": "@vercel/next"
     }
   ]
 }
