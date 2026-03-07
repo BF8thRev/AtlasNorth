@@ -298,3 +298,41 @@ For permanent rules, procedures, and protocols → See **STANDING_INSTRUCTIONS.m
   - Folder ID: `1l13Fvo4LWsOE8LRnMkEisa5YI1ywXN_2`
   - Agent owners: Hunter (sales patterns), Ledger (data/metrics)
   - Trigger: New transcript → Hunter extracts objections/signals → Ledger logs metrics
+
+## last30days Research Skill — Installation & Configuration (Updated 2026-03-07 20:45 EST)
+
+**Status:** ✅ INSTALLED & TESTED
+
+### Installation Details
+- **Version:** v2.9.2
+- **Location:** `~/.openclaw/skills/last30days/`
+- **Installation date:** 2026-03-07
+- **Entry point:** `python3 scripts/last30days.py "query" [--quick]`
+
+### API Configuration
+**Location:** `~/.config/last30days/.env`
+
+| Source | Status | Key | Notes |
+|--------|--------|-----|-------|
+| **Web** | ✅ LIVE | `BRAVE_API_KEY` | Populated from OpenClaw config (BSAbYd83fU4eLfmja8GfM1D_9dO8PKH) |
+| **YouTube** | ✅ LIVE | (built-in) | yt-dlp installed, transcripts working |
+| **Reddit** | ❌ NEEDED | `OPENAI_API_KEY` | Legacy fallback (not added yet) |
+| **TikTok** | ❌ NEEDED | `SCRAPECREATORS_API_KEY` | Not configured (one key = Reddit + TikTok + Instagram) |
+| **Instagram** | ❌ NEEDED | `SCRAPECREATORS_API_KEY` | Not configured |
+| **X/Twitter** | ❌ NEEDED | Browser login OR `XAI_API_KEY` | Not authenticated |
+
+### Test Results
+**Queries tested:** "OpenClaw skills" and "cannabis industry news" with `--quick` flag
+- Web search: ✅ Working (6-18 results per query, Brave-ranked)
+- YouTube: ✅ Working (transcripts extracted, 4-10 videos per query)
+- Reddit: ❌ Skipped (missing OPENAI_API_KEY)
+- X: ❌ Skipped (no browser auth / no XAI_API_KEY)
+
+**Output:** Real engagement metrics (views, likes, timestamps) + ranked results by relevance/recency
+
+### Next Steps (Optional)
+1. Add `OPENAI_API_KEY` to `~/.config/last30days/.env` to unlock Reddit
+2. Add `SCRAPECREATORS_API_KEY` for TikTok + Instagram coverage
+3. Log into x.com in browser OR add `XAI_API_KEY` for X data
+
+**Note:** Currently working well with YouTube + Web; Reddit/X would improve coverage on social/community topics.
