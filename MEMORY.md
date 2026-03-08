@@ -7,6 +7,45 @@ For permanent rules, procedures, and protocols → See **STANDING_INSTRUCTIONS.m
 
 ---
 
+## NORTH STAR STRATEGY (Confirmed 2026-03-08 00:45 EST)
+
+**Critical Strategic Alignment — All Work Flows Through These 3:**
+
+### 1. The Dime — Connector Platform
+**Goal:** Be the connector. Follow curiosity across verticals. Every episode = relationship deepening + idea generation + platform for others. Content as trust signal + networking magnet.
+
+**Operating Principles:**
+- Guest selection: Curiosity first, quality + relationship potential second
+- Episode framing: "What are you thinking about?" (deeper conversations, not pitches)
+- Distribution: Shorts go to network as relationship signal. Long-forms are connector tools.
+- Follow-up: Every guest → 3-5 intros you could make for them
+- Metrics: Relationship depth, intro velocity, Newton pipeline, industry perception (NOT view counts)
+
+**Success Signal:** Position as THE networked operator in cannabis + adjacent verticals
+
+### 2. Newton — Warm Pipeline
+**Goal:** More prospects, more customers. Sourced from Dime relationships + warm intro authority.
+
+**Operating Principle:** 
+- Cold/spray tactics don't work (operators buy from trust, not strangers)
+- Dime is Newton's customer acquisition engine
+- Guest leverage: position guests as natural Newton candidates → warm intro post-episode
+
+**Success Signal:** Pipeline filled with warm, qualified prospects from Dime ecosystem
+
+### 3. Personal — Network Moat
+**Goal:** Build a network moat. Be known as the person who knows everyone and makes things happen.
+
+**Operating Principle:** Relationships compound. Connectors create opportunities for others → reciprocal value.
+
+**Success Signal:** Industry perception as THE connector + leverage platform for future ventures
+
+---
+
+**Integration Rule:** These 3 are interdependent. Dime → Newton pipeline. Dime relationships → personal moat. Personal moat → deeper Dime relationships. Not separate tracks.
+
+---
+
 ## Workspace Reorganization — Token Optimization (Updated 2026-03-07 14:15 EST)
 
 **COMPLETED:** Moved 39 reference files to memory/ folder to reduce auto-load bloat.
