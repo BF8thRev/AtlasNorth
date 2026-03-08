@@ -296,6 +296,15 @@ All use: Mitchell Osak Substack (https://mitchellosak.substack.com/p/cannabis-co
 - Best persona (which role responds best)
 - Best angle (which variation drives engagement)
 
+### Cron Jobs — Newton Operations
+**Hunter Weekly Prospecting (Enabled 2026-03-08):**
+- Schedule: Every Monday @ 10:00 AM EST
+- Job ID: `7e4b409f-5fc1-4555-8613-52d918894558`
+- Task: Search + add 10-20 new Ops Leaders to Newton CRM (no outreach, pipeline building only)
+- Sources: LinkedIn, company sites, industry directories
+- Delivery: WhatsApp announce (prospects found, added, sources, patterns)
+- First run: Monday, March 10, 2026 @ 10:00 AM EST
+
 ---
 
 ## 🤖 SUBAGENT OPERATIONAL STANDARDS (Formalized 2026-03-06)

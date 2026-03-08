@@ -378,3 +378,44 @@ For permanent rules, procedures, and protocols → See **STANDING_INSTRUCTIONS.m
 3. Log into x.com in browser OR add `XAI_API_KEY` for X data
 
 **Note:** Currently working well with YouTube + Web; Reddit/X would improve coverage on social/community topics.
+
+---
+
+## Newton Cold Email Campaign — Controlled Run (Created 2026-03-08)
+
+**Prospect Selection:** 10 Ops Leaders (Edward Cameron, William Sullivan, Will Reckner, Anthony Scuderi, Mario Gadea, Emily Carden, Erik Hackett, Darren Desimone, Grace Hyde, Demi Fetzer)
+
+**CRM:** Newton CRM Sheet (https://docs.google.com/spreadsheets/d/1FxH1YnQ93Oj5KAuXv6h0_TrkV5BS6ejNJ4t_q_0i7i8/edit)
+
+**Workflow:** Prospect List → Newton CRM (Hunter) → 3 Email Drafts (Atlas) → Review (Bryan) → Send (Bryan) → Track (Hunter)
+
+**Email Variations:** Feedback Loop / Baseline Shift / Cost Savings (all using Mitchell Osak Substack as hook)
+
+**Next Milestone:** Load 10 Ops Leaders into Newton CRM, draft 3 variations, ready for Bryan review by EOD 2026-03-08
+
+**Related SOP:** memory/newton/NEWTON_COLD_EMAIL_CAMPAIGN_SOP.md
+
+---
+
+## Hunter Weekly Prospecting Cron — Enabled (Created 2026-03-08)
+
+**Job ID:** `7e4b409f-5fc1-4555-8613-52d918894558`
+
+**Schedule:** Every Monday @ 10:00 AM EST
+
+**Next Run:** Monday, March 10, 2026 @ 10:00 AM EST
+
+**What Hunter Does:**
+- Search for 10-20 new Ops Leaders (LinkedIn, company sites, industry directories)
+- Filter by Newton ICP (VP/Director of Operations, cannabis extraction, multi-facility, margin pressure signal)
+- Load into Newton CRM sheet (one row per prospect: Date, Prospect, Company, Role, Email, LinkedIn, State, Persona=Ops Leader, Stage=Cold)
+- Deduplicate (skip if Email or Company+Role already in CRM)
+- Report results to WhatsApp (prospects found, added, sources, duplicates skipped, patterns)
+
+**Volume Target:** 10-20 new prospects per week
+
+**Quality Gate:** Email found OR LinkedIn verified; no incomplete records; no tangential roles (Compliance, Retail Ops, HR)
+
+**Status:** ✅ ENABLED, first run scheduled for Monday March 10
+
+**Related:** NEWTON_COLD_EMAIL_CAMPAIGN_SOP.md (Section 3: Pipeline Building)
