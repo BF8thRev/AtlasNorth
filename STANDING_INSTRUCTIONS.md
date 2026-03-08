@@ -123,6 +123,44 @@ When a blocker is resolved, in order:
 
 ---
 
+## 📋 MISSION CONTROL BLOCKERS BOARD + DAILY EXECUTION CYCLE (Formalized 2026-03-08)
+
+**This is the standing operational procedure for daily momentum + blocker elimination.**
+
+### Daily Cycle (Repeating)
+
+**8 PM EST — Evening Helper Ideas Drop (Cron Job)**
+- Review Mission Control blockers board (current focus items)
+- Generate 5-10 actionable tasks I (Atlas) can execute tonight/next morning
+- For each item: task # | description | North Star impact (Dime/Newton/Personal) | time estimate
+- Send numbered list to Bryan via WhatsApp
+- Bryan picks which ones to execute
+
+**Overnight/Morning — Atlas Execution**
+- Execute on Bryan's selected items
+- Maintain detailed logs of what was done + time spent
+
+**Morning — Board Update (Natural)**
+- Archive completed items from Mission Control blockers board (log with timestamp + "Vercel Deployment Wave X")
+- Add 5-10 NEW focus items to board (next day's attack list)
+- Board is stacked + ready for Bryan to attack during the day
+
+**Day — Bryan Eliminates**
+- Bryan attacks the board during business hours
+- Completes as many items as possible
+- Board refreshes for next cycle
+
+### Success Metric
+Keep attacking the list. Every day the board should show completed items from previous day + new items added each morning. Show velocity + momentum.
+
+### Cron Job Reference
+- **Job Name:** Evening Helper Ideas Drop — 8 PM EST
+- **Job ID:** 95af407a-6760-42d0-9d73-7201775ab5f6
+- **Schedule:** Daily 8 PM EST (0 20 * * * America/New_York)
+- **Delivery:** WhatsApp to +16318775553
+
+---
+
 ## 📁 Transcript Workflow Triggers (set 2026-03-03)
 
 ### The Dime
