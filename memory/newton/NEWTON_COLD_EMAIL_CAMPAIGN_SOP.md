@@ -304,5 +304,110 @@ This SOP defines how to execute a coordinated cold email campaign for Newton Ins
 ---
 
 **Document Owner:** Atlas  
-**Last Updated:** 2026-03-08 17:55 EST  
+**Last Updated:** 2026-03-08 18:30 EST  
 **Next Review:** After first 10 responses logged
+
+---
+
+## 10. Hunter Weekly Prospecting — Automated Pipeline Building (Cron)
+
+**Purpose:** Every Monday, Hunter searches for 10-20 new Ops Leaders matching Newton ICP and loads them into Newton CRM (no outreach).
+
+**Cron Job Details:**
+- **Job ID:** `7e4b409f-5fc1-4555-8613-52d918894558`
+- **Name:** Hunter Weekly Prospecting — Monday 10 AM EST
+- **Schedule:** Every Monday @ 10:00 AM EST (cron expr: `0 10 * * 1`)
+- **Agent:** Hunter (subagent)
+- **Model:** google/gemini-2.5-flash (research + synthesis)
+- **Status:** ✅ ENABLED (activated 2026-03-08)
+- **Next Run:** Monday, March 10, 2026 @ 10:00 AM EST
+- **Delivery:** WhatsApp announce to +16318775553
+
+**What Hunter Does (Weekly):**
+1. Search LinkedIn, company websites, industry directories for new Ops Leaders
+2. Filter by Newton ICP (title, company type, scale, extraction focus, margin pressure signal)
+3. Collect: First Name | Last Name | Company | Role | State | Email | LinkedIn
+4. Verify no duplicates in Newton CRM (search by Email or Company+Role)
+5. Load into Newton CRM as new rows (one prospect per row)
+6. Report findings to you via WhatsApp (count, sources, duplicates skipped, patterns)
+
+**Newton ICP Criteria (Hunter's Search Filter):**
+- **Title:** VP Operations, Director of Operations, Director of Extraction, Director of Manufacturing, Head of Operations, COO, National Manufacturing Director
+- **Company:** Cannabis extraction operator (solvent: butane, CO2, ethanol | solventless: rosin, flower, etc.)
+- **Scale:** 2+ extraction systems OR multi-location operations
+- **Geography:** Regulated US states with active cannabis market
+- **Signal:** Margin pressure (MSO structure, established scale, cost control focus)
+
+**Search Sources:**
+1. LinkedIn: "Director of Operations" + "cannabis" + "extraction" — filter by company size, state
+2. Cannabis Business Times: Operations/Manufacturing director profiles, company announcements
+3. Industry directories: Weedmaps, BDSA, MG Magazine — new company profiles
+4. Company websites: Top 50 MSOs (Green Thumb, Curaleaf, Verano, Cresco, etc.) — extract operations leadership
+
+**Quality Gates:**
+- ✅ Only add if Email found OR LinkedIn verified
+- ❌ Do NOT add incomplete records
+- ❌ Do NOT add if role is tangential (Compliance, Retail Ops, HR)
+- ❌ Do NOT duplicate (check CRM before adding)
+
+**Target Volume:**
+- Minimum: 10 new prospects
+- Ideal: 15-20 new prospects
+- All added in single batch to CRM
+
+**CRM Load Format (One Row Per Prospect):**
+| Field | Value |
+|-------|-------|
+| Date | TODAY (YYYY-MM-DD) |
+| Prospect | First Name, Last Name |
+| Company | Company name |
+| Role | Job title |
+| Email | (if found, else blank) |
+| LinkedIn | LinkedIn profile URL |
+| State | US state |
+| Persona | "Ops Leader" |
+| Stage | "Cold" |
+| Primary Problem | (blank — Atlas fills) |
+| Strongest Wedge | (blank — Atlas fills) |
+| All other columns | Leave blank |
+
+**Weekly Report (WhatsApp):**
+- Prospects Found: [number]
+- Added to CRM: [number]
+- Sources Used: [list]
+- Duplicates Skipped: [number]
+- Key Pattern: [observation]
+
+**Constraints:**
+- NO fabrication. All data must be verifiable (LinkedIn or company website)
+- NO assumptions. If extraction type unclear, mark as "Unclear"
+- NO outreach. This is pipeline building only
+- NO modifications to existing CRM rows. Only ADD new rows
+
+---
+
+## 11. Workflow Sequence (Full End-to-End)
+
+**Timeline Example: Week 1**
+
+| Day | Time | Owner | Action | Output |
+|-----|------|-------|--------|--------|
+| Monday | 10 AM | Hunter (Cron) | Prospecting run, load 15 new Ops Leaders | 15 new rows in Newton CRM |
+| Monday | 11 AM | Atlas | Review 15 prospects, assign pain points + wedges | Populated CRM (4 new columns filled) |
+| Monday | 2 PM | Atlas | Select 10 for outreach, research each | 10 selected + researched |
+| Monday | 3 PM | Atlas | Draft 3 email variations | 3 variations ready |
+| Tuesday | 9 AM | Bryan | Review drafts, approve tone | Approved versions |
+| Tuesday | 10 AM | Bryan | Personalize + send 10 emails | 10 emails sent, CRM updated |
+| Tue-Fri | Daily | Hunter | Track responses, log objections, update status | CRM updated with responses |
+| Friday | 4 PM | Atlas | Analyze reply patterns, refine angles if needed | Learnings for next cycle |
+
+**Next Cycle (Week 2):**
+- Monday 10 AM: Hunter finds 15 more Ops Leaders (new batch)
+- Repeat Tuesday-Friday process with next 10 prospects
+- Continue until pipeline reaches target size
+
+---
+
+**Document Owner:** Atlas  
+**Last Updated:** 2026-03-08 18:30 EST  
+**Next Review:** After first Monday Hunter run (March 10)
