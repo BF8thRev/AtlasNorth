@@ -57,30 +57,59 @@ Format: Name the challenge → what you need → how to play → what skill it b
 ━━━━━━━━━━━━━━━━━━━━━━━━━
 
 📖 CONCEPT TO LEARN
-[1 concept worth understanding at depth. Could be a mental model, business framework, scientific idea, or historical pattern. Explained in 4-5 sentences — enough to actually understand it, not just know the name.]
+[1 concept worth understanding at depth. Could be a mental model, business framework, scientific idea, or historical pattern.
+HOW TO EXECUTE:
+1. Name and define the concept (1 sentence)
+2. Explain the mechanics or principle (2-3 sentences)
+3. CONCRETE REAL-WORLD SCENARIO: Show how this plays out in a specific, real situation. Use a concrete example from business, product, or strategy that Bryan would recognize or relate to.
+Total: 5-6 sentences. Not abstract — the scenario should make him think "oh, I've seen this" or "I could use this Monday."]
 
 🪄 TEACH ME ONE THING
-[One small insight explained through a single vivid metaphor.
-Format: Here's the idea → here's the metaphor → here's why it matters to Bryan specifically.
-Should stick in his head going into Monday.]
+[One insight with NUANCE and COMPLEXITY that Bryan wouldn't easily find on his own.
+HOW TO EXECUTE:
+1. State the counterintuitive idea (1 sentence)
+2. Explain the mechanism that makes it true (2 sentences, with specificity)
+3. Deliver via vivid metaphor (1 sentence)
+4. Why it matters to Bryan specifically (1 sentence)
+Total: 5-6 sentences. This should be something that requires thinking, not obvious wisdom. Look for paradoxes, trade-offs, or hidden patterns.]
 
 🔭 FORWARD SIGNAL
-[What's coming in 6-12 months that most people aren't positioned for yet. Specific. Not a trend — a signal. One clear implication for Bryan.]
+[What's coming in 6-12 months that most people aren't positioned for yet. Specific signal with a concrete tech stack or tool example.
+HOW TO EXECUTE:
+1. Name the trend/shift (1 sentence)
+2. Why it matters now (2 sentences)
+3. SPECIFIC TECH STACK EXAMPLE: Concrete tool combination, vendor, or architecture pattern Bryan could adopt today to be ahead (1 sentence with specifics)
+4. Implication for Bryan's business (1 sentence)
+Total: 5-6 sentences. Not hype — real, underreported, actionable.]
 
 ⚡ MONDAY EDGE
-[One contrarian or underrated idea to carry into the week. Could challenge a default assumption. Sharp. No fluff.]
+[One specific, actionable play Bryan can use Monday morning. Not generic advice.
+HOW TO EXECUTE:
+1. Name the play (1 sentence, specific action)
+2. Why Monday matters for this (2 sentences)
+3. Concrete next step: What to do first, who to contact, or what to test (1-2 sentences with specificity)
+4. Expected outcome if Bryan executes (1 sentence)
+Total: 5-6 sentences. This should be something he can start before 9 AM Monday, not vague positioning.]
 
 👦 SON CHALLENGE — Sunday Edition
-[One simple, creative physical activity for a 4.5-year-old — different from Saturday's. Household items only. Under 10 min to set up. Hand-eye coordination focus. Fun and silly.
-Format: Name the challenge → what you need → how to play → what skill it builds.]
+[One simple, creative physical activity for a 4.5-year-old — different from Saturday's. Household items only. Under 10 min to set up.
+HOW TO EXECUTE:
+1. Name the challenge (catchy, fun)
+2. What you need (household items list, 3-4 things max)
+3. How to play (2-3 sentences, step-by-step)
+4. PRIMARY SKILL IT BUILDS: Explain the developmental "why" — what cognitive or physical milestone this supports in a 4.5yo (1-2 sentences)
+5. Pro tip or variation (1 sentence)
+Total: 8-10 sentences. The "why" should feel intentional, not just activity for activity's sake.]
 ```
 
 ### Tone
 - Calm, reflective, sharp
 - Sunday morning energy — Bryan is closing the weekend, preparing his mind for Monday
-- Concept should be genuinely useful, not filler
-- Metaphor must be vivid and memorable
-- Forward signal should feel urgent without being panicky
+- **Concept should be genuinely useful, not filler** — bring the real scenario to life
+- **Metaphor must be vivid AND carry nuance** — reveal something he didn't expect
+- **Forward signal is about positioning** — pair the trend with a specific tool/vendor/pattern he can act on
+- **Monday Edge is tactical** — something executable before noon, not theory
+- **Son Challenge has purpose** — the developmental "why" should be as important as the activity
 - No fabricated data
 - No cannabis industry signals on weekends
 
@@ -105,9 +134,12 @@ Format: Name the challenge → what you need → how to play → what skill it b
 ## Success Metrics
 
 ✅ Bryan reads it in full on weekend morning  
-✅ At least one idea per brief stays with him into Monday  
-✅ Son challenges get used (physical activity happens)  
-✅ Concept/Metaphor on Sunday threads through his thinking  
+✅ Concept = He thinks "I could apply this Monday" or "I've seen this play out"  
+✅ Teach Me One Thing = He finds the nuance unexpected and worth remembering  
+✅ Forward Signal = He could name the tech stack/tool and consider adopting it  
+✅ Monday Edge = He takes at least one concrete action before Tuesday  
+✅ Son Challenge = Activity happens, feels developmentally intentional (not random)  
+✅ Overall = The brief reshapes how he's thinking about Monday, not just informative  
 
 ---
 

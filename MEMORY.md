@@ -71,10 +71,13 @@ For permanent rules, procedures, and protocols → See **STANDING_INSTRUCTIONS.m
 - AGENTS.md — agent skill registry
 - IDENTITY.md, USER.md, HEARTBEAT.md — system metadata
 - STANDING_INSTRUCTIONS.md (16K) — procedures & rules
-- PULSE_BRIEF_SPEC.md, WEEKEND_BRIEF_SPEC.md — active job specs
-- YOUTUBE_CONTENT_CATALOG.md — live feed data
 - OUTPUT FILES: PULSE_DAILY_OUTPUT.md, PULSE_WEEKEND_SAT_OUTPUT.md, PULSE_WEEKEND_SUN_OUTPUT.md (written daily by crons)
 - 6 other essential reference files
+
+**Files Moved to memory/ (Fetched On-Demand, 2026-03-08):**
+- PULSE_BRIEF_SPEC.md — cron job specifications
+- WEEKEND_BRIEF_SPEC.md — weekend cron job specifications
+- YOUTUBE_CONTENT_CATALOG.md — live feed data (written by crons)
 
 **Git Commits:**
 - Commit 80025be — Move reference files to memory/ (2026-03-07 13:49 EST)
