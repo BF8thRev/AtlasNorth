@@ -256,6 +256,48 @@ Keep attacking the list. Every day the board should show completed items from pr
 
 ---
 
+## 🎯 NEWTON COLD EMAIL CAMPAIGN WORKFLOW (Formalized 2026-03-08)
+
+**For coordinated cold email campaigns with multiple prospects, follow this SOP:**
+
+**Reference:** `memory/newton/NEWTON_COLD_EMAIL_CAMPAIGN_SOP.md`
+
+### Three-Person Workflow
+- **Atlas:** Prospect selection, research, email drafting (3 variations), calibration to Bryan's voice
+- **Hunter:** CRM management (loading prospects, tracking responses, logging objections, updating status)
+- **Bryan:** Reviews drafts, personalizes emails, sends from own email, conducts first conversations
+
+### Controlled Run Process
+1. **Phase 1:** Atlas selects 10 Ops Leaders from prospect list + researches each
+2. **Phase 2:** Load into Newton CRM with persona, pain point, strongest wedge
+3. **Phase 3:** Atlas drafts 3 email variations (all using verified hook: Mitchell Osak Substack article)
+4. **Phase 4:** Bryan reviews + approves tone, personalizes each email
+5. **Phase 5:** Bryan sends 10 emails from his account
+6. **Phase 6:** Hunter tracks responses, logs objections, updates CRM status
+
+### Newton CRM Structure (Cold Campaign)
+- **Single source of truth:** Newton CRM Google Sheet
+- **Columns:** Date | Prospect | Company | Role | Email | Persona | Stage | Primary Problem | Strongest Wedge | Message Type | Message Sent Date | Response | Objection | Next Action | Notes
+- **Owner:** Hunter (updates all responses, objections, next actions)
+- **Access:** Atlas (initial load), Bryan (review), Hunter (ongoing management)
+
+### Email Framework (3 Variations)
+All use: Mitchell Osak Substack (https://mitchellosak.substack.com/p/cannabis-cost-savings-hiding-in-plain)
+- **Variation 1:** Feedback Loop angle (technical, process-focused)
+- **Variation 2:** Baseline Shift angle (operational, pattern-focused)
+- **Variation 3:** Cost Savings angle (economic, margin-focused)
+
+**Standards:** 50-70 words, Bryan's voice, one diagnostic question (no scheduling links), no marketing language
+
+### Metrics to Track (Hunter)
+- Reply rate (target: 15-25% for cold B2B)
+- Positive response rate
+- Objection patterns (budget, prior tool, operator resistance, etc.)
+- Best persona (which role responds best)
+- Best angle (which variation drives engagement)
+
+---
+
 ## 🤖 SUBAGENT OPERATIONAL STANDARDS (Formalized 2026-03-06)
 
 **CRITICAL: No subagent is production-ready until both requirements are verified in a test run.**
