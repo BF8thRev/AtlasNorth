@@ -1,0 +1,2 @@
+# TOKEN_USAGE.jsonl — append-only, one JSON object per line
+# Schema: {"timestamp":"ISO","model":"string","agent":"string","task_ref":"string","input_tokens":0,"output_tokens":0,"total_tokens":0,"category":"string"}

@@ -1,0 +1,64 @@
+{
+  "goals": [
+    {
+      "id": "goal-yt-subs",
+      "platform": "YouTube",
+      "icon": "▶️",
+      "metric": "Subscribers",
+      "baseline": 6740,
+      "baselineDate": "2026-02-27",
+      "current": 6740,
+      "target": 10000,
+      "unit": "",
+      "url": "https://www.youtube.com/channel/UCcck3tzBNXrJ1WJ8EtIVq1w",
+      "autoRefresh": true,
+      "color": "red",
+      "notes": "Auto-refreshed via YouTube API"
+    },
+    {
+      "id": "goal-x-followers",
+      "platform": "X (Twitter)",
+      "icon": "𝕏",
+      "metric": "Followers",
+      "baseline": null,
+      "baselineDate": "2026-02-27",
+      "current": null,
+      "target": 5000,
+      "unit": "",
+      "url": "https://x.com/BryanFields24",
+      "autoRefresh": false,
+      "color": "gray",
+      "notes": "Update manually — open X profile and set baseline once"
+    },
+    {
+      "id": "goal-li-personal",
+      "platform": "LinkedIn Personal",
+      "icon": "👤",
+      "metric": "Followers",
+      "baseline": null,
+      "baselineDate": "2026-02-27",
+      "current": null,
+      "target": 2500,
+      "unit": "",
+      "url": "https://www.linkedin.com/in/bryanfields24",
+      "autoRefresh": false,
+      "color": "blue",
+      "notes": "Update manually — LinkedIn doesn't expose follower API publicly"
+    },
+    {
+      "id": "goal-li-company",
+      "platform": "LinkedIn — The Dime",
+      "icon": "🎙️",
+      "metric": "Followers",
+      "baseline": null,
+      "baselineDate": "2026-02-27",
+      "current": null,
+      "target": 1000,
+      "unit": "",
+      "url": "https://www.linkedin.com/company/the-dime-podcast",
+      "autoRefresh": false,
+      "color": "blue",
+      "notes": "Update manually — company page follower count"
+    }
+  ]
+}

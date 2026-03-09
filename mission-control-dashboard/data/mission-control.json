@@ -1,0 +1,78 @@
+{
+  "blockersForYou": [
+    {
+      "id": "blocker-1",
+      "title": "Add Vercel Env Vars — Memory Vault saves broken until this is done",
+      "impact": 95,
+      "difficulty": 5,
+      "notes": "Go to vercel.com → AtlasNorth → Settings → Environment Variables. Add: GITHUB_TOKEN, GITHUB_REPO=BF8thRev/AtlasNorth, GITHUB_BRANCH=main. Token is in mission-control-dashboard/VERCEL_ENV_REQUIRED.md. Until this is set, saving files in Memory Vault silently fails.",
+      "status": "blocked"
+    },
+    {
+      "id": "blocker-2",
+      "title": "Complete Agent SOUL.md Files — 9 agents have no identity",
+      "impact": 85,
+      "difficulty": 30,
+      "notes": "Only Spark and Pulse have Bryan-authored SOUL.md files. Olg, Rob C, Hunter, Dr. Frankl, Ledger, Voss, Bob, Niessen, Atlas are scaffolded but empty. Drop each SOUL.md in chat and Atlas will slot them in immediately.",
+      "status": "waiting"
+    },
+    {
+      "id": "blocker-3",
+      "title": "Newton Software-Only Tier — Pricing Decision Pending",
+      "impact": 80,
+      "difficulty": 40,
+      "notes": "Free vs $500/mo decision is unresolved. This blocks Hunter from building an outreach sequence and Ledger from modeling revenue scenarios. Bryan needs to decide before any Newton sales motion starts.",
+      "status": "blocked"
+    },
+    {
+      "id": "blocker-4",
+      "title": "Add atlas.opsman@gmail.com to Search Console — SCC/HUSA SEO blind",
+      "impact": 70,
+      "difficulty": 5,
+      "notes": "Search Console API returns no sites. Need Bryan to add atlas.opsman@gmail.com as a user in Google Search Console for Hellma USA. Blocks SEO growth tracking for SCC/HUSA.",
+      "status": "blocked"
+    }
+  ],
+  "openLoops": [
+    {
+      "id": "loop-1",
+      "title": "The Dime — Distribution Gap Not Fixed",
+      "impact": 90,
+      "difficulty": 35,
+      "notes": "Bryan makes enormous content but doesn't maximize distribution. Top performers using outside-in framing (Tobacco/Pharma/AI lens) drive 5x reach. No systematic distribution playbook exists yet. Rob C + Olg need to build one.",
+      "status": "pending"
+    },
+    {
+      "id": "loop-2",
+      "title": "Newton Prospects — No Active Outreach Sequence",
+      "impact": 85,
+      "difficulty": 30,
+      "notes": "FL and MI prospect lists exist (Newton_prospects_FL_MI.md). LinkedIn outreach draft exists. No sequence is actively running. Hunter needs a green light and the pricing decision resolved before this moves.",
+      "status": "waiting"
+    },
+    {
+      "id": "loop-3",
+      "title": "Dime Hidden Gems — 5 High-Ratio Clips Need Distribution Push",
+      "impact": 75,
+      "difficulty": 15,
+      "notes": "DIME_AUDIENCE_INTELLIGENCE.md identifies hidden gems with high like ratios but low views — distribution problem not content quality. Rob C should push these before any new content is cut.",
+      "status": "pending"
+    },
+    {
+      "id": "loop-4",
+      "title": "Agent Roster — Bob Scaffold Completion Status Unknown",
+      "impact": 65,
+      "difficulty": 20,
+      "notes": "Bob was tasked with scaffolding 10 agent directories (SOUL, IDENTITY, USER, MEMORY, HEARTBEAT). Confirmation of full completion was not received. Atlas to verify all 10 agent folders exist with all 5 files.",
+      "status": "in-progress"
+    },
+    {
+      "id": "loop-5",
+      "title": "SCC/HUSA — No Growth Report Built Yet",
+      "impact": 60,
+      "difficulty": 25,
+      "notes": "Google Analytics access exists (Property ID 473280391). SEO guy sends weekly Excel. No automated growth report has been built to track and prove growth to Bryan. Ledger should own this.",
+      "status": "pending"
+    }
+  ]
+}

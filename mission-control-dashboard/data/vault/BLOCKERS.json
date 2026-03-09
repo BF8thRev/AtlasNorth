@@ -1,0 +1,58 @@
+{
+  "last_updated": "2026-03-05",
+  "version": "1.0",
+  "blockers": [
+    {
+      "id": "BLK-001",
+      "description": "Search Console — atlas.opsman@gmail.com not added as property user. Blocks SCC/HUSA and Newton SEO data.",
+      "priority": "🔴",
+      "owner": "Bryan",
+      "status": "open",
+      "action": "Google Search Console → Settings → Users and Permissions → Add atlas.opsman@gmail.com"
+    },
+    {
+      "id": "BLK-002",
+      "description": "OAuth re-auth blocked — redirect_uri_mismatch. 127.0.0.1 callback not registered in Google Cloud Console OAuth credentials.",
+      "priority": "🔴",
+      "owner": "Bryan",
+      "status": "blocked",
+      "action": "Go to console.cloud.google.com → APIs & Services → Credentials → OAuth 2.0 Client → Add http://127.0.0.1 to Authorized redirect URIs. Takes 30 seconds."
+    },
+    {
+      "id": "BLK-003",
+      "description": "VERCEL_TOKEN not stored — Atlas cannot trigger manual deploys or verify env vars without Chrome attached.",
+      "priority": "🟠",
+      "owner": "Bryan",
+      "status": "open",
+      "action": "vercel.com/account/tokens → create token → add VERCEL_TOKEN to ~/.openclaw/.env"
+    },
+
+
+    {
+      "id": "BLK-014",
+      "description": "Agent SOUL.md files missing for 9 agents — OLG, Rob_C, Hunter, Dr. Frankl, Ledger, Voss, Bob, Niessen, Spark are scaffolded but empty.",
+      "priority": "🟠",
+      "owner": "Bryan",
+      "status": "open",
+      "action": "Drop each agent's SOUL.md in chat and Atlas slots it in immediately. Or Bryan writes identity bullet points and Atlas drafts them."
+    },
+
+
+    {
+      "id": "BLK-017",
+      "description": "OLG LinkedIn post draft (Tilray/BrewDog) moved to DRAFTS folder. Need formal system for tracking draft items that need Bryan review/approval.",
+      "priority": "🟠",
+      "owner": "Bryan",
+      "status": "open",
+      "action": "Review OLG post in /DRAFTS/OLG_LinkedIn_TilrayBrewDog_20260305.md. Approve, edit, or reject. Establish DRAFTS workflow: Atlas creates → stores in DRAFTS → logs as blocker → Bryan handles."
+    },
+    {
+      "id": "BLK-018",
+      "description": "DRAFTS folder system not formalized. Items building in DRAFTS need tracking so Bryan can batch-review and approve/reject.",
+      "priority": "🟠",
+      "owner": "Bryan",
+      "status": "open",
+      "action": "Define DRAFTS workflow: (1) Atlas moves items to /DRAFTS/ with metadata header, (2) Add to blockers board as 'pending review', (3) Bryan reviews batch at set cadence (daily? weekly?), (4) Approve/Reject/Revise. Build DRAFTS_STATUS.json to track."
+    }
+  ]
+}
