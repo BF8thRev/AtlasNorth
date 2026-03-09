@@ -1,0 +1,46 @@
+{
+  "candidates": [
+    {
+      "name": "Cullen Lindsay",
+      "role": "Director of Extraction & Processing",
+      "company": "UNIQ cannabis",
+      "state": "MA",
+      "linkedin_url": "https://www.linkedin.com/in/cullen-lindsay-5880ba345/",
+      "verified": false
+    },
+    {
+      "name": "Matthew Folk",
+      "role": "Director of Processing",
+      "company": "Natrabis",
+      "state": "Unknown",
+      "linkedin_url": "https://www.linkedin.com/in/matthew-folk-750393112/",
+      "verified": false
+    },
+    {
+      "name": "Christine Mills",
+      "role": "VP Operations",
+      "company": "The Mills Group LLC",
+      "state": "NJ",
+      "linkedin_url": "https://www.linkedin.com/in/christine-mills-97926315/",
+      "verified": false
+    },
+    {
+      "name": "Patrick Frost",
+      "role": "VP Operations",
+      "company": "BounceBack",
+      "state": "KS",
+      "linkedin_url": "https://www.linkedin.com/in/patrick-frost-a97a1320/",
+      "verified": false
+    },
+    {
+      "name": "Thane Ewald",
+      "role": "Manufacturing Operations & Production Management",
+      "company": "Cannabis Manufacturing",
+      "state": "Multiple",
+      "linkedin_url": "https://www.linkedin.com/in/thaneewald/",
+      "verified": false
+    }
+  ],
+  "total": 5,
+  "verification_needed": true
+}

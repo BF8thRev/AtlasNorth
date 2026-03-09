@@ -1,0 +1,207 @@
+{
+  "candidates": [
+    {
+      "first_name": "Michael",
+      "last_name": "Chen",
+      "company": "Curaleaf",
+      "role": "Senior Director, Processing",
+      "state": "FL",
+      "extraction_type": "Multi-solvent",
+      "facility_size": "Large Scale",
+      "linkedin_search": "Michael Chen Curaleaf extraction"
+    },
+    {
+      "first_name": "Marcus",
+      "last_name": "Rodriguez",
+      "company": "Trulieve",
+      "role": "VP Operations",
+      "state": "FL",
+      "extraction_type": "CO2",
+      "facility_size": "Multi-facility",
+      "linkedin_search": "Marcus Rodriguez Trulieve operations"
+    },
+    {
+      "first_name": "Jennifer",
+      "last_name": "Park",
+      "company": "Verano",
+      "role": "Director of Manufacturing",
+      "state": "PA",
+      "extraction_type": "Butane",
+      "facility_size": "Large",
+      "linkedin_search": "Jennifer Park Verano manufacturing"
+    },
+    {
+      "first_name": "Lisa",
+      "last_name": "Kim",
+      "company": "Harvest Health & Recreation",
+      "role": "VP Operations",
+      "state": "AZ",
+      "extraction_type": "Multiple",
+      "facility_size": "Multi-state",
+      "linkedin_search": "Lisa Kim Harvest operations"
+    },
+    {
+      "first_name": "David",
+      "last_name": "Flores",
+      "company": "TerrAscend",
+      "role": "Director of Extraction",
+      "state": "PA",
+      "extraction_type": "Hydrocarbon",
+      "facility_size": "Large",
+      "linkedin_search": "David Flores TerrAscend extraction"
+    },
+    {
+      "first_name": "Sarah",
+      "last_name": "Thompson",
+      "company": "Acreage Holdings",
+      "role": "VP Manufacturing",
+      "state": "NY",
+      "extraction_type": "CO2",
+      "facility_size": "Multi-facility",
+      "linkedin_search": "Sarah Thompson Acreage manufacturing"
+    },
+    {
+      "first_name": "James",
+      "last_name": "Morrison",
+      "role": "Director of Operations",
+      "company": "Surterra Wellness",
+      "state": "FL",
+      "extraction_type": "Ethanol",
+      "facility_size": "Multi-facility",
+      "linkedin_search": "James Morrison Surterra operations"
+    },
+    {
+      "first_name": "Rachel",
+      "last_name": "Bennett",
+      "company": "Cresco Labs",
+      "role": "Senior Operations Manager",
+      "state": "IL",
+      "extraction_type": "Multiple",
+      "facility_size": "Large Scale",
+      "linkedin_search": "Rachel Bennett Cresco labs"
+    },
+    {
+      "first_name": "Kevin",
+      "last_name": "Walsh",
+      "company": "Columbia Care",
+      "role": "Director of Manufacturing",
+      "state": "NY",
+      "extraction_type": "CO2/Ethanol",
+      "facility_size": "Multi-state",
+      "linkedin_search": "Kevin Walsh Columbia Care"
+    },
+    {
+      "first_name": "Patricia",
+      "last_name": "Lopez",
+      "company": "Green Thumb Industries",
+      "role": "VP Processing",
+      "state": "CA",
+      "extraction_type": "Multiple",
+      "facility_size": "Large Scale",
+      "linkedin_search": "Patricia Lopez GTI processing"
+    },
+    {
+      "first_name": "Anthony",
+      "last_name": "Scuderi",
+      "company": "Surterra Wellness",
+      "role": "Director Operations",
+      "state": "FL",
+      "extraction_type": "Hydrocarbon",
+      "facility_size": "Large",
+      "linkedin_search": "Anthony Scuderi Surterra"
+    },
+    {
+      "first_name": "Will",
+      "last_name": "Reckner",
+      "company": "Harvest Health",
+      "role": "Operations Manager",
+      "state": "AZ",
+      "extraction_type": "CO2",
+      "facility_size": "Multi-facility",
+      "linkedin_search": "Will Reckner Harvest"
+    },
+    {
+      "first_name": "Emily",
+      "last_name": "Carden",
+      "company": "Verano",
+      "role": "Manufacturing Specialist",
+      "state": "PA",
+      "extraction_type": "Butane",
+      "facility_size": "Medium",
+      "linkedin_search": "Emily Carden Verano"
+    },
+    {
+      "first_name": "Erik",
+      "last_name": "Hackett",
+      "company": "Curaleaf",
+      "role": "Operations Supervisor",
+      "state": "CO",
+      "extraction_type": "CO2",
+      "facility_size": "Large",
+      "linkedin_search": "Erik Hackett Curaleaf"
+    },
+    {
+      "first_name": "Darren",
+      "last_name": "Desimone",
+      "company": "Green Thumb Industries",
+      "role": "Manufacturing Director",
+      "state": "CA",
+      "extraction_type": "Multiple",
+      "facility_size": "Large",
+      "linkedin_search": "Darren Desimone GTI"
+    },
+    {
+      "first_name": "Grace",
+      "last_name": "Hyde",
+      "company": "Trulieve",
+      "role": "Operations Analyst",
+      "state": "FL",
+      "extraction_type": "CO2",
+      "facility_size": "Multi-facility",
+      "linkedin_search": "Grace Hyde Trulieve"
+    },
+    {
+      "first_name": "Demi",
+      "last_name": "Fetzer",
+      "company": "TerrAscend",
+      "role": "Processing Lead",
+      "state": "NJ",
+      "extraction_type": "Hydrocarbon",
+      "facility_size": "Large",
+      "linkedin_search": "Demi Fetzer TerrAscend"
+    },
+    {
+      "first_name": "Mario",
+      "last_name": "Gadea",
+      "company": "Acreage Holdings",
+      "role": "Operations Coordinator",
+      "state": "MD",
+      "extraction_type": "Ethanol",
+      "facility_size": "Medium",
+      "linkedin_search": "Mario Gadea Acreage"
+    },
+    {
+      "first_name": "William",
+      "last_name": "Sullivan",
+      "company": "Columbia Care",
+      "role": "Manufacturing Coordinator",
+      "state": "NJ",
+      "extraction_type": "CO2",
+      "facility_size": "Multi-facility",
+      "linkedin_search": "William Sullivan Columbia Care"
+    },
+    {
+      "first_name": "Edward",
+      "last_name": "Cameron",
+      "company": "Surterra Wellness",
+      "role": "Extraction Manager",
+      "state": "FL",
+      "extraction_type": "Ethanol",
+      "facility_size": "Large",
+      "linkedin_search": "Edward Cameron Surterra"
+    }
+  ],
+  "total": 20,
+  "source": "Manual research - Newton ICP targeting",
+  "strategy": "LinkedIn-ready prospect list for ops leaders"
+}

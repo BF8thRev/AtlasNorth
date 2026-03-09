@@ -1,0 +1,7 @@
+{
+  "timestamp": "2026-03-09T14:30:00Z",
+  "action": "Add extraction/processing leaders to Newton CRM",
+  "rows_inserted": 11,
+  "status": "SUCCESS",
+  "updated_range": "Prospects!A22:K32"
+}

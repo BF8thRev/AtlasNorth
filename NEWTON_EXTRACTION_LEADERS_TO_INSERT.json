@@ -1,0 +1,95 @@
+{
+  "new_prospects": [
+    {
+      "first_name": "Cullen",
+      "last_name": "Lindsay",
+      "company": "UNIQ cannabis",
+      "role": "Director of Extraction & Processing",
+      "state": "MA",
+      "linkedin_url": "https://www.linkedin.com/in/cullen-lindsay-5880ba345/"
+    },
+    {
+      "first_name": "Matthew",
+      "last_name": "Folk",
+      "company": "Natrabis",
+      "role": "Director of Processing",
+      "state": "Unknown",
+      "linkedin_url": "https://www.linkedin.com/in/matthew-folk-750393112/"
+    },
+    {
+      "first_name": "Christine",
+      "last_name": "Mills",
+      "company": "The Mills Group LLC",
+      "role": "VP Operations",
+      "state": "NJ",
+      "linkedin_url": "https://www.linkedin.com/in/christine-mills-97926315/"
+    },
+    {
+      "first_name": "Patrick",
+      "last_name": "Frost",
+      "company": "BounceBack",
+      "role": "VP Operations",
+      "state": "KS",
+      "linkedin_url": "https://www.linkedin.com/in/patrick-frost-a97a1320/"
+    },
+    {
+      "first_name": "Thane",
+      "last_name": "Ewald",
+      "company": "Cannabis Manufacturing Consultant",
+      "role": "Manufacturing Operations Manager",
+      "state": "Multiple",
+      "linkedin_url": "https://www.linkedin.com/in/thaneewald/"
+    },
+    {
+      "first_name": "Tyler",
+      "last_name": "Post",
+      "company": "Cannabis Production",
+      "role": "Director of Production and Manufacturing",
+      "state": "Unknown",
+      "linkedin_url": "https://www.linkedin.com/in/tyler-post-07299a243/"
+    },
+    {
+      "first_name": "Kevin",
+      "last_name": "Coyle",
+      "company": "Boston Hemp Inc",
+      "role": "Director of Sales and Operations",
+      "state": "MA",
+      "linkedin_url": "https://www.linkedin.com/in/kevin-coyle-401300307/"
+    },
+    {
+      "first_name": "Brad",
+      "last_name": "Hudock",
+      "company": "Hemp-Alternative",
+      "role": "Director of Operations & Project Management",
+      "state": "Unknown",
+      "linkedin_url": "https://www.linkedin.com/in/bradmhudock/"
+    },
+    {
+      "first_name": "Jon",
+      "last_name": "Lane",
+      "company": "LeafLine Labs, LLC",
+      "role": "VP Cultivation Operations",
+      "state": "MN",
+      "linkedin_url": "https://www.linkedin.com/in/jon-lane-246a33117/"
+    },
+    {
+      "first_name": "Darren",
+      "last_name": "Waguespack",
+      "company": "Hemp & CBD Services",
+      "role": "Director of Sales Hemp & CBD Division",
+      "state": "Unknown",
+      "linkedin_url": "https://www.linkedin.com/in/darrenwaguespack/"
+    },
+    {
+      "first_name": "Alexander",
+      "last_name": "Ceranek",
+      "company": "flord cannabinoids",
+      "role": "Vice President of Sales",
+      "state": "Unknown",
+      "linkedin_url": "https://www.linkedin.com/in/alexanderceranek/"
+    }
+  ],
+  "total_new": 11,
+  "duplicates_skipped": 0,
+  "ready_for_crm": true
+}

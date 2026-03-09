@@ -1,0 +1,8 @@
+{
+  "timestamp": "2026-03-09T14:35:00Z",
+  "action": "Add COO leaders to Newton CRM with LinkedIn Verified column",
+  "rows_inserted": 7,
+  "column_l_added": "LinkedIn Verified",
+  "status": "SUCCESS",
+  "updated_range": "Prospects!A33:L39"
+}

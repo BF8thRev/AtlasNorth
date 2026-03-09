@@ -1,0 +1,8 @@
+{
+  "timestamp": "2026-03-09T14:20:00Z",
+  "action": "Append prospects to Newton CRM",
+  "rows_inserted": 20,
+  "sheet_id": "1FxH1YnQ93Oj5KAuXv6h0_TrkV5BS6ejNJ4t_q_0i7i8",
+  "status": "SUCCESS",
+  "updated_range": "Prospects!A22:K41"
+}

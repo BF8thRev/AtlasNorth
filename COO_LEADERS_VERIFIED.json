@@ -1,0 +1,76 @@
+{
+  "coo_leaders": [
+    {
+      "first_name": "Kim",
+      "last_name": "Fontenot",
+      "company": "EcoXtraction",
+      "role": "President & Chief Operating Officer",
+      "state": "LA",
+      "linkedin_url": "https://www.linkedin.com/in/kimfontenot/",
+      "extraction_vape": true,
+      "notes": "Clean extraction solutions"
+    },
+    {
+      "first_name": "Ben",
+      "last_name": "Dublin",
+      "company": "Verabloom Inc",
+      "role": "Chief Operating Officer",
+      "state": "NY",
+      "linkedin_url": "https://www.linkedin.com/in/ben-dublin-203331199/",
+      "extraction_vape": true,
+      "notes": "Large scale cannabis, hemp processing facilities"
+    },
+    {
+      "first_name": "Josh",
+      "last_name": "Ruhlman",
+      "company": "Redbird Cannabis",
+      "role": "Chief Operating Officer",
+      "state": "WA",
+      "linkedin_url": "https://www.linkedin.com/in/josh-ruhlman-853045127/",
+      "extraction_vape": true,
+      "notes": "Cannabis operations"
+    },
+    {
+      "first_name": "Justin",
+      "last_name": "Torkildson",
+      "company": "Juicy Concentrates",
+      "role": "Chief Operating Officer",
+      "state": "Unknown",
+      "linkedin_url": "https://www.linkedin.com/in/justin-torkildson-200723223/",
+      "extraction_vape": true,
+      "notes": "Cannabis concentrates, 10+ years extraction ops"
+    },
+    {
+      "first_name": "Jace",
+      "last_name": "Bueno",
+      "company": "Cheech & Chong",
+      "role": "Chief Operating Officer",
+      "state": "Unknown",
+      "linkedin_url": "https://www.linkedin.com/in/jacebueno2024/",
+      "extraction_vape": true,
+      "notes": "Cannabis/vape brand operations"
+    },
+    {
+      "first_name": "Mark",
+      "last_name": "Hillier",
+      "company": "Gage Cannabis Co.",
+      "role": "Chief Operating Officer",
+      "state": "MA",
+      "linkedin_url": "https://www.linkedin.com/in/mark-hillier-a8704931/",
+      "extraction_vape": true,
+      "notes": "Multi-unit cannabis operations"
+    },
+    {
+      "first_name": "Don",
+      "last_name": "Frederick",
+      "company": "The Vape Loft",
+      "role": "Chief Operating Officer",
+      "state": "Unknown",
+      "linkedin_url": "https://www.linkedin.com/in/don-frederick-4307b6233/",
+      "extraction_vape": true,
+      "notes": "Vape operations, 20+ years experience"
+    }
+  ],
+  "total": 7,
+  "cross_reference": "All verified as extraction/vape/cannabis operations"
+}
