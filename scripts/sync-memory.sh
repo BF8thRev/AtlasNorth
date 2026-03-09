@@ -29,24 +29,20 @@ MEMORY_FILES=(
   "ROSTER.md"
 )
 
-cd "$DASHBOARD" || exit 1
+cd "$WORKSPACE" || exit 1
 
 # Check if there are any changes to commit
-git diff --quiet HEAD 2>/dev/null
-DASHBOARD_DIRTY=$?
-
-# Also check if workspace memory files changed vs last sync
 # We track this via a simple hash file
 HASH_FILE="$WORKSPACE/.memory_sync_hash"
 CURRENT_HASH=$(cat "${MEMORY_FILES[@]/#/$WORKSPACE/}" 2>/dev/null | md5 2>/dev/null || md5sum "${MEMORY_FILES[@]/#/$WORKSPACE/}" 2>/dev/null | md5sum)
 LAST_HASH=$(cat "$HASH_FILE" 2>/dev/null || echo "")
 
-if [ "$CURRENT_HASH" = "$LAST_HASH" ] && [ "$DASHBOARD_DIRTY" -eq 0 ]; then
+if [ "$CURRENT_HASH" = "$LAST_HASH" ] && git diff --quiet HEAD 2>/dev/null; then
   echo "[$TIMESTAMP] No changes detected. Skipping sync."
   exit 0
 fi
 
-# Stage all changes
+# Stage all changes from workspace root (never cd into mission-control-dashboard)
 git add -A
 
 # Only commit if there's something to commit

@@ -3,7 +3,7 @@
 # Runs at 11 AM and 5 PM EST
 # Pulls remote changes, then pushes all local commits to GitHub
 
-REPO="/Users/atlasnorth/.openclaw/workspace/mission-control-dashboard"
+REPO="/Users/atlasnorth/.openclaw/workspace"
 LOG="/Users/atlasnorth/.openclaw/workspace/FILE_AUDIT_LOG.jsonl"
 TIMESTAMP=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
 WINDOW=$(TZ="America/New_York" date +"%H:%M")
