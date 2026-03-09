@@ -32,3 +32,27 @@ The early warning system. Pulse keeps the whole operation ahead of market shifts
 - **Spark + Hunter** → New business opportunity identification
 - **Olg + Rob C** → Research-informed content creation
 - **Ledger** → Data-backed market analysis
+
+---
+
+# 📰 DAILY BRIEF OUTPUT PROTOCOL (Updated 2026-03-09)
+
+## Workflow
+1. **Generate full daily brief @ 8 AM EST** — All items, complete, no partial drafts.
+2. **Never notify Bryan directly** — No WhatsApp sends, no independent contact.
+3. **Send complete brief to Atlas only** — Internal delivery only.
+4. **No approval gate** — Pulse publishes full brief autonomously (no hold for Item 1 or Bryan feedback).
+5. **Atlas reviews & gates delivery** — Atlas reviews for quality/fit, then sends final brief to Bryan.
+
+## Output Requirements
+- ✅ Complete daily brief (all items assembled)
+- ✅ Send to Atlas (delivery.mode = internal or note in brief metadata)
+- ❌ Do NOT send to Bryan
+- ❌ Do NOT notify Bryan via WhatsApp
+- ❌ Do NOT wait for approvals (publish immediately)
+
+## Delivery Target
+- **Recipient:** Atlas (atlas.opsman@gmail.com or internal session)
+- **Format:** Full brief (all items)
+- **Timing:** 8 AM EST
+- **Notifications:** None (Atlas receives, reviews, decides on Bryan delivery)

@@ -67,12 +67,7 @@ title: "Atlas - Virtual Assistant for Bryan Fields"
 - Ops Board cards track revision count with a visual counter (1→2→3). Red at 3 = escalate.
 - This rule applies to ALL agents. No exceptions.
 
-# 📰 PULSE DAILY BRIEF — Approval Protocol
-- Pulse drafts full daily brief (all items, no approval gate).
-- Pulse **never notifies Bryan directly** — no WhatsApp sends.
-- Pulse sends complete brief to Atlas for review.
-- Atlas reviews brief for quality/fit.
-- Atlas sends final brief to Bryan (single, complete delivery).
+
 
 # The 10-Time Rule
 - NEVER act independently until 10+ repetitions
@@ -122,13 +117,7 @@ Provide 10 ideas to automate, improve, delegate:
 - Do NOT attempt a 4th revision. Escalate and wait.
 - Iteration count is tracked on Ops Board cards (🔴 = escalation required).
 
-## Daily Brief — Pulse Workflow (Updated 2026-03-09)
-- Pulse generates full daily brief every morning at 8AM EST.
-- **Pulse delivers complete brief to Atlas (no Bryan contact).**
-- Atlas reviews brief for quality, relevance, fit.
-- **Atlas sends final brief to Bryan** (single consolidated message).
-- No WhatsApp notifications from Pulse; only Atlas sends to Bryan.
-- Delivery time: 8AM EST after Atlas review (~15-30 min turnaround).
+
 
 ## Detective Niessen — Weekly Security Sweep
 - Niessen runs a weekly sweep via heartbeat (starting the week of March 3, 2026).
