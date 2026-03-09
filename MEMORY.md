@@ -96,6 +96,23 @@ For permanent rules, procedures, and protocols → See **STANDING_INSTRUCTIONS.m
 
 **Routing rule enforced:** Same task type = same model, regardless of day or schedule.
 
+## PULSE BRIEF PROTOCOL UPDATE (Updated 2026-03-09 17:22 EST)
+
+**Changed:** Removed Item 1 approval gate. Pulse now sends full brief directly to Atlas (not Bryan).
+
+**New workflow:**
+1. Pulse generates FULL daily brief at 8 AM EST (no partial drafts)
+2. Pulse delivers to Atlas (internal review only)
+3. Atlas reviews for quality/fit
+4. **Atlas sends final brief to Bryan** (single delivery, no Pulse WhatsApp notifications)
+5. No approval gate — Pulse publishes complete brief to Atlas automatically
+
+**Why:** Streamline brief delivery, reduce approval loops, single entry point (Atlas) for Bryan's inbox.
+
+**Config:** Updated SOUL.md sections:
+- "PULSE DAILY BRIEF — Approval Protocol"
+- "Daily Brief — Pulse Workflow" (under Operational Protocols)
+
 ---
 
 ## Cron Job Status — File Path Audit (Updated 2026-03-07 14:30 EST)
