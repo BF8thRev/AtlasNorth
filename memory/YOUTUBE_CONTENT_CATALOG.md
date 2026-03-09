@@ -28,6 +28,16 @@ _(Catalog entries appended daily by OLG routine)_
 
 ---
 
+### Pull Log — 2026-03-09T04:00:00Z (11 PM EST, Mar 8 2026)
+
+**New episodes in last 24 hours:** 1
+
+| Episode ID | Title | Publish Date | Format | Duration (s) | Theme | Title Style | Views (at catalog) | Likes (at catalog) | Notes | Pulled | Days Live |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| boH2n38ywvM | Why California Cannabis Never Recovered After Prop 64 \| Micah Anderson (LEEF Brands) | 2026-03-08 | long | 3192 | policy_regulatory, extraction_ops | question_pipe_guest | 36 | 4 | New episode — Prop 64 cannabis regulation deep-dive with operator from LEEF Brands. ~53 min. Early snapshot. | 2026-03-09T04:00:00Z | <1 |
+
+---
+
 ### Pull Log — 2026-03-08T04:00:02Z (11 PM EST, Mar 7 2026)
 
 **New episodes in last 24 hours:** 0
