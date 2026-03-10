@@ -477,3 +477,147 @@ For permanent rules, procedures, and protocols → See **STANDING_INSTRUCTIONS.m
 **Status:** ✅ ENABLED, first run scheduled for Monday March 10
 
 **Related:** NEWTON_COLD_EMAIL_CAMPAIGN_SOP.md (Section 3: Pipeline Building)
+
+---
+
+## HEARTBEAT.md Investigation & Remediation (Executed 2026-03-10 13:00 EST)
+
+**PROBLEM DISCOVERED:** Overnight token burn spike. Bryan requested investigation of repeated model calls between 00:00–06:00 EST.
+
+**Investigation Results:**
+- **Root Cause:** System Health Check (HEARTBEAT.md) cron job running every 60 seconds on `claude-sonnet-4-6`
+- **Run History:** 3,719 total runs logged since creation
+- **Token Burn:** ~13,470 tokens per run (input 5 + output 220 + system context)
+- **Overnight Impact:** 360 calls/night × 13,470 tokens = **~4.8M tokens burned per night**
+- **Output Value:** Only "HEARTBEAT_OK" (3 words) — task was trivial compared to model cost
+- **Job Status:** Disabled (confirmed safe state), but the oversight was critical
+
+**Root Cause Analysis:**
+- System was monitoring health every 60 seconds across 24 hours
+- Sonnet-4-6 is expensive for a simple boolean check
+- Every isolated session reloaded full system context (SOUL.md, MEMORY.md, AGENTS.md) = context bloat
+- No mechanism existed to detect high-frequency jobs or expensive model mismatches
+
+**Remediation — 3 Parts:**
+
+### 1. Heartbeat Job Optimization (Completed 2026-03-10 13:15 EST)
+- **Disabled:** ✅ Stayed disabled (no auto-enable)
+- **Model Downgrade:** `claude-sonnet-4-6` → `ollama/phi4-mini:latest` (local, $0/call)
+- **Interval Change:** Every 60 seconds → Every 5 minutes (300,000ms)
+- **Impact if Re-enabled:** 72 calls/night at $0 vs. 360 calls/night at $13,470 each
+
+### 2. Detective Niessen — Daily Security Audit (Completed 2026-03-10 13:45 EST)
+- **New Agent Registered:** `detective-niessen` in gateway config
+- **Model:** `ollama/phi4-mini:latest` (locked at agent level, $0/run)
+- **Tools Allowed:** `cron` + `message` only (minimal surface)
+- **Workspace:** `/Users/atlasnorth/.openclaw/workspace/agents/detective-niessen` (SOUL.md loads automatically)
+- **Identity:** Detective Niessen, Emoji: 🕵️ (fully mapped)
+- **Schedule:** Daily 2 AM EST
+- **Audit Checks:**
+  1. High-frequency jobs (any interval < 5 minutes) → 🔴 FLAG
+  2. Expensive models on simple tasks (sonnet/opus + <500 token output) → 🔴 FLAG
+  3. Ghost jobs (disabled jobs with recent run history) → 🔴 FLAG
+  4. New unregistered jobs (created in last 24h) → 🔴 FLAG
+  5. Overnight surprise activity (jobs between 00:00–06:00 EST outside whitelist) → 🔴 FLAG
+- **Reporting:** Sends WhatsApp alert only if issues found; silent (NIESSEN_CLEAR) if all clear
+- **First Run:** 2026-03-11 @ 2:00 AM EST
+
+### 3. Gateway Configuration Update (Completed 2026-03-10 13:30 EST)
+- **Added to `agents.list`:** detective-niessen (4th agent after atlas, hunter, pulse)
+- **Config Patch Applied:** Merged without full restart needed, then restarted for safety
+- **Sentinel Logged:** Config change confirmed in `/Users/atlasnorth/.openclaw/restart-sentinel.json`
+
+**Prevention Going Forward:**
+- Niessen audits every morning for high-frequency, expensive, or ghost jobs
+- Any anomaly triggers WhatsApp alert to Bryan
+- New jobs flagged within 24 hours of creation
+- Cost mismatches (expensive models on trivial tasks) automatically caught
+
+**Key Learning:**
+High-frequency health checks require lightweight execution. Phi4-Mini's 32K context window is sufficient for system pings. Sonnet should never be assigned to "respond HEARTBEAT_OK" tasks.
+
+**Status:** ✅ COMPLETE — Heartbeat disabled + reconfigured, Niessen live, no further action required
+
+---
+
+## YOUTUBE CONTENT PIPELINE — Two-Stage Restructure (Updated 2026-03-10 13:50 EST)
+
+**CHANGE:** Restructured YouTube content workflow from single "ingest + evaluate" job to two separate jobs.
+
+**Why:** Separate concerns. Daily ingest = fast dashboard load. Weekly evaluation = deep analysis after time-gates pass. Dashboard shows UNRATED entries immediately, then updates to RATED after evaluation.
+
+**Part 1 — Daily Ingest (11 PM EST)**
+- **Job ID:** `9dc17356-0dab-41b1-a3e4-85d8b0b9ead7`
+- **Schedule:** Every day 11 PM EST
+- **Task:** Pull new episodes from YouTube (last 24h), catalog metadata, ADD to `podcast-reviews.json` as UNRATED
+- **Output:** 
+  - `memory/YOUTUBE_CONTENT_CATALOG.md` — append new episode row
+  - `podcast-reviews.json` — append entry with `rating: null, ratingDate: null, category: null, etc.`
+- **No evaluation, no time gates, no performance analysis**
+- **Model:** claude-haiku-4-5-20251001 (fast, lightweight ingest)
+
+**Part 2 — Weekly Evaluation (Tuesday 10 AM EST)**
+- **Job ID:** `d69b4947-867a-4456-a471-5bc9bfa553e6`
+- **Schedule:** Every Tuesday 10 AM EST
+- **Task:** Read `podcast-reviews.json`, find entries where `rating === null AND today >= eligibleDate`, evaluate performance, assign rating/category/insights
+- **Output:** 
+  - `podcast-reviews.json` — update entries with `rating, category, rampStatus, slowStarter, notes, ratingDate`
+  - `memory/DIME_LEARNINGS.md` — append learnings from newly rated episodes
+- **Time gates enforced:** 7 days for shorts, 14 days for long-form
+- **Model:** claude-sonnet-4-20250514 (reasoning required for ramp curves + pattern analysis)
+
+**Dashboard Behavior:**
+1. **Day 0 (episode publishes):** Part 1 runs at 11 PM → episode appears in podcast-reviews.json as UNRATED
+2. **Day 1-6 (shorts) or Day 1-13 (long-form):** Episode stays UNRATED in dashboard
+3. **Day 7 (shorts) / Day 14 (long-form):** Tuesday 10 AM Part 2 runs → episode evaluates, rating fills in, dashboard updates to RATED
+
+**Result:** Bryan sees new episodes DAILY in dashboard (unrated), ratings populate after time-gates clear.
+
+**Related Files:**
+- `podcast-reviews.json` — single source of truth for all episodes
+- `memory/YOUTUBE_CONTENT_CATALOG.md` — tracking log (ingest only, not rated)
+- `memory/DIME_LEARNINGS.md` — learnings database (populated by Part 2 evaluations)
+- Mission Control dashboard → synced from `podcast-reviews.json` via Part 2
+
+**Permanent rule:** Part 1 = never evaluate. Part 2 = never ingest new episodes. Clean separation.
+
+---
+
+## Agent Registration & Registry Sync (Updated 2026-03-10 11:31 EST)
+
+### OLG & Bob the Builder Registration (Completed 2026-03-10 @ 11:18 AM)
+
+**Task:** Register OLG (writer) and Bob the Builder (engineer) as production agents.
+
+**Action Taken:**
+- Applied config.patch to agents.list
+- Registered OLG: workspace=/agents/olg, model=claude-sonnet-4-6, tools=[gog, read, write, edit]
+- Registered Bob: workspace=/agents/bob-the-builder, model=claude-sonnet-4-6, tools=[exec, read, write, edit]
+- Gateway restarted (SIGUSR1)
+
+**Initial Sync Issue:** agents_list endpoint returned only [atlas] despite both agents saved in config. Likely lag in gateway's agent registry rebuild.
+
+### Agent Registry Sync — FIXED (2026-03-10 @ 11:31 AM)
+
+**Issue Resolution:** Full gateway restart + openclaw doctor --non-interactive
+
+**Doctor Confirmed All 6 Agents Active:**
+```
+Agents: atlas (default), hunter, pulse, detective-niessen, olg, bob-the-builder
+```
+
+**Status:** ✅ RESOLVED
+- All agents now visible and spawnable
+- No agents_list lag
+- Registry fully synced post-restart
+
+**System Health (Doctor Report):**
+- 6 orphan transcript files (cleanup only)
+- 1 active session lock (normal)
+- 6 plugins loaded, 0 errors
+- 18 session entries in atlas store
+- All LaunchAgent services running
+
+**Implication:** All 6 agents (Atlas, Hunter, Pulse, OLG, Bob, Niessen) ready for task execution.
+
+**Operational Standards:** Added to STANDING_INSTRUCTIONS.md section "🤖 SUBAGENT OPERATIONAL STANDARDS (Updated 2026-03-10)" → covers spawn rules, identity verification, post-task retirement, production-readiness checklist.

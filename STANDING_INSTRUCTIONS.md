@@ -215,6 +215,143 @@ Keep attacking the list. Every day the board should show completed items from pr
 
 ---
 
+## 📺 YOUTUBE CONTENT PIPELINE — TWO-STAGE WORKFLOW (Formalized 2026-03-10)
+
+**This is the standing operational procedure for ingesting and evaluating The Dime episodes.**
+
+### Why Two Stages?
+- **Part 1 (Daily Ingest):** Fast, lightweight. Load new episodes to dashboard same day for visibility.
+- **Part 2 (Weekly Evaluation):** Deep analysis. Rate episodes after time-gates pass (7d shorts, 14d long-form).
+- **Result:** Bryan sees new content immediately (unrated) + ratings populate after performance is clear.
+
+### Part 1 — Daily Catalog & Ingest (11 PM EST)
+
+**Job Details:**
+- **Name:** YouTube Content Catalog — Daily Pull — 11 PM EST
+- **Job ID:** `9dc17356-0dab-41b1-a3e4-85d8b0b9ead7`
+- **Schedule:** Every day 11 PM EST (`0 23 * * *` America/New_York)
+- **Model:** `claude-haiku-4-5-20251001` (lightweight, fast)
+- **Timeout:** 300 seconds
+
+**Task:**
+1. Query The Dime YouTube channel (UCcck3tzBNXrJ1WJ8EtIVq1w) for uploads in last 24 hours via YouTube Data API v3
+2. For each new episode, collect metadata:
+   - Video ID, Title, Publish date (ISO), Duration, View count, Like count
+   - Estimate format (short <120s, long ≥120s)
+   - Title style (declarative, compressed, colon_subtitle, etc.)
+   - Likely theme if identifiable
+3. Append to `memory/YOUTUBE_CONTENT_CATALOG.md` (tracking log only)
+4. Add entry to `podcast-reviews.json` with schema:
+   ```json
+   {
+     "id": "<youtube-id>",
+     "title": "<title>",
+     "publishedAt": "<ISO-date>",
+     "format": "short|long",
+     "viewCount": <number>,
+     "likeCount": <number>,
+     "addedAt": "<today-ISO>",
+     "eligibleDate": "<ISO-date-7d-or-14d>",
+     "rating": null,
+     "ratingDate": null,
+     "category": null,
+     "rampStatus": null,
+     "slowStarter": null,
+     "notes": "Unrated—pending evaluation after time-gate"
+   }
+   ```
+5. Deduplication: Check if ID already in file before adding. Skip duplicates.
+
+**Output:**
+- `memory/YOUTUBE_CONTENT_CATALOG.md` — new row appended
+- `podcast-reviews.json` — new entry added with rating: null
+
+**Critical Rules:**
+- ❌ Do NOT evaluate episodes
+- ❌ Do NOT check time-gates
+- ❌ Do NOT rate or assign categories
+- ✅ Ingest only. Part 2 handles evaluation.
+
+### Part 2 — Weekly Evaluation & Rating (Tuesday 10 AM EST)
+
+**Job Details:**
+- **Name:** YouTube Content Rating — Weekly Evaluation — Tuesday 10 AM EST
+- **Job ID:** `d69b4947-867a-4456-a471-5bc9bfa553e6`
+- **Schedule:** Every Tuesday 10 AM EST (`0 10 * * 2` America/New_York)
+- **Model:** `claude-sonnet-4-20250514` (reasoning required for ramp curves)
+- **Timeout:** 120 seconds
+
+**Task:**
+1. Read `podcast-reviews.json`
+2. Filter: `rating === null AND today >= eligibleDate` (time-gates cleared)
+3. For each qualifying episode:
+   a) Fetch current YouTube stats (views, likes)
+   b) Apply performance ramp curve model:
+      - Shorts at day-7+: should be ~85% of final 30-day views
+      - Long-form at day-14+: should be ~90% of final 60-day views
+   c) Rate on 5-point scale:
+      - weak (below baseline, declining)
+      - solid (at or slightly below baseline, steady)
+      - strong (at or above baseline, positive trajectory)
+      - exceptional (well above baseline)
+      - breakout (exceptional + high engagement)
+   d) Assign category: policy_regulatory, market_dynamics, science_tech, extraction_ops, culture_story, brand_content, leadership, investor_lens
+   e) Flag slow starters: views < baseline BUT growth > 15% daily
+4. Update `podcast-reviews.json` entries with:
+   ```json
+   {
+     "ratedAt": "2026-03-XX",
+     "rating": "strong",
+     "category": "extraction_ops",
+     "daysLive": 7,
+     "viewsAtRating": 145,
+     "rampStatus": "on-track",
+     "slowStarter": false,
+     "notes": "[brief insight]"
+   }
+   ```
+5. Sync to Mission Control: `cp podcast-reviews.json mission-control-dashboard/public/data/podcast-reviews.json`
+6. Append to `memory/DIME_LEARNINGS.md`:
+   - [YYYY-MM-DD] Episode ID | Title | Rating | Category | Key Learning
+   - What worked, what didn't, patterns & trends
+   - Check existing entries — NO DUPLICATES
+
+**Output:**
+- `podcast-reviews.json` — entries updated with rating + category + performance data
+- `memory/DIME_LEARNINGS.md` — new learnings appended (dated entries)
+- Mission Control dashboard — synced and displayed as RATED
+
+**Critical Rules:**
+- ❌ Do NOT ingest new episodes (Part 1 handles daily ingest)
+- ❌ Do NOT rate entries before eligibleDate
+- ✅ Evaluate only entries where rating === null
+- ✅ Use actual YouTube data (no fabrication)
+- ✅ Check DIME_LEARNINGS.md for existing entries before appending (no duplicates)
+
+### Dashboard Behavior (Bryan's View)
+
+| Day | Stage | Status | Notes |
+|---|---|---|---|
+| **0 (publish)** | Part 1 runs 11 PM | **UNRATED** | Episode appears in podcast-reviews.json immediately |
+| **1-6 (shorts) / 1-13 (long)** | Both idle | **UNRATED** | Time-gate still active, no evaluation |
+| **7 (shorts) / 14 (long)** | Part 2 runs Tue 10 AM | **→ RATED** | Episode evaluates, rating fills in, dashboard updates |
+
+**Result:** New episodes visible daily. Ratings populate after performance is measurable.
+
+### Files Reference
+
+| File | Owner | Purpose | Update Frequency |
+|---|---|---|---|
+| `memory/YOUTUBE_CONTENT_CATALOG.md` | Part 1 | Tracking log (metadata only) | Daily 11 PM |
+| `podcast-reviews.json` | Part 1 + Part 2 | Single source of truth (all episodes + ratings) | Daily 11 PM (ingest) + Tue 10 AM (rating) |
+| `memory/DIME_LEARNINGS.md` | Part 2 | Learning database (patterns, insights) | Weekly Tue 10 AM |
+| Mission Control Dashboard | Part 2 (via sync) | User-facing display | Weekly Tue 10 AM |
+
+### Permanent Rule
+**Part 1 = Never evaluate. Part 2 = Never ingest. Clean separation.**
+
+---
+
 ## 🎯 NEWTON INSIGHTS SOP WORKFLOW (Formalized 2026-03-06)
 
 **Read these BEFORE any Newton prospecting, outreach, or CRM work:**
@@ -307,7 +444,52 @@ All use: Mitchell Osak Substack (https://mitchellosak.substack.com/p/cannabis-co
 
 ---
 
-## 🤖 SUBAGENT OPERATIONAL STANDARDS (Formalized 2026-03-06)
+## 🤖 SUBAGENT OPERATIONAL STANDARDS (Formalized 2026-03-06 · Updated 2026-03-10)
+
+### Agent Roster & Deployment Rules
+
+**Active Agents (Registered & Production-Ready):**
+1. **Atlas** (self) — Executive partner, task routing, synthesis
+2. **Hunter** — Sales research, prospect pipeline, CRM management
+3. **Pulse** — Research synthesis, trend intelligence, brief generation
+4. **Detective Niessen** — Security audits, system health, cron monitoring
+5. **OLG** — Content writing, voice consistency, narrative structure (registered 2026-03-10)
+6. **Bob the Builder** — Technical builds, automation, integrations (registered 2026-03-10)
+
+**CRITICAL RULE: No agent spawning without active task.**
+
+| Agent | Spawns Only When | Example Active Task | Rest State |
+|-------|-----------------|-------------------|-----------|
+| **OLG** | Content writing needed | "Write a 800-word long-form article on [topic] in Bryan's voice" | ❌ Retired |
+| **Bob** | Build/automation needed | "Build an API integration between [X] and [Y]" | ❌ Retired |
+| **Hunter** | Research needed | "Find 15 Ops Leaders in [state] + load to CRM" | ❌ Retired |
+| **Pulse** | Intel brief needed | "Research [topic] + generate 5 signals with sources" | ❌ Retired |
+| **Niessen** | Security audit needed | Daily cron (2 AM) — monitoring system health | ✅ Active (cron-driven) |
+
+**Atlas Never Impersonates:**
+- ❌ NEVER write as "Olg" or claim to be OLG
+- ❌ NEVER write as "Bob" or claim to be Bob the Builder
+- ❌ NEVER write code and credit it to Bob
+- ❌ NEVER write content and claim it's from OLG
+- ✅ DO reference them: "OLG will write this" or "Bob can build this"
+- ✅ DO spawn them for active tasks only
+- ✅ DO retire them when task completes
+
+### Agent Production-Readiness Checklist
+
+**Before using any agent for the first time, complete this checklist:**
+- [ ] Agent has SOUL.md in workspace
+- [ ] Agent has IDENTITY.md in workspace
+- [ ] Agent is registered in `agents.list` in gateway config
+- [ ] Agent has model specified (or uses default)
+- [ ] Agent has tools assigned (alsoAllow list)
+- [ ] Test spawn: Confirm identity in output
+- [ ] Test spawn: Verify SOUL.md + IDENTITY.md were read
+- [ ] Test spawn: Verify auto-write to MEMORY.md occurred
+
+**If any box unchecked → agent cannot be used.**
+
+### CRITICAL: Test Run Before Production Use
 
 **CRITICAL: No subagent is production-ready until both requirements are verified in a test run.**
 
