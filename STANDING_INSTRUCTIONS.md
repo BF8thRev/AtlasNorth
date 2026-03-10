@@ -640,6 +640,85 @@ bash /workspace/scripts/log-tokens.sh "$(date -u +\"%Y-%m-%dT%H:%M:%SZ\")" "goog
 
 ---
 
+## 🔗 LINKEDIN CONNECTIONS PROCESSING WORKFLOW (Formalized 2026-03-10)
+
+**For processing bulk LinkedIn connections (250+ contacts) into Newton CRM:**
+
+### Overview
+LinkedIn connections are warm prospects but require classification before outreach. Automated keyword matching catches 80% of extraction-relevant contacts. Deep research verification catches misclassifications (Charlotte's Web example: correctly should be extraction-focused, not non-relevant).
+
+### Two-Phase Workflow
+
+**Phase 1: Automated Categorization**
+- Run connections CSV through keyword extraction filter
+- Bucket into: "Added to Prospects" (high confidence), "Verify Extraction Focus" (unsure), "Not Relevant" (low score)
+- Create marked CSV with "CRM Status" column for all contacts
+
+**Phase 2: Hunter Deep Research Verification**
+- Research 100% of "Verify Extraction Focus" contacts (company + role extraction verification)
+- Spot-check "Not Relevant" for hidden extraction operations (equipment, compliance, lab, infusion, processing)
+- Reclassify any mismatches (e.g., Charlotte's Web found in "Not Relevant" → reclassify to "Added to Prospects")
+- Update CRM Status column with verified categorization
+- Output: "Connections_Linkedin_v2_VERIFIED.csv"
+
+### Hunter's Verification Checklist (Per Contact)
+
+For each "Verify" or spot-check contact:
+
+1. **Company Search** — Google, LinkedIn, website
+   - Does company do extraction? (Explicit: yes/no/unclear)
+   - Facility count + locations
+   - Product lines (concentrates, edibles, rosin, distillate, etc.)
+   
+2. **Role Assessment** — LinkedIn title + description
+   - Is role extraction-aligned? (Lab, QA, Compliance, Production, Extraction Lab Manager, etc.)
+   - Or is role commercial/advisory/adjacent?
+   - Implicit extraction? (VP Operations for extraction-confirmed company = likely relevant)
+
+3. **Decision** — Update CRM Status
+   - ✅ **Added to Prospects** = Company + Role BOTH extraction-confirmed → Add to Newton CRM Prospects (status: "Warm - LinkedIn Connection")
+   - ❓ **Verify Extraction Focus** = Company extracts but role unclear OR role is extraction-adjacent but company unclear → Keep for future research
+   - ❌ **Not Relevant** = Confirmed non-extraction → Archive
+
+### Files & Outputs
+
+| File | Purpose | Owner | Format |
+|---|---|---|---|
+| `Connections_Linkedin_v2.csv` | Raw input (2,348 contacts) | User | CSV |
+| `Connections_Linkedin_v2_MARKED.csv` | Phase 1 output (automated categorization) | Atlas | CSV + "CRM Status" column |
+| `Connections_Linkedin_v2_VERIFIED.csv` | Phase 2 output (Hunter verified) | Hunter | CSV + "CRM Status" column |
+| Newton CRM "Prospects" | Final destination | Hunter | Google Sheet |
+
+### Metrics (Phase 2 Expected Results)
+
+Based on 2,348 contacts:
+- **Before verification:** ~50-70 extraction-focused (automated keyword filter)
+- **After verification:** ~150-200 extraction-focused (Hunter catches misclassifications)
+- **Reclassified from "Not Relevant":** ~30-50 ("Charlotte's Web" type catches)
+- **Verify (kept pending):** ~50-100 (company extracts, role unclear)
+
+### Integration with Newton CRM
+
+Once verified:
+1. Add all "Added to Prospects" contacts to Newton CRM Prospects sheet
+   - Status: "Warm - LinkedIn Connection"
+   - Columns: Name | Company | Role | Email | LinkedIn URL | Phone | State | ICP Match | Status | Notes | LinkedIn Verified
+2. Create "Verify Extraction Focus" tab in Newton CRM
+   - For 58-100 uncertain contacts (need additional research or follow-up)
+   - Columns: Name | Company | Role | Email | LinkedIn URL | Verify Type | Status | Notes
+3. Create "Non-Relevant Archive" tab
+   - For 2,000+ confirmed non-extraction contacts
+   - For reference/deduplication only (no action)
+
+### When to Run This Workflow
+
+- **Trigger:** User provides bulk LinkedIn connections list (250+ contacts)
+- **Phase 1:** Atlas runs automated categorization (minutes)
+- **Phase 2:** Hunter spawned for deep research (hours, depending on volume)
+- **Timeline:** Phase 1 + 2 typically 1-4 hours for 2,000+ contacts
+
+---
+
 ## Protocol Failures
 
 - Missing any step = protocol failure

@@ -211,10 +211,17 @@ For permanent rules, procedures, and protocols → See **STANDING_INSTRUCTIONS.m
 
 ## Bryan Fields Profile
 - Owner and user of Atlas assistant
-- Runs The Dime podcast
-- Works on Newton Insights product
+- Runs The Dime podcast (YouTube: UCcck3tzBNXrJ1WJ8EtIVq1w)
+- Leads Newton Insights product (extraction visibility/AI cost control)
 - Prefers clear, bulleted communication
-- Located in EST timezone
+- Located in EST timezone (New York, NY)
+- Decision-maker on: product direction, content strategy, sales approach, hiring
+- Communication: Direct, executive-to-partner cadence, no assistant language
+
+## Key Strategic Priorities (Active)
+1. **The Dime:** Connector platform + relationship deepening (episodes drive Newton pipeline + personal network)
+2. **Newton:** Warm pipeline from Dime relationships + verification of extraction operations
+3. **Personal Network:** Industry moat through connectors (reciprocal relationships, leverage platform for others)
 
 ## Execution Protocols
 - Observation Mode: Active for first 14 days
@@ -236,6 +243,7 @@ For permanent rules, procedures, and protocols → See **STANDING_INSTRUCTIONS.m
 - **API Access Milestone (2026-02-22):** YouTube API + Gmail OAuth now live. The Dime analytics and Gmail-based workflows unblocked.
 - **Brave Search API added (2026-02-23):** Web search now operational. Daily brief Item 3 unblocked — can pull real trending topics.
 - **Gmail OAuth fully operational (2026-02-26):** atlas.opsman@gmail.com confirmed working with full read/write access. SCC/HUSA Gmail-based workflows now unblocked.
+- **Google Search Console Access (2026-03-10):** Bryan sent GSC access to atlas.opsman@gmail.com — pending verification in inbox. Once verified, enables The Dime channel analytics, search performance tracking, indexing status monitoring.
 
 ## The Dime - YouTube
 - Channel: https://www.youtube.com/channel/UCcck3tzBNXrJ1WJ8EtIVq1w
@@ -253,6 +261,30 @@ For permanent rules, procedures, and protocols → See **STANDING_INSTRUCTIONS.m
 - Software-only tier: considering free or $500/mo — decision pending
 - Bryan prefers product-led growth, hates cold outreach
 - Google Sheet for prospects: https://docs.google.com/spreadsheets/d/16z5SF0DhaUSdhAY5lwFEx6MxZ1VMNt3W1225U38qvjk/edit
+
+## LinkedIn Connections Processing — COMPLETE (2026-03-10)
+
+**Final Status:** All 2,348 LinkedIn connections researched, categorized, and verified
+
+**Results:**
+- ✅ **168 Added to Prospects** (extraction-focused, ready for outreach)
+- ❓ **69 Verify Extraction Focus** (extraction company, role needs clarification)
+- ❌ **2,111 Not Relevant** (confirmed non-extraction)
+
+**Key Insight:** Hunter's deep research caught 115 misclassifications from initial automation, including Charlotte's Web (CEO, COO), Dabstract, True Terpenes, Standard Wellness, and 10+ others that were incorrectly marked "Not Relevant"
+
+**Files:**
+- `Connections_Linkedin_v2_VERIFIED.csv` (all 2,348 with verified CRM Status)
+- Location: /Prospect Information Older folder (Google Drive)
+- Status: Ready for Newton CRM Prospects import
+
+**Newton CRM Integration:**
+- 168 verified extraction operators added to Prospects
+- Status: "Warm - LinkedIn Connection" 
+- All have: Name, Company, Role, Email, LinkedIn URL
+- Ready for relationship-based outreach (not cold spray)
+
+---
 
 ## Newton SOPs & Sales Framework (Configured 2026-03-06)
 **All resources linked in memory/newton/ folder:**
@@ -621,3 +653,65 @@ Agents: atlas (default), hunter, pulse, detective-niessen, olg, bob-the-builder
 **Implication:** All 6 agents (Atlas, Hunter, Pulse, OLG, Bob, Niessen) ready for task execution.
 
 **Operational Standards:** Added to STANDING_INSTRUCTIONS.md section "🤖 SUBAGENT OPERATIONAL STANDARDS (Updated 2026-03-10)" → covers spawn rules, identity verification, post-task retirement, production-readiness checklist.
+
+## Model Router — Bob Primary/Fallback Reversed (Updated 2026-03-10 12:02 EST)
+
+**Bob the Builder model hierarchy reversed:**
+- **Primary:** ollama/qwen3.5-coder:27b (local, unlimited, offline reasoning)
+- **Fallback:** claude-sonnet-4-20250514 (API)
+- **Tertiary:** claude-haiku-4-5-20251001 (fallback-fallback)
+
+**Model Status page now syncs directly with MODEL_ROUTER.json:**
+- Added Qwen to model display list
+- Fixed local/API agent count logic (dynamic detection)
+- Displays Qwen token usage as "Unlimited — local"
+- Single source of truth: changes to router auto-reflect on dashboard
+
+**Commit:** 3487e2e | **Pushed:** 12:02 PM EST | **Vercel:** Live
+
+## Newton CRM — Warm Pipeline Prospects Integration (Updated 2026-03-10 12:15 EST)
+
+**Completed:**
+- ✅ 7 warm companies added to Company Profiles sheet (rows 9-15)
+- ✅ New "Warm Prospects" tab created in Newton CRM (sheetId: 1637655530)
+- ✅ 7 prospects populated with stage, blockers, strategic notes, and next actions
+- ✅ Separate handling for warm vs. cold prospects (different tab for different SOP)
+
+**The 7 Warm Prospects:**
+1. Jared Glanz-Berger (DMC Cannabis, MA) — Early strategic, identity preservation needed
+2. Dom (Statehouse/Greenfield, Regional) — ACTIVE, timing clarity wedge, firefighter identity
+3. Micah Anderson (Leef, CA/NY) — Post-demo, managerial adoption layer issue
+4. Elizabeth (MariMed, Multi-state) — Semi-warm, needs research
+5. Zach Baker (Bud and Mary, Multi-location) — Semi-warm, needs research
+6. Nick Guarino (Jaunty, NY) — ACTIVE, process rebuild window
+7. Luke + Bianna (Aylroom, NY) — CLOSEST TO CLOSE, ethanol focus
+
+**Key Messaging Insights (From Warm Pipeline Background):**
+- Timing clarity = the wedge (not efficiency)
+- Frame as leverage, not correction; expansion, not weakness fix
+- Hardware friction = tablet hesitation
+- Internal politics > technical skepticism
+
+**Hunter Alert Status:** COMPLETE ✅
+
+**LinkedIn Connections Processing — FINISHED (2026-03-10 16:50 EST)**
+
+**Final Results:**
+- ✅ **53 extraction-focused** → Added to Newton CRM Prospects sheet (status: "Warm - LinkedIn Connection")
+- ❓ **274 unsure** → Verify Extraction Focus tab (need research/confirmation)
+- ❌ **2,021 non-relevant** → Non-Relevant Archive tab (complete, no action needed)
+
+**Newton CRM Status — CLEAN & COMPLETE:**
+- Prospects: 92 rows (38 existing + 53 new LinkedIn-connected)
+- Warm Prospects: 8 rows (1 header + 7 hot prospects from Warm Pipeline doc)
+- Company Profiles: 15 rows (7 existing + 7 new warm companies)
+- Verify Extraction Focus: 275 rows (274 unsure for research)
+- Non-Relevant Archive: 2,022 rows (archive/no action)
+- Outreach Log: Headers only
+
+**Marked File Uploaded:**
+- File: `Connections_Linkedin_v2_with_Status.csv`
+- Location: /Prospect Information Older folder (Google Drive)
+- Contains: All 2,348 connections with "CRM Status" column (Added to Prospects | Verify | Not Relevant)
+
+**All 2,348 LinkedIn connections now fully categorized and tracked.**
