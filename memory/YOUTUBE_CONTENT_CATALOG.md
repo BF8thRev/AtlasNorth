@@ -1,5 +1,5 @@
 # YouTube Content Catalog — The Dime
-**Last Updated:** 2026-03-08T04:00:02Z  
+**Last Updated:** 2026-03-09T23:00:00Z  
 **Owner:** OLG (Researcher)  
 **Process:** Daily pull at 11 PM EST. Catalog only — no ratings until time-gate (7 days shorts, 14 days long-form).
 
@@ -25,6 +25,16 @@
 ## Archive (Latest First)
 
 _(Catalog entries appended daily by OLG routine)_
+
+---
+
+### Pull Log — 2026-03-09T23:00:00Z (11 PM EST, Mar 9 2026)
+
+**New episodes in last 24 hours:** 1
+
+| Episode ID | Title | Publish Date | Format | Duration (s) | Theme | Title Style | Views (at catalog) | Likes (at catalog) | Notes | Pulled | Days Live |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| U8-OgtFmJ_c | Organic Food Would Fail Cannabis Testing | 2026-03-09 | short | 30 | policy_regulatory, extraction_ops | declarative_claim | 365 | 6 | New short — Cannabis testing standards vs. grocery food labeling. LEEF Brands / Micah Anderson follow-up on Prop 64 damage. Early snapshot. | 2026-03-09T23:00:00Z | <1 |
 
 ---
 
