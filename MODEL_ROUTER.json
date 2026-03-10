@@ -1,6 +1,6 @@
 {
-  "version": "1.2",
-  "last_updated": "2026-03-05",
+  "version": "1.3",
+  "last_updated": "2026-03-10",
   "description": "Agent-to-Model mapping. Haiku is default for new subagents. Atlas validates model availability before task dispatch.",
 
   "global_defaults": {
@@ -65,8 +65,10 @@
     },
     "bob_the_builder": {
       "primary_model": "claude-sonnet-4-20250514",
+      "secondary_model": "ollama/qwen3.5-coder:27b",
       "fallback_model": "claude-haiku-4-5-20251001",
-      "role": "Code & Technical Build"
+      "role": "Code & Technical Build",
+      "note": "Qwen3.5-Coder available for local reasoning without API calls"
     },
     "detective_niessen": {
       "primary_model": "phi-4-mini-local",
@@ -81,6 +83,7 @@
     "claude-sonnet-4-20250514":   { "status": "active", "type": "api", "last_checked": "2026-03-05" },
     "ollama/phi-4-mini:latest":   { "status": "active", "type": "local", "last_checked": "2026-03-05" },
     "ollama/deepseek-r1:14b":     { "status": "active", "type": "local", "last_checked": "2026-03-05" },
+    "ollama/qwen3.5-coder:27b":   { "status": "active", "type": "local", "local_model_name": "qwen3.5:27b-q4_K_M", "size_gb": 17, "last_checked": "2026-03-10" },
     "google/gemini-2.5-flash":    { "status": "active", "type": "api", "api_key_env": "GEMINI_API_KEY", "last_checked": "2026-03-05" }
   },
 
@@ -111,6 +114,11 @@
     "deepseek_r1_local": {
       "threshold": "unlimited",
       "action_on_error": "switch_to_fallback"
+    },
+    "qwen3.5_coder_27b_local": {
+      "threshold": "unlimited",
+      "action_on_error": "switch_to_fallback",
+      "note": "Local reasoning model for code generation + technical tasks"
     }
   },
 
