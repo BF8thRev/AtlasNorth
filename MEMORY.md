@@ -118,6 +118,44 @@ For permanent rules, procedures, and protocols → See **STANDING_INSTRUCTIONS.m
 
 ---
 
+## DIME GUEST AUDIT — Extraction Operators for Newton (Updated 2026-03-09 21:32 EST)
+
+**TASK #2 COMPLETE**
+
+**Last 15 episodes audited (2026-02-09 to 2026-03-09):**
+
+| Episode | Guest | Topic | Newton Fit | Pitched? |
+|---------|-------|-------|-----------|----------|
+| 2026-03-08 | Micah Anderson (LEEF Brands) | Prop 64 + Extraction Ops | ⭐⭐⭐ HIGH | ❌ NO |
+| 2026-03-01-04 | Jonathan Black (Cheech & Chong) | Multi-state brand + ops | ⭐⭐ MEDIUM | ✅ YES (warm intro SOP) |
+| 2026-02-22-25 | Eric Rogers + Kristin Rogers (Levia) | Beverage distribution | ⭐ LOW | ❌ NO |
+| 2026-02-15-17 | Trent Woloveck | Vertical integration, genetics, 280E | ⭐⭐ MEDIUM | ❌ NO |
+| 2026-02-09-10 | John Shute (MBA) | Brand economics | ⭐ LOW | ❌ NO |
+
+**Action:** Micah Anderson is ready for Newton pitch. Extraction ops expert. Regulatory deep-dive. Not yet introduced to product.
+
+---
+
+## CAPITAL MARKETS ANALYST GUEST — Need To Book (Updated 2026-03-09 21:32 EST)
+
+**TASK #3 STATUS: WAITING**
+
+**Finding:** Last 15 episodes contain NO dedicated capital markets analyst.
+
+**Content Performance Data:**
+- "Is SNDL a Silent Giant?" — 593v, 5.6% like ratio (HIGH engagement)
+- "Tier 1s, Cannabis Debt Crisis, 2026 Reset" — 438v, 5.7% ratio (HIGHEST)
+- Finance content = highest engagement ceiling on The Dime
+
+**Recommendation:** Book someone covering:
+1. Public cannabis valuations (SNDL, CGC, Tilray, Curaleaf)
+2. Tier-1 operator debt structures + capital access
+3. 2026 market reset thesis
+
+**Suggested sources:** Brightfield Group analyst, Dope Stocks equity researcher, Marijuana Policy Group capital analyst. Details pending Bryan decision.
+
+---
+
 ## Cron Job Status — File Path Audit (Updated 2026-03-07 14:30 EST)
 
 **CRITICAL FIX APPLIED:** All cron jobs verified for valid file paths after workspace reorganization.

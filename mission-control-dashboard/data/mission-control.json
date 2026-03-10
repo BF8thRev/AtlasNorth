@@ -74,5 +74,34 @@
       "notes": "Google Analytics access exists (Property ID 473280391). SEO guy sends weekly Excel. No automated growth report has been built to track and prove growth to Bryan. Ledger should own this.",
       "status": "pending"
     }
+  ],
+  "todaysTasks": [
+    {
+      "id": "task-2",
+      "title": "#2: Audit Dime Guest Archive — Flag extraction operators for Newton pitch",
+      "impact": 75,
+      "difficulty": 20,
+      "owner": "Atlas",
+      "notes": "Last 15 episodes audited. FINDING: Micah Anderson (LEEF Brands, Prop 64 expert) — extraction ops focus, NOT yet pitched Newton. Trent Woloveck (vertical integration, genetics, 280E reform). Eric Rogers (Levia beverage). All available for warm Newton intro post-episode. Status: Ready to pitch.",
+      "status": "completed"
+    },
+    {
+      "id": "task-3",
+      "title": "#3: Book 1 Capital Markets / Analyst Guest — SNDL, debt crisis, valuations",
+      "impact": 80,
+      "difficulty": 25,
+      "owner": "Atlas",
+      "notes": "FINDING: Last 15 episodes show NO dedicated capital markets analyst guests. Finance content ceiling is 5.6-5.7% engagement (highest on The Dime). RECOMMENDATION: Reach out to cannabis equity analyst or investor covering Tier-1 valuations (SNDL, Curaleaf, Trulieve debt structures). Contact suggestion: Industry analyst from Marijuana Policy Group, Brightfield Group, or Dope Stocks. Decision pending Bryan.",
+      "status": "waiting"
+    },
+    {
+      "id": "task-10",
+      "title": "#10: Make 1 Intro — Micah Anderson + Jonathan Black (JB)",
+      "impact": 70,
+      "difficulty": 5,
+      "owner": "Atlas",
+      "notes": "Micah Anderson (LEEF Brands) — Prop 64 regulatory expertise, extraction ops scale. Jonathan Black (Cheech & Chong) — Multi-state brand + operational efficiency. Mutual value: Micah's regulatory/regulatory insights + JB's scaling playbook. Both recent Dime guests. READY TO EXECUTE: Send double opt-in intro email.",
+      "status": "ready"
+    }
   ]
 }
