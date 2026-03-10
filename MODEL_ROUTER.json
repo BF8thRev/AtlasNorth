@@ -64,11 +64,11 @@
       "role": "Ideas & Concepts - synthesis across domains"
     },
     "bob_the_builder": {
-      "primary_model": "claude-sonnet-4-20250514",
-      "secondary_model": "ollama/qwen3.5-coder:27b",
-      "fallback_model": "claude-haiku-4-5-20251001",
+      "primary_model": "ollama/qwen3.5-coder:27b",
+      "fallback_model": "claude-sonnet-4-20250514",
+      "tertiary_fallback": "claude-haiku-4-5-20251001",
       "role": "Code & Technical Build",
-      "note": "Qwen3.5-Coder available for local reasoning without API calls"
+      "note": "Primary: Local Qwen3.5-Coder (offline reasoning). Fallback: Claude Sonnet (API). Max reliability via local-first strategy."
     },
     "detective_niessen": {
       "primary_model": "phi-4-mini-local",

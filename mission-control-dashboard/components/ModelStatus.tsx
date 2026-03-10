@@ -40,6 +40,7 @@ const MODEL_SHORT: Record<string, string> = {
   "claude-sonnet-4-20250514":   "Claude Sonnet",
   "ollama/phi4-mini:latest":    "Phi-4 Mini",
   "ollama/deepseek-r1:14b":     "DeepSeek R1 14B",
+  "ollama/qwen3.5-coder:27b":   "Qwen 3.5 Coder 27B",
   "google/gemini-2.5-flash":    "Gemini 2.5 Flash",
 };
 
@@ -87,9 +88,12 @@ export default function ModelStatus() {
   const routing = data.agent_routing;
   const switchLog = data.model_switch_log ?? [];
 
-  // E — count local vs API
-  const localAgents = Object.values(routing).filter(a => a.primary_model === "phi-4-mini-local").length;
-  const apiAgents = Object.values(routing).filter(a => a.primary_model !== "phi-4-mini-local").length;
+  // E — count local vs API (local = ollama/*, phi-4, etc; API = claude, google, etc)
+  const isLocalModel = (modelId: string) => {
+    return modelId.startsWith("ollama/") || modelId.includes("phi") || modelId.includes("deepseek");
+  };
+  const localAgents = Object.values(routing).filter(a => isLocalModel(a.primary_model)).length;
+  const apiAgents = Object.values(routing).filter(a => !isLocalModel(a.primary_model)).length;
 
   return (
     <div className="max-w-6xl mx-auto space-y-6">
@@ -181,6 +185,16 @@ export default function ModelStatus() {
               <div className="bg-green-500 h-3 rounded-full w-full" />
             </div>
             <p className="text-xs text-green-600 mt-1">Unlimited — local model</p>
+          </div>
+          <div>
+            <div className="flex justify-between text-sm text-gray-600 mb-1">
+              <span className="font-medium">Qwen 3.5 Coder 27B</span>
+              <span className="text-green-600 font-bold">∞</span>
+            </div>
+            <div className="w-full bg-green-100 rounded-full h-3">
+              <div className="bg-green-500 h-3 rounded-full w-full" />
+            </div>
+            <p className="text-xs text-green-600 mt-1">Unlimited — local model (offline reasoning)</p>
           </div>
         </div>
       </section>
