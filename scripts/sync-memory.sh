@@ -34,7 +34,13 @@ cd "$WORKSPACE" || exit 1
 # Check if there are any changes to commit
 # We track this via a simple hash file
 HASH_FILE="$WORKSPACE/.memory_sync_hash"
-CURRENT_HASH=$(cat "${MEMORY_FILES[@]/#/$WORKSPACE/}" 2>/dev/null | md5 2>/dev/null || md5sum "${MEMORY_FILES[@]/#/$WORKSPACE/}" 2>/dev/null | md5sum)
+
+# Use md5 on macOS, md5sum on Linux
+if command -v md5 &> /dev/null; then
+  CURRENT_HASH=$(cat "${MEMORY_FILES[@]/#/$WORKSPACE/}" 2>/dev/null | md5)
+else
+  CURRENT_HASH=$(cat "${MEMORY_FILES[@]/#/$WORKSPACE/}" 2>/dev/null | md5sum | awk '{print $1}')
+fi
 LAST_HASH=$(cat "$HASH_FILE" 2>/dev/null || echo "")
 
 if [ "$CURRENT_HASH" = "$LAST_HASH" ] && git diff --quiet HEAD 2>/dev/null; then
