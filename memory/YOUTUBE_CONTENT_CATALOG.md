@@ -1,5 +1,5 @@
 # YouTube Content Catalog — The Dime
-**Last Updated:** 2026-03-09T23:00:00Z  
+**Last Updated:** 2026-03-11T23:00:00Z  
 **Owner:** OLG (Researcher)  
 **Process:** Daily pull at 11 PM EST. Catalog only — no ratings until time-gate (7 days shorts, 14 days long-form).
 
@@ -25,6 +25,16 @@
 ## Archive (Latest First)
 
 _(Catalog entries appended daily by OLG routine)_
+
+---
+
+### Pull Log — 2026-03-11T23:00:00Z (11 PM EST, Mar 11 2026)
+
+**New episodes in last 24 hours:** 1
+
+| Episode ID | Title | Publish Date | Format | Duration (s) | Theme | Title Style | Views (at catalog) | Likes (at catalog) | Notes | Pulled | Days Live |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| GBUB9sahEI4 | Pesticide Drift Cost LEEF Millions | 2026-03-11 | short | 22 | policy_regulatory, cannabis_ops | declarative_claim | 122 | 0 | New short — Pesticide drift damage & supply chain risk. LEEF Brands guest continuation (3-part series with Micah Anderson). Early snapshot. | 2026-03-11T23:00:00Z | <1 |
 
 ---
 
