@@ -1,33 +1,33 @@
-# 🌅 MORNING BRIEF — Tuesday, March 10
+# 🌅 MORNING BRIEF — Thursday, March 12
 ━━━━━━━━━━━━━━━━━━━━━━━━━
 
 ---
 
-**TOP SIGNAL #1 — Rescheduling Is Stalled. Operators Are Still Bleeding.**
+**TOP SIGNAL #1 — MSO Operators Are Bleeding. Workforce Cuts Are Real.**
 
-*Cannabis remains Schedule I as of March 2026.* The DEA has no administrative law judge to run hearings, the AG has gone silent, and 48 GOP lawmakers are actively pushing to kill rescheduling entirely — two months after Trump's December executive order raised hopes. Meanwhile, state-level operators are still absorbing full 280E tax exposure with no federal relief in sight.
+*Cannabis prices are in freefall across legalization states — Massachusetts is the latest flashpoint.* Nova Farms CEO went on record with the Boston Globe (published this morning) confirming he cut **25% of his multistate workforce** in the last 18 months. RAND's Beau Kilmer called it a nationwide pattern: oversupply is crushing margins in early-legalization states like CO, CA, and OR, and it's spreading east.
 
-**So what:** This is the exact environment Newton was built for. Operators burning cash on taxes and inefficiency aren't waiting on D.C. — they need internal cost control *now*. The pain is real and nobody's solving it federally.
+**So what:** This is Newton's opening. Operators in cost-cutting mode aren't buying new tools on vision — they buy on proof that it saves money *now*. Margin compression = extraction efficiency is no longer a "nice to have," it's a survival lever. Your ICP is actively hurting.
 
-**Action:** Pull up your top 3 warm Newton prospects and identify which one has the most active cost pressure signal (yield issues, SKU cuts, announced layoffs). That's your first touch this week.
+**Action:** Pull one warm Newton prospect in a high-compression state (MA, CO, CA, OR). Lead with the pain signal — *"Seeing a lot of operators in [state] tighten extraction ops right now — what does that look like on your end?"* No pitch. One question.
 
 ---
 
-**TOP SIGNAL #2 — NY Concentrate Market Is Maturing Fast (Solventless Is the Word)**
+**TOP SIGNAL #2 — Texas Smokable Ban Hits March 31. Operators Have 19 Days.**
 
-*New York's extraction and concentrate category is hitting an inflection point.* Consumer behavior is shifting toward solventless products — bubble hash, live rosin, terpene-forward extracts — driven by Gen Z preference for clean extraction and quality over raw THC percentage. NY processors refining solventless methods are gaining shelf visibility as the market moves past flower dominance.
+*Texas's state health agency just confirmed: smokable cannabis products must be off shelves and out of production by March 31.* This affects hemp-derived and cannabis-adjacent operators across the state — a sudden regulatory hammer with minimal lead time.
 
-**So what:** Solventless is harder to run efficiently. Yield variance is high, temperature precision is everything, and operators who can't measure their process are leaving margin on the table. That's a Newton use case — real-time visibility on extraction runs matters *more* in solventless, not less.
+**So what:** Texas operators scrambling to pivot away from smokable SKUs will be exploring concentrates, edibles, and tinctures — categories where extraction efficiency directly determines whether the pivot is profitable. This is a hot entry point: operators mid-pivot are actively solving process problems.
 
-**Action:** Flag this as a content wedge for The Dime. A solventless-focused episode (process, economics, market shift) positions both the show and Newton's value prop in one move.
+**Action:** Flag Texas-based processors in your prospect list. If you have any warm contacts there, a short check-in message this week is well-timed and purely relationship-driven. No pitch needed — the situation speaks for itself.
 
 ---
 
 **⚡ QUICK ACTION — Do Before Noon**
 
-Review the Newton FL/MI prospect list (memory/Newton_prospects_FL_MI.md) and identify one licensed processor with active concentrate SKUs. Draft or queue a first-touch outreach using the Dime as the entry point — "I host The Dime, I'm curious what you're seeing on the extraction side" style open. No pitch. One question.
+**Hall of Flowers is March 18–19 in Ventura, CA.** That's 6 days out. Decide today whether you're going or sending someone. It's the clearest room of Newton ICP in one place — processors, extractors, brand operators — and it doubles as a Dime booking opportunity. Check travel logistics *now* before it's too late to plan.
 
 ---
 
-*Brief generated: Tuesday, March 10, 2026 — 8:00 AM EST*
-*Sources: Marijuana Moment (Mar 6), MMJ.com (rescheduling status), StupidDOPE (NY concentrates, Mar 2026)*
+*Brief generated: Thursday, March 12, 2026 — 8:00 AM EST*
+*Sources: Boston Globe (Mar 12 — Nova Farms/MA price collapse), KERA News (Mar 11 — TX smokable ban), Respect My Region (Mar 11 — Hall of Flowers 2026)*
