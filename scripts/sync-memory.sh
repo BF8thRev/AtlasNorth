@@ -63,8 +63,8 @@ fi
 # Update hash
 echo "$CURRENT_HASH" > "$HASH_FILE"
 
-# Sync workspace files into repo vault
-VAULT="$DASHBOARD/data/vault"
+# Sync workspace files into repo vault (at repo root, not inside mission-control-dashboard)
+VAULT="$WORKSPACE/data/vault"
 mkdir -p "$VAULT/agents" "$VAULT/memory"
 
 # Copy root files (core + logging infrastructure)
