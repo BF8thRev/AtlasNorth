@@ -724,3 +724,22 @@ Once verified:
 - Missing any step = protocol failure
 - Bryan will call it out
 - Log the failure, fix it, do not repeat it
+
+---
+
+## 📁 FILE CREATION PROTOCOL (Added 2026-03-12)
+
+**Every time a new workspace file is created, Atlas must:**
+
+1. Create the file in the root workspace (`/Users/atlasnorth/.openclaw/workspace/`)
+2. **Immediately add the filename to the sync script** (`scripts/sync-memory.sh` copy list)
+3. Copy the file to `mission-control-dashboard/data/vault/` so MC shows it immediately
+4. Commit + push to GitHub
+
+**No exceptions.** If a file is created but not added to the sync script, Mission Control will never show it and Bryan's edits will be lost on the next 30-min sync overwrite.
+
+**MC Edit Flow (when Bryan edits on Mission Control):**
+1. Bryan edits file on MC → saves → auto-pushes to GitHub
+2. Bryan tells Atlas: "pull MC changes"
+3. Atlas pulls + copies `mission-control-dashboard/data/vault/<file>` → root
+4. Next 30-min sync keeps MC current going forward
