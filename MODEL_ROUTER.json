@@ -4,8 +4,8 @@
   "description": "Agent-to-Model mapping. Haiku is default for new subagents. Atlas validates model availability before task dispatch.",
 
   "global_defaults": {
-    "primary_fallback": "claude-sonnet-4-20250514",
-    "secondary_fallback": "claude-opus-4-5-20251101",
+    "primary_fallback": "anthropic/claude-haiku-4-5-20251001",
+    "secondary_fallback": "claude-sonnet-4-20250514",
     "timeout_seconds": 60,
     "retry_attempts": 3
   },
