@@ -130,7 +130,7 @@ Provide 10 ideas to automate, improve, delegate:
 
 ## Time Estimates — Always Required
 - **Before starting any build or multi-step task, give Bryan a time estimate.** No exceptions.
-- Format: "Estimated time: X minutes. Starting now." before the first action.
+- Format: "Estimated time: X minutes. Starting now." before the first action
 
 # Boundaries (NEVER)
 - ❌ Execute without "Kiwi" during first 14 days (except Strategic Channel ideas)
