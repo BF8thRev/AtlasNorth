@@ -1,0 +1,54 @@
+# ATLAS_MEMORY_EXPORT.txt
+# Last Updated: 2026-03-03 | Version: 1.2
+# Format: task_id | task_type | decision | primary_reason | revision_count
+# ---
+# task_id | task_type | decision | primary_reason | revision_count
+TASK-001 | mobile_responsive_build | PASS | Bob applied Tailwind responsive classes to mission-control.html | 0
+TASK-002 | nextjs_mobile_build | PASS | Bob updated Navigation.tsx + page.tsx for mobile, pushed to GitHub | 0
+TASK-003 | memory_vault_file_serving | PASS | Bob fixed Vercel filesystem issue, copied files to data/vault/, all agents added to sidebar | 0
+TASK-004 | atlas_context_export | PASS | Created ATLAS_SOUL.md, USER_IDENTITY.md, SYSTEM_ARCHITECTURE.md, CALIBRATION_NOTES.md, DECISION_TREES.md | 0
+TASK-005 | agent_file_scaffold | PASS | Created 5-file structure for Spark + Pulse; Bob scaffolding remaining 9 agents | 0
+TASK-006 | memory_sync_cron | PASS | sync-memory.sh created, cron job set to run every 30 min | 0
+TASK-007 | file_audit_log_implementation | PASS | FILE_AUDIT_LOG.jsonl created, audit utility wired into API routes, Bob executing | 0
+TASK-008 | model_router_implementation | PASS | MODEL_ROUTER.json created, UI panel + WORKFLOW_PROTOCOL + HEARTBEAT wired, Bob executing | 0
+TASK-009 | agent_tool_access_boundaries | PASS | /system/AGENT_TOOL_ACCESS.md created, deny-by-default enforcement layer, FILE_AUDIT_LOG wired | 0
+TASK-010 | memory_vault_debug_logging | PASS | Added full env + GitHub write debug logging to files/route.ts, committed and pushed to main | 0
+TASK-011 | model_router_pulse_gemini | PASS | MODEL_ROUTER.json v1.1 — Pulse primary set to google/gemini-2.5-flash, fallback claude-opus, Gemini added to model_availability | 0
+TASK-012 | people_api_verification | PASS | Confirmed People API enabled via gog contacts list + gog auth list — contacts scope active on atlas.opsman@gmail.com | 0
+TASK-013 | memory_md_people_api_update | PASS | Updated MEMORY.md to reflect People API confirmed enabled via gog | 0
+TASK-014 | standing_instructions_checklist | PASS | Created STANDING_INSTRUCTIONS.md with 4-step task completion gate — no task complete without all 4 | 0
+TASK-015 | drive_folder_access_confirmation | PASS | Confirmed read+write on both Drive folders (1l13Fvo4L + 165U0PXhd) via gog upload/delete | 0
+TASK-015 | drive_folder_mapping | PASS | Dime folder (165U0...) + Newton folder (1l13F...) mapped to agents, WORKFLOW_AUTO.md created, MEMORY.md + STANDING_INSTRUCTIONS.md updated | 0
+TASK-016 | deployment_schedule | PASS | Push schedule set: 11AM + 5PM EST crons live, push-to-github.sh created, STANDING_INSTRUCTIONS.md updated | 0
+TASK-017 | pulse_brief_spec | PASS | PULSE_BRIEF_SPEC.md created, 6AM EST cron live, 5 signals defined, WhatsApp delivery, narrative tone locked | 0
+TASK-018 | file_audit_model_router | PASS | MODEL_ROUTER.json change (TASK-011) backlogged to FILE_AUDIT_LOG.jsonl with timestamp and reason | 0
+TASK-019 | token_tracking_wire | PASS | TOKEN_USAGE.jsonl created, update-token-heartbeat.sh built, /api/token-usage route created, BudgetMeter source updated | 0
+TASK-020 | blockers_tab | PASS | BLOCKERS.json created with 10 prioritized blockers, /api/blockers route created, ready for UI tab build | 0
+TASK-021 | ui_fix_mission_control_json | PASS | Replaced broken /data/mission-control.json fetch with /api/mission-control route — reads from BLOCKERS.json + WORKFLOW_STATE.json | 0
+TASK-021 | blockers_ui_numbers | PASS | Added numbered circles to BlockerCard component, index passed from page.tsx | 0
+TASK-022 | standing_instructions_update | PASS | Test run rule + blocker resolution protocol added to STANDING_INSTRUCTIONS.md | 0
+TASK-023 | completed_blockers_archive | PASS | COMPLETED_BLOCKERS.json created as resolution archive | 0
+TASK-021 | blocker_resolution | PASS | BLK-008 resolved: Blockers tab UI built, numbered cards live on Mission Control | 0
+TASK-021 | pulse_brief_spec_v1.1 | PASS | Spec updated: stat citation rule, PRIORITY ACTION TODAY locked as mandatory, agent distribution pipeline defined for OLG/Hunter/Spark/DrFrankl | 0
+TASK-022 | agent_brief_extractions | PASS | DIME_LEARNINGS, GENERAL_LEARNINGS, Newton_tasks updated with today's brief extractions for OLG/Hunter/Spark/DrFrankl | 0
+BLOCKER_RESOLUTION | BLK-004 | Pulse Daily Brief first run completed and delivered 2026-03-04 | resolved 2026-03-04 | task_type: blocker_resolution
+BLOCKER_RESOLUTION | BLK-007 | TOKEN_USAGE.jsonl infrastructure built — API route + file live | resolved 2026-03-04 | task_type: blocker_resolution
+BLOCKER_RESOLUTION | BLK-008 | Mission Control Blockers tab built, numbered, deployed to Vercel | resolved 2026-03-04 | task_type: blocker_resolution
+BLOCKER_RESOLUTION | BLK-009 | 11AM push cron verified running, timeout fixed to 120s | resolved 2026-03-04 | task_type: blocker_resolution
+BLOCKER_RESOLUTION | BLK-010 | WORKFLOW_AUTO.md post-compaction protocol accepted as complete | resolved 2026-03-04 | task_type: blocker_resolution
+
+[2026-03-05 15:15 EST] TASK: Resolve deployment window conflict
+TYPE: standing_instructions_update
+CHANGE: STANDING_INSTRUCTIONS.md deployment windows updated
+OLD: 11 AM EST, 5 PM EST
+NEW: 6:30 AM EST, 12:00 PM EST, 6:00 PM EST, 11:30 PM EST
+SOURCE: MISSION_CONTROL_ROUTINES.json (active cron routines)
+STATUS: ✅ Committed locally
+
+[2026-03-05 15:21 EST] TASK: Add DIME SOP context to Standing Instructions
+TYPE: standing_instructions_update
+CHANGE: Added "🎙️ DIME EPISODE SOP WORKFLOW" section
+INCLUDES: Workflow_Feedback doc link, 10 Hard Rules quick ref, trigger flow
+SOURCE: MEMORY.md (locked 2026-03-05)
+PURPOSE: Ensure SOP is never forgotten — accessible from Standing Instructions
+STATUS: ✅ Committed locally

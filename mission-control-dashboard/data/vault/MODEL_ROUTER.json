@@ -128,5 +128,52 @@
     "log_file": "FILE_AUDIT_LOG.jsonl",
     "track_model_switches": true,
     "track_fallback_triggers": true
+  },
+
+  "runtime_logging": {
+    "enabled": true,
+    "log_file": "MODEL_CALL_LOG.jsonl",
+    "log_every_call": true,
+    "schema_version": "1.0",
+    "required_fields": [
+      "timestamp",
+      "agent",
+      "model_used",
+      "task_source",
+      "tokens.prompt",
+      "tokens.completion",
+      "model_routing.fallback_triggered",
+      "cost.total_cost_usd"
+    ],
+    "capture_metrics": {
+      "timestamp": true,
+      "agent_name": true,
+      "model_used": true,
+      "prompt_tokens": true,
+      "completion_tokens": true,
+      "cached_tokens": true,
+      "fallback_used": true,
+      "task_source": "cron|manual|agent_loop",
+      "task_id": true,
+      "task_name": true,
+      "duration_ms": true,
+      "status": true,
+      "cost_usd": true,
+      "context_utilization_pct": true
+    },
+    "task_source_mapping": {
+      "cron": {
+        "identifier": "job_id",
+        "metadata": ["cron_schedule", "job_name"]
+      },
+      "manual": {
+        "identifier": "session_key",
+        "metadata": ["user_id", "command"]
+      },
+      "agent_loop": {
+        "identifier": "parent_task_id",
+        "metadata": ["parent_agent", "loop_depth"]
+      }
+    }
   }
 }

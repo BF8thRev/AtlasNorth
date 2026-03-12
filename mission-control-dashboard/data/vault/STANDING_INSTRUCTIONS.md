@@ -743,3 +743,25 @@ Once verified:
 2. Bryan tells Atlas: "pull MC changes"
 3. Atlas pulls + copies `mission-control-dashboard/data/vault/<file>` → root
 4. Next 30-min sync keeps MC current going forward
+
+## 📊 MODEL CALL RUNTIME LOGGING (Active 2026-03-12)
+
+**Every model call is logged to MODEL_CALL_LOG.jsonl with:**
+- Timestamp + Unix milliseconds
+- Agent name + model used
+- **Prompt tokens + completion tokens consumed**
+- **Fallback triggered? Yes/No + reason**
+- **Task source: cron | manual | agent_loop**
+- Duration (ms) + cost (USD)
+- Context utilization %
+
+**Aggregated Reports (Updated Every 30 Minutes):**
+- `/reports/model-calls/summary-24h.json` — Total calls, tokens, cost, fallback rate
+- `/reports/model-calls/by-agent-7d.json` — Cost breakdown by agent
+- `/reports/model-calls/by-source-7d.json` — Breakdown by task source type
+- `/reports/model-calls/fallback-analysis-7d.json` — Fallback patterns + reasons
+
+**Diagnostic Queries:**
+See `MODEL_CALL_LOG_GUIDE.md` for 10 common queries (wrong model, cost anomalies, fallback cascades, etc.)
+
+**When a job uses wrong model:** Check `model_used` vs `model_routing.primary_assigned` in log. If different and `fallback_triggered == false` → immediate investigation required.
