@@ -1,0 +1,164 @@
+{
+  "_meta": {
+    "schema_version": "2.0",
+    "description": "SINGLE SOURCE OF TRUTH for agent→model mappings. Edit here. OpenClaw reads this on startup. MODEL_ROUTER.json is auto-generated from openclaw.json — never edit it directly.",
+    "config_flow": "Edit this file → push to GitHub → run: node scripts/sync-agent-models.js → openclaw reload",
+    "last_updated": "2026-03-13",
+    "managed_by": "mission-control-dashboard/data/agent-models.json"
+  },
+
+  "global_defaults": {
+    "primary": "anthropic/claude-haiku-4-5-20251001",
+    "fallbacks": [
+      "anthropic/claude-sonnet-4-6",
+      "ollama/phi4-mini:latest"
+    ],
+    "timeout_seconds": 60,
+    "retry_attempts": 3
+  },
+
+  "agents": [
+    {
+      "id": "atlas",
+      "name": "Atlas",
+      "emoji": "🗂️",
+      "role": "Chief of Staff — orchestration, routing, decision gating",
+      "model": {
+        "primary": "openai/gpt-4o",
+        "fallbacks": [
+          "anthropic/claude-sonnet-4-6",
+          "anthropic/claude-haiku-4-5-20251001"
+        ]
+      }
+    },
+    {
+      "id": "olg",
+      "name": "Olg",
+      "emoji": "✍️",
+      "role": "Writer — content drafting + offline reasoning",
+      "model": {
+        "primary": "ollama/qwen3.5-coder:27b",
+        "fallbacks": [
+          "anthropic/claude-haiku-4-5-20251001",
+          "anthropic/claude-sonnet-4-6"
+        ],
+        "notes": "Local Qwen first for cost efficiency"
+      }
+    },
+    {
+      "id": "rob-c",
+      "name": "Rob C",
+      "emoji": "📣",
+      "role": "Engagement — content evaluation against audience rules",
+      "model": {
+        "primary": "anthropic/claude-haiku-4-5-20251001",
+        "fallbacks": [
+          "anthropic/claude-sonnet-4-6"
+        ]
+      }
+    },
+    {
+      "id": "hunter",
+      "name": "Hunter",
+      "emoji": "🎯",
+      "role": "Sales — prospect research + web-enabled insight correlations",
+      "model": {
+        "primary": "google/gemini-2.5-flash",
+        "fallbacks": [
+          "anthropic/claude-haiku-4-5-20251001",
+          "ollama/phi4-mini:latest"
+        ],
+        "requires_web_search": true
+      }
+    },
+    {
+      "id": "pulse",
+      "name": "Pulse",
+      "emoji": "📡",
+      "role": "Research — web search + synthesis across domains",
+      "model": {
+        "primary": "google/gemini-2.5-flash",
+        "fallbacks": [
+          "anthropic/claude-sonnet-4-6",
+          "openai/gpt-4o"
+        ],
+        "requires_web_search": true,
+        "notes": "Gemini for fast web lookups. Sonnet for reasoning."
+      }
+    },
+    {
+      "id": "dr-frankl",
+      "name": "Dr. Frankl",
+      "emoji": "🧠",
+      "role": "Life Coach — pattern matching against BRYAN_PROFILE.md",
+      "model": {
+        "primary": "ollama/phi4-mini:latest",
+        "fallbacks": [
+          "anthropic/claude-haiku-4-5-20251001"
+        ]
+      }
+    },
+    {
+      "id": "ledger",
+      "name": "Ledger",
+      "emoji": "📊",
+      "role": "Data & Analytics — structuring, analysis, and reporting",
+      "model": {
+        "primary": "anthropic/claude-sonnet-4-6",
+        "fallbacks": [
+          "anthropic/claude-haiku-4-5-20251001"
+        ]
+      }
+    },
+    {
+      "id": "voss",
+      "name": "Voss",
+      "emoji": "⚔️",
+      "role": "Devil's Advocate — critique and risk assessment",
+      "model": {
+        "primary": "ollama/phi4-mini:latest",
+        "fallbacks": [
+          "anthropic/claude-haiku-4-5-20251001"
+        ]
+      }
+    },
+    {
+      "id": "spark",
+      "name": "Spark",
+      "emoji": "⚡",
+      "role": "Ideas & Concepts — synthesis across domains",
+      "model": {
+        "primary": "anthropic/claude-sonnet-4-6",
+        "fallbacks": [
+          "anthropic/claude-haiku-4-5-20251001"
+        ]
+      }
+    },
+    {
+      "id": "bob-the-builder",
+      "name": "Bob the Builder",
+      "emoji": "🔧",
+      "role": "Code & Technical Build — execution engine for anything technical",
+      "model": {
+        "primary": "anthropic/claude-sonnet-4-6",
+        "fallbacks": [
+          "openai/gpt-4o",
+          "anthropic/claude-haiku-4-5-20251001"
+        ],
+        "notes": "Sonnet primary. GPT-4o available for complex architecture."
+      }
+    },
+    {
+      "id": "detective-niessen",
+      "name": "Detective Niessen",
+      "emoji": "🕵️",
+      "role": "Security & Defense — audit against FILE_AUDIT_LOG.jsonl",
+      "model": {
+        "primary": "ollama/phi4-mini:latest",
+        "fallbacks": [
+          "anthropic/claude-haiku-4-5-20251001"
+        ]
+      }
+    }
+  ]
+}

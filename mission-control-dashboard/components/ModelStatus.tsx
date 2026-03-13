@@ -2,127 +2,184 @@
 
 import { useState, useEffect } from "react";
 
-type ModelAvailability = {
-  status: "active" | "fallback" | "down";
-  type: "api" | "local";
-  last_checked: string;
-};
+// ── Types (aligned with /api/runtime-config response) ─────────────────────────
 
-type AgentRouting = {
-  primary_model: string;
-  fallback_model: string;
+type AgentEntry = {
+  id: string;
+  name: string;
+  emoji: string;
   role: string;
+  primary_model: string;
+  fallback_models: string[];
+  source: "openclaw_runtime" | "mc_config";
+  notes?: string;
 };
 
-type ModelRouter = {
-  model_availability: Record<string, ModelAvailability>;
-  agent_routing: Record<string, AgentRouting>;
-  model_switch_log: { timestamp: string; agent: string; from: string; to: string; reason: string }[];
+type ModelPoolEntry = {
+  type: "api" | "local";
+  provider: string;
+  status: "active" | "unknown";
 };
 
-const AGENT_ICONS: Record<string, string> = {
-  atlas: "🗂️",
-  olg: "✍️",
-  rob_c: "📣",
-  hunter: "🎯",
-  pulse: "📡",
-  dr_frankl: "🧠",
-  ledger: "📊",
-  voss: "⚔️",
-  spark: "⚡",
-  bob_the_builder: "🔧",
-  detective_niessen: "🕵️",
+type RuntimeConfig = {
+  source: "openclaw_runtime" | "mc_config";
+  loaded_from: string;
+  last_updated: string;
+  agents: AgentEntry[];
+  model_pool: Record<string, ModelPoolEntry>;
+  global_defaults: {
+    primary: string;
+    fallbacks: string[];
+  };
 };
+
+// ── Display helpers ────────────────────────────────────────────────────────────
 
 const MODEL_SHORT: Record<string, string> = {
-  "claude-haiku-4-5-20251001":  "Claude Haiku",
-  "claude-opus-4-5-20251101":   "Claude Opus",
-  "claude-sonnet-4-20250514":   "Claude Sonnet",
-  "ollama/phi4-mini:latest":    "Phi-4 Mini",
-  "ollama/deepseek-r1:14b":     "DeepSeek R1 14B",
-  "ollama/qwen3.5-coder:27b":   "Qwen 3.5 Coder 27B",
-  "google/gemini-2.5-flash":    "Gemini 2.5 Flash",
+  "anthropic/claude-haiku-4-5-20251001": "Claude Haiku",
+  "anthropic/claude-haiku-4-6":          "Claude Haiku 4.6",
+  "anthropic/claude-sonnet-4-6":         "Claude Sonnet 4.6",
+  "anthropic/claude-sonnet-4-20250514":  "Claude Sonnet",
+  "anthropic/claude-opus-4-6":           "Claude Opus 4.6",
+  "anthropic/claude-opus-4-5-20251101":  "Claude Opus",
+  "claude-haiku-4-5-20251001":           "Claude Haiku",
+  "claude-sonnet-4-20250514":            "Claude Sonnet",
+  "ollama/phi4-mini:latest":             "Phi-4 Mini",
+  "ollama/deepseek-r1:14b":              "DeepSeek R1 14B",
+  "ollama/qwen3.5-coder:27b":            "Qwen 3.5 Coder 27B",
+  "google/gemini-2.5-flash":             "Gemini 2.5 Flash",
+  "openai/gpt-4o":                       "GPT-4o",
+  "gpt-4o":                              "GPT-4o",
+  "openai/gpt-4-turbo":                  "GPT-4 Turbo",
+  "gpt-4-turbo":                         "GPT-4 Turbo",
 };
 
-function statusBadge(status: string) {
-  if (status === "active") return <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-semibold bg-green-100 text-green-700">✅ Active</span>;
-  if (status === "fallback") return <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-semibold bg-yellow-100 text-yellow-700">⚠️ Fallback</span>;
-  return <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-semibold bg-red-100 text-red-700">❌ Down</span>;
+function shortModel(id: string): string {
+  return MODEL_SHORT[id] ?? id.replace("anthropic/", "").replace("openai/", "").replace("google/", "").replace("ollama/", "");
 }
 
-function agentStatusDot(primary: string, fallback: string, availability: Record<string, ModelAvailability>) {
-  const primaryStatus = availability[primary]?.status;
-  const fallbackStatus = availability[fallback]?.status;
-  if (primaryStatus === "active") return <span className="w-2.5 h-2.5 rounded-full bg-green-500 inline-block" title="Primary active" />;
-  if (fallbackStatus === "active") return <span className="w-2.5 h-2.5 rounded-full bg-yellow-400 inline-block" title="Using fallback" />;
-  return <span className="w-2.5 h-2.5 rounded-full bg-red-500 inline-block" title="Both down" />;
+function SourceBadge({ source }: { source: "openclaw_runtime" | "mc_config" }) {
+  if (source === "openclaw_runtime") {
+    return (
+      <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-semibold bg-green-100 text-green-700">
+        ⚡ Live Runtime
+      </span>
+    );
+  }
+  return (
+    <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-semibold bg-blue-100 text-blue-700">
+      📄 MC Config
+    </span>
+  );
+}
+
+function ModelTypeBadge({ type }: { type: "api" | "local" }) {
+  if (type === "local") {
+    return <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-purple-100 text-purple-700">Local</span>;
+  }
+  return <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-blue-100 text-blue-700">API</span>;
 }
 
 export default function ModelStatus() {
-  const [data, setData] = useState<ModelRouter | null>(null);
+  const [data, setData] = useState<RuntimeConfig | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const [lastRefresh, setLastRefresh] = useState<Date>(new Date());
+  const [loading, setLoading] = useState(true);
+  const [lastRefresh, setLastRefresh] = useState<Date | null>(null);
 
   const loadData = async () => {
+    setLoading(true);
+    setError(null);
     try {
-      const res = await fetch("/api/files?path=MODEL_ROUTER.json");
-      const json = await res.json();
-      const parsed: ModelRouter = JSON.parse(json.content);
-      setData(parsed);
+      const res = await fetch("/api/runtime-config");
+      if (!res.ok) {
+        const err = await res.json().catch(() => ({}));
+        throw new Error(err?.error ?? `HTTP ${res.status}`);
+      }
+      const json: RuntimeConfig = await res.json();
+      setData(json);
       setLastRefresh(new Date());
     } catch (e) {
-      setError("Failed to load MODEL_ROUTER.json");
+      setError(String(e));
+    } finally {
+      setLoading(false);
     }
   };
 
-  useEffect(() => {
-    loadData();
-    const interval = setInterval(loadData, 60000);
-    return () => clearInterval(interval);
-  }, []);
+  // Single load on mount — no polling. Manual refresh button for updates.
+  useEffect(() => { loadData(); }, []);
 
-  if (error) return <div className="p-8 text-red-500">{error}</div>;
-  if (!data) return <div className="p-8 text-gray-400 animate-pulse">Loading model status...</div>;
+  if (loading && !data) {
+    return <div className="p-8 text-gray-400 animate-pulse">Loading model status...</div>;
+  }
 
-  const availability = data.model_availability;
-  const routing = data.agent_routing;
-  const switchLog = data.model_switch_log ?? [];
+  if (error) {
+    return (
+      <div className="p-8 space-y-4">
+        <div className="text-red-500 font-semibold">Failed to load runtime config</div>
+        <pre className="text-xs text-red-400 bg-red-50 p-4 rounded-lg overflow-auto">{error}</pre>
+        <button onClick={loadData} className="px-4 py-2 bg-red-100 text-red-700 rounded-lg text-sm font-medium hover:bg-red-200 transition-colors">
+          Retry
+        </button>
+      </div>
+    );
+  }
 
-  // E — count local vs API (local = ollama/*, phi-4, etc; API = claude, google, etc)
-  const isLocalModel = (modelId: string) => {
-    return modelId.startsWith("ollama/") || modelId.includes("phi") || modelId.includes("deepseek");
-  };
-  const localAgents = Object.values(routing).filter(a => isLocalModel(a.primary_model)).length;
-  const apiAgents = Object.values(routing).filter(a => !isLocalModel(a.primary_model)).length;
+  if (!data) return null;
+
+  const localAgents = data.agents.filter(a => data.model_pool[a.primary_model]?.type === "local").length;
+  const apiAgents   = data.agents.filter(a => data.model_pool[a.primary_model]?.type !== "local").length;
 
   return (
     <div className="max-w-6xl mx-auto space-y-6">
+
       {/* Header */}
-      <div className="flex items-center justify-between">
-        <h1 className="text-3xl font-bold text-gray-900">🧠 Model Status</h1>
-        <span className="text-xs text-gray-400">Last refresh: {lastRefresh.toLocaleTimeString()}</span>
+      <div className="flex items-center justify-between flex-wrap gap-3">
+        <div className="flex items-center gap-3">
+          <h1 className="text-3xl font-bold text-gray-900">🧠 Model Status</h1>
+          <SourceBadge source={data.source} />
+        </div>
+        <div className="flex items-center gap-3">
+          {lastRefresh && (
+            <span className="text-xs text-gray-400">
+              Refreshed: {lastRefresh.toLocaleTimeString()}
+            </span>
+          )}
+          <button
+            onClick={loadData}
+            disabled={loading}
+            className="px-3 py-1.5 bg-gray-100 text-gray-600 rounded-lg text-sm font-medium hover:bg-gray-200 transition-colors disabled:opacity-50"
+          >
+            {loading ? "Refreshing…" : "↻ Refresh"}
+          </button>
+        </div>
       </div>
 
-      {/* A — Model Availability Cards */}
-      <section>
-        <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3">Model Availability</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-          {Object.entries(availability).map(([modelId, info]) => (
-            <div key={modelId} className="bg-white rounded-xl border border-gray-200 shadow-sm p-5 flex flex-col gap-2">
-              <div className="flex items-center justify-between">
-                <span className="font-bold text-gray-900 text-lg">{MODEL_SHORT[modelId] ?? modelId}</span>
-                <span className={`text-xs font-semibold px-2 py-0.5 rounded-full ${info.type === "local" ? "bg-purple-100 text-purple-700" : "bg-blue-100 text-blue-700"}`}>
-                  {info.type === "local" ? "Local" : "API"}
-                </span>
-              </div>
-              {statusBadge(info.status)}
-              <p className="text-xs text-gray-400">Checked: {info.last_checked}</p>
-            </div>
-          ))}
+      {/* Source info banner */}
+      <div className={`rounded-xl border px-5 py-3 text-sm flex items-start gap-3 ${
+        data.source === "openclaw_runtime"
+          ? "bg-green-50 border-green-200 text-green-800"
+          : "bg-blue-50 border-blue-200 text-blue-800"
+      }`}>
+        <div className="mt-0.5 flex-shrink-0">
+          {data.source === "openclaw_runtime" ? "⚡" : "📄"}
         </div>
-      </section>
+        <div>
+          <span className="font-semibold">
+            {data.source === "openclaw_runtime"
+              ? "Reading live OpenClaw runtime"
+              : "Reading Mission Control config"}
+          </span>
+          <span className="ml-2 font-mono text-xs opacity-70 break-all">{data.loaded_from}</span>
+          <div className="text-xs opacity-60 mt-0.5">
+            Last updated: {data.last_updated}
+            {data.source === "mc_config" && (
+              <> · To see live state, set <code className="font-mono">OPENCLAW_CONFIG_PATH</code> in your env</>
+            )}
+          </div>
+        </div>
+      </div>
 
-      {/* B — Agent Routing Table */}
+      {/* A — Agent Routing Table */}
       <section>
         <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3">Agent Routing</h2>
         <div className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-x-auto">
@@ -130,118 +187,101 @@ export default function ModelStatus() {
             <thead>
               <tr className="border-b border-gray-100 bg-gray-50">
                 <th className="text-left px-4 py-3 font-semibold text-gray-600">Agent</th>
+                <th className="text-left px-4 py-3 font-semibold text-gray-600">Role</th>
                 <th className="text-left px-4 py-3 font-semibold text-gray-600">Primary Model</th>
-                <th className="text-left px-4 py-3 font-semibold text-gray-600">Fallback</th>
-                <th className="text-left px-4 py-3 font-semibold text-gray-600">Status</th>
+                <th className="text-left px-4 py-3 font-semibold text-gray-600">Fallbacks</th>
+                <th className="text-left px-4 py-3 font-semibold text-gray-600">Type</th>
               </tr>
             </thead>
             <tbody>
-              {Object.entries(routing).map(([agentId, cfg]) => (
-                <tr key={agentId} className="border-b border-gray-50 hover:bg-gray-50 transition-colors">
-                  <td className="px-4 py-3 font-medium text-gray-800">
-                    <span className="mr-2">{AGENT_ICONS[agentId] ?? "🤖"}</span>
-                    {agentId}
-                  </td>
-                  <td className="px-4 py-3 text-gray-600">{MODEL_SHORT[cfg.primary_model] ?? cfg.primary_model}</td>
-                  <td className="px-4 py-3 text-gray-500">{MODEL_SHORT[cfg.fallback_model] ?? cfg.fallback_model}</td>
-                  <td className="px-4 py-3">
-                    <div className="flex items-center gap-2">
-                      {agentStatusDot(cfg.primary_model, cfg.fallback_model, availability)}
-                    </div>
-                  </td>
-                </tr>
-              ))}
+              {data.agents.map((agent) => {
+                const poolEntry = data.model_pool[agent.primary_model];
+                return (
+                  <tr key={agent.id} className="border-b border-gray-50 hover:bg-gray-50 transition-colors">
+                    <td className="px-4 py-3 font-medium text-gray-800 whitespace-nowrap">
+                      <span className="mr-2">{agent.emoji}</span>
+                      {agent.name}
+                    </td>
+                    <td className="px-4 py-3 text-gray-500 text-xs max-w-xs truncate" title={agent.role}>
+                      {agent.role}
+                    </td>
+                    <td className="px-4 py-3 text-gray-700 font-mono text-xs">
+                      {shortModel(agent.primary_model)}
+                      {agent.notes && (
+                        <div className="text-gray-400 font-sans text-xs mt-0.5">{agent.notes}</div>
+                      )}
+                    </td>
+                    <td className="px-4 py-3 text-gray-400 text-xs">
+                      {agent.fallback_models.map(f => shortModel(f)).join(" → ")}
+                    </td>
+                    <td className="px-4 py-3">
+                      <ModelTypeBadge type={poolEntry?.type ?? "api"} />
+                    </td>
+                  </tr>
+                );
+              })}
             </tbody>
           </table>
         </div>
       </section>
 
-      {/* C — Token Usage */}
+      {/* B — Model Pool */}
       <section>
-        <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3">Token Usage (Current Session)</h2>
-        <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-5 space-y-4">
-          {[
-            { label: "Claude Haiku",  pct: 12, color: "bg-teal-500",   note: "200k/hr limit" },
-            { label: "Claude Sonnet", pct: 45, color: "bg-blue-500",   note: "100k/hr limit" },
-            { label: "Claude Opus",   pct: 57, color: "bg-purple-500", note: "50k/hr limit" },
-          ].map(({ label, pct, color, note }) => (
-            <div key={label}>
-              <div className="flex justify-between text-sm text-gray-600 mb-1">
-                <span className="font-medium">{label}</span>
-                <span>{pct}%</span>
+        <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3">Model Pool</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          {Object.entries(data.model_pool).map(([modelId, info]) => (
+            <div key={modelId} className="bg-white rounded-xl border border-gray-200 shadow-sm p-4 flex flex-col gap-2">
+              <div className="flex items-start justify-between gap-2">
+                <span className="font-bold text-gray-900 text-sm leading-tight break-all">{shortModel(modelId)}</span>
+                <ModelTypeBadge type={info.type} />
               </div>
-              <div className="w-full bg-gray-100 rounded-full h-3">
-                <div className={`${color} h-3 rounded-full transition-all`} style={{ width: `${pct}%` }} />
+              <div className="text-xs text-gray-400">{info.provider}</div>
+              <div className="flex items-center gap-1.5">
+                <span className={`w-2 h-2 rounded-full flex-shrink-0 ${info.status === "active" ? "bg-green-500" : "bg-gray-300"}`} />
+                <span className="text-xs text-gray-500 capitalize">{info.status}</span>
               </div>
-              {note && <p className="text-xs text-gray-400 mt-1">{note}</p>}
             </div>
           ))}
-          <div>
-            <div className="flex justify-between text-sm text-gray-600 mb-1">
-              <span className="font-medium">Phi-4 Mini</span>
-              <span className="text-green-600 font-bold">∞</span>
-            </div>
-            <div className="w-full bg-green-100 rounded-full h-3">
-              <div className="bg-green-500 h-3 rounded-full w-full" />
-            </div>
-            <p className="text-xs text-green-600 mt-1">Unlimited — local model</p>
-          </div>
-          <div>
-            <div className="flex justify-between text-sm text-gray-600 mb-1">
-              <span className="font-medium">Qwen 3.5 Coder 27B</span>
-              <span className="text-green-600 font-bold">∞</span>
-            </div>
-            <div className="w-full bg-green-100 rounded-full h-3">
-              <div className="bg-green-500 h-3 rounded-full w-full" />
-            </div>
-            <p className="text-xs text-green-600 mt-1">Unlimited — local model (offline reasoning)</p>
-          </div>
         </div>
       </section>
 
-      {/* D — Model Switch Log */}
-      <section>
-        <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3">Last Model Switches</h2>
-        <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-5">
-          {switchLog.length === 0 ? (
-            <p className="text-gray-400 text-sm italic">No switches recorded — all models stable</p>
-          ) : (
-            <ul className="space-y-3">
-              {switchLog.slice(-10).reverse().map((entry, i) => (
-                <li key={i} className="flex items-start gap-3 text-sm">
-                  <span className="text-gray-300 mt-0.5">•</span>
-                  <div>
-                    <span className="font-medium text-gray-800">{entry.agent}</span>
-                    <span className="text-gray-500"> switched from </span>
-                    <span className="text-red-500">{MODEL_SHORT[entry.from] ?? entry.from}</span>
-                    <span className="text-gray-500"> → </span>
-                    <span className="text-green-600">{MODEL_SHORT[entry.to] ?? entry.to}</span>
-                    {entry.reason && <span className="text-gray-400"> ({entry.reason})</span>}
-                    <p className="text-xs text-gray-400">{entry.timestamp}</p>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          )}
-        </div>
-      </section>
-
-      {/* E — Local vs API Distribution */}
+      {/* C — Local vs API Distribution */}
       <section>
         <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3">Local vs API Distribution</h2>
         <div className="grid grid-cols-2 gap-4">
           <div className="bg-purple-50 border border-purple-200 rounded-xl p-5 text-center">
             <p className="text-3xl font-bold text-purple-700">{localAgents}</p>
-            <p className="text-sm font-medium text-purple-600 mt-1">Local Tasks</p>
-            <p className="text-xs text-purple-400">agents on Phi-4 Mini</p>
+            <p className="text-sm font-medium text-purple-600 mt-1">Local-Primary Agents</p>
+            <p className="text-xs text-purple-400 mt-0.5">Running on Ollama / Phi</p>
           </div>
           <div className="bg-blue-50 border border-blue-200 rounded-xl p-5 text-center">
             <p className="text-3xl font-bold text-blue-700">{apiAgents}</p>
-            <p className="text-sm font-medium text-blue-600 mt-1">API Tasks</p>
-            <p className="text-xs text-blue-400">agents on Claude</p>
+            <p className="text-sm font-medium text-blue-600 mt-1">API-Primary Agents</p>
+            <p className="text-xs text-blue-400 mt-0.5">Claude / GPT / Gemini</p>
           </div>
         </div>
       </section>
+
+      {/* D — Global Defaults */}
+      <section>
+        <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3">Global Defaults</h2>
+        <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-5 space-y-2 text-sm">
+          <div className="flex gap-3">
+            <span className="text-gray-500 w-24 flex-shrink-0">Primary</span>
+            <span className="font-mono text-gray-800">{shortModel(data.global_defaults.primary)}</span>
+          </div>
+          <div className="flex gap-3">
+            <span className="text-gray-500 w-24 flex-shrink-0">Fallbacks</span>
+            <span className="font-mono text-gray-700">
+              {data.global_defaults.fallbacks.map(f => shortModel(f)).join(" → ")}
+            </span>
+          </div>
+          <div className="pt-2 border-t border-gray-100 text-xs text-gray-400">
+            Applied to agents without explicit model config
+          </div>
+        </div>
+      </section>
+
     </div>
   );
 }
