@@ -1,9 +1,9 @@
 {
-  "timestamp": "2026-03-12T22:06:29Z",
+  "timestamp": "2026-03-13T02:36:12Z",
   "period": "last_24_hours",
   "total_calls": 0,
   "total_tokens": null,
   "total_cost_usd": null,
   "fallback_triggers": 0,
-  "fallback_rate_pct": 
+  "fallback_rate_pct": 0
 }
