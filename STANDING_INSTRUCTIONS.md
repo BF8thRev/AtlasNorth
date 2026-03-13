@@ -765,3 +765,90 @@ Once verified:
 See `MODEL_CALL_LOG_GUIDE.md` for 10 common queries (wrong model, cost anomalies, fallback cascades, etc.)
 
 **When a job uses wrong model:** Check `model_used` vs `model_routing.primary_assigned` in log. If different and `fallback_triggered == false` → immediate investigation required.
+
+---
+
+## 🔄 MEMORY ROTATION PROTOCOL (Formalized 2026-03-13)
+
+**Goal:** Keep MEMORY.md lean and focused on active context only. Archives preserve history; rotation happens automatically at midnight EST daily.
+
+### How It Works
+
+**Every day at midnight EST:**
+- Current MEMORY.md is archived to `memory/MEMORY_MM-DD-YY.md` (yesterday's date)
+- Lines prefixed with `STICKY:` are extracted and carried forward into fresh MEMORY.md
+- New MEMORY.md is created with today's date header, sticky section, and empty "Today's Context" section
+- Cron job: `/Users/atlasnorth/.openclaw/scripts/rotate-memory.sh`
+- Idempotent: skips if archive already exists (no double-rotation)
+
+### STICKY: Prefix Rules
+
+**When to use `STICKY:`**
+- Active blockers (multi-day, unresolved)
+- In-progress work that spans multiple days (e.g., "Micah Anderson Newton pitch — PENDING SEND")
+- Pending outreach or decisions awaiting response
+- Infrastructure work in progress (e.g., "Cron job audit — 50% complete, remainder pending")
+
+**Format:**
+```
+STICKY: [Brief description] — [Status] — [Next action]
+STICKY: Micah Anderson Newton pitch — Ready to send — Ask Bryan for approval
+STICKY: Cron agent ownership — 50% fixes applied — Fix GitHub push jobs next
+```
+
+**Max limit:** 10 sticky lines at any time
+- If more than 10: consolidate, combine related items, or remove resolved ones
+- Force yourself to triage ruthlessly
+
+**Cleanup:**
+- Once resolved: Remove the `STICKY:` prefix immediately
+- Don't wait until rotation; keep the file clean
+- Add a one-line entry to "Today's Context" to document the resolution
+
+### Archive Files (memory/MEMORY_MM-DD-YY.md)
+
+**Read-only. Never modify archives.**
+- Preserved for historical reference only
+- Automatically created, never manually edited
+- Can be reviewed on demand to understand past context or decisions
+- Never auto-loaded by heartbeat or agents (on-demand only)
+- Naming convention: `MEMORY_MM-DD-YY.md` (e.g., `MEMORY_03-12-26.md`)
+
+### MEMORY.md Timestamp Convention
+
+**All entries in MEMORY.md must include timestamps in EST, MM-DD-YY format**
+- ❌ Wrong: "We fixed the cron jobs"
+- ✅ Right: "STICKY: Cron audit (03-13-26) — 50% complete"
+
+### Existing Dated Files in memory/
+
+**All existing files in `memory/` (e.g., newton/, longterm_memory.md) stay untouched.**
+- Rotation only affects MEMORY.md
+- Subdirectories like `memory/newton/`, `memory/dime/` are NOT affected
+- Only MEMORY.md follows the rotation protocol
+
+### Rotation Verification
+
+**To verify rotation is working:**
+```bash
+# Check if script exists and is executable
+ls -lh ~/.openclaw/scripts/rotate-memory.sh
+
+# Verify cron job is scheduled
+crontab -l | grep rotate-memory
+
+# Check recent log
+tail -50 ~/.openclaw/logs/memory-rotation.log
+
+# List archives
+ls -lh ~/.openclaw/workspace/memory/MEMORY_*.md
+```
+
+### Do NOT Manually Rotate
+
+**Never run `rotate-memory.sh` manually unless instructed.**
+- Cron handles it automatically at midnight EST daily
+- Manual runs can create duplicate archives
+- Let the scheduled job manage the rotation
+
+---

@@ -98,14 +98,40 @@ Three interdependent tracks — not separate:
 
 ---
 
-## ACTIVE OPEN ITEMS (as of 2026-03-12)
+## STICKY ITEMS (Active Multi-Day Work — Survive Rotation)
+
+STICKY: Micah Anderson Newton pitch — Ready to send (03-13-26) — Awaiting Bryan go-ahead
+STICKY: Capital markets analyst — Book for The Dime (03-13-26) — Hunter prospecting lead required
+STICKY: Google Search Console — Add atlas.opsman@gmail.com as GSC user (03-13-26) — Blocking Dime analytics
+STICKY: Friday Founder Load cron — Disabled timeout, needs optimization (03-13-26) — Blocked until resolved
+STICKY: People API re-auth — OAuth scope missing (03-13-26) — Blocked by scope issue
+STICKY: Cron agent ownership audit — 50% complete (03-13-26) — Remaining: fix GitHub push jobs, validate guard
+STICKY: Model usage diagnostics — Enabled in config (03-13-26) — Verify spans captured in logs
+STICKY: Newton CRM connector tracking — Schema created, Taylor Ladd added (03-13-26) — Waiting for Mikhail → Rugged Roots
+
+---
+
+## GENERAL OPEN ITEMS (as of 2026-03-13)
 
 1. **Add Anthropic credits** — Zero-balance caused 03:00 UTC failure on 2026-03-11
-2. **Micah Anderson Newton pitch** — Ready, not yet sent
-3. **Capital markets analyst** — Book for The Dime (finance content = highest engagement)
-4. **Google Search Console** — Add atlas.opsman@gmail.com as GSC user to unlock Dime analytics
-5. **Friday Founder Load cron** — Disabled (timeout). Re-enable after SOUL.md memory/ reference fix
-6. **People API re-auth** — OAuth scope missing, needed before contacts workflows
+
+---
+
+## SOUL.md — SINGLE SOURCE OF TRUTH (Formalized 2026-03-13)
+
+**The official identity and operating principles live in ONE place:**
+- **Source of Truth:** `mission-control-dashboard/data/vault/SOUL.md` (GitHub)
+- **Root Copy:** `/Users/atlasnorth/.openclaw/workspace/SOUL.md` (synced every 30 min)
+- **No other SOUL files exist** — all duplicates removed
+
+**What I load at session start:** Root SOUL.md (always in sync with MC vault)
+
+**If SOUL.md changes:**
+- Edit in MC vault (GitHub)
+- Sync updates root every 30 minutes
+- I load updated version on next session
+
+**No duplicates. One identity. One source of truth on MC.**
 
 ---
 
