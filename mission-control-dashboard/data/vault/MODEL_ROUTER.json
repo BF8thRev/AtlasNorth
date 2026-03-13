@@ -1,7 +1,8 @@
 {
-  "version": "1.3",
-  "last_updated": "2026-03-10",
-  "description": "Agent-to-Model mapping. Haiku is default for new subagents. Atlas validates model availability before task dispatch.",
+  "version": "1.4",
+  "last_updated": "2026-03-13",
+  "description": "Agent-to-Model mapping. Cost-optimized with OpenAI integration. Atlas validates model availability before task dispatch.",
+  "summary": "UPDATED 2026-03-13: Added OpenAI (GPT-4o, GPT-4 Turbo, GPT-3.5). Atlas now uses GPT-4o primary (complex routing). Hunter uses Gemini (web-enabled prospect research). Olg uses local Qwen (cost efficiency). Defaults: Haiku primary → Sonnet → Phi4-mini.",
 
   "global_defaults": {
     "primary_fallback": "anthropic/claude-haiku-4-5-20251001",
@@ -17,15 +18,20 @@
 
   "agent_routing": {
     "atlas": {
-      "primary_model": "claude-haiku-4-5-20251001",
-      "fallback_model": "claude-sonnet-4-20250514",
-      "role": "Gatekeeper - validates all routing decisions. Default to Haiku. Request Sonnet or Opus for heavy reasoning.",
-      "min_confidence_threshold": 0.85
+      "primary_model": "gpt-4o",
+      "fallback_model": "claude-sonnet-4-6",
+      "tertiary_fallback": "claude-haiku-4-5-20251001",
+      "role": "Gatekeeper - validates all routing decisions. GPT-4o for complex routing. Falls back to Sonnet, then Haiku.",
+      "min_confidence_threshold": 0.90,
+      "updated": "2026-03-13"
     },
     "olg": {
-      "primary_model": "claude-haiku-4-5-20251001",
-      "fallback_model": "claude-sonnet-4-20250514",
-      "role": "Writer - content drafting"
+      "primary_model": "ollama/qwen3.5-coder:27b",
+      "fallback_model": "anthropic/claude-haiku-4-5-20251001",
+      "tertiary_fallback": "anthropic/claude-sonnet-4-20250514",
+      "role": "Writer - content drafting + offline reasoning",
+      "note": "Local Qwen first for cost efficiency. Falls back to Haiku, then Sonnet for heavier edits.",
+      "updated": "2026-03-13"
     },
     "rob_c": {
       "primary_model": "claude-haiku-4-5-20251001",
@@ -33,15 +39,21 @@
       "role": "Engagement - evaluates content against audience rules"
     },
     "hunter": {
-      "primary_model": "claude-haiku-4-5-20251001",
-      "fallback_model": "claude-sonnet-4-20250514",
-      "role": "Sales - prospect engagement"
+      "primary_model": "google/gemini-2.5-flash",
+      "fallback_model": "anthropic/claude-haiku-4-5-20251001",
+      "tertiary_fallback": "phi-4-mini-local",
+      "role": "Sales - prospect research + web-enabled insight correlations",
+      "requires_web_search": true,
+      "updated": "2026-03-13"
     },
     "pulse": {
       "primary_model": "google/gemini-2.5-flash",
       "fallback_model": "claude-sonnet-4-20250514",
-      "role": "Research - web search and synthesis",
-      "requires_web_search": true
+      "tertiary_fallback": "gpt-4o",
+      "role": "Research - web search + synthesis across domains",
+      "requires_web_search": true,
+      "note": "Gemini for fast web lookups. Sonnet for reasoning. GPT-4o available for complex synthesis if needed.",
+      "updated": "2026-03-13"
     },
     "dr_frankl": {
       "primary_model": "phi-4-mini-local",
@@ -66,9 +78,10 @@
     "bob_the_builder": {
       "primary_model": "ollama/qwen3.5-coder:27b",
       "fallback_model": "claude-sonnet-4-20250514",
-      "tertiary_fallback": "claude-haiku-4-5-20251001",
+      "tertiary_fallback": "gpt-4o",
       "role": "Code & Technical Build",
-      "note": "Primary: Local Qwen3.5-Coder (offline reasoning). Fallback: Claude Sonnet (API). Max reliability via local-first strategy."
+      "note": "Primary: Local Qwen3.5-Coder (offline reasoning). Fallback: Claude Sonnet. GPT-4o available for complex architecture.",
+      "updated": "2026-03-13"
     },
     "detective_niessen": {
       "primary_model": "phi-4-mini-local",
@@ -84,7 +97,11 @@
     "ollama/phi-4-mini:latest":   { "status": "active", "type": "local", "last_checked": "2026-03-05" },
     "ollama/deepseek-r1:14b":     { "status": "active", "type": "local", "last_checked": "2026-03-05" },
     "ollama/qwen3.5-coder:27b":   { "status": "active", "type": "local", "local_model_name": "qwen3.5:27b-q4_K_M", "size_gb": 17, "last_checked": "2026-03-10" },
-    "google/gemini-2.5-flash":    { "status": "active", "type": "api", "api_key_env": "GEMINI_API_KEY", "last_checked": "2026-03-05" }
+    "google/gemini-2.5-flash":    { "status": "active", "type": "api", "api_key_env": "GEMINI_API_KEY", "last_checked": "2026-03-05" },
+    "gpt-4o":                     { "status": "active", "type": "api", "provider": "openai", "cost_tier": "high", "last_checked": "2026-03-13" },
+    "gpt-4-turbo":                { "status": "active", "type": "api", "provider": "openai", "cost_tier": "high", "last_checked": "2026-03-13" },
+    "gpt-4":                      { "status": "active", "type": "api", "provider": "openai", "cost_tier": "very_high", "last_checked": "2026-03-13" },
+    "gpt-3.5-turbo":              { "status": "active", "type": "api", "provider": "openai", "cost_tier": "low", "last_checked": "2026-03-13" }
   },
 
   "model_availability_check": {
@@ -95,6 +112,21 @@
   },
 
   "rate_limit_rules": {
+    "gpt_4o": {
+      "threshold_tokens_per_hour": 200000,
+      "action_on_breach": "switch_to_fallback",
+      "cost_tracking": true
+    },
+    "gpt_4_turbo": {
+      "threshold_tokens_per_hour": 150000,
+      "action_on_breach": "switch_to_fallback",
+      "cost_tracking": true
+    },
+    "gpt_3_5_turbo": {
+      "threshold_tokens_per_hour": 300000,
+      "action_on_breach": "switch_to_fallback",
+      "cost_tracking": true
+    },
     "claude_haiku": {
       "threshold_tokens_per_hour": 200000,
       "action_on_breach": "switch_to_fallback"
@@ -105,6 +137,10 @@
     },
     "claude_sonnet": {
       "threshold_tokens_per_hour": 100000,
+      "action_on_breach": "switch_to_fallback"
+    },
+    "gemini_2_5_flash": {
+      "threshold_tokens_per_hour": 150000,
       "action_on_breach": "switch_to_fallback"
     },
     "phi_4_mini_local": {
