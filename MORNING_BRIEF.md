@@ -1,33 +1,23 @@
-# 🌅 MORNING BRIEF — Thursday, March 12
+🌅 MORNING BRIEF — Friday, March 13
 ━━━━━━━━━━━━━━━━━━━━━━━━━
 
----
-
-**TOP SIGNAL #1 — MSO Operators Are Bleeding. Workforce Cuts Are Real.**
-
-*Cannabis prices are in freefall across legalization states — Massachusetts is the latest flashpoint.* Nova Farms CEO went on record with the Boston Globe (published this morning) confirming he cut **25% of his multistate workforce** in the last 18 months. RAND's Beau Kilmer called it a nationwide pattern: oversupply is crushing margins in early-legalization states like CO, CA, and OR, and it's spreading east.
-
-**So what:** This is Newton's opening. Operators in cost-cutting mode aren't buying new tools on vision — they buy on proof that it saves money *now*. Margin compression = extraction efficiency is no longer a "nice to have," it's a survival lever. Your ICP is actively hurting.
-
-**Action:** Pull one warm Newton prospect in a high-compression state (MA, CO, CA, OR). Lead with the pain signal — *"Seeing a lot of operators in [state] tighten extraction ops right now — what does that look like on your end?"* No pitch. One question.
+**TOP SIGNAL #1 — Hemp THC Ban Clock Is Ticking**
+The 2026 Farm Bill (passed House Agriculture Committee 34-17 on March 5) closes the delta-9 "loophole" by redefining hemp as ≤0.3% *total* THC — not just delta-9. Under current law, the intoxicating hemp ban takes effect **November 12, 2026**, wiping out the majority of hemp-derived cannabinoid products (delta-8, THCA, etc.) from the federal market.
+**So what:** This is a 8-month runway. Any hemp-derived products in Newton's client or prospect ecosystem are at compliance risk. Testing and reformulation costs are about to spike.
+**Action:** Flag this for any Newton prospects or clients with hemp-derived product lines — this is a wedge. Who in your pipeline has exposure here?
 
 ---
 
-**TOP SIGNAL #2 — Texas Smokable Ban Hits March 31. Operators Have 19 Days.**
-
-*Texas's state health agency just confirmed: smokable cannabis products must be off shelves and out of production by March 31.* This affects hemp-derived and cannabis-adjacent operators across the state — a sudden regulatory hammer with minimal lead time.
-
-**So what:** Texas operators scrambling to pivot away from smokable SKUs will be exploring concentrates, edibles, and tinctures — categories where extraction efficiency directly determines whether the pivot is profitable. This is a hot entry point: operators mid-pivot are actively solving process problems.
-
-**Action:** Flag Texas-based processors in your prospect list. If you have any warm contacts there, a short check-in message this week is well-timed and purely relationship-driven. No pitch needed — the situation speaks for itself.
+**TOP SIGNAL #2 — Testing Bottleneck Choking Minnesota's New Craft Market**
+Minnesota's first craft cannabis products hit dispensary shelves March 11, but small producers say lab testing is the #1 blocker. The state's two licensed labs are backlogged, lawmakers are debating an out-of-state testing extension, and the infrastructure strain is industry-wide — not just Minnesota.
+**So what:** Testing friction = delayed revenue for operators. This is a recurring pain point as new state markets open. Newton's angle: operators need faster compliance workflows, not slower ones.
+**Action:** Track which states are facing similar lab capacity issues — this is a pattern Newton can build positioning around.
 
 ---
 
-**⚡ QUICK ACTION — Do Before Noon**
-
-**Hall of Flowers is March 18–19 in Ventura, CA.** That's 6 days out. Decide today whether you're going or sending someone. It's the clearest room of Newton ICP in one place — processors, extractors, brand operators — and it doubles as a Dime booking opportunity. Check travel logistics *now* before it's too late to plan.
+**⚡ QUICK ACTION — Before Noon**
+Rescheduling is still pending at DEA (EO issued Jan 6 moved it forward but no final rule, no timeline). With the Farm Bill hemp definition tightening AND rescheduling in limbo, **this Friday is a good time to review your top 3 Newton prospects** and identify which ones have the most federal policy exposure — they're your warmest leads right now.
 
 ---
-
-*Brief generated: Thursday, March 12, 2026 — 8:00 AM EST*
-*Sources: Boston Globe (Mar 12 — Nova Farms/MA price collapse), KERA News (Mar 11 — TX smokable ban), Respect My Region (Mar 11 — Hall of Flowers 2026)*
+*Generated: Friday, March 13, 2026 — 8:00 AM EST*
+*Sources: Cannabis Business Times, MPR News, MJ Biz Daily, National Law Review*
