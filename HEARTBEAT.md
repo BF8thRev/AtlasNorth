@@ -5,12 +5,16 @@ _Auto-updated every 60 seconds by cron. Do not edit manually._
 
 ## Current System Health
 
-- **Last Checked:** 2026-03-13T21:59:30Z
+- **Last Checked:** 2026-03-14T03:29:31Z
 - **Status:** ✅ HEALTHY
 - **Models:**
-  - phi-4-mini-local: ✅ Active
-  - claude-sonnet-4-20250514: ✅ Active
-  - claude-opus-4-5-20251101: ✅ Active
+  - anthropic/claude-haiku-4-5-20251001: ✅ Active
+  - anthropic/claude-opus-4-20250514: ✅ Active
+  - anthropic/claude-sonnet-4-20250514: ✅ Active
+  - google/gemini-2.5-flash: ✅ Active
+  - ollama/deepseek-r1:14b: ✅ Active
+  - ollama/phi4-mini:latest: ✅ Active
+  - openai/gpt-4o: ✅ Active
 - **Mission Control Responsive:** Yes
 - **Memory Sync Last Run:** 2026-03-13T02:55:23Z
 - **GitHub Connection:** Active
@@ -21,37 +25,30 @@ _Auto-updated every 60 seconds by cron. Do not edit manually._
 
 | Timestamp | Status | Models Up | Issues |
 |-----------|--------|-----------|--------|
-| 2026-03-13T21:50:27Z | ✅ HEALTHY | 3/3 | None |
-| 2026-03-13T21:51:27Z | ✅ HEALTHY | 3/3 | None |
-| 2026-03-13T21:52:28Z | ✅ HEALTHY | 3/3 | None |
-| 2026-03-13T21:53:28Z | ✅ HEALTHY | 3/3 | None |
-| 2026-03-13T21:54:28Z | ✅ HEALTHY | 3/3 | None |
-| 2026-03-13T21:55:29Z | ✅ HEALTHY | 3/3 | None |
-| 2026-03-13T21:56:29Z | ✅ HEALTHY | 3/3 | None |
-| 2026-03-13T21:57:29Z | ✅ HEALTHY | 3/3 | None |
-| 2026-03-13T21:58:30Z | ✅ HEALTHY | 3/3 | None |
-| 2026-03-13T21:59:30Z | ✅ HEALTHY | 3/3 | None |
+| 2026-03-14T03:20:27Z | ✅ HEALTHY | 7 | None |
+| 2026-03-14T03:21:27Z | ✅ HEALTHY | 7 | None |
+| 2026-03-14T03:22:28Z | ✅ HEALTHY | 7 | None |
+| 2026-03-14T03:23:28Z | ✅ HEALTHY | 7 | None |
+| 2026-03-14T03:24:29Z | ✅ HEALTHY | 7 | None |
+| 2026-03-14T03:25:29Z | ✅ HEALTHY | 7 | None |
+| 2026-03-14T03:26:29Z | ✅ HEALTHY | 7 | None |
+| 2026-03-14T03:27:30Z | ✅ HEALTHY | 7 | None |
+| 2026-03-14T03:28:30Z | ✅ HEALTHY | 7 | None |
+| 2026-03-14T03:29:31Z | ✅ HEALTHY | 7 | None |
 
 ---
 
 ## Periodic Tasks
 
 ### Every 60 seconds — Model Health Check
-- Read MODEL_ROUTER.json
-- Verify model_availability status for all 3 models
-- If any model shows degraded/down → log to FILE_AUDIT_LOG.jsonl
+- Read openclaw.json agents.defaults.models (live source)
+- Verify model status
 - Update this file with new health check row
 
 ### Every 30 minutes — Memory Sync
 - Run /Users/atlasnorth/.openclaw/workspace/scripts/sync-memory.sh
 - Copies workspace files → data/vault/ → pushes to GitHub → Vercel deploys
 
-### Every Friday @ 11am EST — Founder Load Snapshot
-- Open Loops, tasks to delegate, revenue items, decisions pending
-- Ping Bryan via WhatsApp
-
 ## Scheduled Cron Jobs (active)
 | Job | Schedule | ID |
 |-----|----------|----|
-| Memory Sync → GitHub → Vercel | Every 30 min | 9ba59fab |
-| Model Health Check | Every 60 sec | health-check cron |

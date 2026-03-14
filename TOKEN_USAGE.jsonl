@@ -1,2 +1,3 @@
 # TOKEN_USAGE.jsonl — append-only, one JSON object per line
 # Schema: {"timestamp":"ISO","model":"string","agent":"string","task_ref":"string","input_tokens":0,"output_tokens":0,"total_tokens":0,"category":"string"}
+{"timestamp":"2026-03-13T21:00:00Z","model":"openai/gpt-4o","agent":"atlas","task_ref":"token-logging-test","input_tokens":1200,"output_tokens":800,"total_tokens":2000,"category":"audit"}
