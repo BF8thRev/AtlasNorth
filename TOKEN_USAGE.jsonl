@@ -2,3 +2,4 @@
 # Schema: {"timestamp":"ISO","model":"string","agent":"string","task_ref":"string","input_tokens":0,"output_tokens":0,"total_tokens":0,"category":"string"}
 {"timestamp":"2026-03-13T21:00:00Z","model":"openai/gpt-4o","agent":"atlas","task_ref":"token-logging-test","input_tokens":1200,"output_tokens":800,"total_tokens":2000,"category":"audit"}
 {"timestamp":""2026-03-14T10:00:03Z"","model":"anthropic/claude-haiku-4-5-20251001","agent":"atlas","task_ref":"memory-rotation-verify-6am","input_tokens":0,"output_tokens":0,"total_tokens":0,"category":"ops"}
+{"timestamp":"2026-03-15T00:00:00Z","model":"anthropic/claude-haiku-4-5-20251001","agent":"atlas","task_ref":"evening-helper-ideas-8pm","input_tokens":0,"output_tokens":0,"total_tokens":0,"category":"strategy"}
