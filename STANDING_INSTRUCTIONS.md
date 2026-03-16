@@ -124,6 +124,39 @@ Dashboard reads from vault/
 
 ---
 
+## ⏰ Scheduling & Gateway Timing (Dual System)
+
+**CRITICAL: Two separate scheduling systems can conflict.**
+
+When investigating scheduling, cron, or gateway timing issues — always check BOTH:
+
+1. **OpenClaw Cron Jobs** (application-level scheduling)
+   ```bash
+   openclaw cron list
+   ```
+   - Jobs are stored in OpenClaw's internal database
+   - Run within OpenClaw sessions
+   - Require active gateway
+
+2. **System LaunchAgents** (macOS-level scheduling)
+   ```bash
+   launchctl list | grep openclaw
+   cat ~/Library/LaunchAgents/ai.openclaw.*.plist
+   ```
+   - Jobs are scheduled at OS level
+   - Control gateway start/stop times
+   - Can prevent cron jobs from running if gateway is asleep
+
+**Example Conflict:**
+- LaunchAgent: Gateway sleeps 11 PM - 7 AM
+- Cron job: Pulse runs at 6:00 AM
+- **Result:** Pulse fails silently (gateway not running)
+- **Fix:** Either move gateway wake earlier (5:30 AM) OR move cron job after 7 AM
+
+**Always verify timing across both systems before scheduling new jobs.**
+
+---
+
 ## 🕐 Deployment Schedule (updated 2026-03-06)
 
 ### ⚠️ CRITICAL: EVERY PUSH = LIVE DEPLOYMENT TO VERCEL
