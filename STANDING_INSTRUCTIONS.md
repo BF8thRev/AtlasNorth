@@ -13,6 +13,103 @@
 
 ---
 
+## 📁 FILE PROTOCOL — SINGLE SOURCE OF TRUTH
+
+**Every file has ONE home. It lives in one location only. No copies across directories.**
+
+### File Locations (Non-Negotiable)
+
+**Workspace Root** — Only files loaded every session (always available to Atlas)
+```
+SOUL.md                  ← Atlas identity & voice
+MEMORY.md                ← Current session context
+STANDING_INSTRUCTIONS.md ← This file (permanent rules)
+IDENTITY.md              ← User/assistant identity
+AGENTS.md                ← Agent roster + delegation rules
+HEARTBEAT.md             ← System health (auto-updated)
+TOOLS.md                 ← Environment-specific notes (cameras, SSH, etc.)
+USER.md                  ← About the human
+USER_IDENTITY.md         ← User preferences
+```
+
+**workspace/reference/** — Static reference docs (read on-demand only)
+- Architectural diagrams
+- Protocol documentation
+- One-time setup guides
+- Rarely-changed reference material
+
+**workspace/memory/** — Daily logs, archives, historical data
+- `memory/MEMORY_MM-DD-YY.md` ← Rotated daily
+- `memory/LEARNINGS.md` files ← Domain-specific learnings
+- `memory/PULSE_BRIEF_SPEC.md` ← Static specs (rarely change)
+- Archived context older than current session
+
+**mission-control-dashboard/data/vault/** — Dashboard display data (SINGLE SOURCE FOR VERCEL)
+```
+BLOCKERS.json            ← Top 10 priorities (updated daily @ 6:10 AM by Atlas)
+WORKFLOW_STATE.json      ← Open loops & workflow status
+podcast-reviews.json     ← YouTube content ratings
+TOKEN_USAGE.jsonl        ← API spend history
+FILE_AUDIT_LOG.jsonl     ← System file operations log
+[+ memory/ subfolder]    ← Synced daily from workspace/memory/
+```
+
+### The Rule: Data Flows One Direction
+
+```
+Agent work
+    ↓
+Write to vault/ file (single copy)
+    ↓
+push-to-github.sh syncs vault/ → GitHub
+    ↓
+Vercel pulls from GitHub
+    ↓
+Dashboard reads from vault/
+```
+
+**NEVER:**
+- ❌ Duplicate a vault file in workspace root
+- ❌ Have two copies of the same data in different locations
+- ❌ Write to workspace root if the source-of-truth is in vault/
+- ❌ Have agents read from workspace root if the vault copy exists
+
+**IF a file needs to be read by both an agent AND the dashboard:**
+- The vault copy is the source of truth
+- The agent reads FROM vault, not a workspace copy
+- Example: BLOCKERS.json lives in `mission-control-dashboard/data/vault/BLOCKERS.json` only
+
+### Before Creating Any New File
+
+**CHECKLIST:**
+1. Does this file already exist somewhere? (Search workspace/ + vault/)
+2. If yes → Use the existing file (do NOT create a second copy)
+3. If no → Choose the right location using rules above
+4. If it's dashboard data → Put it in vault/ only
+5. If it's workspace context → Put it in workspace root only
+6. If it's historical/archived → Put it in workspace/memory/ only
+
+### Sync Workflow
+
+**Local writes → GitHub → Vercel deployment (automatic)**
+
+| Step | What Happens | Who |
+|------|-------------|-----|
+| Agent creates/updates file | Writes to workspace root or vault/ | Atlas / subagent |
+| Local commit | `git add` + `git commit` at end of task | Atlas |
+| Scheduled push (11 AM, 5 PM, etc.) | `push-to-github.sh` runs, syncs vault/ to GitHub | Cron |
+| GitHub webhook | Notifies Vercel of push | GitHub |
+| Vercel deployment | Auto-deploys new code + data/vault/ files to production | Vercel |
+| Dashboard refresh | Next page load reads new data from deployed vault/ | Browser |
+
+**Push windows (only times to sync to production):**
+- 6:30 AM EST (morning)
+- 12:00 PM EST (noon)
+- 6:00 PM EST (evening)
+- 11:30 PM EST (night)
+
+---
+
 ## ✅ Task Completion Checklist
 
 **No task is complete until all 4 are done. In order:**
