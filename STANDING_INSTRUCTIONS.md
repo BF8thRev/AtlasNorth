@@ -313,7 +313,59 @@ Keep attacking the list. Every day the board should show completed items from pr
 
 **See:** memory/newton/NEWTON_COLD_EMAIL_CAMPAIGN_SOP.md
 
-## 🤖 SUBAGENT OPERATIONAL STANDARDS (Formalized 2026-03-06 · Updated 2026-03-10)
+## 🤖 SUBAGENT OPERATIONAL STANDARDS (Formalized 2026-03-06 · Updated 2026-03-10 · Updated 2026-03-16)
+
+### Newton CRM Cell Update Protocol (Added 2026-03-16)
+
+**For updating existing cells (not appending rows):**
+
+Use `gws sheets spreadsheets batchUpdate` with updateCells request:
+
+```bash
+gws sheets spreadsheets batchUpdate --params '{"spreadsheetId":"SHEET_ID"}' --json '{
+  "requests": [
+    {
+      "updateCells": {
+        "range": {
+          "sheetId": SHEET_ID_NUMBER,
+          "startRowIndex": ROW-1,
+          "endRowIndex": ROW,
+          "startColumnIndex": COL-1,
+          "endColumnIndex": COL
+        },
+        "rows": [{"values": [{"userEnteredValue": {"stringValue": "VALUE"}}]}],
+        "fields": "userEnteredValue"
+      }
+    }
+  ]
+}'
+```
+
+**Reference:** Warm Prospects sheet ID = 1637655530. Column I = 8 (0-indexed).
+
+**DO NOT use `+append` for existing row updates — it adds new rows instead.**
+
+---
+
+### Sub-Agent Task Timeout Rule (Added 2026-03-16)
+
+**CRITICAL: All sub-agent spawns MUST include `timeoutSeconds: 300` (5 minutes).**
+
+```javascript
+sessions_spawn({
+  runtime: "subagent",
+  task: "...",
+  label: "Hunter",
+  timeoutSeconds: 300  // ← MANDATORY on every spawn
+})
+```
+
+**Why:**
+- Prevents long delays and stuck processes
+- Forces accountability: if a sub-agent can't complete in 5 min, it fails and escalates
+- Keeps task execution predictable and observable
+
+**No exceptions.** Every sub-agent spawn includes this timeout.
 
 ### Agent Roster & Deployment Rules
 

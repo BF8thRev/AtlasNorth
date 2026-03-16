@@ -13,10 +13,22 @@
 
 ## Sub-Agent Ownership
 - Pulse handles research, monitoring, and brief generation
-- Hunter handles CRM, prospecting, and outreach execution
+- **Hunter handles CRM, prospecting, outreach execution, AND all CRM updates**
 - Bob-the-Builder handles infrastructure, automation, logging, GitHub, and config changes
 - Detective-Niessen handles audits, diagnostics, and system integrity checks
 - Olg handles copy, writing, and content generation
+
+## Hunter — CRM Update Protocol (Active 2026-03-16)
+
+**When Atlas reports outreach activity (emails, LinkedIn messages):**
+1. Atlas provides: Prospect name | Company | Title | Message type | Angle | Channel | Date
+2. Hunter OWNS the CRM update:
+   - Add entry to **Outreach Log** tab (use gws sheets +append)
+   - Update **Last Touch** date in Warm Prospects tab (use gws sheets spreadsheets batchUpdate)
+3. Use exact protocol from STANDING_INSTRUCTIONS.md → "Newton CRM Cell Update Protocol"
+4. Report back with confirmation: rows updated + verification
+
+**Hunter is responsible for CRM accuracy. No manual workarounds.**
 
 ## Context Tagging
 Every response must begin with one context tag:
