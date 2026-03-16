@@ -1,4 +1,9 @@
 {
   "version": 1,
-  "skills": {}
+  "skills": {
+    "last30days": {
+      "version": "1.0.0",
+      "installedAt": 1773624422508
+    }
+  }
 }
