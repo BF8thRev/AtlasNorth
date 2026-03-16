@@ -272,274 +272,13 @@ Keep attacking the list. Every day the board should show completed items from pr
 
 ---
 
-## 🎙️ DIME EPISODE SOP WORKFLOW (Formalized 2026-03-05)
+**See:** memory/dime/DIME_EPISODE_SOP.md
 
-**⚠️ CRITICAL: Read this section EVERY TIME Bryan signals "New Episode Ready"**
+**See:** memory/dime/YOUTUBE_CONTENT_PIPELINE.md
 
-**This is the authoritative SOP.** Current configuration tracked in MEMORY.md.
+**See:** memory/newton/NEWTON_INSIGHTS_SOP.md
 
-### Workflow_Feedback Doc (Live Learning System)
-- **Link:** https://docs.google.com/document/d/15ewrXDLrhOTWd4nnLJTl0KvdLl7-ebZp0kf8LQErGuk/edit
-- **Doc ID:** `15ewrXDLrhOTWd4nnLJTl0KvdLl7-ebZp0kf8LQErGuk`
-- **MANDATORY:** Read this doc BEFORE each new episode trigger
-- **Active Instructions:** Any notes in Feedback Doc override SOP if conflict
-- **Logging:** After each episode, log timestamp + what worked + what failed + improvements
-
-### Quick Reference: 10 Hard Rules (Never Forget)
-1. **NO EM-DASHES EVER** — Any em-dash (—) = immediate failure
-2. **INTRO HOOKS MUST BE VERBATIM WITH TIMESTAMPS** — No made-up text
-3. **AUDIO TITLES MUST INCLUDE GUEST NAME** — Non-negotiable for feed discovery
-4. **AUDIO OPTION 2 MUST BE EPISODE-RELEVANT** — Not generic angles
-5. **YOUTUBE TITLES MUST BE SEO-OPTIMIZED, HIGH-CTR, RELEVANT** — 70-100 chars
-6. **SOCIAL CLIPS REQUIRE TITLES + DESCRIPTIONS FOR SEO** — Every clip must have metadata
-7. **SECTION E IS MANDATORY** — 3 newsletter title options + full drafts
-8. **CONTEXTUAL AUTOCORRECT ENABLED** — Fix phonetic errors (myclobutanil, Leef Brands, etc.)
-9. **ONLY REPORT AFTER STAGE 3 PASSES** — No content dumps to chat, only folder links
-10. **ALL DELIVERABLES NATIVE GOOGLE DOCS** — Never .txt or .md uploads
-
-### Trigger Flow
-1. Bryan signals "New episode ready" with [Guest Name] + [Transcript Path]
-2. Atlas reads Workflow_Feedback doc first (check for live notes)
-3. Ingest full transcript (20k–60k tokens)
-4. Create 5-section compressed artifact (local, temp)
-5. File as native Google Doc via `gog docs create`
-6. Delegate to subagents (OLG + Rob_C equivalent)
-7. Await completion, consolidate, score, cleanup
-8. Report folder link only (ZERO chat dumps)
-9. Log to Workflow_Feedback with timestamp + learnings
-
----
-
----
-
-## 📺 YOUTUBE CONTENT PIPELINE — TWO-STAGE WORKFLOW (Formalized 2026-03-10)
-
-**This is the standing operational procedure for ingesting and evaluating The Dime episodes.**
-
-### Why Two Stages?
-- **Part 1 (Daily Ingest):** Fast, lightweight. Load new episodes to dashboard same day for visibility.
-- **Part 2 (Weekly Evaluation):** Deep analysis. Rate episodes after time-gates pass (7d shorts, 14d long-form).
-- **Result:** Bryan sees new content immediately (unrated) + ratings populate after performance is clear.
-
-### Part 1 — Daily Catalog & Ingest (11 PM EST)
-
-**Job Details:**
-- **Name:** YouTube Content Catalog — Daily Pull — 11 PM EST
-- **Job ID:** `9dc17356-0dab-41b1-a3e4-85d8b0b9ead7`
-- **Schedule:** Every day 11 PM EST (`0 23 * * *` America/New_York)
-- **Model:** `claude-haiku-4-5-20251001` (lightweight, fast)
-- **Timeout:** 300 seconds
-
-**Task:**
-1. Query The Dime YouTube channel (UCcck3tzBNXrJ1WJ8EtIVq1w) for uploads in last 24 hours via YouTube Data API v3
-2. For each new episode, collect metadata:
-   - Video ID, Title, Publish date (ISO), Duration, View count, Like count
-   - Estimate format (short <120s, long ≥120s)
-   - Title style (declarative, compressed, colon_subtitle, etc.)
-   - Likely theme if identifiable
-3. Append to `memory/YOUTUBE_CONTENT_CATALOG.md` (tracking log only)
-4. Add entry to `podcast-reviews.json` with schema:
-   ```json
-   {
-     "id": "<youtube-id>",
-     "title": "<title>",
-     "publishedAt": "<ISO-date>",
-     "format": "short|long",
-     "viewCount": <number>,
-     "likeCount": <number>,
-     "addedAt": "<today-ISO>",
-     "eligibleDate": "<ISO-date-7d-or-14d>",
-     "rating": null,
-     "ratingDate": null,
-     "category": null,
-     "rampStatus": null,
-     "slowStarter": null,
-     "notes": "Unrated—pending evaluation after time-gate"
-   }
-   ```
-5. Deduplication: Check if ID already in file before adding. Skip duplicates.
-
-**Output:**
-- `memory/YOUTUBE_CONTENT_CATALOG.md` — new row appended
-- `podcast-reviews.json` — new entry added with rating: null
-
-**Critical Rules:**
-- ❌ Do NOT evaluate episodes
-- ❌ Do NOT check time-gates
-- ❌ Do NOT rate or assign categories
-- ✅ Ingest only. Part 2 handles evaluation.
-
-### Part 2 — Weekly Evaluation & Rating (Tuesday 10 AM EST)
-
-**Job Details:**
-- **Name:** YouTube Content Rating — Weekly Evaluation — Tuesday 10 AM EST
-- **Job ID:** `d69b4947-867a-4456-a471-5bc9bfa553e6`
-- **Schedule:** Every Tuesday 10 AM EST (`0 10 * * 2` America/New_York)
-- **Model:** `claude-sonnet-4-20250514` (reasoning required for ramp curves)
-- **Timeout:** 120 seconds
-
-**Task:**
-1. Read `podcast-reviews.json`
-2. Filter: `rating === null AND today >= eligibleDate` (time-gates cleared)
-3. For each qualifying episode:
-   a) Fetch current YouTube stats (views, likes)
-   b) Apply performance ramp curve model:
-      - Shorts at day-7+: should be ~85% of final 30-day views
-      - Long-form at day-14+: should be ~90% of final 60-day views
-   c) Rate on 5-point scale:
-      - weak (below baseline, declining)
-      - solid (at or slightly below baseline, steady)
-      - strong (at or above baseline, positive trajectory)
-      - exceptional (well above baseline)
-      - breakout (exceptional + high engagement)
-   d) Assign category: policy_regulatory, market_dynamics, science_tech, extraction_ops, culture_story, brand_content, leadership, investor_lens
-   e) Flag slow starters: views < baseline BUT growth > 15% daily
-4. Update `podcast-reviews.json` entries with:
-   ```json
-   {
-     "ratedAt": "2026-03-XX",
-     "rating": "strong",
-     "category": "extraction_ops",
-     "daysLive": 7,
-     "viewsAtRating": 145,
-     "rampStatus": "on-track",
-     "slowStarter": false,
-     "notes": "[brief insight]"
-   }
-   ```
-5. Sync to Mission Control: `cp podcast-reviews.json mission-control-dashboard/public/data/podcast-reviews.json`
-6. Append to `memory/DIME_LEARNINGS.md`:
-   - [YYYY-MM-DD] Episode ID | Title | Rating | Category | Key Learning
-   - What worked, what didn't, patterns & trends
-   - Check existing entries — NO DUPLICATES
-
-**Output:**
-- `podcast-reviews.json` — entries updated with rating + category + performance data
-- `memory/DIME_LEARNINGS.md` — new learnings appended (dated entries)
-- Mission Control dashboard — synced and displayed as RATED
-
-**Critical Rules:**
-- ❌ Do NOT ingest new episodes (Part 1 handles daily ingest)
-- ❌ Do NOT rate entries before eligibleDate
-- ✅ Evaluate only entries where rating === null
-- ✅ Use actual YouTube data (no fabrication)
-- ✅ Check DIME_LEARNINGS.md for existing entries before appending (no duplicates)
-
-### Dashboard Behavior (Bryan's View)
-
-| Day | Stage | Status | Notes |
-|---|---|---|---|
-| **0 (publish)** | Part 1 runs 11 PM | **UNRATED** | Episode appears in podcast-reviews.json immediately |
-| **1-6 (shorts) / 1-13 (long)** | Both idle | **UNRATED** | Time-gate still active, no evaluation |
-| **7 (shorts) / 14 (long)** | Part 2 runs Tue 10 AM | **→ RATED** | Episode evaluates, rating fills in, dashboard updates |
-
-**Result:** New episodes visible daily. Ratings populate after performance is measurable.
-
-### Files Reference
-
-| File | Owner | Purpose | Update Frequency |
-|---|---|---|---|
-| `memory/YOUTUBE_CONTENT_CATALOG.md` | Part 1 | Tracking log (metadata only) | Daily 11 PM |
-| `podcast-reviews.json` | Part 1 + Part 2 | Single source of truth (all episodes + ratings) | Daily 11 PM (ingest) + Tue 10 AM (rating) |
-| `memory/DIME_LEARNINGS.md` | Part 2 | Learning database (patterns, insights) | Weekly Tue 10 AM |
-| Mission Control Dashboard | Part 2 (via sync) | User-facing display | Weekly Tue 10 AM |
-
-### Permanent Rule
-**Part 1 = Never evaluate. Part 2 = Never ingest. Clean separation.**
-
----
-
-## 🎯 NEWTON INSIGHTS SOP WORKFLOW (Formalized 2026-03-06)
-
-**Read these BEFORE any Newton prospecting, outreach, or CRM work:**
-
-### Core SOP Files (memory/newton/)
-1. **NEWTON_BACKGROUND.md** — Thesis, why Newton exists, core value proposition
-2. **NEWTON_ICP.md** — Ideal customer profile, objections, buying triggers, 4 wedges
-3. **NEWTON_STYLE_GUIDE.md** — Writing tone, email structure (Problem→Insight→Offer→CTA), forbidden phrases
-4. **NEWTON_SALES_MEMO.md** — Sales tactics, objection responses, what works vs. what doesn't
-5. **NEWTON_PROSPECTS_SOP.md** — 9-point prospecting framework, research requirements
-6. **README.md** — Index, quick reference by task
-
-### 10 Operating Rules (Non-Negotiable)
-1. **Lead with problem** — margin pressure, delayed feedback, variability (NOT features)
-2. **Frame as visibility, not optimization** — Newton observes, doesn't judge
-3. **Emphasize "minutes not days"** — Speed of feedback is the differentiator
-4. **Software first, hardware later** — Avoid installation friction early
-5. **Record → Explain → Prevent** — Trust progression model
-6. **Personalize by role** — COO: margins | Director: attribution | VP: firefighting
-7. **Email: 50-70 words, one idea, one question** — No scheduling links, no demos
-8. **Information integrity: NEVER fabricate** — No data invention, exaggeration, or unverified claims
-9. **Forbidden phrases** — reaching out, leverage, unlock, optimize, maximize, AI-powered, etc.
-10. **CTA = Questions only** — "Does this show up for you during runs?" NOT "Schedule a demo?"
-
-### CRM Structure
-- **Company Profile** — Facility-level (status, health, wedge, pain points)
-- **Prospects** — Contact-level (allows multiple per company; status: cold/warm/considering)
-- **Outreach Log** — Interaction history (every touch, objection, next action)
-
-### Trigger Flow (Newton Work)
-1. Consult memory/newton/ SOP files first
-2. Research prospect using CRM research checklist
-3. Identify strongest wedge (operational, economic, compliance, or leadership)
-4. Draft email using NEWTON_STYLE_GUIDE.md structure
-5. Review against NEWTON_PROSPECTS_SOP.md 9-point framework
-6. Final check: no fabricated data, problem-led, 50-70 words, one question
-7. Log to CRM (Outreach Log + Prospects tab)
-8. Track status updates (cold → warm → considering)
-
----
-
-## 🎯 NEWTON COLD EMAIL CAMPAIGN WORKFLOW (Formalized 2026-03-08)
-
-**For coordinated cold email campaigns with multiple prospects, follow this SOP:**
-
-**Reference:** `memory/newton/NEWTON_COLD_EMAIL_CAMPAIGN_SOP.md`
-
-### Three-Person Workflow
-- **Atlas:** Prospect selection, research, email drafting (3 variations), calibration to Bryan's voice
-- **Hunter:** CRM management (loading prospects, tracking responses, logging objections, updating status)
-- **Bryan:** Reviews drafts, personalizes emails, sends from own email, conducts first conversations
-
-### Controlled Run Process
-1. **Phase 1:** Atlas selects 10 Ops Leaders from prospect list + researches each
-2. **Phase 2:** Load into Newton CRM with persona, pain point, strongest wedge
-3. **Phase 3:** Atlas drafts 3 email variations (all using verified hook: Mitchell Osak Substack article)
-4. **Phase 4:** Bryan reviews + approves tone, personalizes each email
-5. **Phase 5:** Bryan sends 10 emails from his account
-6. **Phase 6:** Hunter tracks responses, logs objections, updates CRM status
-
-### Newton CRM Structure (Cold Campaign)
-- **Single source of truth:** Newton CRM Google Sheet
-- **Columns:** Date | Prospect | Company | Role | Email | Persona | Stage | Primary Problem | Strongest Wedge | Message Type | Message Sent Date | Response | Objection | Next Action | Notes
-- **Owner:** Hunter (updates all responses, objections, next actions)
-- **Access:** Atlas (initial load), Bryan (review), Hunter (ongoing management)
-
-### Email Framework (3 Variations)
-All use: Mitchell Osak Substack (https://mitchellosak.substack.com/p/cannabis-cost-savings-hiding-in-plain)
-- **Variation 1:** Feedback Loop angle (technical, process-focused)
-- **Variation 2:** Baseline Shift angle (operational, pattern-focused)
-- **Variation 3:** Cost Savings angle (economic, margin-focused)
-
-**Standards:** 50-70 words, Bryan's voice, one diagnostic question (no scheduling links), no marketing language
-
-### Metrics to Track (Hunter)
-- Reply rate (target: 15-25% for cold B2B)
-- Positive response rate
-- Objection patterns (budget, prior tool, operator resistance, etc.)
-- Best persona (which role responds best)
-- Best angle (which variation drives engagement)
-
-### Cron Jobs — Newton Operations
-**Hunter Weekly Prospecting (Enabled 2026-03-08):**
-- Schedule: Every Monday @ 10:00 AM EST
-- Job ID: `7e4b409f-5fc1-4555-8613-52d918894558`
-- Task: Search + add 10-20 new Ops Leaders to Newton CRM (no outreach, pipeline building only)
-- Sources: LinkedIn, company sites, industry directories
-- Delivery: WhatsApp announce (prospects found, added, sources, patterns)
-- First run: Monday, March 10, 2026 @ 10:00 AM EST
-
----
+**See:** memory/newton/NEWTON_COLD_EMAIL_CAMPAIGN_SOP.md
 
 ## 🤖 SUBAGENT OPERATIONAL STANDARDS (Formalized 2026-03-06 · Updated 2026-03-10)
 
@@ -737,84 +476,7 @@ bash /workspace/scripts/log-tokens.sh "$(date -u +\"%Y-%m-%dT%H:%M:%SZ\")" "goog
 
 ---
 
-## 🔗 LINKEDIN CONNECTIONS PROCESSING WORKFLOW (Formalized 2026-03-10)
-
-**For processing bulk LinkedIn connections (250+ contacts) into Newton CRM:**
-
-### Overview
-LinkedIn connections are warm prospects but require classification before outreach. Automated keyword matching catches 80% of extraction-relevant contacts. Deep research verification catches misclassifications (Charlotte's Web example: correctly should be extraction-focused, not non-relevant).
-
-### Two-Phase Workflow
-
-**Phase 1: Automated Categorization**
-- Run connections CSV through keyword extraction filter
-- Bucket into: "Added to Prospects" (high confidence), "Verify Extraction Focus" (unsure), "Not Relevant" (low score)
-- Create marked CSV with "CRM Status" column for all contacts
-
-**Phase 2: Hunter Deep Research Verification**
-- Research 100% of "Verify Extraction Focus" contacts (company + role extraction verification)
-- Spot-check "Not Relevant" for hidden extraction operations (equipment, compliance, lab, infusion, processing)
-- Reclassify any mismatches (e.g., Charlotte's Web found in "Not Relevant" → reclassify to "Added to Prospects")
-- Update CRM Status column with verified categorization
-- Output: "Connections_Linkedin_v2_VERIFIED.csv"
-
-### Hunter's Verification Checklist (Per Contact)
-
-For each "Verify" or spot-check contact:
-
-1. **Company Search** — Google, LinkedIn, website
-   - Does company do extraction? (Explicit: yes/no/unclear)
-   - Facility count + locations
-   - Product lines (concentrates, edibles, rosin, distillate, etc.)
-   
-2. **Role Assessment** — LinkedIn title + description
-   - Is role extraction-aligned? (Lab, QA, Compliance, Production, Extraction Lab Manager, etc.)
-   - Or is role commercial/advisory/adjacent?
-   - Implicit extraction? (VP Operations for extraction-confirmed company = likely relevant)
-
-3. **Decision** — Update CRM Status
-   - ✅ **Added to Prospects** = Company + Role BOTH extraction-confirmed → Add to Newton CRM Prospects (status: "Warm - LinkedIn Connection")
-   - ❓ **Verify Extraction Focus** = Company extracts but role unclear OR role is extraction-adjacent but company unclear → Keep for future research
-   - ❌ **Not Relevant** = Confirmed non-extraction → Archive
-
-### Files & Outputs
-
-| File | Purpose | Owner | Format |
-|---|---|---|---|
-| `Connections_Linkedin_v2.csv` | Raw input (2,348 contacts) | User | CSV |
-| `Connections_Linkedin_v2_MARKED.csv` | Phase 1 output (automated categorization) | Atlas | CSV + "CRM Status" column |
-| `Connections_Linkedin_v2_VERIFIED.csv` | Phase 2 output (Hunter verified) | Hunter | CSV + "CRM Status" column |
-| Newton CRM "Prospects" | Final destination | Hunter | Google Sheet |
-
-### Metrics (Phase 2 Expected Results)
-
-Based on 2,348 contacts:
-- **Before verification:** ~50-70 extraction-focused (automated keyword filter)
-- **After verification:** ~150-200 extraction-focused (Hunter catches misclassifications)
-- **Reclassified from "Not Relevant":** ~30-50 ("Charlotte's Web" type catches)
-- **Verify (kept pending):** ~50-100 (company extracts, role unclear)
-
-### Integration with Newton CRM
-
-Once verified:
-1. Add all "Added to Prospects" contacts to Newton CRM Prospects sheet
-   - Status: "Warm - LinkedIn Connection"
-   - Columns: Name | Company | Role | Email | LinkedIn URL | Phone | State | ICP Match | Status | Notes | LinkedIn Verified
-2. Create "Verify Extraction Focus" tab in Newton CRM
-   - For 58-100 uncertain contacts (need additional research or follow-up)
-   - Columns: Name | Company | Role | Email | LinkedIn URL | Verify Type | Status | Notes
-3. Create "Non-Relevant Archive" tab
-   - For 2,000+ confirmed non-extraction contacts
-   - For reference/deduplication only (no action)
-
-### When to Run This Workflow
-
-- **Trigger:** User provides bulk LinkedIn connections list (250+ contacts)
-- **Phase 1:** Atlas runs automated categorization (minutes)
-- **Phase 2:** Hunter spawned for deep research (hours, depending on volume)
-- **Timeline:** Phase 1 + 2 typically 1-4 hours for 2,000+ contacts
-
----
+**See:** memory/newton/LINKEDIN_PROCESSING_SOP.md
 
 ## Protocol Failures
 
@@ -862,3 +524,103 @@ Once verified:
 See `MODEL_CALL_LOG_GUIDE.md` for 10 common queries (wrong model, cost anomalies, fallback cascades, etc.)
 
 **When a job uses wrong model:** Check `model_used` vs `model_routing.primary_assigned` in log. If different and `fallback_triggered == false` → immediate investigation required.
+
+---
+
+## 🔄 MEMORY ROTATION PROTOCOL (Formalized 2026-03-13)
+
+**Goal:** Keep MEMORY.md lean and focused on active context only. Archives preserve history; rotation happens automatically at midnight EST daily.
+
+### How It Works
+
+**Every day at midnight EST:**
+- Current MEMORY.md is archived to `memory/MEMORY_MM-DD-YY.md` (yesterday's date)
+- Lines prefixed with `STICKY:` are extracted and carried forward into fresh MEMORY.md
+- New MEMORY.md is created with today's date header, sticky section, and empty "Today's Context" section
+- Cron job: `/Users/atlasnorth/.openclaw/scripts/rotate-memory.sh`
+- Idempotent: skips if archive already exists (no double-rotation)
+
+### STICKY: Prefix Rules
+
+**When to use `STICKY:`**
+- Active blockers (multi-day, unresolved)
+- In-progress work that spans multiple days (e.g., "Micah Anderson Newton pitch — PENDING SEND")
+- Pending outreach or decisions awaiting response
+- Infrastructure work in progress (e.g., "Cron job audit — 50% complete, remainder pending")
+
+**Format:**
+```
+STICKY: [Brief description] — [Status] — [Next action]
+STICKY: Micah Anderson Newton pitch — Ready to send — Ask Bryan for approval
+STICKY: Cron agent ownership — 50% fixes applied — Fix GitHub push jobs next
+```
+
+**Max limit:** 10 sticky lines at any time
+- If more than 10: consolidate, combine related items, or remove resolved ones
+- Force yourself to triage ruthlessly
+
+**Cleanup:**
+- Once resolved: Remove the `STICKY:` prefix immediately
+- Don't wait until rotation; keep the file clean
+- Add a one-line entry to "Today's Context" to document the resolution
+
+**⚠️ MANDATORY: STICKY: After System Changes**
+After completing ANY task that changes system configuration, creates/modifies cron jobs, changes file structure, or creates new protocols:
+- **You MUST immediately add a STICKY: entry to MEMORY.md before moving on to the next task**
+- This is NOT optional. Non-compliance = zero context carrying forward = lost context at rotation
+- Examples that trigger this rule:
+  - Created new cron job → add STICKY: immediately
+  - Fixed cron payload → add STICKY: immediately
+  - Added new file protocol → add STICKY: immediately
+  - Changed gateway/OpenClaw config → add STICKY: immediately
+  - Modified STANDING_INSTRUCTIONS or major procedures → add STICKY: immediately
+- Format: `STICKY: [What changed] — [Status] — [Next action/verification needed]`
+- Failure to do this results in lost institutional memory at next rotation
+
+### Archive Files (memory/MEMORY_MM-DD-YY.md)
+
+**Read-only. Never modify archives.**
+- Preserved for historical reference only
+- Automatically created, never manually edited
+- Can be reviewed on demand to understand past context or decisions
+- Never auto-loaded by heartbeat or agents (on-demand only)
+- Naming convention: `MEMORY_MM-DD-YY.md` (e.g., `MEMORY_03-12-26.md`)
+
+### MEMORY.md Timestamp Convention
+
+**All entries in MEMORY.md must include timestamps in EST, MM-DD-YY format**
+- ❌ Wrong: "We fixed the cron jobs"
+- ✅ Right: "STICKY: Cron audit (03-13-26) — 50% complete"
+
+### Existing Dated Files in memory/
+
+**All existing files in `memory/` (e.g., newton/, longterm_memory.md) stay untouched.**
+- Rotation only affects MEMORY.md
+- Subdirectories like `memory/newton/`, `memory/dime/` are NOT affected
+- Only MEMORY.md follows the rotation protocol
+
+### Rotation Verification
+
+**To verify rotation is working:**
+```bash
+# Check if script exists and is executable
+ls -lh ~/.openclaw/scripts/rotate-memory.sh
+
+# Verify cron job is scheduled
+crontab -l | grep rotate-memory
+
+# Check recent log
+tail -50 ~/.openclaw/logs/memory-rotation.log
+
+# List archives
+ls -lh ~/.openclaw/workspace/memory/MEMORY_*.md
+```
+
+### Do NOT Manually Rotate
+
+**Never run `rotate-memory.sh` manually unless instructed.**
+- Cron handles it automatically at midnight EST daily
+- Manual runs can create duplicate archives
+- Let the scheduled job manage the rotation
+
+---

@@ -564,6 +564,19 @@ STICKY: Cron agent ownership — 50% fixes applied — Fix GitHub push jobs next
 - Don't wait until rotation; keep the file clean
 - Add a one-line entry to "Today's Context" to document the resolution
 
+**⚠️ MANDATORY: STICKY: After System Changes**
+After completing ANY task that changes system configuration, creates/modifies cron jobs, changes file structure, or creates new protocols:
+- **You MUST immediately add a STICKY: entry to MEMORY.md before moving on to the next task**
+- This is NOT optional. Non-compliance = zero context carrying forward = lost context at rotation
+- Examples that trigger this rule:
+  - Created new cron job → add STICKY: immediately
+  - Fixed cron payload → add STICKY: immediately
+  - Added new file protocol → add STICKY: immediately
+  - Changed gateway/OpenClaw config → add STICKY: immediately
+  - Modified STANDING_INSTRUCTIONS or major procedures → add STICKY: immediately
+- Format: `STICKY: [What changed] — [Status] — [Next action/verification needed]`
+- Failure to do this results in lost institutional memory at next rotation
+
 ### Archive Files (memory/MEMORY_MM-DD-YY.md)
 
 **Read-only. Never modify archives.**
