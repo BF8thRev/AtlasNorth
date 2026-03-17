@@ -8,3 +8,5 @@
 {"timestamp":"2026-03-16T10:02:00Z","model":"anthropic/claude-haiku-4-5-20251001","agent":"atlas","task_ref":"admin-brief-daily-615am","input_tokens":0,"output_tokens":0,"total_tokens":0,"category":"ops"}
 {"timestamp":""2026-03-16T10:01:31Z"","model":"anthropic/claude-haiku-4-5-20251001","agent":"atlas","task_ref":"memory-rotation-verify-6am","input_tokens":0,"output_tokens":0,"total_tokens":0,"category":"ops"}
 {"timestamp":"%Y-%m-%dT%H:%M:%SZ","model":"anthropic/claude-sonnet-4-20250514","agent":"pulse","task_ref":"morning-brief-8am","input_tokens":0,"output_tokens":0,"total_tokens":0,"category":"research"}
+{"timestamp":"2026-03-17T09:45:03Z","model":"anthropic/claude-haiku-4-5-20251001","agent":"atlas","task_ref":"memory-rotation-verify-6am","input_tokens":0,"output_tokens":0,"total_tokens":0,"category":"ops"}
+{"timestamp":""%Y-%m-%dT%H:%M:%SZ"","model":"google/gemini-2.5-flash","agent":"pulse","task_ref":"daily-intel-6am","input_tokens":0,"output_tokens":0,"total_tokens":0,"category":"research"}
