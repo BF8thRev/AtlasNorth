@@ -1,36 +1,34 @@
-## PULSE DAILY INTEL - 2026-03-17
+SIGNAL 1 — MARKET MOVES
+Company name: Multiple major cannabis MSOs
+Location: United States
+What happened: Cannabis MSOs collectively owe the IRS $1.6 billion in past-due 280E-related bills, with the IRS fighting rescheduling gambits.
+Why it matters: This substantial tax liability creates significant financial pressure on MSOs, impacting their cash flow and increasing the risk of financial distress or closures if not addressed.
+Evidence + source: mjbizdaily.com, businessofcannabis.com (published 2-5 days ago)
 
-### Signal 1: MSO Tax Liabilities & Distress
-- **Company name:** Cannabis MSOs collectively
-- **Person name OR location:** IRS, United States
-- **What happened:** Major cannabis multistate operators (MSOs) collectively owe $1.6 billion in past-due 280E-related tax bills, with the IRS asserting that pending rescheduling will not negate these liabilities.
-- **Why it matters:** This significant tax burden could lead to increased financial distress and potential closures for MSOs, especially those that have withheld payments as part of a risky strategy to improve cash flow. It also highlights the ongoing financial challenges in the cannabis industry despite potential regulatory changes.
-- **Evidence + source:** MJBizDaily (March 2026), Business of Cannabis (March 2026)
+SIGNAL 2 — MARKET MOVES
+Company name: Verano Holdings Corp.
+Location: Chicago
+What happened: Verano Holdings secured a new $195 million loan to retire old debt and fund growth initiatives in 2026.
+Why it matters: This demonstrates Verano's ability to access significant capital for strategic growth and debt management, indicating a stronger financial position compared to other distressed operators in the market.
+Evidence + source: mjbizdaily.com (published 5 days ago)
 
-### Signal 2: Executive Movement in New York Cannabis Regulation
-- **Company name:** New York Office of Cannabis Management
-- **Person name OR location:** New York
-- **What happened:** The New York Office of Cannabis Management has appointed its fourth executive director in less than five years, indicating a high turnover in leadership.
-- **Why it matters:** Frequent changes in executive leadership can lead to instability, inconsistent policy implementation, and challenges in establishing a clear regulatory framework, potentially hindering the growth and stability of the cannabis market in New York.
-- **Evidence + source:** Times Union (March 2026)
+SIGNAL 3 — POLICY
+Company name: (Future operators in Virginia)
+Location: Virginia
+What happened: Virginia is set to begin adult-use cannabis sales on January 1, 2027, following expected legislative approval.
+Why it matters: This development opens a large new regulated market in the Southern U.S., presenting substantial expansion opportunities for cannabis businesses and a significant shift in regional policy.
+Evidence + source: mjbizdaily.com (published 2 days ago)
 
-### Signal 3: Cannabis Industry Consolidation in Colorado
-- **Company name:** Unspecified Colorado cannabis retail chain
-- **Person name OR location:** Colorado
-- **What happened:** A prominent Colorado cannabis retail chain was recently acquired, signaling a new phase of consolidation within the national cannabis industry.
-- **Why it matters:** This acquisition points towards an accelerating trend of mergers and acquisitions in the cannabis sector, which could lead to fewer, larger players dominating the market and potentially impacting smaller operators.
-- **Evidence + source:** MJBizDaily (March 2026)
+SIGNAL 4 — POLICY
+Company name: (Hemp businesses in Texas)
+Location: Texas
+What happened: Texas will ban hemp THC flower starting March 31 due to a revised "total THC" rule that now includes THCA in calculations.
+Why it matters: This regulatory change will force Texas hemp businesses to adjust product offerings and operations, potentially eliminating a major product category and causing market disruption for both producers and retailers.
+Evidence + source: mjbizdaily.com (published 1 week ago)
 
-### Signal 4: Michigan Cannabis Market Decline due to Wholesale Tax
-- **Company name:** Michigan cannabis industry
-- **Person name OR location:** Michigan
-- **What happened:** A new 24% wholesale tax in Michigan contributed to a 14.8% drop in statewide cannabis revenue to $206.18 million in February 2026 compared to February 2025.
-- **Why it matters:** High taxation can severely impact market performance, leading to revenue declines for businesses and potentially driving consumers to the illicit market. This highlights the delicate balance between generating tax revenue and fostering a healthy legal market.
-- **Evidence + source:** MJBizDaily (March 2026)
-
-### Signal 5: Automation as a Response to Cost & Labor Pressures
-- **Company name:** Cannabis producers/operators
-- **Person name OR location:** Global (general industry trend)
-- **What happened:** Cannabis producers are increasingly adopting automation technologies in cultivation, harvesting, drying, curing, and extraction to reduce operating costs and improve efficiency, driven by labor shortages and price compression.
-- **Why it matters:** The shift towards automation is a critical response to economic pressures within the cannabis industry, indicating a maturation of the sector and a focus on operational excellence to maintain margins. This trend will likely differentiate competitive players.
-- **Evidence + source:** Sorting Robotics (Feb 2026), Cannabis Science and Technology (Feb 2026)
+SIGNAL 5 — REGULATORY ENFORCEMENT
+Company name: A cannabis cultivation and distribution company (unnamed)
+Person name: Former Executive (unnamed)
+What happened: A former executive of a cannabis company was ordered to pay over $1 million in an SEC fraud case for issuing "wildly inflated" statements.
+Why it matters: This signifies continued rigorous regulatory oversight by the SEC regarding financial misrepresentation in the cannabis sector, highlighting the risks of non-compliance and investor deception for industry leaders.
+Evidence + source: news.bloomberglaw.com (published 2 days ago)
