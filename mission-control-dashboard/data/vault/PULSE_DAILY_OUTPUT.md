@@ -1,34 +1,34 @@
-SIGNAL 1 — MARKET MOVES
-Company name: Multiple major cannabis MSOs
-Location: United States
-What happened: Cannabis MSOs collectively owe the IRS $1.6 billion in past-due 280E-related bills, with the IRS fighting rescheduling gambits.
-Why it matters: This substantial tax liability creates significant financial pressure on MSOs, impacting their cash flow and increasing the risk of financial distress or closures if not addressed.
-Evidence + source: mjbizdaily.com, businessofcannabis.com (published 2-5 days ago)
+SIGNAL 1
+Company: Multiple MSOs (e.g., Green Thumb, Verano implicitly)
+Location: IRS
+What happened: Cannabis MSOs collectively owe the IRS $1.6 billion in past-due 280E-related bills, and the IRS has stated rescheduling is unlikely to alleviate this burden.
+Why it matters: This significant tax liability continues to be a major financial strain on large cannabis operators, hindering profitability and potentially leading to further distress or closures if not addressed. It also clarifies the IRS's position on 280E despite rescheduling efforts.
+Evidence + source: MJBizDaily.com (6 days ago), Businessofcannabis.com (3 days ago)
 
-SIGNAL 2 — MARKET MOVES
-Company name: Verano Holdings Corp.
-Location: Chicago
-What happened: Verano Holdings secured a new $195 million loan to retire old debt and fund growth initiatives in 2026.
-Why it matters: This demonstrates Verano's ability to access significant capital for strategic growth and debt management, indicating a stronger financial position compared to other distressed operators in the market.
-Evidence + source: mjbizdaily.com (published 5 days ago)
+SIGNAL 2
+Company: New York State Office of Cannabis Management (OCM)
+Person: John Kagia
+What happened: John Kagia has been appointed as the Acting Executive Director of the New York State Office of Cannabis Management (OCM).
+Why it matters: This leadership change at a key regulatory body in a major state cannabis market could signal a shift in policy, enforcement, or the speed of market development in New York, which has faced challenges. Kagia has prior experience in cannabis industry analytics and within OCM.
+Evidence + source: cbs6albany.com, whec.com, news10.com, mymalonetelegram.com, mjbizdaily.com (all published 3 weeks ago)
 
-SIGNAL 3 — POLICY
-Company name: (Future operators in Virginia)
-Location: Virginia
-What happened: Virginia is set to begin adult-use cannabis sales on January 1, 2027, following expected legislative approval.
-Why it matters: This development opens a large new regulated market in the Southern U.S., presenting substantial expansion opportunities for cannabis businesses and a significant shift in regional policy.
-Evidence + source: mjbizdaily.com (published 2 days ago)
+SIGNAL 3
+Company: LEEF Brands Inc.
+Person: Jamie Mendola
+What happened: LEEF Brands Inc. appointed Jamie Mendola to its board of directors.
+Why it matters: Mendola brings over two decades of experience across capital markets, private equity, and scaling cannabis operations. This appointment suggests a strategic move by LEEF Brands to enhance financial and operational expertise on its board, potentially aiming for growth or improved market position.
+Evidence + source: mgmagazine.com (6 days ago)
 
-SIGNAL 4 — POLICY
-Company name: (Hemp businesses in Texas)
-Location: Texas
-What happened: Texas will ban hemp THC flower starting March 31 due to a revised "total THC" rule that now includes THCA in calculations.
-Why it matters: This regulatory change will force Texas hemp businesses to adjust product offerings and operations, potentially eliminating a major product category and causing market disruption for both producers and retailers.
-Evidence + source: mjbizdaily.com (published 1 week ago)
+SIGNAL 4
+Company: Cresco Labs (as example of MSO), General cannabis operators
+Location: U.S. Cannabis Market
+What happened: The margin profile for the MSO industry has compressed significantly since 2024 due to adult-use market saturation, with over 80% of operators planning to adopt automation to cut costs.
+Why it matters: This indicates a continued struggle for profitability among cannabis operators, particularly MSOs, in saturated markets. The push towards automation highlights an industry-wide effort to improve efficiency and counteract shrinking margins.
+Evidence + source: Ad-Hoc-News.de (3 days ago), The Local News (2 weeks ago), Cannabis Science and Technology (1 month ago)
 
-SIGNAL 5 — REGULATORY ENFORCEMENT
-Company name: A cannabis cultivation and distribution company (unnamed)
-Person name: Former Executive (unnamed)
-What happened: A former executive of a cannabis company was ordered to pay over $1 million in an SEC fraud case for issuing "wildly inflated" statements.
-Why it matters: This signifies continued rigorous regulatory oversight by the SEC regarding financial misrepresentation in the cannabis sector, highlighting the risks of non-compliance and investor deception for industry leaders.
-Evidence + source: news.bloomberglaw.com (published 2 days ago)
+SIGNAL 5
+Company: Cannaspire (observing industry trend)
+Location: National (US) hemp operators
+What happened: The national "intoxicating hemp" crackdown is transitioning from a policy discussion to a hard deadline for operators.
+Why it matters: This indicates increasing regulatory pressure on the hemp-derived cannabinoid market, which could significantly impact businesses operating in this space, potentially leading to closures or a shift in product offerings.
+Evidence + source: mjbizdaily.com (6 days ago)
