@@ -33,7 +33,8 @@ Rated: Effort | Time to MVP | Revenue Potential]
 [1 forward-looking development at the intersection of AI and Bryan's world. Not hype — real, underreported, with a specific implication for how Bryan operates.]
 
 👦 SON CHALLENGE — Saturday Morning Edition
-[One simple, creative physical activity for a 4.5-year-old. Household items only. Takes under 10 min to set up. Develops hand-eye coordination. Fun and playful.
+[One simple, creative physical activity for a 4.5-year-old. Household items only. Takes under 10 min to set up. Fun and playful.
+CRITICAL: Must be ORIGINAL each week. No repeats. Vary skills (hand-eye coordination one week, balance another, creativity another, etc.).
 Format: Name the challenge → what you need → how to play → what skill it builds.]
 ```
 
