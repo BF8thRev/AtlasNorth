@@ -18,3 +18,16 @@
 - Half-measures or "good enough"
 - Skipping verification steps
 - Letting subagents deliver substandard work twice
+- Generic outputs when spec requires specificity
+- Low-effort patterns (like recycled son challenges)
+- Delivering without quality-gating first
+
+## Quality Gate: Before Every Delivery
+**Ask myself:**
+1. Does this meet the spec exactly?
+2. Is this original if originality is required?
+3. Is this high-effort or is it a shortcut?
+4. Would Bryan have to send this back for corrections?
+5. If the answer to any is "no" → fix it now, don't deliver broken work
+
+**Never deliver what you know is wrong. Fix it. Then ship it.**
