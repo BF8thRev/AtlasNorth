@@ -1,58 +1,87 @@
 {
-  "last_updated": "2026-03-05",
-  "version": "1.0",
+  "last_updated": "2026-03-23T10:10:00Z",
+  "version": "2.0",
+  "date": "Monday, March 23, 2026",
   "blockers": [
     {
-      "id": "BLK-001",
-      "description": "Search Console — atlas.opsman@gmail.com not added as property user. Blocks SCC/HUSA and Newton SEO data.",
+      "id": "BLK-024",
+      "description": "Anthropic API billing depleted — blocking Blocker Refresh cron (4 consecutive errors) and YouTube catalog ingest.",
       "priority": "🔴",
       "owner": "Bryan",
-      "status": "open",
-      "action": "Google Search Console → Settings → Users and Permissions → Add atlas.opsman@gmail.com"
+      "status": "blocked",
+      "action": "Check Anthropic account billing status, add credits if needed, resume cron job 3fa57eec-62d2-4b92-a82d-5c24c5fece16. Contact: https://console.anthropic.com/account/billing"
+    },
+    {
+      "id": "BLK-023",
+      "description": "Pulse Daily Intel (6 AM) reported unknown error but marked delivered — possible retry loop or silent failure. Last run 2026-03-23 10:10 UTC.",
+      "priority": "🔴",
+      "owner": "Atlas",
+      "status": "in-progress",
+      "action": "Run Detective Niessen audit on Pulse job (ea9220d2-8cd1-4c3c-92fb-37e781b4a24a). Check PULSE_DAILY_OUTPUT.md exists and has valid content. If missing/corrupted, manually trigger Pulse agent or revert to fallback model (haiku)."
     },
     {
       "id": "BLK-002",
-      "description": "OAuth re-auth blocked — redirect_uri_mismatch. 127.0.0.1 callback not registered in Google Cloud Console OAuth credentials.",
+      "description": "OAuth redirect_uri_mismatch blocking local dev auth. 127.0.0.1 callback not registered in Google Cloud Console.",
       "priority": "🔴",
       "owner": "Bryan",
       "status": "blocked",
       "action": "Go to console.cloud.google.com → APIs & Services → Credentials → OAuth 2.0 Client → Add http://127.0.0.1 to Authorized redirect URIs. Takes 30 seconds."
     },
     {
-      "id": "BLK-003",
-      "description": "VERCEL_TOKEN not stored — Atlas cannot trigger manual deploys or verify env vars without Chrome attached.",
-      "priority": "🟠",
+      "id": "BLK-001",
+      "description": "Search Console — atlas.opsman@gmail.com not added as property user. Blocks SCC/HUSA and Newton SEO data.",
+      "priority": "🔴",
       "owner": "Bryan",
       "status": "open",
-      "action": "vercel.com/account/tokens → create token → add VERCEL_TOKEN to ~/.openclaw/.env"
+      "action": "Google Search Console → Settings → Users and Permissions → Add atlas.opsman@gmail.com for both properties."
     },
-
-
     {
-      "id": "BLK-014",
-      "description": "Agent SOUL.md files missing for 9 agents — OLG, Rob_C, Hunter, Dr. Frankl, Ledger, Voss, Bob, Niessen, Spark are scaffolded but empty.",
+      "id": "BLK-025",
+      "description": "Newton CRM Warm Prospects tab not updated with recent outreach. Last touch dates stale (>7 days). Hunter CRM protocol not yet executed.",
       "priority": "🟠",
-      "owner": "Bryan",
-      "status": "open",
-      "action": "Drop each agent's SOUL.md in chat and Atlas slots it in immediately. Or Bryan writes identity bullet points and Atlas drafts them."
+      "owner": "Hunter",
+      "status": "waiting",
+      "action": "Review STANDING_INSTRUCTIONS.md → Hunter CRM Cell Update Protocol. Append recent outreach activity (Pulse findings, Bryan emails) to Outreach Log tab. Update Last Touch dates in Warm Prospects tab using gws sheets batchUpdate."
     },
-
-
     {
       "id": "BLK-017",
-      "description": "OLG LinkedIn post draft (Tilray/BrewDog) moved to DRAFTS folder. Need formal system for tracking draft items that need Bryan review/approval.",
+      "description": "OLG LinkedIn post draft (Tilray/BrewDog) awaiting Bryan review. Stored in /DRAFTS/OLG_LinkedIn_TilrayBrewDog_20260305.md.",
       "priority": "🟠",
       "owner": "Bryan",
-      "status": "open",
-      "action": "Review OLG post in /DRAFTS/OLG_LinkedIn_TilrayBrewDog_20260305.md. Approve, edit, or reject. Establish DRAFTS workflow: Atlas creates → stores in DRAFTS → logs as blocker → Bryan handles."
+      "status": "waiting",
+      "action": "Review draft in /DRAFTS/. Approve, edit, or reject. Establish formal DRAFTS workflow: Atlas → /DRAFTS/ → blocker board → Bryan batch review at set cadence."
     },
     {
       "id": "BLK-018",
-      "description": "DRAFTS folder system not formalized. Items building in DRAFTS need tracking so Bryan can batch-review and approve/reject.",
+      "description": "DRAFTS folder system not formalized. Multiple items building in /DRAFTS/ need tracking so Bryan can batch-review.",
+      "priority": "🟠",
+      "owner": "Atlas",
+      "status": "in-progress",
+      "action": "Create DRAFTS_STATUS.json to track: file | created_date | type (post/email/doc) | owner | status (pending-review/approved/rejected). Update on every new DRAFT. Review cadence: daily at 6 AM."
+    },
+    {
+      "id": "BLK-003",
+      "description": "VERCEL_TOKEN not stored — Atlas cannot trigger manual deploys or verify env vars without browser.",
       "priority": "🟠",
       "owner": "Bryan",
       "status": "open",
-      "action": "Define DRAFTS workflow: (1) Atlas moves items to /DRAFTS/ with metadata header, (2) Add to blockers board as 'pending review', (3) Bryan reviews batch at set cadence (daily? weekly?), (4) Approve/Reject/Revise. Build DRAFTS_STATUS.json to track."
+      "action": "vercel.com/account/tokens → create token → add VERCEL_TOKEN=<token> to ~/.openclaw/.env. Verify with: echo $VERCEL_TOKEN"
+    },
+    {
+      "id": "BLK-026",
+      "description": "Dime guest booking — Micah Anderson (LEEF Brands, Prop 64 expert) identified as 🟢 HIGH priority pitch target. Email draft ready. No outreach sent yet.",
+      "priority": "🟠",
+      "owner": "Bryan",
+      "status": "open",
+      "action": "Review Micah Anderson pitch in memory/DIME_GUEST_AUDIT_COMPLETE.md. Approve email draft or request revisions. Send direct email or LinkedIn message to LEEF Brands to initiate guest conversation."
+    },
+    {
+      "id": "BLK-014",
+      "description": "Agent SOUL.md files missing for 9 agents — OLG, Rob_C, Hunter, Dr. Frankl, Ledger, Voss, Bob, Niessen, Spark are scaffolded but empty.",
+      "priority": "🟡",
+      "owner": "Bryan",
+      "status": "open",
+      "action": "Drop each agent's identity bullet points in chat. Atlas drafts SOUL.md for each and stages in .agents/skills/. Or Bryan writes 3-5 identity traits per agent and Atlas slots them immediately."
     }
   ]
 }
