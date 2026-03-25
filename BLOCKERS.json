@@ -1,31 +1,47 @@
 {
-  "last_updated": "2026-03-24T10:10:00Z",
-  "version": "2.1",
-  "date": "Tuesday, March 24, 2026",
+  "last_updated": "2026-03-25T10:10:00Z",
+  "version": "2.2",
+  "date": "Wednesday, March 25, 2026",
   "blockers": [
     {
-      "id": "BLK-024",
-      "description": "Anthropic API billing status unknown — Blocker Refresh cron (3fa57eec) runs but verify no payment blocks active.",
-      "priority": "🔴",
-      "owner": "Bryan",
-      "status": "in-progress",
-      "action": "Log into https://console.anthropic.com/account/billing. Confirm credit balance > $0. If depleted, add credits immediately. Monitor cron run logs for payment errors."
-    },
-    {
-      "id": "BLK-023",
-      "description": "Pulse Daily Intel (6 AM) delivered successfully but audit log missing — verify output file exists and contains valid content.",
-      "priority": "🔴",
-      "owner": "Atlas",
-      "status": "in-progress",
-      "action": "Check if /PULSE_DAILY_OUTPUT.md exists with today's date. If missing or stale (>24h old), run Detective Niessen audit on cron job ea9220d2. If found, mark DONE."
-    },
-    {
-      "id": "BLK-001",
-      "description": "Search Console — atlas.opsman@gmail.com not added as property user for SCC/HUSA and Newton properties.",
+      "id": "BLK-026",
+      "description": "Dime guest booking — Micah Anderson (LEEF Brands, Prop 64 expert, aired 2026-03-08) HIGH priority pitch target. Zero outreach sent. 17 days post-appearance.",
       "priority": "🔴",
       "owner": "Bryan",
       "status": "open",
-      "action": "Go to Google Search Console → Settings → Users and Permissions. Add atlas.opsman@gmail.com with Viewer or Editor role for both properties. Verify access within 5 min."
+      "action": "Send warm email to Micah Anderson: Reference his Dime episode + Newton Insights fit. Hook: extraction ops pain + feedback loop visibility. Subject: 'Quick thought on your Prop 64 insights + Newton tool'. Max 5-day lag threshold exceeded—send TODAY."
+    },
+    {
+      "id": "BLK-024",
+      "description": "Anthropic API billing status unknown — Blocker Refresh cron (3fa57eec) runs daily but verify no payment blocks active.",
+      "priority": "🔴",
+      "owner": "Bryan",
+      "status": "in-progress",
+      "action": "Log into https://console.anthropic.com/account/billing. Confirm credit balance > $0. If depleted, add credits immediately. Set calendar reminder to check balance weekly (Fridays 9 AM)."
+    },
+    {
+      "id": "BLK-025",
+      "description": "Newton CRM Warm Prospects tab stale — Last touch dates >7 days old. Outreach Log incomplete. Hunter CRM protocol failed twice (2026-03-16).",
+      "priority": "🔴",
+      "owner": "Atlas",
+      "status": "blocked",
+      "action": "Hunter reassigned to research-only (per 2026-03-16 decision). ESCALATE: Assign CRM updates to Bryan directly OR delegate to new operational role. Manual audit + batchUpdate needed: (1) Review Warm Prospects tab. (2) Update Last Touch dates for recent outreach. (3) Append Outreach Log entries. Contact: Bryan for decision."
+    },
+    {
+      "id": "BLK-023",
+      "description": "Pulse Daily Intel (6 AM) delivery audit — output file exists with valid content (2026-03-25).",
+      "priority": "🔴",
+      "owner": "Atlas",
+      "status": "done",
+      "action": "✅ Verified: /PULSE_DAILY_OUTPUT.md exists in vault/ and workspace root. Content valid (industry intel on PharmaCann exit, IRS 280E, CLIMB Act, MA grants, extraction efficiency). Mark DONE."
+    },
+    {
+      "id": "BLK-001",
+      "description": "Search Console — atlas.opsman@gmail.com not added as property user for SCC/HUSA and Newton properties. Blocks SEO monitoring.",
+      "priority": "🔴",
+      "owner": "Bryan",
+      "status": "open",
+      "action": "Go to Google Search Console → Settings → Users and Permissions. Add atlas.opsman@gmail.com (Viewer or Editor) for both SCC/HUSA and Newton properties. Verify access within 5 min."
     },
     {
       "id": "BLK-002",
@@ -36,36 +52,20 @@
       "action": "Go to console.cloud.google.com → APIs & Services → Credentials → OAuth 2.0 Client IDs → Add http://127.0.0.1:PORT to Authorized redirect URIs. Save. Test callback."
     },
     {
-      "id": "BLK-026",
-      "description": "Dime guest booking — Micah Anderson (LEEF Brands, Prop 64 expert, recent guest 2026-03-08) HIGH priority pitch target. Email draft ready. Zero outreach sent.",
-      "priority": "🔴",
-      "owner": "Bryan",
-      "status": "open",
-      "action": "Send warm email to Micah Anderson referencing his recent Dime episode + Newton Insights fit. Template: reference extraction ops pain + feedback loop visibility. Subject: 'Quick thought on your Prop 64 insights + Newton tool' (max 5 days lag from appearance)."
-    },
-    {
-      "id": "BLK-025",
-      "description": "Newton CRM Warm Prospects tab not updated with recent outreach. Last touch dates stale (>7 days). Hunter CRM protocol incomplete.",
+      "id": "BLK-017",
+      "description": "OLG LinkedIn post draft (Tilray/BrewDog) in /DRAFTS/ — Created 2026-03-05. 20 days old, awaiting Bryan review. Status: stale (>14-day threshold).",
       "priority": "🟠",
-      "owner": "Hunter",
+      "owner": "Bryan",
       "status": "waiting",
-      "action": "Execute Hunter CRM Cell Update Protocol (STANDING_INSTRUCTIONS.md): (1) Append recent outreach to Outreach Log tab. (2) Update Last Touch dates in Warm Prospects using gws sheets batchUpdate. (3) Report rows updated + verification."
+      "action": "Decision required: (1) Approve for posting (Olg posts to LinkedIn immediately). (2) Request revisions (specify changes). (3) Reject & mark for refresh (Olg drafts new angle). Current status: STALE. Recommend rejection + refresh with current cannabis market angle."
     },
     {
       "id": "BLK-018",
-      "description": "DRAFTS folder system not formalized. 1 item in /DRAFTS/ (OLG_LinkedIn_TilrayBrewDog_20260305.md) lacks tracking or review status.",
+      "description": "DRAFTS folder system not formalized. 1+ items in /DRAFTS/ lack tracking or review status. No visibility into pending approvals.",
       "priority": "🟠",
       "owner": "Atlas",
       "status": "in-progress",
-      "action": "Create DRAFTS_STATUS.json: track file name | created_date | type (post/email/doc/analysis) | owner | status (pending-review/approved/rejected). Add daily 6 AM blocker board task to check /DRAFTS/ and update status."
-    },
-    {
-      "id": "BLK-017",
-      "description": "OLG LinkedIn post draft (Tilray/BrewDog) in /DRAFTS/OLG_LinkedIn_TilrayBrewDog_20260305.md awaiting Bryan review. Created 2026-03-05 (19 days old).",
-      "priority": "🟠",
-      "owner": "Bryan",
-      "status": "waiting",
-      "action": "Review draft in /DRAFTS/. Approve for posting, request revisions, or reject. If approved, Olg posts to LinkedIn. If stale (>14 days), flag for rejection or refresh."
+      "action": "Create DRAFTS_STATUS.json: track file name | created_date | type (post/email/doc/analysis) | owner | status (pending-review/approved/rejected). Add daily 6 AM blocker board task to check /DRAFTS/ and update status. Report weekly aging on drafts >7 days."
     },
     {
       "id": "BLK-003",
@@ -77,11 +77,11 @@
     },
     {
       "id": "BLK-014",
-      "description": "Agent SOUL.md files missing for 9 agents — OLG, Rob_C, Hunter, Dr. Frankl, Ledger, Voss, Bob, Niessen, Spark scaffolded but empty. Blocks identity + role clarity.",
+      "description": "Agent SOUL.md files missing for 9 agents — OLG, Rob_C, Hunter, Dr. Frankl, Ledger, Voss, Bob, Niessen, Spark. Blocks identity + role clarity.",
       "priority": "🟡",
       "owner": "Bryan",
       "status": "open",
-      "action": "Provide 3-5 identity traits per agent (name, role, core trait, vibe, standard). Atlas drafts SOUL.md for each and stages in ~/.agents/skills/. Or Bryan writes identity bullets directly in Slack."
+      "action": "Provide 3-5 identity traits per agent (name, role, core trait, vibe, standard). Atlas drafts SOUL.md for each and stages in ~/.agents/skills/. Or Bryan writes identity bullets in Slack + Atlas auto-generates."
     }
   ]
 }
