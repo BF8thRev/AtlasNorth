@@ -26,3 +26,4 @@
 {"timestamp":"2026-03-25T09:45:42Z","model":"anthropic/claude-haiku-4-5-20251001","agent":"atlas","task_ref":"memory-rotation-verify-6am","input_tokens":0,"output_tokens":0,"total_tokens":0,"category":"ops"}
 {"timestamp":""2026-03-25T10:00:49Z"","model":"google/gemini-2.5-flash","agent":"pulse","task_ref":"daily-intel-6am","input_tokens":0,"output_tokens":0,"total_tokens":0,"category":"research"}
 {"timestamp":"2026-03-25T10:10:00Z","model":"anthropic/claude-haiku-4-5-20251001","agent":"atlas","task_ref":"blocker-board-refresh-610am","input_tokens":0,"output_tokens":0,"total_tokens":0,"category":"ops"}
+{"timestamp":"2026-03-25T12:00:00Z","model":"anthropic/claude-haiku-4-5-20251001","agent":"atlas","task_ref":"daily-brief-615am","input_tokens":0,"output_tokens":0,"total_tokens":0,"category":"ops"}
