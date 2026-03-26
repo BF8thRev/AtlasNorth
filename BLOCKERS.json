@@ -1,39 +1,32 @@
 {
-  "last_updated": "2026-03-25T10:10:00Z",
-  "version": "2.2",
-  "date": "Wednesday, March 25, 2026",
+  "last_updated": "2026-03-26T10:10:00Z",
+  "version": "2.3",
+  "date": "Thursday, March 26, 2026",
+  "time_generated": "6:10 AM EST",
   "blockers": [
     {
-      "id": "BLK-026",
-      "description": "Dime guest booking — Micah Anderson (LEEF Brands, Prop 64 expert, aired 2026-03-08) HIGH priority pitch target. Zero outreach sent. 17 days post-appearance.",
+      "id": "BLK-025",
+      "description": "Newton CRM Warm Prospects tab stale — Last touch dates >7 days old. Outreach Log incomplete. Hunter CRM protocol failed twice (2026-03-16), reassigned to research-only.",
       "priority": "🔴",
       "owner": "Bryan",
       "status": "open",
-      "action": "Send warm email to Micah Anderson: Reference his Dime episode + Newton Insights fit. Hook: extraction ops pain + feedback loop visibility. Subject: 'Quick thought on your Prop 64 insights + Newton tool'. Max 5-day lag threshold exceeded—send TODAY."
+      "action": "Assign CRM updates to operational owner OR Bryan direct. Task: (1) Audit Warm Prospects tab for Last Touch staleness. (2) Append 15+ entries to Outreach Log (recent Hunter prospecting). (3) Update Last Touch dates with gws sheets batchUpdate. Decision needed TODAY on who owns CRM stewardship going forward."
+    },
+    {
+      "id": "BLK-026",
+      "description": "Dime guest booking — Micah Anderson (LEEF Brands, Prop 64 expert, aired 2026-03-08) HIGH priority pitch target. Zero outreach sent. 18 days post-appearance.",
+      "priority": "🔴",
+      "owner": "Bryan",
+      "status": "open",
+      "action": "Send warm email TODAY to Micah Anderson: Reference his Dime episode + Newton Insights fit. Hook: extraction ops pain + feedback loop visibility. Subject: 'Quick thought on your Prop 64 insights + Newton tool'. Max 5-day lag threshold exceeded—URGENT."
     },
     {
       "id": "BLK-024",
-      "description": "Anthropic API billing status unknown — Blocker Refresh cron (3fa57eec) runs daily but verify no payment blocks active.",
+      "description": "Anthropic API billing status unknown — Blocker Refresh cron (3fa57eec) runs daily but credit balance must be >$0. Verify no payment blocks active.",
       "priority": "🔴",
       "owner": "Bryan",
       "status": "in-progress",
-      "action": "Log into https://console.anthropic.com/account/billing. Confirm credit balance > $0. If depleted, add credits immediately. Set calendar reminder to check balance weekly (Fridays 9 AM)."
-    },
-    {
-      "id": "BLK-025",
-      "description": "Newton CRM Warm Prospects tab stale — Last touch dates >7 days old. Outreach Log incomplete. Hunter CRM protocol failed twice (2026-03-16).",
-      "priority": "🔴",
-      "owner": "Atlas",
-      "status": "blocked",
-      "action": "Hunter reassigned to research-only (per 2026-03-16 decision). ESCALATE: Assign CRM updates to Bryan directly OR delegate to new operational role. Manual audit + batchUpdate needed: (1) Review Warm Prospects tab. (2) Update Last Touch dates for recent outreach. (3) Append Outreach Log entries. Contact: Bryan for decision."
-    },
-    {
-      "id": "BLK-023",
-      "description": "Pulse Daily Intel (6 AM) delivery audit — output file exists with valid content (2026-03-25).",
-      "priority": "🔴",
-      "owner": "Atlas",
-      "status": "done",
-      "action": "✅ Verified: /PULSE_DAILY_OUTPUT.md exists in vault/ and workspace root. Content valid (industry intel on PharmaCann exit, IRS 280E, CLIMB Act, MA grants, extraction efficiency). Mark DONE."
+      "action": "Log into https://console.anthropic.com/account/billing. Confirm credit balance > $0. If depleted, add credits immediately. Set calendar reminder for weekly balance check (Fridays 9 AM). Last verified: 2026-03-25."
     },
     {
       "id": "BLK-001",
@@ -44,20 +37,20 @@
       "action": "Go to Google Search Console → Settings → Users and Permissions. Add atlas.opsman@gmail.com (Viewer or Editor) for both SCC/HUSA and Newton properties. Verify access within 5 min."
     },
     {
-      "id": "BLK-002",
-      "description": "OAuth redirect_uri_mismatch blocking local dev auth flow. 127.0.0.1 callback not registered in Google Cloud Console.",
-      "priority": "🔴",
+      "id": "BLK-019",
+      "description": "Dime content roadmap — No H1 2026 guest booking pipeline. 3 episodes in March need guests confirmed. May/June slots open with zero prospects identified.",
+      "priority": "🟠",
       "owner": "Bryan",
-      "status": "blocked",
-      "action": "Go to console.cloud.google.com → APIs & Services → Credentials → OAuth 2.0 Client IDs → Add http://127.0.0.1:PORT to Authorized redirect URIs. Save. Test callback."
+      "status": "open",
+      "action": "Review Dime Learnings + past successful guests. Build 5-person shortlist for April/May episodes (industry experts, hot founders, regulatory analysts). Hunter to vet and warm-intro each. Target 2 confirms by April 1st."
     },
     {
       "id": "BLK-017",
-      "description": "OLG LinkedIn post draft (Tilray/BrewDog) in /DRAFTS/ — Created 2026-03-05. 20 days old, awaiting Bryan review. Status: stale (>14-day threshold).",
+      "description": "OLG LinkedIn post draft (Tilray/BrewDog) in /DRAFTS/ — Created 2026-03-05. 21 days old, awaiting Bryan review. Status: STALE (>14-day threshold).",
       "priority": "🟠",
       "owner": "Bryan",
       "status": "waiting",
-      "action": "Decision required: (1) Approve for posting (Olg posts to LinkedIn immediately). (2) Request revisions (specify changes). (3) Reject & mark for refresh (Olg drafts new angle). Current status: STALE. Recommend rejection + refresh with current cannabis market angle."
+      "action": "Decision required: (1) Approve for posting (Olg posts immediately). (2) Request revisions (specify changes). (3) Reject + refresh (Olg drafts new angle with current market context). RECOMMEND rejection + refresh with March 26 cannabis market dynamics (MSO compression, legacy industry moves, rescheduling momentum)."
     },
     {
       "id": "BLK-018",
@@ -65,7 +58,7 @@
       "priority": "🟠",
       "owner": "Atlas",
       "status": "in-progress",
-      "action": "Create DRAFTS_STATUS.json: track file name | created_date | type (post/email/doc/analysis) | owner | status (pending-review/approved/rejected). Add daily 6 AM blocker board task to check /DRAFTS/ and update status. Report weekly aging on drafts >7 days."
+      "action": "Create DRAFTS_STATUS.json: track file name | created_date | type (post/email/doc/analysis) | owner | status (pending-review/approved/rejected). Add daily 6 AM blocker board refresh task to check /DRAFTS/ and update status. Report weekly aging on drafts >7 days."
     },
     {
       "id": "BLK-003",
@@ -74,6 +67,14 @@
       "owner": "Bryan",
       "status": "open",
       "action": "Go to vercel.com/account/tokens → Create Personal Access Token → Add to ~/.openclaw/.env as VERCEL_TOKEN=<token>. Verify: echo $VERCEL_TOKEN should output token."
+    },
+    {
+      "id": "BLK-002",
+      "description": "OAuth redirect_uri_mismatch blocking local dev auth flow. 127.0.0.1 callback not registered in Google Cloud Console.",
+      "priority": "🟠",
+      "owner": "Bryan",
+      "status": "blocked",
+      "action": "Go to console.cloud.google.com → APIs & Services → Credentials → OAuth 2.0 Client IDs → Add http://127.0.0.1:PORT to Authorized redirect URIs. Save. Test callback."
     },
     {
       "id": "BLK-014",
