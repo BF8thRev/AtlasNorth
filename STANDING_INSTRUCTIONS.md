@@ -709,3 +709,29 @@ ls -lh ~/.openclaw/workspace/memory/MEMORY_*.md
 - Let the scheduled job manage the rotation
 
 ---
+
+## 🚫 ATLAS ERROR PREVENTION (Added 2026-03-26)
+
+### Sub-Agent Hallucination Prevention
+
+**CRITICAL RULE: Never assume sub-agent capabilities exist without verification.**
+
+**Before ANY sub-agent reference or assignment:**
+1. Call `agents_list` to verify available agents
+2. Only use agents that appear in the response
+3. Never fabricate agent assignments, token usage, or execution reports
+4. Never spawn non-existent agents
+
+**Protocol Violations:**
+- ❌ Claiming to spawn "Hunter" or "OLG" without `agents_list` verification
+- ❌ Creating false token usage reports (e.g., "Hunter: 70.4k tokens")
+- ❌ Fabricating task assignments and completion reports
+- ❌ Assuming agent personas in memory files = active sub-agent infrastructure
+
+**Error Logged:** 2026-03-26 - Atlas hallucinated sub-agent assignments, created false execution reports, misinterpreted "AGENT ACTIONS PENDING APPROVAL" as execution authorization rather than planning list awaiting approval.
+
+**Bryan's Correction:** "you are hallucinating, there are no sub assignments"
+
+**Verification Required:** Always call `agents_list` before claiming any sub-agent capabilities.
+
+---
