@@ -4,11 +4,13 @@
 
 **This is the authoritative SOP.** Current configuration tracked in MEMORY.md.
 
-### Workflow_Feedback Doc (Live Learning System)
+### Dime Content Feedback Doc (Live Learning System)
 - **Link:** https://docs.google.com/document/d/15ewrXDLrhOTWd4nnLJTl0KvdLl7-ebZp0kf8LQErGuk/edit
 - **Doc ID:** `15ewrXDLrhOTWd4nnLJTl0KvdLl7-ebZp0kf8LQErGuk`
-- **MANDATORY:** Read this doc BEFORE each new episode trigger
-- **Active Instructions:** Any notes in Feedback Doc override SOP if conflict
+- **PURPOSE:** Accumulate patterns each week until perfect. Grows with every episode.
+- **MANDATORY:** Read this doc BEFORE building each new episode (step 3 in Trigger Flow)
+- **How it Works:** Pull all patterns first → Apply while building → After feedback, add new patterns to doc
+- **Active Instructions:** Any patterns in Dime Content Feedback inform the build from the start
 - **Logging:** After each episode, log timestamp + what worked + what failed + improvements
 
 ### Quick Reference: 11 Hard Rules (Never Forget)
@@ -24,15 +26,20 @@
 10. **ALL DELIVERABLES NATIVE GOOGLE DOCS** — Never .txt or .md uploads
 11. **FILE TO EPISODES FOLDER IMMEDIATELY** — https://drive.google.com/drive/folders/1N-E2sxnHsus6x83LfSMfKLccSOBzQyV7 (non-negotiable)
 
-### Trigger Flow
+### Trigger Flow (CORRECTED 2026-03-27)
+**Patterns inform the build from the start, not applied after**
+
 1. Bryan signals "New episode ready" with [Guest Name] + [Transcript Path]
 2. Atlas reads DIME_EPISODE_SOP.md (this file) to confirm workflow
-3. Atlas reads Workflow_Feedback doc (check for live overrides/notes)
+3. **Atlas reads Workflow_Feedback doc FIRST** (pull ALL Dime Content Feedback patterns before building)
 4. **ATLAS INGESTS FULL TRANSCRIPT (every word, 20k–60k tokens) — NON-DELEGABLE**
-5. **ATLAS BUILDS 6-SECTION ARTIFACT (single Google Doc) — ATLAS OWNS THIS**
+5. **ATLAS BUILDS 6-SECTION ARTIFACT (single Google Doc) — ATLAS OWNS THIS** (while applying patterns from step 3)
 6. File as native Google Doc via `gog docs create` **→ IMMEDIATELY MOVE TO EPISODES FOLDER (https://drive.google.com/drive/folders/1N-E2sxnHsus6x83LfSMfKLccSOBzQyV7)**
-7. Atlas performs Stage 3 quality audit against all 11 hard rules
+7. Atlas performs Stage 3 quality audit against all 11 hard rules + Dime Content Feedback patterns
 8. Report folder link only (ZERO content dumps to chat)
+9. Bryan reviews → Provides corrections → Atlas updates Workflow_Feedback doc with new patterns
+10. **AFTER content is finalized, create Simplecast draft** (see SIMPLECAST EPISODE CREATION section below)
+11. Report Simplecast draft link to Bryan for review
 
 ---
 
@@ -220,6 +227,56 @@
 - Initial version lacked full context focus
 - Format conversion left as "user responsibility"
 - Social clips lacked SEO framing
+
+---
+
+## SIMPLECAST EPISODE CREATION (Standardized 2026-03-27)
+
+**Access Credentials (SECURE — NEVER COMMIT TO GITHUB)**
+- Account email: atlas.opsman+simple@gmail.com
+- Password: HnyF@@pmRxU6z@q
+- Show ID: 583052dc-8161-4a60-8c68-f486c33c8be9
+- Account ID: e239093b-4ab7-44ce-89ed-4f890f9603ac
+
+**Draft Episode Creation Process**
+1. When Bryan signals "New episode" with [Guest Name]
+2. Login to Simplecast (credentials above)
+3. Navigate to Episodes → Drafts tab
+4. Click "Add Episode"
+5. **Fill Title:** `[Guest Name] – Draft For Contributors`
+6. **Add Episode Contributors:**
+   - Bryan Fields
+   - [Guest Name]
+7. **Paste Episode Notes Template (see below) into Episode Notes field**
+8. **Save as Draft** (do NOT publish, do NOT add audio file)
+9. Report: "Draft created: [Guest Name] – Draft For Contributors"
+
+**Episode Notes Template (Copy & Paste Exactly)**
+```
+Our Links
+
+Bryan Fields on Twitter https://x.com/BryanFields24
+
+Kellan Finney on Twitter https://x.com/Kellan_Finney
+
+The Dime on Twitter https://x.com/TheDime_8th
+
+Extraction Teams: Want to cut costs and get more out of every run? Unlock hidden revenue by extracting more from the same input—with Newton Insights https://www.newton-insights.com/?utm_source=Thedime&utm_medium=pod&utm_campaign=simple_link
+
+At Eighth Revolution (8th Rev) https://www.eighthrevolution.com/the-dime/ - we provide services from capital to cannabinoid and everything in between in the cannabinoid industry.
+
+The Dime is a top 5% most shared global podcast https://twitter.com/BryanFields24/status/1597975425321410560/photo/2
+
+The Dime is a top 10 Cannabis Podcast https://www.millionpodcasts.com/marijuana-podcasts/
+
+The Dime has a New Website. Shhhh its not finished. https://dimepodcast.com/
+
+🎥 YouTube: The Dime https://www.youtube.com/channel/UCcck3tzBNXrJ1WJ8EtIVq1w
+
+📸 Instagram: The Dime https://www.instagram.com/thedime_8th
+
+https://www.newton-insights.com/
+```
 
 ---
 
