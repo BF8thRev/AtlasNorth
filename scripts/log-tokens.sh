@@ -21,6 +21,11 @@ if [ "$TOTAL_TOKENS" = "0" ] && [ "$INPUT_TOKENS" != "0" ]; then
   TOTAL_TOKENS=$((INPUT_TOKENS + OUTPUT_TOKENS))
 fi
 
+# Ensure numeric values
+INPUT_TOKENS=${INPUT_TOKENS:-0}
+OUTPUT_TOKENS=${OUTPUT_TOKENS:-0} 
+TOTAL_TOKENS=${TOTAL_TOKENS:-0}
+
 # Create JSON entry
 JSON=$(cat <<EOF
 {"timestamp":"$TIMESTAMP","model":"$MODEL","agent":"$AGENT","task_ref":"$TASK_REF","input_tokens":$INPUT_TOKENS,"output_tokens":$OUTPUT_TOKENS,"total_tokens":$TOTAL_TOKENS,"category":"$CATEGORY"}

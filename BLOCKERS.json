@@ -1,88 +1,89 @@
 {
-  "last_updated": "2026-03-26T10:10:00Z",
-  "version": "2.3",
-  "date": "Thursday, March 26, 2026",
+  "last_updated": "2026-03-27T10:10:00Z",
+  "version": "2.4",
+  "date": "Friday, March 27, 2026",
   "time_generated": "6:10 AM EST",
+  "notes": "Daily refresh. Today priorities: Micah Anderson pitch (18 days post-episode), CRM ownership decision, drafts aging review.",
   "blockers": [
     {
-      "id": "BLK-025",
-      "description": "Newton CRM Warm Prospects tab stale — Last touch dates >7 days old. Outreach Log incomplete. Hunter CRM protocol failed twice (2026-03-16), reassigned to research-only.",
+      "id": "BLK-026",
+      "description": "Dime — Micah Anderson (LEEF Brands, Prop 64 expert) URGENT warm pitch. Aired 2026-03-08, zero outreach sent, 19 days post-appearance (5-day lag exceeded).",
       "priority": "🔴",
       "owner": "Bryan",
       "status": "open",
-      "action": "Assign CRM updates to operational owner OR Bryan direct. Task: (1) Audit Warm Prospects tab for Last Touch staleness. (2) Append 15+ entries to Outreach Log (recent Hunter prospecting). (3) Update Last Touch dates with gws sheets batchUpdate. Decision needed TODAY on who owns CRM stewardship going forward."
+      "action": "Send warm email TODAY to Micah Anderson: Reference his Dime episode (Prop 64 insights), Newton Insights fit (extraction ops pain + timing visibility). Hook: \"Quick thought on your Prop 64 insights + Newton tool fit\". Max follow-up window: 3 days. This is a WARM pitch from audience engagement (not cold)."
     },
     {
-      "id": "BLK-026",
-      "description": "Dime guest booking — Micah Anderson (LEEF Brands, Prop 64 expert, aired 2026-03-08) HIGH priority pitch target. Zero outreach sent. 18 days post-appearance.",
+      "id": "BLK-025",
+      "description": "Newton CRM ownership CRITICAL — Warm Prospects tab stale (Last Touch >7d). Outreach Log incomplete. Hunter CRM protocol failed 2x (2026-03-16), reassigned to research. NO OWNER assigned for CRM operations.",
       "priority": "🔴",
       "owner": "Bryan",
       "status": "open",
-      "action": "Send warm email TODAY to Micah Anderson: Reference his Dime episode + Newton Insights fit. Hook: extraction ops pain + feedback loop visibility. Subject: 'Quick thought on your Prop 64 insights + Newton tool'. Max 5-day lag threshold exceeded—URGENT."
+      "action": "DECISION REQUIRED TODAY: (1) Will Bryan own CRM updates directly? (2) Will a new agent own CRM stewardship? OR (3) Will Hunt be re-trained on gws sheets append/batchUpdate protocol? Until decision: CRM is un-owned, data goes stale, prospecting becomes invisible. This blocks Newton funnel tracking."
     },
     {
       "id": "BLK-024",
-      "description": "Anthropic API billing status unknown — Blocker Refresh cron (3fa57eec) runs daily but credit balance must be >$0. Verify no payment blocks active.",
+      "description": "Anthropic API billing status unknown. Blocker Refresh cron (3fa57eec) runs daily on claude-haiku. Must have credit balance >$0. No alert system if depleted.",
       "priority": "🔴",
       "owner": "Bryan",
       "status": "in-progress",
-      "action": "Log into https://console.anthropic.com/account/billing. Confirm credit balance > $0. If depleted, add credits immediately. Set calendar reminder for weekly balance check (Fridays 9 AM). Last verified: 2026-03-25."
+      "action": "Verify TODAY: Log into https://console.anthropic.com/account/billing → confirm balance > $0. If low, add credits immediately. Set recurring Friday 9 AM reminder (Calendar event) for weekly balance check. Document: Last verified 2026-03-27 6:10 AM EST."
     },
     {
       "id": "BLK-001",
-      "description": "Search Console — atlas.opsman@gmail.com not added as property user for SCC/HUSA and Newton properties. Blocks SEO monitoring.",
+      "description": "Google Search Console — atlas.opsman@gmail.com NOT added as property user for SCC/HUSA and Newton properties. Blocks SEO analytics + monitoring.",
       "priority": "🔴",
       "owner": "Bryan",
       "status": "open",
-      "action": "Go to Google Search Console → Settings → Users and Permissions. Add atlas.opsman@gmail.com (Viewer or Editor) for both SCC/HUSA and Newton properties. Verify access within 5 min."
+      "action": "Go to search.google.com → Settings → Users and Permissions. Add atlas.opsman@gmail.com (minimum: Viewer role) for BOTH SCC/HUSA and Newton properties. Verify access within 5 minutes. Needed for: SEO audits, keyword performance, search traffic monitoring."
+    },
+    {
+      "id": "BLK-027",
+      "description": "Dime — H1 2026 guest booking pipeline EMPTY. March episodes need confirmed guests. April/May slots (8 weeks out) have zero prospects identified or tracked.",
+      "priority": "🟠",
+      "owner": "Bryan",
+      "status": "open",
+      "action": "Build 5-person guest shortlist for April/May episodes (industry experts, hot founders, regulatory analysts). Recommended focus: capital markets analysts (Pablo Zuanic, Giadha Aguirre) — finance content achieves 5.6%+ like ratio on The Dime (highest ceiling). Hunter to vet + warm-intro each. Target: 2 booking confirmations by April 1st."
     },
     {
       "id": "BLK-019",
-      "description": "Dime content roadmap — No H1 2026 guest booking pipeline. 3 episodes in March need guests confirmed. May/June slots open with zero prospects identified.",
+      "description": "Newton pipeline — Connector introductions not tracked or followed up. Mitch Pfeifer (strong intro source, 3-5/quarter capacity) and Mikhail Sagal (pending Rugged Roots intro) need follow-up schedule.",
       "priority": "🟠",
-      "owner": "Bryan",
-      "status": "open",
-      "action": "Review Dime Learnings + past successful guests. Build 5-person shortlist for April/May episodes (industry experts, hot founders, regulatory analysts). Hunter to vet and warm-intro each. Target 2 confirms by April 1st."
+      "owner": "Hunter",
+      "status": "waiting",
+      "action": "Review NEWTON_CRM_SCHEMA.md — activate Connector Tracking tab if not live. Schedule follow-ups with Mitch (identify 2-3 intro targets for Q2) and Mikhail (confirm Rugged Roots ask ETA). Atlas: Add 'Follow-up connectors' to Hunter weekly prospecting cron if not included."
     },
     {
       "id": "BLK-017",
-      "description": "OLG LinkedIn post draft (Tilray/BrewDog) in /DRAFTS/ — Created 2026-03-05. 21 days old, awaiting Bryan review. Status: STALE (>14-day threshold).",
+      "description": "OLG LinkedIn post draft (Tilray/BrewDog, MSO market angle) in /DRAFTS/ — Created 2026-03-05. 22 days old. Status: STALE (>14-day threshold). No review decision from Bryan.",
       "priority": "🟠",
       "owner": "Bryan",
       "status": "waiting",
-      "action": "Decision required: (1) Approve for posting (Olg posts immediately). (2) Request revisions (specify changes). (3) Reject + refresh (Olg drafts new angle with current market context). RECOMMEND rejection + refresh with March 26 cannabis market dynamics (MSO compression, legacy industry moves, rescheduling momentum)."
+      "action": "DECISION REQUIRED: (1) Approve for posting (Olg posts immediately). (2) Request revisions (specify changes). (3) RECOMMEND: Reject + refresh with current March 27 cannabis market context (MSO earnings, federal signal momentum, macro reset thesis). 22-day-old angle is dated. Fresh angle = better engagement."
     },
     {
       "id": "BLK-018",
-      "description": "DRAFTS folder system not formalized. 1+ items in /DRAFTS/ lack tracking or review status. No visibility into pending approvals.",
+      "description": "DRAFTS folder system not formalized. Multiple pending items lack tracking status. No visibility into what's waiting review vs. approved vs. rejected. No aging alerts.",
       "priority": "🟠",
       "owner": "Atlas",
       "status": "in-progress",
-      "action": "Create DRAFTS_STATUS.json: track file name | created_date | type (post/email/doc/analysis) | owner | status (pending-review/approved/rejected). Add daily 6 AM blocker board refresh task to check /DRAFTS/ and update status. Report weekly aging on drafts >7 days."
+      "action": "Create DRAFTS_STATUS.json: file_name | created_date | type (post|email|doc|analysis) | owner | status (pending-review|approved|rejected) | days_aging. Add to daily Blocker Board refresh (6 AM) to flag items >7 days pending. Report weekly draft aging summary. FIRST: Audit /DRAFTS/ folder today, populate initial status."
     },
     {
       "id": "BLK-003",
-      "description": "VERCEL_TOKEN not stored in environment. Atlas cannot trigger manual deploys or verify env vars without browser auth.",
+      "description": "VERCEL_TOKEN not stored in environment. Atlas cannot trigger manual deploys or verify Vercel env vars without browser OAuth.",
       "priority": "🟠",
       "owner": "Bryan",
       "status": "open",
-      "action": "Go to vercel.com/account/tokens → Create Personal Access Token → Add to ~/.openclaw/.env as VERCEL_TOKEN=<token>. Verify: echo $VERCEL_TOKEN should output token."
+      "action": "Go to vercel.com/account/tokens → Create Personal Access Token (name: atlas-deploy). Add to ~/.openclaw/.env as VERCEL_TOKEN=<token>. Test: echo $VERCEL_TOKEN should output token. Needed for: programmatic deploys, env var audits, Vercel API access."
     },
     {
       "id": "BLK-002",
-      "description": "OAuth redirect_uri_mismatch blocking local dev auth flow. 127.0.0.1 callback not registered in Google Cloud Console.",
+      "description": "OAuth redirect_uri_mismatch blocking local dev auth. 127.0.0.1 callback not registered in Google Cloud Console for dev environment.",
       "priority": "🟠",
       "owner": "Bryan",
       "status": "blocked",
-      "action": "Go to console.cloud.google.com → APIs & Services → Credentials → OAuth 2.0 Client IDs → Add http://127.0.0.1:PORT to Authorized redirect URIs. Save. Test callback."
-    },
-    {
-      "id": "BLK-014",
-      "description": "Agent SOUL.md files missing for 9 agents — OLG, Rob_C, Hunter, Dr. Frankl, Ledger, Voss, Bob, Niessen, Spark. Blocks identity + role clarity.",
-      "priority": "🟡",
-      "owner": "Bryan",
-      "status": "open",
-      "action": "Provide 3-5 identity traits per agent (name, role, core trait, vibe, standard). Atlas drafts SOUL.md for each and stages in ~/.agents/skills/. Or Bryan writes identity bullets in Slack + Atlas auto-generates."
+      "action": "Go to console.cloud.google.com → APIs & Services → Credentials → OAuth 2.0 Client IDs. Add http://127.0.0.1:3000 to Authorized redirect URIs (adjust port if needed). Save. Test callback. Blocks: local dev Gmail/Calendar auth, local Workspace API testing."
     }
   ]
 }
