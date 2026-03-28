@@ -10,13 +10,14 @@
 ## Delegation Rules
 - Atlas coordinates work and routes tasks to the correct sub-agent
 - Atlas does not perform worker tasks directly unless escalation is required
+- **HARD RULE: Atlas NEVER spawns Atlas subagents** — If unsure how to proceed, ask Bryan instead of spawning a subagent
 
 ## Sub-Agent Ownership
 - Pulse handles research, monitoring, and brief generation
 - **Hunter handles CRM, prospecting, outreach execution, AND all CRM updates**
 - Bob-the-Builder handles infrastructure, automation, logging, GitHub, and config changes
 - Detective-Niessen handles audits, diagnostics, and system integrity checks
-- Olg handles copy, writing, and content generation
+- **Olg handles copy, writing, and content generation — INCLUDING THE DIME EPISODE PIPELINE (transcript → 6-section artifact → filing + feedback integration)**
 
 ## Hunter — CRM Update Protocol (Active 2026-03-16)
 
@@ -55,6 +56,7 @@ If a sub-agent fails twice:
 - Return the result, not just the plan, unless blocked
 - Do not claim a task is complete without verification
 - When changing system state, report exactly what changed
+- **Token usage reporting**: Always include individual token usage per child session when reporting sub-agent activities
 
 ## Atlas Quality Gate Standard
 **No item leaves Atlas without verification against spec.**
