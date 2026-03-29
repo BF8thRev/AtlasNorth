@@ -612,6 +612,64 @@ See `MODEL_CALL_LOG_GUIDE.md` for 10 common queries (wrong model, cost anomalies
 
 ---
 
+## 🚨 SONNET FALLBACK NOTIFICATION PROTOCOL (Active 2026-03-29)
+
+**CRITICAL RULE: Any task that falls back to Claude Sonnet MUST be reported immediately to Bryan before proceeding.**
+
+### Why
+Sonnet fallbacks indicate primary model failure or unavailability. Bryan needs real-time visibility into these events to:
+- Diagnose model availability issues
+- Track fallback patterns
+- Approve continuation or halt work
+- Monitor cost impact
+
+### The Protocol (Non-Negotiable)
+
+**When a fallback to Sonnet occurs:**
+1. Atlas **MUST IMMEDIATELY** send a WhatsApp message to Bryan (+16318775553) with:
+   - Task name / job ID
+   - Primary model attempted
+   - Reason fallback triggered (timeout, error, rate limit, unavailable, etc.)
+   - Timestamp (UTC)
+   - Next action: "Awaiting your approval to proceed"
+
+2. **Atlas MUST WAIT** for Bryan's explicit approval before continuing the task
+
+3. **Only after Bryan responds** can Atlas proceed with the Sonnet task
+
+4. **Log the fallback event:**
+   - Include in MODEL_CALL_LOG.jsonl
+   - Tag with `fallback_notification_sent: true`
+   - Include Bryan's approval timestamp
+
+### Example WhatsApp Alert
+
+```
+🚨 FALLBACK ALERT
+
+Task: Evening Helper Ideas Drop (8 PM)
+Primary: anthropic/claude-haiku-4-5-20251001
+Fallback: Sonnet (primary timeout at 20:00:05 UTC)
+Reason: API response timeout after 30s
+Status: WAITING FOR APPROVAL
+
+Proceed with Sonnet? (yes/no)
+```
+
+### No Exceptions
+- Cron jobs: Halt and notify. Do not auto-continue.
+- Manual tasks: Notify and wait.
+- Subagents: Parent agent notifies and waits before spawning fallback.
+
+### Automation
+If a cron job cannot proceed without approval, it must:
+1. Send the alert
+2. Reschedule itself for +5 minutes (give Bryan time to respond)
+3. Exit gracefully with "AWAITING_APPROVAL" status
+4. Do NOT attempt the fallback model without explicit sign-off
+
+---
+
 ## 🔄 MEMORY ROTATION PROTOCOL (Formalized 2026-03-13)
 
 **Goal:** Keep MEMORY.md lean and focused on active context only. Archives preserve history; rotation happens automatically at midnight EST daily.
@@ -701,12 +759,41 @@ tail -50 ~/.openclaw/logs/memory-rotation.log
 ls -lh ~/.openclaw/workspace/memory/MEMORY_*.md
 ```
 
+### Manual Archive Save Protocol (When Explicitly Requested)
+
+**When Bryan says "save and /new", use this protocol:**
+
+1. Check if `memory/MEMORY_MM-DD-YE.md` exists for today's date
+2. If file EXISTS → append today's completed events to it (never overwrite)
+3. If file DOES NOT EXIST → create it using the MM-DD-YE format (e.g., `MEMORY_03-29-26.md`)
+4. Never delete an archive file
+5. Both manual saves and midnight cron write to the same file — manual gets there first
+
+**Format for appended entries:**
+- Section header: `## [Event Name] (HH:MM EDT)`
+- Status: `**Status:** ✅ COMPLETE` or `⚠️ IN PROGRESS`
+- Details: Bullet points with specifics, findings, verification
+
+**Example:**
+```markdown
+## Token Logging Script Fix (2026-03-29 ~ 14:38 EDT)
+**Status:** ✅ COMPLETE
+
+Bob diagnosed and fixed token logging:
+- Problem: log-tokens.sh was accepting hardcoded 0 values from callers
+- Solution: Rewrote script to read real token data from OpenClaw session metadata
+```
+
+**Idempotency:** The midnight cron appends stickies + creates fresh MEMORY.md. If manual archive exists, cron appends its carry-forward data to the same file. No duplication, no overwrites.
+
+---
+
 ### Do NOT Manually Rotate
 
 **Never run `rotate-memory.sh` manually unless instructed.**
 - Cron handles it automatically at midnight EST daily
-- Manual runs can create duplicate archives
-- Let the scheduled job manage the rotation
+- Manual saves (per protocol above) append to the same archive — no conflict
+- Let the scheduled job manage routine rotation
 
 ---
 

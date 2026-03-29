@@ -1,0 +1,168 @@
+# TOKEN_USAGE.jsonl — append-only, one JSON object per line
+# Schema: {"timestamp":"ISO","model":"string","agent":"string","task_ref":"string","input_tokens":0,"output_tokens":0,"total_tokens":0,"category":"string"}
+{"timestamp":"2026-03-13T21:00:00Z","model":"openai/gpt-4o","agent":"atlas","task_ref":"token-logging-test","input_tokens":1200,"output_tokens":800,"total_tokens":2000,"category":"audit"}
+{"timestamp":""2026-03-14T10:00:03Z"","model":"anthropic/claude-haiku-4-5-20251001","agent":"atlas","task_ref":"memory-rotation-verify-6am","input_tokens":0,"output_tokens":0,"total_tokens":0,"category":"ops"}
+{"timestamp":"2026-03-15T00:00:00Z","model":"anthropic/claude-haiku-4-5-20251001","agent":"atlas","task_ref":"evening-helper-ideas-8pm","input_tokens":0,"output_tokens":0,"total_tokens":0,"category":"strategy"}
+{"timestamp":"2026-03-15T10:00:03Z","model":"anthropic/claude-haiku-4-5-20251001","agent":"atlas","task_ref":"memory-rotation-verify-6am","input_tokens":0,"output_tokens":0,"total_tokens":0,"category":"ops"}
+{"timestamp":"2026-03-16T10:00:50Z","model":"google/gemini-2.5-flash","agent":"pulse","task_ref":"daily-intel-6am","input_tokens":0,"output_tokens":0,"total_tokens":0,"category":"research"}
+{"timestamp":"2026-03-16T10:02:00Z","model":"anthropic/claude-haiku-4-5-20251001","agent":"atlas","task_ref":"admin-brief-daily-615am","input_tokens":0,"output_tokens":0,"total_tokens":0,"category":"ops"}
+{"timestamp":""2026-03-16T10:01:31Z"","model":"anthropic/claude-haiku-4-5-20251001","agent":"atlas","task_ref":"memory-rotation-verify-6am","input_tokens":0,"output_tokens":0,"total_tokens":0,"category":"ops"}
+{"timestamp":"%Y-%m-%dT%H:%M:%SZ","model":"anthropic/claude-sonnet-4-20250514","agent":"pulse","task_ref":"morning-brief-8am","input_tokens":0,"output_tokens":0,"total_tokens":0,"category":"research"}
+{"timestamp":"2026-03-17T09:45:03Z","model":"anthropic/claude-haiku-4-5-20251001","agent":"atlas","task_ref":"memory-rotation-verify-6am","input_tokens":0,"output_tokens":0,"total_tokens":0,"category":"ops"}
+{"timestamp":""%Y-%m-%dT%H:%M:%SZ"","model":"google/gemini-2.5-flash","agent":"pulse","task_ref":"daily-intel-6am","input_tokens":0,"output_tokens":0,"total_tokens":0,"category":"research"}
+{"timestamp":"2026-03-18T09:45:07Z","model":"anthropic/claude-haiku-4-5-20251001","agent":"atlas","task_ref":"memory-rotation-verify-6am","input_tokens":0,"output_tokens":0,"total_tokens":0,"category":"ops"}
+{"timestamp":"2026-03-18T10:00:46Z","model":"google/gemini-2.5-flash","agent":"pulse","task_ref":"daily-intel-6am","input_tokens":0,"output_tokens":0,"total_tokens":0,"category":"research"}
+{"timestamp":"2026-03-19T09:45:04Z","model":"anthropic/claude-haiku-4-5-20251001","agent":"atlas","task_ref":"memory-rotation-verify-6am","input_tokens":0,"output_tokens":0,"total_tokens":0,"category":"ops"}
+{"timestamp":""%Y-%m-%dT%H:%M:%SZ"","model":"google/gemini-2.5-flash","agent":"pulse","task_ref":"daily-intel-6am","input_tokens":0,"output_tokens":0,"total_tokens":0,"category":"research"}
+{"timestamp":""2026-03-20T09:45:10Z"","model":"anthropic/claude-haiku-4-5-20251001","agent":"atlas","task_ref":"memory-rotation-verify-6am","input_tokens":0,"output_tokens":0,"total_tokens":0,"category":"ops"}
+{"timestamp":"2026-03-20T10:00:48Z","model":"google/gemini-2.5-flash","agent":"pulse","task_ref":"daily-intel-6am","input_tokens":0,"output_tokens":0,"total_tokens":0,"category":"research"}
+{"timestamp":""%Y-%m-%dT%H:%M:%SZ"","model":"anthropic/claude-haiku-4-5-20251001","agent":"atlas","task_ref":"memory-rotation-verify-6am","input_tokens":0,"output_tokens":0,"total_tokens":0,"category":"ops"}
+{"timestamp":"2026-03-21T13:13:08Z","model":"anthropic/claude-haiku-4-5-20251001","agent":"atlas","task_ref":"admin-brief-sat-715am","input_tokens":0,"output_tokens":0,"total_tokens":0,"category":"ops"}
+{"timestamp":""%Y-%m-%dT%H:%M:%SZ"","model":"anthropic/claude-haiku-4-5-20251001","agent":"atlas","task_ref":"memory-rotation-verify-6am","input_tokens":0,"output_tokens":0,"total_tokens":0,"category":"ops"}
+{"timestamp":"2026-03-23T09:45:03Z","model":"anthropic/claude-haiku-4-5-20251001","agent":"atlas","task_ref":"memory-rotation-verify-6am","input_tokens":0,"output_tokens":0,"total_tokens":0,"category":"ops"}
+{"timestamp":"2026-03-23T10:10:32Z","model":"anthropic/claude-haiku-4-5-20251001","agent":"atlas","task_ref":"blocker-board-refresh-610am","input_tokens":0,"output_tokens":0,"total_tokens":0,"category":"ops"}
+{"timestamp":"2026-03-24T09:45:05Z","model":"anthropic/claude-haiku-4-5-20251001","agent":"atlas","task_ref":"memory-rotation-verify-6am","input_tokens":0,"output_tokens":0,"total_tokens":0,"category":"ops"}
+{"timestamp":""2026-03-24T10:10:30Z"","model":"anthropic/claude-haiku-4-5-20251001","agent":"atlas","task_ref":"blocker-board-refresh-610am","input_tokens":0,"output_tokens":0,"total_tokens":0,"category":"ops"}
+{"timestamp":"2026-03-25T09:45:42Z","model":"anthropic/claude-haiku-4-5-20251001","agent":"atlas","task_ref":"memory-rotation-verify-6am","input_tokens":0,"output_tokens":0,"total_tokens":0,"category":"ops"}
+{"timestamp":""2026-03-25T10:00:49Z"","model":"google/gemini-2.5-flash","agent":"pulse","task_ref":"daily-intel-6am","input_tokens":0,"output_tokens":0,"total_tokens":0,"category":"research"}
+{"timestamp":"2026-03-25T10:10:00Z","model":"anthropic/claude-haiku-4-5-20251001","agent":"atlas","task_ref":"blocker-board-refresh-610am","input_tokens":0,"output_tokens":0,"total_tokens":0,"category":"ops"}
+{"timestamp":"2026-03-25T12:00:00Z","model":"anthropic/claude-haiku-4-5-20251001","agent":"atlas","task_ref":"daily-brief-615am","input_tokens":0,"output_tokens":0,"total_tokens":0,"category":"ops"}
+{"timestamp":"2026-03-26T10:10:34Z","model":"anthropic/claude-haiku-4-5-20251001","agent":"atlas","task_ref":"blocker-board-refresh-610am","input_tokens":0,"output_tokens":0,"total_tokens":0,"category":"ops"}
+{"timestamp":"%Y-%m-%dT%H:%M:%SZ","model":"anthropic/claude-haiku-4-5-20251001","agent":"atlas","task_ref":"memory-rotation-verify-6am","input_tokens":0,"output_tokens":0,"total_tokens":0,"category":"ops"}
+{"timestamp":"2026-03-27T10:00:29Z","model":"google/gemini-2.5-flash","agent":"pulse","task_ref":"daily-intel-6am","input_tokens":0,"output_tokens":0,"total_tokens":0,"category":"research"}
+{"timestamp":"2026-03-27T10:10:37Z","model":"anthropic/claude-haiku-4-5-20251001","agent":"atlas","task_ref":"blocker-board-refresh-610am","input_tokens":0,"output_tokens":0,"total_tokens":0,"category":"ops"}
+{"timestamp":"2026-03-27T12:00:00Z","model":"anthropic/claude-haiku-4-5-20251001","agent":"atlas","task_ref":"daily-brief-615am","input_tokens":0,"output_tokens":0,"total_tokens":0,"category":"ops"}
+{"timestamp":"2026-03-28T09:45:10Z","model":"anthropic/claude-haiku-4-5-20251001","agent":"atlas","task_ref":"memory-rotation-verify-6am","input_tokens":0,"output_tokens":0,"total_tokens":0,"category":"ops"}
+{"timestamp":"2026-03-29T12:29:31Z","model":"anthropic/claude-haiku-4-5-20251001","agent":"atlas","task_ref":"admin-brief-sun-715am","input_tokens":0,"output_tokens":0,"total_tokens":0,"category":"ops"}
+{
+  "timestamp": "2026-03-29T12:29:18Z",
+  "model": "anthropic/claude-haiku-4-5-20251001",
+  "agent": "atlas",
+  "task_ref": "0c1977ae-7a94-4a9f-944e-aeeabe94db43",
+  "input_tokens": 23,
+  "output_tokens": 1469,
+  "total_tokens": 18066,
+  "category": "cron"
+}
+{
+  "timestamp": "2026-03-29T12:29:18Z",
+  "model": "anthropic/claude-haiku-4-5-20251001",
+  "agent": "atlas",
+  "task_ref": "0c1977ae-7a94-4a9f-944e-aeeabe94db43",
+  "input_tokens": 23,
+  "output_tokens": 1469,
+  "total_tokens": 18066,
+  "category": "cron"
+}
+{
+  "timestamp": "2026-03-29T12:18:49Z",
+  "model": "anthropic/claude-haiku-4-5-20251001",
+  "agent": "atlas",
+  "task_ref": "0c1977ae-7a94-4a9f-944e-aeeabe94db43",
+  "input_tokens": 15,
+  "output_tokens": 351,
+  "total_tokens": 15565,
+  "category": "cron"
+}
+{
+  "timestamp": "2026-03-29T12:17:07Z",
+  "model": "google/gemini-2.5-flash",
+  "agent": "pulse",
+  "task_ref": "686887f1-5bbb-4f84-97fa-eafb9de9f74b",
+  "input_tokens": 70343,
+  "output_tokens": 344,
+  "total_tokens": 47160,
+  "category": "cron"
+}
+{
+  "timestamp": "2026-03-29T12:17:07Z",
+  "model": "google/gemini-2.5-flash",
+  "agent": "pulse",
+  "task_ref": "686887f1-5bbb-4f84-97fa-eafb9de9f74b",
+  "input_tokens": 70343,
+  "output_tokens": 344,
+  "total_tokens": 47160,
+  "category": "cron"
+}
+{
+  "timestamp": "2026-03-29T11:00:07Z",
+  "model": "anthropic/claude-haiku-4-5-20251001",
+  "agent": "atlas",
+  "task_ref": "0c1977ae-7a94-4a9f-944e-aeeabe94db43",
+  "input_tokens": 15,
+  "output_tokens": 427,
+  "total_tokens": 15565,
+  "category": "cron"
+}
+{
+  "timestamp": "2026-03-29T11:00:00Z",
+  "model": "google/gemini-2.5-flash",
+  "agent": "pulse",
+  "task_ref": "686887f1-5bbb-4f84-97fa-eafb9de9f74b",
+  "input_tokens": 70302,
+  "output_tokens": 412,
+  "total_tokens": 46155,
+  "category": "cron"
+}
+{
+  "timestamp": "2026-03-29T09:45:00Z",
+  "model": "openai/gpt-4o",
+  "agent": "atlas",
+  "task_ref": "1bd4a6b6-333e-459f-806d-0ff7bd3eb6f6",
+  "input_tokens": 16060,
+  "output_tokens": 70,
+  "total_tokens": 15938,
+  "category": "cron"
+}
+{
+  "timestamp": "2026-03-29T09:45:00Z",
+  "model": "openai/gpt-4o",
+  "agent": "atlas",
+  "task_ref": "1bd4a6b6-333e-459f-806d-0ff7bd3eb6f6",
+  "input_tokens": 16060,
+  "output_tokens": 70,
+  "total_tokens": 15938,
+  "category": "cron"
+}
+{
+  "timestamp": "2026-03-29T06:00:00Z",
+  "model": "ollama/phi4-mini:latest",
+  "agent": "detective-niessen",
+  "task_ref": "a01e8b8a-a007-4b7d-83dc-a4160fafa7a3",
+  "input_tokens": 18911,
+  "output_tokens": 11,
+  "total_tokens": 18911,
+  "category": "cron"
+}
+{
+  "timestamp": "2026-03-29T06:00:00Z",
+  "model": "ollama/phi4-mini:latest",
+  "agent": "detective-niessen",
+  "task_ref": "a01e8b8a-a007-4b7d-83dc-a4160fafa7a3",
+  "input_tokens": 18911,
+  "output_tokens": 11,
+  "total_tokens": 18911,
+  "category": "cron"
+}
+{
+  "timestamp": "2026-03-29T00:00:29Z",
+  "model": "openai/gpt-4o",
+  "agent": "atlas",
+  "task_ref": "95af407a-6760-42d0-9d73-7201775ab5f6",
+  "input_tokens": 8486,
+  "output_tokens": 45,
+  "total_tokens": 8486,
+  "category": "cron"
+}
+{
+  "timestamp": "2026-03-29T00:00:00Z",
+  "model": "anthropic/claude-haiku-4-5-20251001",
+  "agent": "atlas",
+  "task_ref": "95af407a-6760-42d0-9d73-7201775ab5f6",
+  "input_tokens": 15,
+  "output_tokens": 1142,
+  "total_tokens": 16516,
+  "category": "cron"
+}
+{"timestamp":"test","model":"test","agent":"test","task_ref":"test","input_tokens":0,"output_tokens":0,"total_tokens":0,"category":"test"}
+{"timestamp":"2026-03-29T12:29:18Z","model":"anthropic/claude-haiku-4-5-20251001","agent":"atlas","task_ref":"memory-rotation-verify-6am","input_tokens":23,"output_tokens":1469,"total_tokens":18066,"category":"manual"}

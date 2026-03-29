@@ -1,14 +1,5 @@
-# Atlas Long-Term Memory
-
-## ORGANIZATION RULE: Single Source of Truth
-**This file = ACTIVE context only.** Historical/completed entries → See **memory/MEMORY_MM-DD-YY.md**
-Procedures & protocols → See **STANDING_INSTRUCTIONS.md**
-
----
-
-## Memory Rotation: 03-29-26
+# 2026-03-29
 
 ## Today's Context
 
----
-
+_(No active items.)_
