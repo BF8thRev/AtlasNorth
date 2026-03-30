@@ -1,73 +1,73 @@
 {
-  "last_updated": "2026-03-27T10:10:00Z",
-  "version": "2.4",
-  "date": "Friday, March 27, 2026",
+  "last_updated": "2026-03-30T10:10:00Z",
+  "version": "2.5",
+  "date": "Monday, March 30, 2026",
   "time_generated": "6:10 AM EST",
-  "notes": "Daily refresh. Today priorities: Micah Anderson pitch (18 days post-episode), CRM ownership decision, drafts aging review.",
+  "notes": "Monday refresh. Critical: Micah Anderson warm pitch deadline TODAY (20-day threshold exceeded). Newton CRM ownership still unresolved. Dime H1 guest pipeline empty. Daily Brief job cleaned up (no agent handoffs). Token logging now live.",
   "blockers": [
     {
       "id": "BLK-026",
-      "description": "Dime — Micah Anderson (LEEF Brands, Prop 64 expert) URGENT warm pitch. Aired 2026-03-08, zero outreach sent, 19 days post-appearance (5-day lag exceeded).",
+      "description": "Dime — Micah Anderson (LEEF Brands, Prop 64 expert) warm pitch OVERDUE. Episode aired 2026-03-08, today is 2026-03-30 (22 days post). Zero outreach sent.",
       "priority": "🔴",
       "owner": "Bryan",
       "status": "open",
-      "action": "Send warm email TODAY to Micah Anderson: Reference his Dime episode (Prop 64 insights), Newton Insights fit (extraction ops pain + timing visibility). Hook: \"Quick thought on your Prop 64 insights + Newton tool fit\". Max follow-up window: 3 days. This is a WARM pitch from audience engagement (not cold)."
+      "action": "SEND WARM EMAIL TODAY. Subject: 'Quick thought on your Prop 64 insights + Newton tool fit'. Reference episode date, extraction ops pain point, timing visibility. Max window: 3 days (today is last viable warm pitch window). This is NOT cold outreach — Micah is audience-sourced from episode appearance."
     },
     {
       "id": "BLK-025",
-      "description": "Newton CRM ownership CRITICAL — Warm Prospects tab stale (Last Touch >7d). Outreach Log incomplete. Hunter CRM protocol failed 2x (2026-03-16), reassigned to research. NO OWNER assigned for CRM operations.",
+      "description": "Newton CRM ownership UNRESOLVED. Warm Prospects tab stale (Last Touch >7d). Outreach Log incomplete. Hunter CRM operations failed 2x (2026-03-16), reassigned to research-only. NO OWNER for CRM stewardship.",
       "priority": "🔴",
       "owner": "Bryan",
       "status": "open",
-      "action": "DECISION REQUIRED TODAY: (1) Will Bryan own CRM updates directly? (2) Will a new agent own CRM stewardship? OR (3) Will Hunt be re-trained on gws sheets append/batchUpdate protocol? Until decision: CRM is un-owned, data goes stale, prospecting becomes invisible. This blocks Newton funnel tracking."
+      "action": "DECISION REQUIRED TODAY: (1) Bryan owns CRM updates directly? (2) New agent owns CRM stewardship? (3) Reassign Hunter with retraining on gws sheets protocol? Until resolved: CRM data goes stale, prospecting visibility breaks, Newton funnel tracking fails. This is a critical blocker for Q2 pipeline."
     },
     {
       "id": "BLK-024",
-      "description": "Anthropic API billing status unknown. Blocker Refresh cron (3fa57eec) runs daily on claude-haiku. Must have credit balance >$0. No alert system if depleted.",
+      "description": "Anthropic API billing status — Claude Haiku runs on $0 balance detection. Blocker Board Refresh cron (3fa57eec) depends on Anthropic daily. No alert system if credits depleted.",
       "priority": "🔴",
       "owner": "Bryan",
       "status": "in-progress",
-      "action": "Verify TODAY: Log into https://console.anthropic.com/account/billing → confirm balance > $0. If low, add credits immediately. Set recurring Friday 9 AM reminder (Calendar event) for weekly balance check. Document: Last verified 2026-03-27 6:10 AM EST."
+      "action": "VERIFY TODAY: Log into console.anthropic.com/account/billing → confirm balance > $0. Add credits immediately if low. Create recurring Friday 9 AM calendar reminder for weekly balance audit. Document verification: Last confirmed 2026-03-30 6:10 AM EST."
     },
     {
       "id": "BLK-001",
-      "description": "Google Search Console — atlas.opsman@gmail.com NOT added as property user for SCC/HUSA and Newton properties. Blocks SEO analytics + monitoring.",
+      "description": "Google Search Console — atlas.opsman@gmail.com NOT added as property user for SCC/HUSA and Newton properties. Blocks SEO analytics, keyword tracking, search traffic monitoring.",
       "priority": "🔴",
       "owner": "Bryan",
       "status": "open",
-      "action": "Go to search.google.com → Settings → Users and Permissions. Add atlas.opsman@gmail.com (minimum: Viewer role) for BOTH SCC/HUSA and Newton properties. Verify access within 5 minutes. Needed for: SEO audits, keyword performance, search traffic monitoring."
+      "action": "Go to search.google.com → Settings → Users & Permissions. Add atlas.opsman@gmail.com (Viewer role minimum) for both SCC/HUSA and Newton properties. Verify access within 5 minutes. Needed for: SEO audits, keyword performance tracking, search traffic analysis."
     },
     {
       "id": "BLK-027",
-      "description": "Dime — H1 2026 guest booking pipeline EMPTY. March episodes need confirmed guests. April/May slots (8 weeks out) have zero prospects identified or tracked.",
+      "description": "Dime — H1 2026 guest booking pipeline EMPTY. March confirmed guests: Unknown. April/May slots (8 weeks out) have zero prospects identified, tracked, or warm-intro'd.",
       "priority": "🟠",
       "owner": "Bryan",
       "status": "open",
-      "action": "Build 5-person guest shortlist for April/May episodes (industry experts, hot founders, regulatory analysts). Recommended focus: capital markets analysts (Pablo Zuanic, Giadha Aguirre) — finance content achieves 5.6%+ like ratio on The Dime (highest ceiling). Hunter to vet + warm-intro each. Target: 2 booking confirmations by April 1st."
+      "action": "Build 5-person shortlist for April/May (recommended: capital markets analysts — Pablo Zuanic, Giadha Aguirre de Yturria, plus 3 hot founders/regulatory analysts). Hunter vets + warm-intro each. Target: 2 booking confirmations by April 1st. This is 2+ weeks out; pipeline gap is acute."
     },
     {
       "id": "BLK-019",
-      "description": "Newton pipeline — Connector introductions not tracked or followed up. Mitch Pfeifer (strong intro source, 3-5/quarter capacity) and Mikhail Sagal (pending Rugged Roots intro) need follow-up schedule.",
+      "description": "Newton pipeline — Connector follow-ups not scheduled. Mitch Pfeifer (strong source, 3-5/quarter) and Mikhail Sagal (Rugged Roots intro pending) lack explicit follow-up dates.",
       "priority": "🟠",
       "owner": "Hunter",
       "status": "waiting",
-      "action": "Review NEWTON_CRM_SCHEMA.md — activate Connector Tracking tab if not live. Schedule follow-ups with Mitch (identify 2-3 intro targets for Q2) and Mikhail (confirm Rugged Roots ask ETA). Atlas: Add 'Follow-up connectors' to Hunter weekly prospecting cron if not included."
+      "action": "Review NEWTON_CRM_SCHEMA.md — activate Connector Tracking tab if not live. Schedule follow-ups: Mitch (identify 2-3 intro targets for Q2), Mikhail (confirm Rugged Roots intro ETA). Atlas: Ensure 'Follow-up connectors' is in Hunter weekly prospecting cron routine."
     },
     {
       "id": "BLK-017",
-      "description": "OLG LinkedIn post draft (Tilray/BrewDog, MSO market angle) in /DRAFTS/ — Created 2026-03-05. 22 days old. Status: STALE (>14-day threshold). No review decision from Bryan.",
+      "description": "OLG LinkedIn draft (Tilray/BrewDog, MSO market angle) created 2026-03-05. Status: STALE (25 days old, >14-day threshold). No review decision from Bryan.",
       "priority": "🟠",
       "owner": "Bryan",
       "status": "waiting",
-      "action": "DECISION REQUIRED: (1) Approve for posting (Olg posts immediately). (2) Request revisions (specify changes). (3) RECOMMEND: Reject + refresh with current March 27 cannabis market context (MSO earnings, federal signal momentum, macro reset thesis). 22-day-old angle is dated. Fresh angle = better engagement."
+      "action": "DECISION REQUIRED: (1) Approve for posting (Olg posts immediately). (2) Request revisions (specify changes). (3) RECOMMEND: Reject + refresh with March 30 cannabis market context (MSO earnings, federal signal momentum). 25-day-old angle is dated. Fresh angle = better engagement. Avoid posting stale content."
     },
     {
       "id": "BLK-018",
-      "description": "DRAFTS folder system not formalized. Multiple pending items lack tracking status. No visibility into what's waiting review vs. approved vs. rejected. No aging alerts.",
+      "description": "DRAFTS folder system not formalized. Multiple pending items lack tracking status. No visibility into pending-review vs. approved vs. rejected. No aging alerts.",
       "priority": "🟠",
       "owner": "Atlas",
       "status": "in-progress",
-      "action": "Create DRAFTS_STATUS.json: file_name | created_date | type (post|email|doc|analysis) | owner | status (pending-review|approved|rejected) | days_aging. Add to daily Blocker Board refresh (6 AM) to flag items >7 days pending. Report weekly draft aging summary. FIRST: Audit /DRAFTS/ folder today, populate initial status."
+      "action": "Create DRAFTS_STATUS.json: file_name | created_date | type (post|email|doc|analysis) | owner | status (pending-review|approved|rejected) | days_aging. Add to daily Blocker Board refresh (6 AM) to flag items >7 days pending. Audit /DRAFTS/ folder today, populate initial DRAFTS_STATUS.json with all files."
     },
     {
       "id": "BLK-003",
@@ -83,7 +83,7 @@
       "priority": "🟠",
       "owner": "Bryan",
       "status": "blocked",
-      "action": "Go to console.cloud.google.com → APIs & Services → Credentials → OAuth 2.0 Client IDs. Add http://127.0.0.1:3000 to Authorized redirect URIs (adjust port if needed). Save. Test callback. Blocks: local dev Gmail/Calendar auth, local Workspace API testing."
+      "action": "Go to console.cloud.google.com → APIs & Services → Credentials → OAuth 2.0 Client IDs. Add http://127.0.0.1:3000 (adjust port if needed) to Authorized redirect URIs. Save. Test callback. Blocks: local dev Gmail/Calendar auth, local Workspace API testing."
     }
   ]
 }

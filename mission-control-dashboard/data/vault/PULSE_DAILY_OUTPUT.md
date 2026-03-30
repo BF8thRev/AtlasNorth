@@ -1,33 +1,33 @@
-## Daily Intel - 2026-03-27
+## PULSE DAILY INTEL - March 30, 2026
 
-### Signal 1: PharmaCann Exits Colorado and Pennsylvania, Citing Market Distress
+### Signals
 
-*   **Company:** PharmaCann
-*   **Location:** Colorado and Pennsylvania
-*   **What happened:** Multi-state cannabis operator PharmaCann is ceasing cultivation operations in Denver, Colorado (132 layoffs), and closing a facility in Pennsylvania (60 layoffs).
-*   **Why it matters:** This signifies substantial financial distress for a major MSO, indicating persistent market challenges like declining wholesale prices and a need for consolidation in mature cannabis markets.
-*   **Evidence + source:** "Mass layoff as cannabis MSO PharmaCann exits Colorado market" (mjbizdaily.com, 2026-03-25); "More PharmaCann layoffs as second cannabis cultivation site closes" (mjbizdaily.com, 2026-03-26); "PharmaCann Closing Pennsylvania Cannabis Facility, Laying Off 60 More Workers" (cannabisbusinesstimes.com, 2026-03-26).
+- **Company name**: PharmaCann
+  **Person name OR location**: Colorado and Pennsylvania
+  **What happened**: PharmaCann is exiting the Colorado market, closing its Denver cultivation facility and laying off 132 workers. Additionally, it is closing another cultivation facility in Pennsylvania, affecting 60 workers.
+  **Why it matters**: This indicates significant financial distress and operational consolidation within a major MSO, highlighting challenges in mature cannabis markets and potential oversupply or competitive pressures.
+  **Evidence + source**: MJBizDaily (published 6 days ago: "Mass layoff as cannabis MSO PharmaCann exits Colorado market"; published 5 days ago: "Cannabis MSO PharmaCann closes another cultivation...")
 
-### Signal 2: Massachusetts Awards $28.8M in Cannabis Social Equity Grants
+- **Company name**: Major Cannabis MSOs (e.g., Curaleaf, Trulieve, Green Thumb Industries, Verano, Cresco Labs, Tilray Brands implicitly)
+  **Person name OR location**: United States / IRS
+  **What happened**: Major cannabis MSOs collectively owe over $1.6 billion in back taxes to the IRS due to Section 280E, with the IRS actively fighting attempts to bypass these liabilities.
+  **Why it matters**: This represents a substantial financial burden for large cannabis companies, impacting their cash flow, profitability, and overall financial stability, regardless of potential rescheduling efforts.
+  **Evidence + source**: MJBizDaily ("Cannabis MSOs' 280E bill grows to $1.6 billion as IRS fights rescheduling gambit", 2 weeks ago); Business of Cannabis ("IRS Rejects MSO 280E Liabilities Challenge", 2 weeks ago)
 
-*   **Company:** N/A (Beneficiaries are 194 individual businesses)
-*   **Location:** Massachusetts
-*   **What happened:** The Healey-Driscoll administration in Massachusetts has disbursed over $28 million in grants to 194 recipients through its Cannabis Social Equity Grant Program for fiscal year 2026.
-*   **Why it matters:** This initiative highlights ongoing state-level efforts to promote equitable participation in the cannabis industry by providing critical funding to social equity businesses, fostering diversity and new market entrants.
-*   **Evidence + source:** "Healey-Driscoll administration awards more than $28 million in second year of Cannabis Social Equity Grant Program" (theberkshireedge.com, 2026-03-20).
+- **Company name**: Cresco Labs
+  **Person name OR location**: Undisclosed medical cannabis dispensary location
+  **What happened**: A 20-day strike at a Cresco Labs-owned medical cannabis dispensary concluded with workers claiming a victory.
+  **Why it matters**: This signal highlights ongoing labor relations challenges within the cannabis industry, potentially setting precedents for worker demands and operational disruptions for other MSOs.
+  **Evidence + source**: MJBizDaily ("A 20-day strike of a Cresco Labs-owned medical cannabis dispensary ended with workers claiming a win", published March 27)
 
-### Signal 3: CLIMB Act Introduced to Expand Cannabis Industry Access to Capital
+- **Company name**: Texas cannabis/hemp businesses
+  **Person name OR location**: Texas
+  **What happened**: Texas is implementing a ban on smokable hemp flower, effective March 31.
+  **Why it matters**: This regulatory change will significantly impact hemp cultivators, processors, and retailers in Texas, potentially shifting market dynamics towards other hemp-derived products or increasing pressure on businesses reliant on smokable flower.
+  **Evidence + source**: MJBizDaily ("Texas is set to enforce a ban on smokable hemp flower starting March 31", published March 11, 2026)
 
-*   **Company:** N/A (Impacts the industry broadly)
-*   **Person:** Congressmen Troy A. Carter, Sr. (D-LA) and Guy Reschenthaler (R-PA)
-*   **What happened:** Bipartisan legislation, the Capital Lending and Investment for Marijuana Businesses (CLIMB) Act, has been introduced in the U.S. Congress to enable state-legal cannabis companies to access traditional lending and investment opportunities.
-*   **Why it matters:** This legislative effort could significantly de-risk cannabis investments and operations by opening up access to mainstream financial services, potentially leading to increased funding and more stable growth for the industry.
-*   **Evidence + source:** "Congressman Carter Introduces Bipartisan Cannabis Bill to Provide Access to Lending Services, Investments, and Grants for State-Legal American Businesses" (troycarter.house.gov, 2026-03-23).
-
-### Signal 4: Cannabis Extraction Sector Focuses on Efficiency Amidst Tightening Margins
-
-*   **Company:** Spherex
-*   **Location:** Colorado
-*   **What happened:** Cannabis engineering company Spherex is implementing an efficiency-first manufacturing approach for extraction operations to counter tightening margins and supply-side constraints.
-*   **Why it matters:** This illustrates a critical industry trend where extraction operators are forced to prioritize operational efficiency and adopt cost-cutting technologies to maintain profitability in a competitive and price-sensitive market.
-*   **Evidence + source:** "A Manufacturer's Efficiency-First Approach to Cannabis Extraction" (powderbulksolids.com, 2026-03-24); "Cannabis Pricing Crisis: Market Forces Shaping 2025 Trends" (cannabissciencetech.com, 2026-03-25).
+- **Company name**: Trulieve Cannabis Corp.
+  **Person name OR location**: DeLand, Florida
+  **What happened**: Trulieve Cannabis Corp. opened a new medical cannabis dispensary in DeLand, Florida.
+  **Why it matters**: This indicates continued strategic expansion by a leading MSO in key medical cannabis markets, suggesting confidence in specific regional growth opportunities despite broader industry challenges.
+  **Evidence + source**: Muck Rack citing Cannabis Business Times (4 days ago: "Trulieve Cannabis Corp., a leading and top-performing cannabis company in the U.S, announced the opening of a new medical cannabis dispensary in DeLand, Fla.")
