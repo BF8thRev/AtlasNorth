@@ -1,8 +1,16 @@
 {
+  "_DEPRECATED": {
+    "status": "DEPRECATED — DO NOT EDIT",
+    "replaced_by": "mission-control-dashboard/data/agent-models.json",
+    "runtime_source": "~/.openclaw/openclaw.json (agents.list)",
+    "model_status_reads": "GET /api/runtime-config (reads openclaw.json live)",
+    "migration_date": "2026-03-13",
+    "note": "This file is kept for reference only. The live Model Status page no longer reads from here. To update agent→model mappings, edit mission-control-dashboard/data/agent-models.json, then run: node scripts/sync-agent-models.js && openclaw reload"
+  },
   "version": "1.4",
   "last_updated": "2026-03-13",
-  "description": "Agent-to-Model mapping. Cost-optimized with OpenAI integration. Atlas validates model availability before task dispatch.",
-  "summary": "UPDATED 2026-03-13: Added OpenAI (GPT-4o, GPT-4 Turbo, GPT-3.5). Atlas now uses GPT-4o primary (complex routing). Hunter uses Gemini (web-enabled prospect research). Olg uses local Qwen (cost efficiency). Defaults: Haiku primary → Sonnet → Phi4-mini.",
+  "description": "⚠️ DEPRECATED. See _DEPRECATED block above. Agent-to-Model mapping — historical reference only.",
+  "summary": "DEPRECATED 2026-03-13: See mission-control-dashboard/data/agent-models.json for current config.",
 
   "global_defaults": {
     "primary_fallback": "anthropic/claude-haiku-4-5-20251001",
@@ -18,20 +26,18 @@
 
   "agent_routing": {
     "atlas": {
-      "primary_model": "gpt-4o",
-      "fallback_model": "claude-sonnet-4-6",
-      "tertiary_fallback": "claude-haiku-4-5-20251001",
-      "role": "Gatekeeper - validates all routing decisions. GPT-4o for complex routing. Falls back to Sonnet, then Haiku.",
-      "min_confidence_threshold": 0.90,
-      "updated": "2026-03-13"
+      "primary_model": "anthropic/claude-haiku-4-5-20251001",
+      "fallback_model": "anthropic/claude-sonnet-4-20250514",
+      "role": "Chief of Staff - coordinates work. Haiku primary for cost efficiency, Sonnet fallback for complex routing.",
+      "updated": "2026-03-29"
     },
     "olg": {
-      "primary_model": "ollama/qwen3.5-coder:27b",
+      "primary_model": "ollama/qwen3.5:27b-q4_K_M",
       "fallback_model": "anthropic/claude-haiku-4-5-20251001",
       "tertiary_fallback": "anthropic/claude-sonnet-4-20250514",
       "role": "Writer - content drafting + offline reasoning",
-      "note": "Local Qwen first for cost efficiency. Falls back to Haiku, then Sonnet for heavier edits.",
-      "updated": "2026-03-13"
+      "note": "Local Qwen3.5 (q4 quantized) for cost efficiency. Falls back to Haiku, then Sonnet for heavier edits.",
+      "updated": "2026-03-29"
     },
     "rob_c": {
       "primary_model": "claude-haiku-4-5-20251001",
@@ -48,12 +54,11 @@
     },
     "pulse": {
       "primary_model": "google/gemini-2.5-flash",
-      "fallback_model": "claude-sonnet-4-20250514",
-      "tertiary_fallback": "gpt-4o",
+      "fallback_model": "anthropic/claude-sonnet-4-20250514",
       "role": "Research - web search + synthesis across domains",
       "requires_web_search": true,
-      "note": "Gemini for fast web lookups. Sonnet for reasoning. GPT-4o available for complex synthesis if needed.",
-      "updated": "2026-03-13"
+      "note": "Gemini for fast web lookups. Sonnet fallback for reasoning.",
+      "updated": "2026-03-29"
     },
     "dr_frankl": {
       "primary_model": "phi-4-mini-local",
@@ -76,12 +81,11 @@
       "role": "Ideas & Concepts - synthesis across domains"
     },
     "bob_the_builder": {
-      "primary_model": "ollama/qwen3.5-coder:27b",
-      "fallback_model": "claude-sonnet-4-20250514",
-      "tertiary_fallback": "gpt-4o",
+      "primary_model": "ollama/qwen3.5:27b-q4_K_M",
+      "fallback_model": "ollama/phi4-mini:latest",
       "role": "Code & Technical Build",
-      "note": "Primary: Local Qwen3.5-Coder (offline reasoning). Fallback: Claude Sonnet. GPT-4o available for complex architecture.",
-      "updated": "2026-03-13"
+      "note": "Primary: Local Qwen3.5 (q4 quantized). Fallback: Phi4 Mini for local reasoning.",
+      "updated": "2026-03-29"
     },
     "detective_niessen": {
       "primary_model": "phi-4-mini-local",
