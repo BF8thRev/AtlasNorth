@@ -28,7 +28,7 @@
 4. **AUDIO OPTION 2 MUST BE EPISODE-RELEVANT** — Not generic angles
 5. **YOUTUBE TITLES MUST BE SEO-OPTIMIZED, HIGH-CTR, RELEVANT** — 70-100 chars
 6. **SOCIAL CLIPS REQUIRE TITLES + DESCRIPTIONS FOR SEO** — Every clip must have metadata
-7. **SECTION E IS MANDATORY** — 3 newsletter title options + full drafts
+7. **All Sections MANDATORY** —
 8. **CONTEXTUAL AUTOCORRECT ENABLED** — Fix phonetic errors (myclobutanil, Leef Brands, etc.)
 9. **ONLY REPORT AFTER STAGE 3 PASSES** — No content dumps to chat, only folder links
 10. **ALL DELIVERABLES NATIVE GOOGLE DOCS** — Never .txt or .md uploads
@@ -238,78 +238,7 @@
 - Paraphrased instead of verbatim quotes
 
 ---
-
-## EPISODE LOG
-
-### Episode 2: Aubrey Amatelli (3/26/26) — Cannabis Payments & PayRio
-**Status:** WORKFLOW FAILURE — SOP CORRECTED
-**Date Logged:** 2026-03-26 14:35 EST
-**Correction Cycle:** CRITICAL SOP REVISION
-
-**Failure Root Cause:**
-- Atlas did NOT ingest full transcript before delegating to subagent
-- Read first 300 lines only, then spawned subagent with file path
-- Subagent executed without full context (missed nuances, weak hook validation, potential angle misalignment)
-- Violated core principle: "Read every word. Never cut corners."
-
-**SOP Corrections Applied:**
-- Transcript ingest is now NON-DELEGABLE (Atlas only, every word)
-- Artifact creation is now NON-DELEGABLE (Atlas only)
-- Stage 3 audit moved to Atlas (not subagent)
-- Workflow simplified: Ingest → Build → File → Report
-- IDENTITY.md updated: Atlas is detailed and meticulous, never cuts corners
-
-**Learnings:**
-- Never read "enough" and delegate the rest
-- Never assume subagents will catch nuances from file path references
-- Full context ingest is not optional; it's foundational
-- SOP must enforce single-threaded ownership for accuracy-critical work
-
-**What This Means Going Forward:**
-- Every word of the transcript must be read by Atlas before any artifact creation
-- No "skimming" or "spot checking"
-- No delegation of transcript analysis or artifact building
-- Aubrey document will be rebuilt with full transcript context
-
----
-
-### Episode 1: Micah Anderson (3/4/26) — Cannabis Extraction & LEEF
-**Status:** CORRECTED AND PASSED
-**Date Logged:** 2026-03-05 12:35 EST
-**Correction Cycle:** 1 revision (Major)
-
-**Initial Failure Points (Iteration 1):**
-- Em-dashes present throughout (multiple instances)
-- Intro hooks were NOT verbatim (made-up text, no timestamps)
-- Audio Option 2 not episode-relevant
-- YouTube titles not SEO-optimized (missing "why" question framing, contradiction angle)
-- Social clips missing titles and descriptions (only timestamps provided)
-- Section E was incomplete (only raw material, no draft newsletter copy)
-- Spelling inconsistencies (Leaf vs Leef, myclobutanil vs "Mike Lowe")
-
-**Corrections Applied (Iteration 2):**
-- Removed all em-dashes from entire deliverables document
-- Rebuilt all intro hooks as verbatim quotes with exact timestamps
-- Rewrote audio titles with guest name
-- Rewrote YouTube titles with SEO optimization
-- Added titles and descriptions to all 6 social clips with SEO keywords
-- Completed Section E with 3 full newsletter drafts
-- Applied contextual autocorrect throughout
-
-**What Worked (Iteration 2):**
-- Single-threaded director approach ensured quality consistency
-- Using Tension Map to guide deliverable copy ensured operator relevance
-- Artifact as "source of truth" prevented drift from original episode intent
-- Verbatim hook enforcement forced copy to align with actual transcript quotes
-
-**What Failed (Iteration 1):**
-- Initial version lacked full context focus
-- Format conversion left as "user responsibility"
-- Social clips lacked SEO framing
-
----
-
-## SOURCE OF TRUTH
+ SOURCE OF TRUTH
 
 - **OLG's SOP (this file):** `/Users/atlasnorth/.openclaw/workspace/agents/olg/DIME_EPISODE_SOP.md`
 - **Atlas Workflow:** `/Users/atlasnorth/.openclaw/workspace/ATLAS_DIME_WORKFLOW.md` (Simplecast creation + filing)
