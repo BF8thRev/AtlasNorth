@@ -2,6 +2,23 @@
 
 **⚠️ CRITICAL: THIS IS THE ONLY DIME SOP FILE. OLG MUST READ THIS BEFORE EVERY EPISODE BUILD.**
 
+### Your Workflow
+
+**See ATLAS_DIME_WORKFLOW.md** for the complete step-by-step trigger flow.
+
+**In brief:** Atlas spawns you → you read this SOP → you read Dime Content Feedback doc → you read entire transcript → you build 6-section artifact → you file to Episodes folder → you report to Atlas.
+
+**CRITICAL ENFORCEMENT (NON-NEGOTIABLE):**
+- **MANDATORY: Read the ENTIRE transcript word-for-word, every line. Do NOT begin writing until transcript is 100% read.**
+- **Each of the 6 sections has specific, non-negotiable requirements. ALL sections are required.**
+- **Any section incomplete, non-compliant, or missing = FAILURE. STOP immediately and report to Atlas. Do NOT file.**
+- **Show description has NO bullets. Section C (social clips) are verbatim quotes selected for viral potential. All specific requirements apply.**
+
+
+**Your Deliverable:**
+- 6-section artifact (Google Doc) filed to Episodes folder
+- Report to Atlas with folder link + compliance verification (all 6 sections passed)
+
 **Path:** `/Users/atlasnorth/.openclaw/workspace/agents/olg/DIME_EPISODE_SOP.md`
 
 **SINGLE SOURCE OF TRUTH:**
@@ -21,7 +38,7 @@
 - **Active Instructions:** Any patterns in Dime Content Feedback inform the build from the start
 - **Logging:** After each episode, log timestamp + what worked + what failed + improvements
 
-### Quick Reference: 11 Hard Rules (Never Forget)
+### Quick Reference: Hard Rules (Never Forget)
 1. **NO EM-DASHES EVER** — Any em-dash (—) = immediate failure
 2. **INTRO HOOKS MUST BE VERBATIM WITH TIMESTAMPS** — No made-up text
 5. **YOUTUBE TITLES MUST BE SEO-OPTIMIZED, HIGH-CTR, RELEVANT** — 70-100 chars
@@ -32,21 +49,6 @@
 10. **ALL DELIVERABLES NATIVE GOOGLE DOCS** — Never .txt or .md uploads
 11. **FILE TO EPISODES FOLDER IMMEDIATELY** — https://drive.google.com/drive/folders/1N-E2sxnHsus6x83LfSMfKLccSOBzQyV7 (non-negotiable)
 
-### Your Workflow
-
-**See ATLAS_DIME_WORKFLOW.md** for the complete step-by-step trigger flow.
-
-**In brief:** Atlas spawns you → you read this SOP → you read Dime Content Feedback doc → you read entire transcript → you build 6-section artifact → you file to Episodes folder → you report to Atlas.
-
-**CRITICAL ENFORCEMENT (NON-NEGOTIABLE):**
-- **MANDATORY: Read the ENTIRE transcript word-for-word, every line. Do NOT begin writing until transcript is 100% read.**
-- **Each of the 6 sections has specific, non-negotiable requirements. ALL sections are required.**
-- **Any section incomplete, non-compliant, or missing = FAILURE. STOP immediately and report to Atlas. Do NOT file.**
-- **Show description has NO bullets. Section C (social clips) are verbatim quotes selected for viral potential. All specific requirements apply.**
-
-**Your Deliverable:**
-- 6-section artifact (Google Doc) filed to Episodes folder
-- Report to Atlas with folder link + compliance verification (all 6 sections passed)
 
 ---
 
@@ -55,9 +57,8 @@
 **Each episode follows this atomic structure. Atlas executes all 6 steps in one document.**
 
 ### STEP 1: EPISODE INTRO HOOK (MANDATORY — ALL REQUIREMENTS NON-NEGOTIABLE)
-**What it is:** A 15–45 second verbatim quote from the guest. This is the audio clip played at the beginning of the episode.
 
-**What it is:** A 15–45 second verbatim quote from the guest. This is the quote played at the beginning of the episode. The goal is to make the listner need to continue. 
+**What it is:** A 15–45 second verbatim quote from the guest. This is the quote played at the beginning of the episode. The goal is to make the listner **need to continue.** 
 
 **Requirements:**
 - **Verbatim from transcript** — No paraphrasing, no polishing
@@ -129,7 +130,6 @@ Then expand into analysis. These need to be in my voice and style.
 - Rate, review for first principles and give feedback.
 
 
-
 ### STEP 4: AUDIO TITLE (MANDATORY — ALL REQUIREMENTS NON-NEGOTIABLE)
 
 **What it is:** The title for podcast feeds (Apple Podcasts, Spotify,).
@@ -161,16 +161,14 @@ Then expand into analysis. These need to be in my voice and style.
 - Timestamps for chapters (if applicable)
 - Links (podcast, related episodes, guest links)
 
-**YOUTUBE COVER ART TEXT (MANDATORY):**
+**YOUTUBE COVER ART TEXT (MANDATORY):This is the thumbnail text**
 - 1–3 words max (readable at thumbnail size)
-- Text overlay communicates episode angle at a glance
-- Examples: "Policy Stalled" / "Cannabis Congress" / "Why Legalization Failed"
+- Text overlay thumbnail communicates episode angle at a glance
+- Example 1: Why Rescheduling stalled
+- Example 2: NY Nearly Killed Us
 
 
 ### STEP 6: SOCIAL CLIPS (MANDATORY — ALL REQUIREMENTS NON-NEGOTIABLE)
-**What it is:** Short-form clips (15–60 seconds) for YouTube Shorts, Instagram Reels, TikTok, Twitter/X.
-
-### STEP 6: SOCIAL CLIPS
 **What it is:** Short-form clips (15–60 seconds) for YouTube Shorts, Instagram Reels, Twitter/X. Review the entire transcript first and then pull clips — up to 5 if they are going  viral  on social. The goal is to find clips that have the chance to go viral.  They should be ranked in most likely to go viral. Up to 5 and put confidence level and why you think it will go viral. 
 
 
@@ -183,6 +181,7 @@ Then expand into analysis. These need to be in my voice and style.
   - Contain one insight or perspective shift
   - Be quotable/shareable
   - Have high engagement potential
+  - Everything that is needed to immediately execute high level 
 
 
 ---
