@@ -26,20 +26,38 @@
 10. **ALL DELIVERABLES NATIVE GOOGLE DOCS** — Never .txt or .md uploads
 11. **FILE TO EPISODES FOLDER IMMEDIATELY** — https://drive.google.com/drive/folders/1N-E2sxnHsus6x83LfSMfKLccSOBzQyV7 (non-negotiable)
 
-### Trigger Flow (UPDATED 2026-03-27)
+### Trigger Flow (UPDATED 2026-03-30 — MANDATORY COMPLIANCE ENFORCEMENT)
 **Atlas→OLG handoff for complete content ownership**
 
+**⚠️ CRITICAL ENFORCEMENT (NON-NEGOTIABLE):**
+- **MANDATORY: Read the ENTIRE transcript word-for-word, every line. Do NOT begin writing until transcript is 100% read.**
+- **Each of the 6 sections has specific, non-negotiable requirements. ALL sections are required.**
+- **Any section incomplete, non-compliant, or missing = FAILURE. STOP immediately and report to Atlas. Do NOT file.**
+- **Show description has NO bullets. Section C (social clips) are verbatim quotes selected for viral potential. All specific requirements apply.**
+
 1. Bryan signals "New episode ready" with [Guest Name] + [Transcript Path]
-2. **Atlas immediately spawns OLG** with guest name + transcript path
-3. **OLG reads DIME_EPISODE_SOP.md** (this file) to confirm workflow
-4. **OLG reads Workflow_Feedback doc FIRST** (pull ALL Dime Content Feedback patterns before building)
-5. **OLG INGESTS FULL TRANSCRIPT (every word, 20k–60k tokens) — OLG OWNS THIS**
-6. **OLG BUILDS 6-SECTION ARTIFACT (single Google Doc) — OLG OWNS THIS** (while applying patterns from step 4)
-7. **OLG performs self-audit** against all 11 hard rules + Dime Content Feedback patterns
-8. **OLG files** as native Google Doc via `gog docs create` **→ IMMEDIATELY MOVE TO EPISODES FOLDER (https://drive.google.com/drive/folders/1N-E2sxnHsus6x83LfSMfKLccSOBzQyV7)**
-9. **OLG messages WhatsApp** when complete with folder link
-10. **Atlas creates Simplecast draft** upon OLG completion notification
-11. Bryan reviews → Makes corrections directly in Google Doc → OLG updates Workflow_Feedback doc with new patterns
+2. **Atlas immediately spawns OLG** with guest name + transcript path + full SOP
+3. **OLG reads DIME_EPISODE_SOP.md** (this file) completely to understand ALL section requirements
+4. **OLG reads Workflow_Feedback doc** (pull ALL Dime Content Feedback patterns)
+5. **⚠️ OLG READS ENTIRE TRANSCRIPT WORD-FOR-WORD, EVERY SINGLE LINE (no skimming, no sampling, no shortcuts)**
+   - Do NOT begin writing until 100% transcript is read
+   - Annotate key quotes, timestamps, potential angles while reading
+   - Identify 5+ candidate hook options before writing Section A
+   - Identify 3+ social clip candidates (high viral potential) before writing Section C
+6. **OLG BUILDS 6-SECTION ARTIFACT (single Google Doc)** — OLG OWNS THE ENTIRE BUILD
+   - **SECTION A (MANDATORY — 3 options):** Verbatim quotes + timestamps + duration + explanations (each must meet hook criteria)
+   - **SECTION B (MANDATORY — paragraphs only, NO bullets):** Show description (3-part: hook para + context para + outcome para)
+   - **SECTION C (MANDATORY — 1–3 clips):** Verbatim social clips + title + SEO description + timestamp (selected for viral potential)
+   - **SECTION D (MANDATORY):** Timestamps + key quotes from transcript
+   - **SECTION E (MANDATORY — 3 options):** Newsletter title + body (each distinct angle, no em-dashes, full drafts)
+   - **SECTION F (MANDATORY):** YouTube title (70-100 chars, no em-dashes) + description (hook + credibility + bullets + timestamps + links) + cover text
+7. **OLG performs self-audit** against ALL section requirements above + 11 hard rules
+   - Verify each section meets its specific requirements
+   - If ANY section fails: **STOP. Do NOT file. Report failure to Atlas with details.**
+8. **OLG files** as native Google Doc via `gog docs create` → **IMMEDIATELY MOVE TO EPISODES FOLDER (https://drive.google.com/drive/folders/1N-E2sxnHsus6x83LfSMfKLccSOBzQyV7)**
+9. **OLG messages Atlas** when complete with folder link + compliance verification (all 6 sections passed, requirements met)
+10. **Atlas verifies compliance** before forwarding to Bryan
+11. Bryan reviews → Makes corrections in Google Doc → OLG updates Workflow_Feedback doc with patterns
 
 ---
 
@@ -47,116 +65,186 @@
 
 **Each episode follows this atomic structure. Atlas executes all 6 steps in one document.**
 
-### STEP 1: EPISODE INTRO HOOK (Opening Quote Hook)
+### STEP 1: EPISODE INTRO HOOK (MANDATORY — ALL REQUIREMENTS NON-NEGOTIABLE)
 **What it is:** A 15–45 second verbatim quote from the guest. This is the audio clip played at the beginning of the episode.
 
-**Requirements:**
-- **Verbatim from transcript** — No paraphrasing, no polishing
-- **Emotional pull** — Create intrigue, tension, signal depth
-- **Timestamp provided** — Exact position in transcript
-- **3 options minimum** — Provide 3 choices with explanations
-- **What makes it strong:**
-  - Challenges a common belief
-  - Reveals something unexpected
-  - Shows stakes, danger, survival, or leverage
-  - Reframes how people think about the topic
-  - Contains a sharp insight
-- **What makes it weak:**
-  - Generic advice ("Cannabis is evolving")
-  - Surface-level commentary
-  - Anything explanatory
-  - Any content the host could have said
+**SPECIFIC REQUIREMENTS — 3 DISTINCT OPTIONS MANDATORY:**
 
-### STEP 2: SHOW DESCRIPTION
+**EACH OPTION MUST HAVE:**
+- **Verbatim quote** (exact words from transcript, no paraphrasing or polishing)
+- **Timestamp** (exact start:end in transcript, e.g., "00:11-00:28")
+- **Duration** (15–45 seconds; verify by counting transcript)
+- **Explanation** (2–3 sentences: why this hook works, what makes it compelling)
+
+**Hook Quality Criteria (MANDATORY):**
+- **Challenges a common belief** (not confirmation of what listeners know)
+- **Reveals something unexpected** (contradiction, insight, surprise)
+- **Shows stakes** (danger, survival, leverage, consequence)
+- **Reframes thinking** (listener leaves with different perspective)
+- **Contains sharp insight** (operator-focused, specific, actionable)
+- **Ends on tension** (not explanation; leaves listener curious)
+
+**What FAILS a Hook:**
+- Generic advice ("Cannabis is evolving")
+- Surface-level commentary ("This is important")
+- Explanatory tone (tells listener what to think)
+- Content the host could have said (not specific to guest)
+- No emotional pull (flat, corporate tone)
+- Too short or too long (must be 15–45 seconds)
+- Paraphrased instead of verbatim
+- Missing timestamp or explanation
+
+### STEP 2: SHOW DESCRIPTION (MANDATORY — ALL REQUIREMENTS NON-NEGOTIABLE)
 **What it is:** The podcast platform description (Apple Podcasts, Spotify, etc.). Drives discoverability and click-through.
 
-**Format:** Three parts
-- **PART 1 — Hook Paragraph** (2–3 sentences max)
-  - Why should listeners care? What's the stakes? What will they learn?
-  - Specific, not generic
-  - Ends with curiosity or challenge
+**SPECIFIC REQUIREMENTS — NO BULLETS, NO EXCEPTIONS:**
+- **NO bullet points** — Description is paragraph-only, no bullets
+- **PART 1 — Hook Paragraph** (2–3 sentences, tension-first)
+  - Opens with WHY this matters NOW (stakes, not summary)
+  - Ends with intrigue or challenge, not explanation
+  - Specific to this episode, not generic "learn about X"
   
-- **PART 2 — Context Paragraph** (2–3 sentences max)
-  - Who is the guest? Why are they credible?
-  - What's their angle or unique perspective?
+- **PART 2 — Guest Context Paragraph** (2–3 sentences)
+  - Who is the guest? What's their credibility/angle?
+  - What makes them unique for THIS episode?
+  - Not biography; narrative of why they matter here
   
-- **PART 3 — 3 Bullet Points**
-  - Top 3 concrete takeaways listeners will get
-  - Specific, actionable, operator-focused
-  - Not "you'll learn about X" — "why X is broken" or "how to fix X"
+- **PART 3 — Outcome Paragraph** (2–3 sentences)
+  - What will listeners understand/gain from this conversation?
+  - Specific takeaways (operator-focused, not vague)
+  - Ends with curiosity, not summary
 
-### STEP 3: FIRST PRINCIPLES NEWSLETTER
-**What it is:** The email newsletter copy sent after episode drops. Drives email engagement and archival value.
+**What FAILS Section B:**
+- Bullet points (format violation)
+- "In this episode" or recap language
+- Generic framework ("learn about X")
+- Explanatory tone instead of narrative
 
-**Components:**
+### STEP 3: NEWSLETTER (MANDATORY — ALL REQUIREMENTS NON-NEGOTIABLE)
+**What it is:** Email copy sent after episode drops. Drives email engagement and archival value.
 
-**TITLE REQUIREMENTS:**
-- 7–12 words
-- No em-dashes
-- SEO-optimized (includes guest name if recognizable)
-- High click-through intent
+**SPECIFIC REQUIREMENTS — 3 DISTINCT OPTIONS:**
 
-**TITLE STYLE — The Pattern:**
-- Format: [INSIGHT or FRAMING] + [GUEST/DOMAIN] + [OUTCOME or CHALLENGE]
-- Examples (from doc):
-  - "Why [Problem] Is Actually [Reframe]"
-  - "[What Most People Get Wrong] About [Topic]"
-  - "[Guest Name] On [Specific Angle] That Changes [Outcome]"
+**TITLE REQUIREMENTS (per option):**
+- 7–12 words (exactly)
+- No em-dashes (format violation = failure)
+- SEO-optimized (includes guest name or domain keyword)
+- High click-through intent (curiosity, tension, contradiction)
+- Each option uses different framing/angle
 
-**NEWSLETTER HOOK (Opening 3–6 Sentences):**
-- Not a summary
-- Not marketing copy
-- Not paraphrased
-- Interpreted narrative of why this matters NOW
-- Written like a sharp analyst briefing an operator
-- Ends with "The episode digs into [SPECIFIC INSIGHT]"
+**NEWSLETTER BODY (per option):**
+- **Opening Hook** (3–6 sentences, NOT a summary)
+  - Why this matters NOW (stakes first, not explanation)
+  - Interpreted narrative (operator voice, not marketing)
+  - Verbatim quote or insight from episode
+  - Ends with "The episode digs into [SPECIFIC INSIGHT]"
 
-### STEP 4: AUDIO TITLE
+- **Context & Takeaway** (3–5 sentences)
+  - Who is the guest + why they matter
+  - What changed or what we learned
+  - Why this contradicts conventional thinking
+  - Operator-focused (actionable, not vague)
+
+- **Call to Action** (1 sentence)
+  - Listen to episode / Read full thread / Follow guest
+  - Direct, no filler
+
+**What FAILS Section E:**
+- Fewer than 3 distinct options
+- Titles with em-dashes
+- Summary-style openings ("In this episode...")
+- Paraphrased instead of interpreted narratives
+- Generic takeaways not specific to episode
+- Missing operator voice (sounds like marketing)
+
+### STEP 4: AUDIO TITLE (MANDATORY — ALL REQUIREMENTS NON-NEGOTIABLE)
 **What it is:** The title for podcast feeds (Apple Podcasts, Spotify, Simplecast backend).
 
-**Requirements:**
-- **Include guest name** — Non-negotiable for feed discovery
-- **Descriptive, not clickbait** — Feed listeners search by keywords
+**SPECIFIC REQUIREMENTS — 2 DISTINCT OPTIONS:**
+- **Guest name REQUIRED** — Non-negotiable for feed discovery
+- **Descriptive angle** — Feed listeners search by keywords
 - **Format:** "ft. [Guest Name] — [Topic/Angle]"
-- Example: "ft. Sarah Chen — Why Ethanol Extraction Is Winning"
+- **Example:** "ft. Gretchen Gailey — Why Cannabis Policy Stalled in Washington"
 
-**Provide 2 options:**
-- Option 1 (SEO-focused, includes guest)
-- Option 2 (Angle-focused, includes guest)
+**OPTION 1 (SEO-focused):**
+- Keyword-rich (problem, pain point, or category)
+- Guest name + problem/opportunity angle
+- Searchable terms (not vague)
 
-### STEP 5: YOUTUBE TITLE + DESCRIPTION + COVER ART TEXT
+**OPTION 2 (Narrative-focused):**
+- Guest name + specific insight or contradiction
+- Why listen angle (not generic)
+- Still includes searchable keywords
+
+**What FAILS Section D:**
+- Missing guest name
+- Generic angle ("Cannabis Conversation")
+- Vague framing ("The Future of X")
+- No SEO keywords
+
+### STEP 5: YOUTUBE (MANDATORY — ALL REQUIREMENTS NON-NEGOTIABLE)
 **What it is:** YouTube metadata that drives discovery, click-through, and SEO ranking.
 
-**YOUTUBE TITLE:**
-- 70–100 characters max
-- SEO-optimized (keywords, guest name if recognizable)
-- High click-through intent
-- Avoid clickbait; avoid em-dashes
+**YOUTUBE TITLE (MANDATORY):**
+- 70–100 characters EXACTLY (count every character)
+- SEO-optimized (keywords + guest name if recognizable)
+- High click-through intent (curiosity, tension, contradiction)
+- NO em-dashes (format violation = failure)
+- NO clickbait (still descriptive, not sensational)
+- Example: "Why Cannabis Policy Stalled: Gretchen Gailey on Washington" (68 chars)
 
-**YOUTUBE DESCRIPTION:**
-- Hook (2–3 sentences, why watch this?)
-- Guest credibility (1–2 sentences)
-- 3 key takeaways (bullet points)
-- Timestamps for chapters (if applicable)
-- Links (podcast, related episodes, guest links)
+**YOUTUBE DESCRIPTION (MANDATORY):**
+- **Hook** (2–3 sentences, why watch?)
+  - Tension/stakes first, not explanation
+  - Specific to this episode, not generic
+- **Guest Credibility** (1–2 sentences)
+  - Who they are + why they matter
+  - Their unique angle
+- **3 Key Takeaways** (bullet points ONLY here, not in show description)
+  - Specific, actionable, operator-focused
+  - Not "learn about X" — "why X is broken"
+- **Timestamps** (if chapters exist in episode)
+- **Links** (podcast feed, guest socials, related episodes)
 
-**YOUTUBE COVER ART TEXT:**
+**YOUTUBE COVER ART TEXT (MANDATORY):**
 - 1–3 words max (readable at thumbnail size)
-- Text overlay for video cover
-- Should communicate the episode angle at a glance
+- Text overlay communicates episode angle at a glance
+- Examples: "Policy Stalled" / "Cannabis Congress" / "Why Legalization Failed"
 
-### STEP 6: SOCIAL CLIPS
+**What FAILS Section F:**
+- Title > 100 chars or < 70 chars
+- Em-dashes in title
+- Missing guest name (when recognizable)
+- Generic description language
+- Bullets in show description instead of newsletter/YouTube
+- Missing timestamps
+- Missing links
+
+### STEP 6: SOCIAL CLIPS (MANDATORY — ALL REQUIREMENTS NON-NEGOTIABLE)
 **What it is:** Short-form clips (15–60 seconds) for YouTube Shorts, Instagram Reels, TikTok, Twitter/X.
 
-**Requirements:**
-- **Verbatim from transcript** — Exact quote with timestamp
-- **Title + description** — Every clip needs metadata for SEO
-- **1–3 clips per episode minimum** — More if applicable
-- **Each clip must:**
-  - Stand alone (listener understands without context)
-  - Contain one insight or perspective shift
-  - Be quotable/shareable
-  - Have high engagement potential
+**SPECIFIC REQUIREMENTS — NO SHORTCUTS:**
+- **Verbatim from transcript** — Exact quote with timestamp, NO paraphrasing
+- **1–3 clips minimum** (more if applicable; select for viral potential)
+- **EACH CLIP MUST HAVE:**
+  - **Title** (5–10 words, high-engagement, quotable)
+  - **Description** (50–100 words, SEO keywords, why this matters)
+  - **Timestamp** (exact position in transcript for production)
+
+**Clip Selection Criteria:**
+- Stand alone (viewer understands without context)
+- Contains one sharp insight or perspective shift
+- Quotable/shareable (operators would share this)
+- **HIGH ENGAGEMENT POTENTIAL** — Controversial, counterintuitive, or emotionally resonant
+- Cuts naturally from transcript (avoid awkward pauses)
+
+**What FAILS Section C:**
+- Clips that require context to understand
+- Generic or explanatory content
+- No SEO description provided
+- Missing timestamps
+- Clips unlikely to be shared (low viral potential)
+- Paraphrased instead of verbatim quotes
 
 ---
 
