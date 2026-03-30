@@ -76,21 +76,21 @@ before doing anything else.
 - Show ID: `583052dc-8161-4a60-8c68-f486c33c8be9`
 - Account ID: `e239093b-4ab7-44ce-89ed-4f890f9603ac`
 
-**Process:**
-1. Login to Simplecast (https://simplecast.com)
+**Simplecast Process:**
+1. Login to Simplecast (https://simplecast.com) with credentials above
 2. Navigate to Episodes → Drafts tab
 3. Click "Add Episode"
 4. **Fill Title:** `[Guest Name] – Draft For Contributors`
 5. **Add Episode Contributors:**
    - Bryan Fields
    - [Guest Name]
-6. **Paste Episode Notes** (see template below) into Episode Notes field
+6. **Paste Episode Notes** (see Step 4 template below) into Episode Notes field
 7. **Save as Draft** (do NOT publish, do NOT add audio file yet)
 
 **Do NOT:**
 - Publish the episode
-- Add audio file
-- Edit Section A–F data (OLG data is authoritative)
+- Add audio file to Simplecast
+- Edit Section A–F data in Simplecast (OLG artifact is authoritative; reference only)
 
 ---
 
