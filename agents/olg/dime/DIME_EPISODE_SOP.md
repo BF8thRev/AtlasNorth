@@ -25,6 +25,7 @@
 9. **ONLY REPORT AFTER STAGE 3 PASSES** — No content dumps to chat, only folder links
 10. **ALL DELIVERABLES NATIVE GOOGLE DOCS** — Never .txt or .md uploads
 11. **FILE TO EPISODES FOLDER IMMEDIATELY** — https://drive.google.com/drive/folders/1N-E2sxnHsus6x83LfSMfKLccSOBzQyV7 (non-negotiable)
+12. Read the entire transcript before producing any output. Do not begin writing until you have read every line. 
 
 ### Trigger Flow (UPDATED 2026-03-27)
 **Atlas→OLG handoff for complete content ownership**
@@ -48,7 +49,7 @@
 **Each episode follows this atomic structure. Atlas executes all 6 steps in one document.**
 
 ### STEP 1: EPISODE INTRO HOOK (Opening Quote Hook)
-**What it is:** A 15–45 second verbatim quote from the guest. This is the audio clip played at the beginning of the episode.
+**What it is:** A 15–45 second verbatim quote from the guest. This is the quote played at the beginning of the episode. The goal is to make the listner need to continue. 
 
 **Requirements:**
 - **Verbatim from transcript** — No paraphrasing, no polishing
@@ -71,58 +72,65 @@
 **What it is:** The podcast platform description (Apple Podcasts, Spotify, etc.). Drives discoverability and click-through.
 
 **Format:** Three parts
-- **PART 1 — Hook Paragraph** (2–3 sentences max)
-  - Why should listeners care? What's the stakes? What will they learn?
-  - Specific, not generic
-  - Ends with curiosity or challenge
+- **PART 1 — Hook ** (1–3 sentences max)
+  -  Curious, a change in perspective, a quote or sentence that makes them pause. 
   
 - **PART 2 — Context Paragraph** (2–3 sentences max)
-  - Who is the guest? Why are they credible?
-  - What's their angle or unique perspective?
+  -  What aspects are learned in the epsiode back up the quote to keep them engaged
+  - If its empty words, or doesnt keep their interest dont include. No extract fluff
   
 - **PART 3 — 3 Bullet Points**
   - Top 3 concrete takeaways listeners will get
   - Specific, actionable, operator-focused
   - Not "you'll learn about X" — "why X is broken" or "how to fix X"
+  - Short 3-5 words, high level summary that get used in a social post that show the 3 key reasons why to listen and what would be learned. 
 
 ### STEP 3: FIRST PRINCIPLES NEWSLETTER
-**What it is:** The email newsletter copy sent after episode drops. Drives email engagement and archival value.
+**What it is:** The newsletter copy sent after episode drops. Drives email engagement and archival value.
+
+- Not a summary or marketing copy. Its applied stragety and gametheory on inspired tactics from the transcript
+- Not paraphrased summary, if the reader isnt learning or thinkng its not correct. 
+- Interpreted narrative of why this matters NOW
+- Written like a sharp analyst briefing an operator
+
 
 **Components:**
 
 **TITLE REQUIREMENTS:**
-- 7–12 words
-- No em-dashes
-- SEO-optimized (includes guest name if recognizable)
-- High click-through intent
+- - High click-through intent
 
 **TITLE STYLE — The Pattern:**
-- Format: [INSIGHT or FRAMING] + [GUEST/DOMAIN] + [OUTCOME or CHALLENGE]
-- Examples (from doc):
-  - "Why [Problem] Is Actually [Reframe]"
-  - "[What Most People Get Wrong] About [Topic]"
-  - "[Guest Name] On [Specific Angle] That Changes [Outcome]"
+- Example 1: Professional Trader Will Sell Early on Catalyst , And Why He's Right
+- Example 2: The Internal Audit Most Companies Avoid
+- Example 3: Your Neighbor Is Destroying Your Supply Chain
+
 
 **NEWSLETTER HOOK (Opening 3–6 Sentences):**
-- Not a summary
-- Not marketing copy
-- Not paraphrased
-- Interpreted narrative of why this matters NOW
-- Written like a sharp analyst briefing an operator
-- Ends with "The episode digs into [SPECIFIC INSIGHT]"
+- Must: tart with a strong framing statement • Challenge assumptions • Introduce tension • Make readers feel exposed or missing something • If they aren't intrigued to continue or it isn't valuable to them, it's not correct
+Example style: "Cannabis doesn't have a sales problem. It has a cash discipline problem. Extending terms feels like growth. Until the invoices don't get paid."
+Then expand into analysis. These need to be in my voice and style.
+
+**NEWSLETTER BODY EXPECTATIONS**
+ - Explain the underlying principle •
+- Tie to broader industry behavior • Provide pattern recognition • End with structural takeaway
+- Not motivational. Not promotional. Not fluffy.
+- Most common sweet spot: 550–650 words.
+- Rate, review for first principles and give feedback.
+
+
 
 ### STEP 4: AUDIO TITLE
-**What it is:** The title for podcast feeds (Apple Podcasts, Spotify, Simplecast backend).
+**What it is:** The title for podcast feeds (Apple Podcasts, Spotify,).
 
 **Requirements:**
 - **Include guest name** — Non-negotiable for feed discovery
 - **Descriptive, not clickbait** — Feed listeners search by keywords
-- **Format:** "ft. [Guest Name] — [Topic/Angle]"
-- Example: "ft. Sarah Chen — Why Ethanol Extraction Is Winning"
+-  Example 1: Gretchen Gailey: Cannabis Industry Has No Idea How DC Works, Why Rescheduling Is Delayed
+-  Example 2: Prop 64 Fine Print, Pesticide Drift, The Economics Behind Concentrates ft. Micah Anderson
+-  Example 3: 15 Years of Cannabis Trading . Why I'll Sell Early (Unless This Happens) ft. Dan McDermitt
 
-**Provide 2 options:**
-- Option 1 (SEO-focused, includes guest)
-- Option 2 (Angle-focused, includes guest)
+  **Provide 3 options:**
+- The 3 example above are different approaches, depending on the epsiode and the blend on finding the best way to have hight Click through rate. The goal is " I need to listen to this, I am curious" but it just not be clickbait so it shoiuld realte
 
 ### STEP 5: YOUTUBE TITLE + DESCRIPTION + COVER ART TEXT
 **What it is:** YouTube metadata that drives discovery, click-through, and SEO ranking.
@@ -146,7 +154,8 @@
 - Should communicate the episode angle at a glance
 
 ### STEP 6: SOCIAL CLIPS
-**What it is:** Short-form clips (15–60 seconds) for YouTube Shorts, Instagram Reels, TikTok, Twitter/X.
+**What it is:** Short-form clips (15–60 seconds) for YouTube Shorts, Instagram Reels, Twitter/X. Review the entire transcript first and then pull clips — up to 5 if they are going  viral  on social. The goal is to find clips that have the chance to go viral.  They should be ranked in most likely to go viral. Up to 5 and put confidence level and why you think it will go viral. 
+
 
 **Requirements:**
 - **Verbatim from transcript** — Exact quote with timestamp
